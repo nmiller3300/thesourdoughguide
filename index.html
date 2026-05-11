@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Sourdough Guide — From First Loaf to Mastery</title>
+  <meta name="description" content="Your complete sourdough resource. Whether you're starting your first starter or perfecting your crumb, The Sourdough Guide has everything you need.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6666741024266551"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- GRAIN OVERLAY -->
+  <div class="grain"></div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-wheat">❧</span>
+        <div class="logo-text">
+          <span class="logo-main">The Sourdough Guide</span>
+          <span class="logo-sub">From First Loaf to Mastery</span>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <a href="#beginner">Start Here</a>
+        <a href="#recipes">Recipes</a>
+        <a href="#troubleshoot">Troubleshooting</a>
+        <a href="#equipment">Equipment</a>
+        <a href="#about">About</a>
+      </nav>
+      <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="#beginner">Start Here</a>
+      <a href="#recipes">Recipes</a>
+      <a href="#troubleshoot">Troubleshooting</a>
+      <a href="#equipment">Equipment</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="hero-img-placeholder">
+        <div class="hero-img-overlay"></div>
+        <svg class="hero-bread-icon" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="100" cy="75" rx="90" ry="40" fill="#C4A26A" opacity="0.3"/>
+          <path d="M20 75 Q30 30 100 25 Q170 30 180 75 Q170 90 100 95 Q30 90 20 75Z" fill="#8B5E3C" opacity="0.5"/>
+          <path d="M50 55 Q70 45 100 43 Q130 45 150 55" stroke="#F7F0E3" stroke-width="1.5" opacity="0.4" fill="none"/>
+          <path d="M70 62 Q100 52 130 62" stroke="#F7F0E3" stroke-width="1" opacity="0.3" fill="none"/>
+        </svg>
+      </div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Welcome to The Sourdough Guide</p>
+      <h1 class="hero-title">Real Bread.<br><em>Real Simple.</em></h1>
+      <p class="hero-desc">From nurturing your first starter to pulling a perfect open-crumb loaf from the oven — we cover every step, every mistake, and every triumph.</p>
+      <div class="hero-ctas">
+        <a href="#beginner" class="btn btn-primary">Start Your Journey</a>
+        <a href="#recipes" class="btn btn-ghost">Browse Recipes</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll to explore</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===== ADSENSE SLOT TOP ===== -->
+  <div class="ad-slot ad-slot--leaderboard">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-6666741024266551"
+         data-ad-slot="auto"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- ===== START HERE STRIP ===== -->
+  <section class="start-strip" id="beginner">
+    <div class="container">
+      <div class="start-strip-inner">
+        <div class="start-label">
+          <span class="tag">New Here?</span>
+          <h2>Begin with the basics</h2>
+          <p>Never made sourdough? Start here. We'll walk you through building your starter from scratch, your first loaf, and everything in between — no experience required.</p>
+          <a href="#" class="btn btn-dark">Read the Beginner's Guide →</a>
+        </div>
+        <div class="start-steps">
+          <div class="start-step">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <h4>Build Your Starter</h4>
+              <p>Flour, water, and a little patience. We show you exactly how.</p>
+            </div>
+          </div>
+          <div class="start-step">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <h4>Mix Your First Dough</h4>
+              <p>Simple ratios, clear steps, no confusing baker's math.</p>
+            </div>
+          </div>
+          <div class="start-step">
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <h4>Bake Your First Loaf</h4>
+              <p>Into the Dutch oven it goes. Pull out something you're proud of.</p>
+            </div>
+          </div>
+          <div class="start-step">
+            <div class="step-num">04</div>
+            <div class="step-body">
+              <h4>Keep Improving</h4>
+              <p>Every bake teaches you something. We help you read the results.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CATEGORY GRID ===== -->
+  <section class="categories">
+    <div class="container">
+      <div class="section-header">
+        <div class="divider-line"></div>
+        <h2 class="section-title">Everything Sourdough</h2>
+        <div class="divider-line"></div>
+      </div>
+      <div class="cat-grid">
+        <a href="#" class="cat-card cat-card--large">
+          <div class="cat-icon">🌾</div>
+          <h3>Beginner Guides</h3>
+          <p>Start from zero. Build your foundation right the first time.</p>
+          <span class="cat-link">Explore →</span>
+        </a>
+        <a href="#recipes" class="cat-card">
+          <div class="cat-icon">🍞</div>
+          <h3>Recipes</h3>
+          <p>Classic loaves, flavored breads, discard recipes & more.</p>
+          <span class="cat-link">Explore →</span>
+        </a>
+        <a href="#troubleshoot" class="cat-card">
+          <div class="cat-icon">🔍</div>
+          <h3>Troubleshooting</h3>
+          <p>Dense crumb? Flat loaf? We've seen it all and know the fix.</p>
+          <span class="cat-link">Explore →</span>
+        </a>
+        <a href="#equipment" class="cat-card">
+          <div class="cat-icon">🫙</div>
+          <h3>Equipment</h3>
+          <p>What you actually need — and what's just nice to have.</p>
+          <span class="cat-link">Explore →</span>
+        </a>
+        <a href="#" class="cat-card">
+          <div class="cat-icon">📐</div>
+          <h3>Advanced Techniques</h3>
+          <p>Lamination, scoring art, high-hydration doughs & beyond.</p>
+          <span class="cat-link">Explore →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED POSTS ===== -->
+  <section class="posts" id="recipes">
+    <div class="container">
+      <div class="section-header">
+        <div class="divider-line"></div>
+        <h2 class="section-title">Latest from the Guide</h2>
+        <div class="divider-line"></div>
+      </div>
+      <div class="posts-grid">
+
+        <article class="post-card post-card--featured">
+          <div class="post-img post-img--1">
+            <span class="post-tag">Beginner</span>
+          </div>
+          <div class="post-body">
+            <p class="post-meta">June 2025 · 8 min read</p>
+            <h3><a href="#">How to Start a Sourdough Starter From Scratch (Day-by-Day Guide)</a></h3>
+            <p>Everything you need to build an active, bubbly starter in 7 days — even if you've failed before.</p>
+            <a href="#" class="post-link">Read More →</a>
+          </div>
+        </article>
+
+        <article class="post-card">
+          <div class="post-img post-img--2">
+            <span class="post-tag">Troubleshooting</span>
+          </div>
+          <div class="post-body">
+            <p class="post-meta">June 2025 · 6 min read</p>
+            <h3><a href="#">Why Is My Sourdough So Dense? 7 Reasons & How to Fix Them</a></h3>
+            <p>Diagnosing a brick loaf is easier than you think when you know what to look for.</p>
+            <a href="#" class="post-link">Read More →</a>
+          </div>
+        </article>
+
+        <article class="post-card">
+          <div class="post-img post-img--3">
+            <span class="post-tag">Recipe</span>
+          </div>
+          <div class="post-body">
+            <p class="post-meta">May 2025 · 5 min read</p>
+            <h3><a href="#">Classic Country Sourdough Loaf — The Only Recipe You Need</a></h3>
+            <p>Simple, reliable, and deeply satisfying. Our most-made recipe for a reason.</p>
+            <a href="#" class="post-link">Read More →</a>
+          </div>
+        </article>
+
+        <article class="post-card">
+          <div class="post-img post-img--4">
+            <span class="post-tag">Equipment</span>
+          </div>
+          <div class="post-body">
+            <p class="post-meta">May 2025 · 7 min read</p>
+            <h3><a href="#">The Best Dutch Ovens for Sourdough Baking (Every Budget)</a></h3>
+            <p>We break down what matters, what doesn't, and what's actually worth buying.</p>
+            <a href="#" class="post-link">Read More →</a>
+          </div>
+        </article>
+
+        <article class="post-card">
+          <div class="post-img post-img--5">
+            <span class="post-tag">Advanced</span>
+          </div>
+          <div class="post-body">
+            <p class="post-meta">April 2025 · 10 min read</p>
+            <h3><a href="#">Understanding Bulk Fermentation: The Key to Great Sourdough</a></h3>
+            <p>Get this right and everything else falls into place. Here's how to read your dough.</p>
+            <a href="#" class="post-link">Read More →</a>
+          </div>
+        </article>
+
+        <article class="post-card">
+          <div class="post-img post-img--6">
+            <span class="post-tag">Beginner</span>
+          </div>
+          <div class="post-body">
+            <p class="post-meta">April 2025 · 4 min read</p>
+            <h3><a href="#">Sourdough Hydration Explained: What It Is and Why It Matters</a></h3>
+            <p>Baker's percentages don't have to be scary. Here's a plain-English breakdown.</p>
+            <a href="#" class="post-link">Read More →</a>
+          </div>
+        </article>
+
+      </div>
+      <div class="posts-cta">
+        <a href="#" class="btn btn-outline">View All Articles</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ADSENSE SLOT MID ===== -->
+  <div class="ad-slot ad-slot--rectangle">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-6666741024266551"
+         data-ad-slot="auto"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- ===== TROUBLESHOOTING BANNER ===== -->
+  <section class="trouble-banner" id="troubleshoot">
+    <div class="container">
+      <div class="trouble-inner">
+        <div class="trouble-text">
+          <span class="tag tag--light">Troubleshooting Hub</span>
+          <h2>Something went wrong?<br>We've got the answer.</h2>
+          <p>Our troubleshooting guides cover the most common sourdough problems — dense crumb, no oven spring, sticky dough, over-proofed loaves, flat starters and more. Find your issue and fix it fast.</p>
+          <div class="trouble-links">
+            <a href="#">→ My starter isn't bubbling</a>
+            <a href="#">→ My loaf came out flat</a>
+            <a href="#">→ My bread is too sour</a>
+            <a href="#">→ My dough is too sticky</a>
+            <a href="#">→ My crust is too hard</a>
+            <a href="#">→ Browse all problems</a>
+          </div>
+        </div>
+        <div class="trouble-art">
+          <div class="trouble-circle">
+            <span>?</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EQUIPMENT / AFFILIATE ===== -->
+  <section class="equipment" id="equipment">
+    <div class="container">
+      <div class="section-header">
+        <div class="divider-line"></div>
+        <h2 class="section-title">Tools of the Trade</h2>
+        <div class="divider-line"></div>
+      </div>
+      <p class="section-sub">The gear that actually makes a difference. No fluff — just honest recommendations at every price point.</p>
+      <div class="equip-grid">
+        <a href="#" class="equip-card">
+          <div class="equip-icon">🥘</div>
+          <h4>Dutch Ovens</h4>
+          <p>The single most important piece of equipment for great crust.</p>
+          <span class="equip-link">Shop Picks →</span>
+        </a>
+        <a href="#" class="equip-card">
+          <div class="equip-icon">🧺</div>
+          <h4>Bannetons</h4>
+          <p>Shape your loaves right. We explain sizes, shapes & care.</p>
+          <span class="equip-link">Shop Picks →</span>
+        </a>
+        <a href="#" class="equip-card">
+          <div class="equip-icon">⚖️</div>
+          <h4>Kitchen Scales</h4>
+          <p>Baking by weight is everything. Here's what we use.</p>
+          <span class="equip-link">Shop Picks →</span>
+        </a>
+        <a href="#" class="equip-card">
+          <div class="equip-icon">🌾</div>
+          <h4>Flour Guides</h4>
+          <p>Not all flour is equal. We break down what works and why.</p>
+          <span class="equip-link">Read Guide →</span>
+        </a>
+      </div>
+      <p class="affiliate-note">Some links on this page are affiliate links. We only recommend products we genuinely believe in — and your purchase helps keep this site running. Thank you.</p>
+    </div>
+  </section>
+
+  <!-- ===== NEWSLETTER ===== -->
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter-inner">
+        <div class="newsletter-icon">✉</div>
+        <h2>Get better at sourdough,<br>one email at a time.</h2>
+        <p>New guides, troubleshooting tips, and seasonal recipes — delivered to your inbox. No spam, ever. Unsubscribe anytime.</p>
+        <form class="newsletter-form" onsubmit="handleSubscribe(event)">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="newsletter-note">Join our growing community of home bakers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT STRIP ===== -->
+  <section class="about-strip" id="about">
+    <div class="container">
+      <div class="about-inner">
+        <div class="about-text">
+          <span class="tag">About This Site</span>
+          <h2>Built for bakers,<br>by people who love bread.</h2>
+          <p>The Sourdough Guide was built because great sourdough information was scattered across the internet — buried in forums, conflicting with itself, and impossible to follow for beginners.</p>
+          <p>We built one place to find everything. Clear, honest, tested information for every skill level — whether you're feeding your first starter or perfecting your scoring patterns.</p>
+        </div>
+        <div class="about-quote">
+          <blockquote>
+            "Good bread takes time. <em>Learning</em> to make good bread shouldn't."
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-wheat">❧</span>
+          <span class="footer-logo">The Sourdough Guide</span>
+          <p>Your complete resource for sourdough baking — from first starter to master loaf.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Learn</h5>
+          <a href="#">Beginner's Guide</a>
+          <a href="#">Starter Guide</a>
+          <a href="#">Techniques</a>
+          <a href="#">Hydration Guide</a>
+        </div>
+        <div class="footer-col">
+          <h5>Recipes</h5>
+          <a href="#">Classic Country Loaf</a>
+          <a href="#">Whole Wheat</a>
+          <a href="#">Discard Recipes</a>
+          <a href="#">Flavored Breads</a>
+        </div>
+        <div class="footer-col">
+          <h5>Help</h5>
+          <a href="#">Troubleshooting</a>
+          <a href="#">Equipment Guide</a>
+          <a href="#">FAQ</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Legal</h5>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Affiliate Disclosure</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 ThesourdoughGuide.com · All rights reserved</p>
+        <p>Some links are affiliate links. We earn a small commission at no extra cost to you.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
