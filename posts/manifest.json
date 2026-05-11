@@ -1,50 +1,58 @@
 [
   {
+    "slug": "why-is-my-sourdough-dense",
+    "title": "Why Is My Sourdough Dense? 7 Reasons and How to Fix Each One",
+    "date": "2025-06-05",
+    "category": "troubleshooting",
+    "readtime": "8 min read",
+    "excerpt": "A dense, gummy sourdough loaf is the most common beginner problem. Here are the 7 most likely causes and the exact fix for each."
+  },
+  {
+    "slug": "best-dutch-ovens-for-sourdough",
+    "title": "The Best Dutch Ovens for Sourdough Baking (Every Budget)",
+    "date": "2025-05-20",
+    "category": "equipment",
+    "readtime": "7 min read",
+    "excerpt": "A Dutch oven is the single most important piece of equipment for home sourdough. Here's what to look for and what we actually recommend."
+  },
+  {
+    "slug": "understanding-bulk-fermentation",
+    "title": "Understanding Bulk Fermentation \u2014 The Key to Great Sourdough",
+    "date": "2025-05-25",
+    "category": "advanced",
+    "readtime": "9 min read",
+    "excerpt": "Get bulk fermentation right and everything else falls into place. Here's exactly how to read your dough and know when it's done."
+  },
+  {
+    "slug": "sourdough-hydration-explained",
+    "title": "Sourdough Hydration Explained \u2014 What It Is and Why It Matters",
+    "date": "2025-05-28",
+    "category": "beginner",
+    "readtime": "7 min read",
+    "excerpt": "Baker's percentages and hydration ratios don't have to be intimidating. Here's exactly what they mean and how to use them."
+  },
+  {
+    "slug": "sourdough-discard-recipes",
+    "title": "8 Ways to Use Sourdough Discard (That Actually Taste Good)",
+    "date": "2025-06-03",
+    "category": "recipe",
+    "readtime": "6 min read",
+    "excerpt": "Stop throwing away your sourdough discard. These 8 recipes are quick, delicious, and use up every bit of it."
+  },
+  {
+    "slug": "classic-country-sourdough-loaf",
+    "title": "Classic Country Sourdough Loaf \u2014 The Only Recipe You Need",
+    "date": "2025-06-01",
+    "category": "recipe",
+    "readtime": "8 min read",
+    "excerpt": "Simple, reliable, and deeply satisfying. This is the recipe most home bakers come back to again and again."
+  },
+  {
     "slug": "how-to-start-a-sourdough-starter",
     "title": "How to Start a Sourdough Starter From Scratch (Day-by-Day Guide)",
     "date": "2025-06-01",
     "category": "beginner",
     "readtime": "8 min read",
-    "excerpt": "Everything you need to build an active, bubbly starter in 7 days — even if you've failed before."
-  },
-  {
-    "slug": "why-is-my-sourdough-dense",
-    "title": "Why Is My Sourdough So Dense? 7 Reasons & How to Fix Them",
-    "date": "2025-06-05",
-    "category": "troubleshooting",
-    "readtime": "6 min read",
-    "excerpt": "Diagnosing a dense, gummy loaf is easier than you think when you know what to look for."
-  },
-  {
-    "slug": "classic-country-sourdough-loaf",
-    "title": "Classic Country Sourdough Loaf — The Only Recipe You Need",
-    "date": "2025-05-20",
-    "category": "recipe",
-    "readtime": "5 min read",
-    "excerpt": "Simple, reliable, and deeply satisfying. Our most-made recipe for a reason."
-  },
-  {
-    "slug": "best-dutch-ovens-for-sourdough",
-    "title": "The Best Dutch Ovens for Sourdough Baking (Every Budget)",
-    "date": "2025-05-15",
-    "category": "equipment",
-    "readtime": "7 min read",
-    "excerpt": "We break down what matters, what doesn't, and what's actually worth buying."
-  },
-  {
-    "slug": "understanding-bulk-fermentation",
-    "title": "Understanding Bulk Fermentation: The Key to Great Sourdough",
-    "date": "2025-04-28",
-    "category": "advanced",
-    "readtime": "10 min read",
-    "excerpt": "Get this right and everything else falls into place. Here's how to read your dough."
-  },
-  {
-    "slug": "sourdough-hydration-explained",
-    "title": "Sourdough Hydration Explained: What It Is and Why It Matters",
-    "date": "2025-04-10",
-    "category": "beginner",
-    "readtime": "4 min read",
-    "excerpt": "Baker's percentages don't have to be scary. Here's a plain-English breakdown."
+    "excerpt": "Everything you need to build an active, bubbly starter in 7 days \u2014 even if you've failed before."
   }
 ]
