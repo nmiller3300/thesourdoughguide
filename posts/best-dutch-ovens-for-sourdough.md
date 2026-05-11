@@ -1,9 +1,10 @@
 ---
 title: The Best Dutch Ovens for Sourdough Baking (Every Budget)
 date: 2025-05-20
-category: equipment
+category: recipe
 readtime: 7 min read
-excerpt: A Dutch oven is the single most important piece of equipment for home sourdough. Here's what to look for and what we actually recommend.
+excerpt: A Dutch oven is the single most important piece of equipment for home
+  sourdough. Here's what to look for and what we actually recommend.
 ---
 
 # The Best Dutch Ovens for Sourdough Baking
