@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipes & Guides — The Sourdough Guide</title>
+  <meta name="description" content="Browse all sourdough recipes, beginner guides, troubleshooting articles, and equipment reviews.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6666741024266551" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<div class="page-hero">
+  <div class="container">
+    <h1>Recipes & Guides</h1>
+    <p>Everything from your first loaf to advanced techniques — sorted and searchable.</p>
+  </div>
+</div>
+
+<div class="ad-slot">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6666741024266551" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+
+<section style="padding:56px 0">
+  <div class="container">
+    <div class="filters" id="filters">
+      <button class="filter-btn active" data-cat="all">All Posts</button>
+      <button class="filter-btn" data-cat="beginner">Beginner</button>
+      <button class="filter-btn" data-cat="recipe">Recipes</button>
+      <button class="filter-btn" data-cat="troubleshooting">Troubleshooting</button>
+      <button class="filter-btn" data-cat="equipment">Equipment</button>
+      <button class="filter-btn" data-cat="advanced">Advanced</button>
+    </div>
+    <div class="post-grid" id="allPosts"><div class="loading">Loading posts...</div></div>
+  </div>
+</section>
+
+<div class="ad-slot" style="min-height:250px">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6666741024266551" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+
+<div id="footer-placeholder"></div>
+
+<script src="/js/layout.js"></script>
+<script src="/js/main.js"></script>
+<script>
+  document.getElementById('nav-placeholder').innerHTML = renderNav('recipes');
+  document.getElementById('footer-placeholder').innerHTML = renderFooter();
+
+  let allPostsData = [];
+  let activeFilter = 'all';
+
+  // Check URL for cat param
+  const urlCat = new URLSearchParams(window.location.search).get('cat');
+  if(urlCat) activeFilter = urlCat;
+
+  function renderPosts(posts){
+    const el = document.getElementById('allPosts');
+    const filtered = activeFilter === 'all' ? posts : posts.filter(p=>p.category===activeFilter);
+    if(!filtered.length){
+      el.innerHTML = '<p style="color:var(--text-light);font-size:14px;grid-column:1/-1;text-align:center;padding:40px 0">No posts in this category yet.</p>';
+      return;
+    }
+    el.innerHTML = filtered.map(buildPostCard).join('');
+  }
+
+  // Filter buttons
+  document.getElementById('filters').addEventListener('click', e=>{
+    if(!e.target.matches('.filter-btn')) return;
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    e.target.classList.add('active');
+    activeFilter = e.target.dataset.cat;
+    renderPosts(allPostsData);
+  });
+
+  // Set active filter from URL
+  if(urlCat){
+    document.querySelectorAll('.filter-btn').forEach(b=>{
+      b.classList.toggle('active', b.dataset.cat===urlCat);
+    });
+  }
+
+  loadPosts().then(posts=>{
+    allPostsData = posts;
+    renderPosts(posts);
+  });
+</script>
+</body>
+</html>

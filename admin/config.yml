@@ -1,0 +1,50 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+site_url: https://thesourdoughguide.com
+display_url: https://thesourdoughguide.com
+logo_url: https://thesourdoughguide.com/images/logo.png
+
+collections:
+  - name: "posts"
+    label: "Blog Posts"
+    folder: "posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Beginner", value: "beginner" }
+          - { label: "Recipe", value: "recipe" }
+          - { label: "Troubleshooting", value: "troubleshooting" }
+          - { label: "Equipment", value: "equipment" }
+          - { label: "Advanced", value: "advanced" }
+      - { label: "Read Time (e.g. 5 min read)", name: "readtime", widget: "string" }
+      - { label: "Excerpt", name: "excerpt", widget: "text", hint: "Short description shown on blog listing page" }
+      - { label: "Featured Image", name: "thumbnail", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Homepage Settings"
+        name: "home"
+        file: "data/home.json"
+        fields:
+          - { label: "Hero Headline", name: "hero_headline", widget: "string" }
+          - { label: "Hero Subheadline", name: "hero_sub", widget: "string" }
+          - { label: "Hero Description", name: "hero_desc", widget: "text" }
+      - label: "About Page"
+        name: "about"
+        file: "data/about.json"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }

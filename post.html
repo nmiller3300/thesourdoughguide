@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Sourdough Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6666741024266551" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<div id="post-hero" class="page-hero" style="display:none">
+  <div class="container">
+    <div id="post-tag-wrap"></div>
+    <h1 id="post-title"></h1>
+    <p id="post-meta-line" style="color:rgba(247,240,227,.6);font-family:var(--fs);font-size:13px;margin-top:8px"></p>
+  </div>
+</div>
+
+<div class="ad-slot">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6666741024266551" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+
+<div id="post-content-wrap">
+  <div class="loading" style="padding:80px">Loading post...</div>
+</div>
+
+<div class="ad-slot" style="min-height:250px">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6666741024266551" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+
+<!-- RELATED POSTS -->
+<section style="padding:56px 0;background:var(--cream-dark)">
+  <div class="container">
+    <div class="sh"><div class="sh-line"></div><h2 class="sh-title">More from the Guide</h2><div class="sh-line"></div></div>
+    <div class="post-grid" id="relatedPosts"></div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+
+<script src="/js/layout.js"></script>
+<script src="/js/main.js"></script>
+<script>
+  document.getElementById('nav-placeholder').innerHTML = renderNav('');
+  document.getElementById('footer-placeholder').innerHTML = renderFooter();
+
+  const slug = new URLSearchParams(window.location.search).get('slug');
+
+  if(!slug){
+    document.getElementById('post-content-wrap').innerHTML = '<div class="prose"><p>Post not found. <a href="/recipes.html" style="color:var(--terra)">Browse all posts →</a></p></div>';
+  } else {
+    fetch(`/posts/${slug}.md`)
+      .then(r=>{
+        if(!r.ok) throw new Error('Not found');
+        return r.text();
+      })
+      .then(text=>{
+        const {data, content} = parseFrontmatter(text);
+
+        // Set page title
+        document.title = (data.title||'Post') + ' — The Sourdough Guide';
+
+        // Show hero
+        const hero = document.getElementById('post-hero');
+        hero.style.display = '';
+        document.getElementById('post-title').textContent = data.title||'';
+        document.getElementById('post-tag-wrap').innerHTML = `<span class="tag ${catClass(data.category)}" style="margin-bottom:14px">${data.category||''}</span>`;
+        document.getElementById('post-meta-line').textContent = [formatDate(data.date), data.readtime].filter(Boolean).join(' · ');
+
+        // Render content
+        document.getElementById('post-content-wrap').innerHTML = `<div class="prose">${marked.parse(content)}</div>`;
+      })
+      .catch(()=>{
+        document.getElementById('post-content-wrap').innerHTML = '<div class="prose"><p>Post not found. <a href="/recipes.html" style="color:var(--terra)">Browse all posts →</a></p></div>';
+      });
+  }
+
+  // Load related posts
+  loadPosts().then(posts=>{
+    const related = posts.filter(p=>p.slug!==slug).slice(0,3);
+    document.getElementById('relatedPosts').innerHTML = related.map(buildPostCard).join('');
+  });
+</script>
+</body>
+</html>
