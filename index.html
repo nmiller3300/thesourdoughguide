@@ -71,8 +71,8 @@ img{max-width:100%;display:block}
 
 /* ── HERO ─────────────────────────── */
 .hero{position:relative;min-height:92vh;display:flex;align-items:center;overflow:hidden;background:#1C0E07}
-.hero-img{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=1800&q=90&fit=crop');background-size:cover;background-position:center 40%}
-.hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(105deg,rgba(15,10,7,.95) 0%,rgba(15,10,7,.75) 45%,rgba(15,10,7,.2) 100%)}
+.hero-img{position:absolute;inset:0;background:linear-gradient(135deg,#1A0A03 0%,#3D1A08 35%,#7B3A15 70%,#C49A6C 100%)}
+.hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(105deg,rgba(15,10,7,.97) 0%,rgba(15,10,7,.85) 45%,rgba(15,10,7,.4) 100%)}
 .hero-content{position:relative;z-index:2;padding:0 32px;max-width:1200px;margin:0 auto;width:100%}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--s);font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--tan);margin-bottom:24px}
 .hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--tan)}
@@ -126,7 +126,7 @@ img{max-width:100%;display:block}
 .cat-card:hover{background:var(--off-white)}
 .cat-card:hover::after{width:100%}
 .cat-card-wide{grid-column:span 3;display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--cream)}
-.cat-img-wide{background-image:url('https://images.unsplash.com/photo-1549931319-a545dcf3bc7c?w=800&q=80&fit=crop');background-size:cover;background-position:center;min-height:280px}
+.cat-img-wide{background:linear-gradient(135deg,#2A1205 0%,#6B3517 50%,#B5702A 100%);min-height:280px}
 .cat-content-wide{padding:48px 48px;display:flex;flex-direction:column;justify-content:center;background:var(--cream)}
 .cat-icon{font-size:28px;margin-bottom:16px}
 .cat-title{font-family:var(--h);font-size:22px;color:var(--black);margin-bottom:10px;line-height:1.2}
@@ -151,12 +151,12 @@ img{max-width:100%;display:block}
 .pc-read{font-family:var(--s);font-size:12px;font-weight:600;color:var(--rust);margin-top:16px;display:inline-flex;align-items:center;gap:5px;letter-spacing:.02em}
 
 /* Post image colors by category */
-.pi-beginner{background-image:url('https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=600&q=80&fit=crop')}
-.pi-recipe{background-image:url('https://images.unsplash.com/photo-1549931319-a545dcf3bc7c?w=600&q=80&fit=crop')}
-.pi-troubleshooting{background-image:url('https://images.unsplash.com/photo-1574085733277-851d9d856a3a?w=600&q=80&fit=crop')}
-.pi-equipment{background-image:url('https://images.unsplash.com/photo-1595356700395-b647f3ca2306?w=600&q=80&fit=crop')}
-.pi-advanced{background-image:url('https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80&fit=crop')}
-.pi-default{background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&fit=crop')}
+.pi-beginner{background:linear-gradient(160deg,#3D2008 0%,#8B4513 60%,#C49A6C 100%)}
+.pi-recipe{background:linear-gradient(160deg,#2D1A0A 0%,#6B3517 60%,#A0622A 100%)}
+.pi-troubleshooting{background:linear-gradient(160deg,#1A1A2E 0%,#4A3060 60%,#8B6A9A 100%)}
+.pi-equipment{background:linear-gradient(160deg,#0D2018 0%,#1A4A30 60%,#3A7A55 100%)}
+.pi-advanced{background:linear-gradient(160deg,#1A0808 0%,#5C1A1A 60%,#A03030 100%)}
+.pi-default{background:linear-gradient(160deg,#2A1808 0%,#7A4020 60%,#C49A6C 100%)}
 
 /* ── TROUBLE SECTION ─────────────── */
 .trouble-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
@@ -180,7 +180,7 @@ img{max-width:100%;display:block}
 
 /* ── ABOUT STRIP ─────────────────── */
 .about-grid{display:grid;grid-template-columns:1fr 1fr}
-.about-img{background-image:url('https://images.unsplash.com/photo-1549931319-a545dcf3bc7c?w=900&q=85&fit=crop');background-size:cover;background-position:center;min-height:480px}
+.about-img{background:linear-gradient(160deg,#1A0A03 0%,#4A2010 40%,#8B4513 70%,#C49A6C 100%);min-height:480px}
 .about-content{padding:64px 56px;background:var(--cream2);display:flex;flex-direction:column;justify-content:center}
 .about-content h2{font-family:var(--h);font-size:clamp(24px,3vw,36px);color:var(--black);margin-bottom:20px;line-height:1.2}
 .about-content p{font-family:var(--s);font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:16px;font-weight:400}
@@ -294,7 +294,18 @@ img{max-width:100%;display:block}
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-img"></div>
+  <div class="hero-img">
+  <svg style="position:absolute;right:5%;top:50%;transform:translateY(-50%);width:min(480px,45vw);opacity:.18" viewBox="0 0 400 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="200" cy="200" rx="185" ry="55" fill="#C49A6C" opacity=".4"/>
+    <path d="M25 185 Q35 60 200 45 Q365 60 375 185 Q360 215 200 225 Q40 215 25 185Z" fill="#8B4513"/>
+    <path d="M60 140 Q100 95 200 88 Q300 95 340 140" stroke="#C49A6C" stroke-width="3" fill="none" opacity=".5"/>
+    <path d="M80 162 Q140 130 200 125 Q260 130 320 162" stroke="#C49A6C" stroke-width="2" fill="none" opacity=".35"/>
+    <path d="M170 88 Q185 65 200 62 Q215 65 230 88" stroke="#D4B08A" stroke-width="2.5" fill="none" opacity=".6"/>
+    <ellipse cx="145" cy="110" rx="12" ry="8" fill="#A06030" opacity=".5"/>
+    <ellipse cx="255" cy="108" rx="10" ry="7" fill="#A06030" opacity=".45"/>
+    <ellipse cx="200" cy="100" rx="8" ry="6" fill="#A06030" opacity=".4"/>
+  </svg>
+</div>
   <div class="hero-content">
     <div class="hero-eyebrow">Welcome to The Sourdough Guide</div>
     <h1>Real Bread.<br><em>Real Simple.</em></h1>
@@ -448,10 +459,10 @@ img{max-width:100%;display:block}
       <p class="sec-sub">Honest recommendations at every price point — only what actually makes a difference.</p>
     </div>
     <div class="equip-grid">
-      <a href="/equipment.html" class="eq"><div class="eq-img" style="background-image:url('https://images.unsplash.com/photo-1595356700395-b647f3ca2306?w=400&q=80&fit=crop')"></div><div class="eq-body"><div class="eq-title">Dutch Ovens</div><p class="eq-desc">The single most important piece of equipment for a great crust and proper oven spring.</p><span class="eq-link">Shop Picks →</span></div></a>
-      <a href="/equipment.html" class="eq"><div class="eq-img" style="background-image:url('https://images.unsplash.com/photo-1574085733277-851d9d856a3a?w=400&q=80&fit=crop')"></div><div class="eq-body"><div class="eq-title">Bannetons</div><p class="eq-desc">Shape your loaves right. We explain sizes, shapes, liners, and long-term care.</p><span class="eq-link">Shop Picks →</span></div></a>
-      <a href="/equipment.html" class="eq"><div class="eq-img" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80&fit=crop')"></div><div class="eq-body"><div class="eq-title">Kitchen Scales</div><p class="eq-desc">Baking by weight is everything in sourdough. Here's what we actually use daily.</p><span class="eq-link">Shop Picks →</span></div></a>
-      <a href="/equipment.html" class="eq"><div class="eq-img" style="background-image:url('https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&q=80&fit=crop')"></div><div class="eq-body"><div class="eq-title">Flour Guide</div><p class="eq-desc">Not all flour is equal for sourdough. We break down protein content, brands, and what works.</p><span class="eq-link">Read Guide →</span></div></a>
+      <a href="/equipment.html" class="eq"><div class="eq-img" style="background-image:none"></div><div class="eq-body"><div class="eq-title">Dutch Ovens</div><p class="eq-desc">The single most important piece of equipment for a great crust and proper oven spring.</p><span class="eq-link">Shop Picks →</span></div></a>
+      <a href="/equipment.html" class="eq"><div class="eq-img" style="background-image:none"></div><div class="eq-body"><div class="eq-title">Bannetons</div><p class="eq-desc">Shape your loaves right. We explain sizes, shapes, liners, and long-term care.</p><span class="eq-link">Shop Picks →</span></div></a>
+      <a href="/equipment.html" class="eq"><div class="eq-img" style="background-image:none"></div><div class="eq-body"><div class="eq-title">Kitchen Scales</div><p class="eq-desc">Baking by weight is everything in sourdough. Here's what we actually use daily.</p><span class="eq-link">Shop Picks →</span></div></a>
+      <a href="/equipment.html" class="eq"><div class="eq-img" style="background-image:none"></div><div class="eq-body"><div class="eq-title">Flour Guide</div><p class="eq-desc">Not all flour is equal for sourdough. We break down protein content, brands, and what works.</p><span class="eq-link">Read Guide →</span></div></a>
     </div>
     <p style="text-align:center;font-family:var(--s);font-size:12px;color:var(--text3);margin-top:32px;font-weight:300;font-style:italic">Some links are affiliate links. We only recommend products we genuinely believe in — your purchase helps keep this site free.</p>
   </div>

@@ -1,21 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sourdough Troubleshooting — The Sourdough Guide</title>
-  <meta name="description" content="Fix common sourdough problems — dense crumb, flat loaves, dead starters, sticky dough and more.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6666741024266551" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sourdough Troubleshooting — The Sourdough Guide</title>
+<meta name="description" content="Fix the most common sourdough problems fast. Dense crumb, flat loaves, dead starters and more.">
+<meta name="google-adsense-account" content="ca-pub-6666741024266551">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6666741024266551" crossorigin="anonymous"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+:root{
+  --white:#FFFFFF;--off-white:#FAFAF7;--cream:#F5EDE0;--cream2:#EDE0CC;
+  --warm-gray:#F0EBE3;--border:#E8E0D5;--text:#1C1410;--text2:#4A3728;
+  --text3:#8B7355;--rust:#B5451B;--rust2:#9A3A16;--brown:#5C3317;
+  --tan:#C49A6C;--tan2:#A67C52;--black:#0F0A07;
+  --h:'DM Serif Display',Georgia,serif;--b:'Lora',Georgia,serif;--s:'Inter',system-ui,sans-serif;
+}
+body{background:var(--off-white);color:var(--text);font-family:var(--b);line-height:1.75;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+.nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{display:flex;align-items:center;height:72px;max-width:1200px;margin:0 auto;padding:0 32px;gap:12px}
+.nav-brand{display:flex;align-items:center;gap:14px;flex-shrink:0;text-decoration:none}
+.nav-logo-mark{width:38px;height:38px;background:var(--rust);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:18px;flex-shrink:0}
+.nav-title{font-family:var(--h);font-size:20px;color:var(--black);line-height:1}
+.nav-tagline{font-family:var(--s);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);font-weight:400;margin-top:2px}
+.nav-links{display:flex;gap:0;margin-left:auto;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.nav-links a{font-family:var(--s);font-size:13px;font-weight:500;color:var(--text2);padding:8px 16px;transition:all .18s;border-right:1px solid var(--border)}
+.nav-links a:last-child{border-right:none}
+.nav-links a:hover{background:var(--cream);color:var(--rust)}
+.nav-links a.active{background:var(--rust);color:var(--white)}
+.nav-toggle{display:none;background:none;border:1px solid var(--border);border-radius:6px;padding:8px 10px;cursor:pointer;margin-left:auto;flex-direction:column;gap:4px}
+.nav-toggle span{display:block;width:18px;height:1.5px;background:var(--text)}
+.mob-nav{display:none;background:var(--white);border-top:1px solid var(--border)}
+.mob-nav.open{display:block}
+.mob-nav a{display:block;font-family:var(--s);font-size:14px;font-weight:500;color:var(--text2);padding:14px 32px;border-bottom:1px solid var(--border);transition:background .15s}
+.btn{display:inline-block;font-family:var(--s);font-size:13px;font-weight:600;letter-spacing:.03em;padding:12px 24px;border-radius:6px;transition:all .2s;cursor:pointer;border:none}
+.btn-primary{background:var(--rust);color:var(--white)}
+.btn-primary:hover{background:var(--rust2);transform:translateY(-1px);box-shadow:0 6px 20px rgba(181,69,27,.3)}
+.btn-outline{background:transparent;color:var(--brown);border:1.5px solid var(--border)}
+.btn-outline:hover{border-color:var(--tan);background:var(--cream)}
+.btn-dark{background:var(--black);color:var(--white)}
+.sec-label{display:inline-block;font-family:var(--s);font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);margin-bottom:14px}
+.page-hero{background:var(--black);padding:72px 0;text-align:center}
+.page-hero-label{display:inline-block;font-family:var(--s);font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--tan);margin-bottom:16px}
+.page-hero h1{font-family:var(--h);font-size:clamp(36px,5vw,60px);color:var(--white);margin-bottom:14px;letter-spacing:-.02em}
+.page-hero p{font-family:var(--s);font-size:16px;color:rgba(255,255,255,.6);max-width:520px;margin:0 auto;font-weight:300}
+.post-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pc{background:var(--white);border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:all .22s}
+.pc:hover{box-shadow:0 12px 40px rgba(28,20,16,.12);transform:translateY(-4px);border-color:transparent}
+.pc-img{height:200px;background-size:cover;background-position:center;position:relative}
+.pc-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(15,10,7,.6),transparent 60%)}
+.pc-tag{position:absolute;bottom:14px;left:14px;font-family:var(--s);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);color:var(--white);padding:4px 10px;border-radius:4px;border:1px solid rgba(255,255,255,.2)}
+.pc-body{padding:22px;flex:1;display:flex;flex-direction:column}
+.pc-meta{font-family:var(--s);font-size:11px;color:var(--text3);margin-bottom:10px}
+.pc-title{font-family:var(--h);font-size:17px;color:var(--black);line-height:1.35;margin-bottom:10px}
+.pc-title a:hover{color:var(--rust)}
+.pc-excerpt{font-family:var(--s);font-size:13px;color:var(--text3);line-height:1.65;flex:1;font-weight:400}
+.pc-read{font-family:var(--s);font-size:12px;font-weight:600;color:var(--rust);margin-top:16px;display:inline-flex;align-items:center;gap:5px}
+.pi-beginner{background:linear-gradient(160deg,#3D2008 0%,#8B4513 60%,#C49A6C 100%)}
+.pi-recipe{background:linear-gradient(160deg,#2D1A0A 0%,#6B3517 60%,#A0622A 100%)}
+.pi-troubleshooting{background:linear-gradient(160deg,#1A1A2E 0%,#4A3060 60%,#8B6A9A 100%)}
+.pi-equipment{background:linear-gradient(160deg,#0D2018 0%,#1A4A30 60%,#3A7A55 100%)}
+.pi-advanced{background:linear-gradient(160deg,#1A0808 0%,#5C1A1A 60%,#A03030 100%)}
+.pi-default{background:linear-gradient(160deg,#2A1808 0%,#7A4020 60%,#C49A6C 100%)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:40px}
+.filter-btn{font-family:var(--s);font-size:12px;font-weight:500;padding:8px 16px;border-radius:6px;border:1.5px solid var(--border);background:var(--white);color:var(--text2);cursor:pointer;transition:all .18s}
+.filter-btn:hover,.filter-btn.active{background:var(--rust);color:var(--white);border-color:var(--rust)}
+.ad-slot{background:var(--warm-gray);border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;justify-content:center;align-items:center;min-height:90px;padding:8px}
+.nl-section{background:var(--black);padding:80px 0}
+.nl{max-width:560px;margin:0 auto;text-align:center}
+.nl h2{font-family:var(--h);font-size:clamp(28px,4vw,42px);color:var(--white);margin-bottom:14px;line-height:1.15}
+.nl p{font-family:var(--s);font-size:15px;color:rgba(255,255,255,.6);margin-bottom:32px;font-weight:300}
+.nl-form{display:flex;border-radius:6px;overflow:hidden;border:1px solid rgba(255,255,255,.15)}
+.nl-form input{flex:1;background:rgba(255,255,255,.07);border:none;outline:none;color:var(--white);font-family:var(--s);font-size:14px;padding:14px 18px;font-weight:300}
+.nl-form input::placeholder{color:rgba(255,255,255,.3)}
+.nl-form button{background:var(--rust);color:var(--white);border:none;font-family:var(--s);font-size:13px;font-weight:600;padding:14px 24px;cursor:pointer;transition:background .2s;letter-spacing:.03em}
+.nl-form button:hover{background:var(--rust2)}
+.footer{background:#0F0A07;padding:64px 0 0}
+.footer-grid{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.07)}
+.footer-brand-logo{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.footer-logo-mark{width:36px;height:36px;background:var(--rust);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:16px}
+.footer-brand-name{font-family:var(--h);font-size:18px;color:var(--white)}
+.footer-brand p{font-family:var(--s);font-size:13px;color:rgba(255,255,255,.4);line-height:1.7;max-width:220px;font-weight:300}
+.footer-col h5{font-family:var(--s);font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--tan);margin-bottom:16px}
+.footer-col a{display:block;font-family:var(--s);font-size:13px;color:rgba(255,255,255,.45);margin-bottom:9px;transition:color .18s;font-weight:400}
+.footer-col a:hover{color:var(--white)}
+.footer-bottom{padding:20px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.footer-bottom p{font-family:var(--s);font-size:11px;color:rgba(255,255,255,.25)}
+.prose{max-width:740px;margin:0 auto;padding:60px 32px}
+.prose h1,.prose h2,.prose h3{font-family:var(--h);color:var(--black);margin:36px 0 16px;line-height:1.2;letter-spacing:-.01em}
+.prose h1{font-size:clamp(30px,4vw,44px)}
+.prose h2{font-size:clamp(22px,3vw,30px)}
+.prose h3{font-size:20px}
+.prose p{margin-bottom:22px;font-size:17px;line-height:1.85;color:var(--text2)}
+.prose ul,.prose ol{margin:0 0 22px 26px}
+.prose li{margin-bottom:10px;font-size:16px;color:var(--text2);line-height:1.7}
+.prose blockquote{border-left:3px solid var(--tan2);padding-left:22px;margin:28px 0;font-family:var(--h);font-style:italic;color:var(--brown);font-size:20px;line-height:1.5}
+.prose strong{color:var(--black);font-weight:600}
+.prose hr{border:none;border-top:1px solid var(--border);margin:40px 0}
+.prose a{color:var(--rust)}
+.prose img{border-radius:8px;margin:36px 0;width:100%}
+.prose table{width:100%;border-collapse:collapse;margin:24px 0;font-family:var(--s);font-size:14px}
+.prose table th{background:var(--cream);padding:10px 14px;text-align:left;font-weight:600;border-bottom:2px solid var(--border)}
+.prose table td{padding:10px 14px;border-bottom:1px solid var(--border)}
+.loading{text-align:center;padding:60px;color:var(--text3);font-family:var(--s);font-size:14px;font-weight:300}
+@media(max-width:768px){
+  .nav-links{display:none}.nav-toggle{display:flex}
+  .post-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .footer-brand{grid-column:1/-1}
+  .nl-form{flex-direction:column}
+  .prose{padding:40px 20px}
+}
+@media(max-width:480px){.wrap{padding-left:20px;padding-right:20px}}
+</style>
 </head>
 <body>
-<div id="nav-placeholder"></div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <div class="nav-logo-mark">🌾</div>
+      <div>
+        <div class="nav-title">The Sourdough Guide</div>
+        <div class="nav-tagline">From First Loaf to Mastery</div>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a href="/beginner.html" id="nl-beginner">Start Here</a>
+      <a href="/recipes.html" id="nl-recipes">Recipes</a>
+      <a href="/troubleshooting.html" id="nl-troubleshooting">Troubleshooting</a>
+      <a href="/equipment.html" id="nl-equipment">Equipment</a>
+      <a href="/about.html" id="nl-about">About</a>
+    </nav>
+    <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mob-nav">
+    <a href="/beginner.html">Start Here</a>
+    <a href="/recipes.html">Recipes</a>
+    <a href="/troubleshooting.html">Troubleshooting</a>
+    <a href="/equipment.html">Equipment</a>
+    <a href="/about.html">About</a>
+  </nav>
+</header>
+<script>document.getElementById('nl-troubleshooting')?.classList.add('active')</script>
 <div class="page-hero">
-  <div class="container">
-    <span class="tag tag-troubleshooting" style="margin-bottom:14px">Troubleshooting</span>
+  <div class="wrap">
+    <div class="page-hero-label">Troubleshooting</div>
     <h1>Something Went Wrong?</h1>
-    <p>Find your problem below and fix it fast — we've seen every sourdough failure and know exactly what causes them.</p>
+    <p>Find your problem below and fix it fast — every common sourdough failure, diagnosed and solved.</p>
   </div>
 </div>
 <div class="ad-slot">
@@ -23,166 +162,104 @@
   <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
 </div>
 <section style="padding:72px 0">
-  <div class="container">
-    <div style="max-width:860px;margin:0 auto">
-      <div class="trouble-search">
-        <input type="text" id="searchBox" placeholder="Search problems (e.g. dense, flat, sticky...)" oninput="filterProblems(this.value)">
-      </div>
-      <div id="problemsList">
-        <div class="problem-card" data-tags="dense crumb gummy heavy">
-          <div class="problem-q">My sourdough is too dense / gummy inside</div>
-          <div class="problem-a">
-            <p><strong>Most likely cause:</strong> Under-fermentation. Your dough didn't have enough time to develop gas bubbles before baking.</p>
-            <ul>
-              <li>Check that your starter is truly active — it should double within 4–6 hours of feeding</li>
-              <li>Extend your bulk fermentation time, especially in cool kitchens</li>
-              <li>Look for 50–75% volume increase and a domed top before shaping</li>
-              <li>Make sure you bake from cold (straight from fridge) for best results</li>
-            </ul>
-          </div>
-        </div>
-        <div class="problem-card" data-tags="flat no rise won't rise oven spring">
-          <div class="problem-q">My loaf came out flat with no oven spring</div>
-          <div class="problem-a">
-            <p><strong>Most likely cause:</strong> Over-proofing or a weak starter.</p>
-            <ul>
-              <li>Test your starter with the float test before using it</li>
-              <li>If over-proofed, the dough loses its structure — it will spread sideways instead of up</li>
-              <li>Make sure your Dutch oven is screaming hot before the dough goes in</li>
-              <li>Score deep enough — at least ¼ inch — to give steam a release point</li>
-            </ul>
-          </div>
-        </div>
-        <div class="problem-card" data-tags="starter not bubbling dead inactive won't rise">
-          <div class="problem-q">My starter isn't bubbling or rising</div>
-          <div class="problem-a">
-            <p><strong>Most likely cause:</strong> It needs more time, warmer temps, or a different flour.</p>
-            <ul>
-              <li>Keep your starter somewhere warm — 75–80°F is ideal</li>
-              <li>Try whole wheat or rye flour, which has more wild yeast</li>
-              <li>Feed more consistently — same time every day</li>
-              <li>Make sure you're not using chlorinated tap water (use filtered)</li>
-            </ul>
-          </div>
-        </div>
-        <div class="problem-card" data-tags="too sour very sour acidic taste">
-          <div class="problem-q">My bread is way too sour</div>
-          <div class="problem-a">
-            <p><strong>Most likely cause:</strong> Over-fermentation, or fermenting in too cool a temperature for too long.</p>
-            <ul>
-              <li>Shorten your bulk fermentation time</li>
-              <li>Use your starter earlier (just after peak, not past it)</li>
-              <li>Cold proof for less time</li>
-              <li>Use a higher ratio of starter for faster, less acidic fermentation</li>
-            </ul>
-          </div>
-        </div>
-        <div class="problem-card" data-tags="sticky dough too wet hard to shape">
-          <div class="problem-q">My dough is way too sticky to handle</div>
-          <div class="problem-a">
-            <p><strong>Most likely cause:</strong> High hydration or under-developed gluten.</p>
-            <ul>
-              <li>Wet hands instead of floured hands — flour makes stickiness worse</li>
-              <li>Make sure you complete all stretch-and-fold sets during bulk fermentation</li>
-              <li>Try reducing hydration by 5–10% on your next bake</li>
-              <li>Bench rest longer before final shaping</li>
-            </ul>
-          </div>
-        </div>
-        <div class="problem-card" data-tags="hard crust too thick hard to cut">
-          <div class="problem-q">My crust is too hard / too thick</div>
-          <div class="problem-a">
-            <p><strong>Most likely cause:</strong> Too long uncovered in the oven, or cooling in a closed space.</p>
-            <ul>
-              <li>Reduce uncovered baking time by 5 minutes</li>
-              <li>Cool on a wire rack with airflow — not in a bag or covered</li>
-              <li>Lower oven temp slightly for the uncovered portion</li>
-            </ul>
-          </div>
-        </div>
-        <div class="problem-card" data-tags="pale crust not brown not dark golden">
-          <div class="problem-q">My crust isn't browning / looks pale</div>
-          <div class="problem-a">
-            <p><strong>Most likely cause:</strong> Oven too cool or not enough time uncovered.</p>
-            <ul>
-              <li>Make sure your oven is fully preheated to 500°F (or as high as it goes)</li>
-              <li>Preheat your Dutch oven inside the oven for at least 45 minutes</li>
-              <li>Extend the uncovered portion of baking by 5–10 minutes</li>
-            </ul>
-          </div>
-        </div>
-        <div class="problem-card" data-tags="mold fuzzy starter bad smell rotten">
-          <div class="problem-q">My starter has mold / smells really bad</div>
-          <div class="problem-a">
-            <p><strong>Most likely cause:</strong> Contamination or too long without feeding.</p>
-            <ul>
-              <li>Pink, orange, or fuzzy growth = throw it out and start over</li>
-              <li>Liquid on top (hooch) is normal — stir it in or pour off, then feed</li>
-              <li>A sharp, acidic smell is fine. Rotten or putrid smell = start over</li>
-              <li>Always use a clean jar and clean tools</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+<div class="wrap"><div style="max-width:860px;margin:0 auto">
+<div style="position:relative;margin-bottom:36px">
+<input type="text" id="srch" placeholder="Search problems (e.g. dense, flat, sticky...)" oninput="filterProbs(this.value)" style="width:100%;padding:16px 20px;font-family:var(--s);font-size:15px;border:1.5px solid var(--border);border-radius:8px;background:var(--white);color:var(--text);outline:none;transition:border-color .2s">
+</div>
+<div id="probs">
+
+<div class="prob" data-t="dense gummy heavy crumb" style="border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:12px;background:var(--white)">
+<div class="prob-q" onclick="this.parentElement.classList.toggle('open')" style="font-family:var(--h);font-size:17px;color:var(--black);padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .18s">
+<span>My sourdough is too dense or gummy inside</span><span style="font-family:var(--s);font-size:18px;color:var(--rust);font-weight:300">+</span></div>
+<div class="prob-a" style="display:none;padding:0 24px 22px;border-top:1px solid var(--border)"><p style='font-family:var(--s);font-size:15px;color:var(--text2);line-height:1.8;margin-top:18px'><strong>Most likely cause:</strong> Under-fermentation — the dough didn't develop enough gas before baking.</p><ul style='font-family:var(--s);font-size:14px;color:var(--text2);padding-left:22px;margin-top:12px'><li style='margin-bottom:8px'>Check your starter is truly active — it must double within 4–6 hours of feeding</li><li style='margin-bottom:8px'>Extend bulk fermentation time, especially in cool kitchens</li><li style='margin-bottom:8px'>Look for 50–75% volume increase before shaping</li><li>Always bake straight from the fridge (cold proof)</li></ul></div>
+</div>
+
+<div class="prob" data-t="flat no rise oven spring" style="border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:12px;background:var(--white)">
+<div class="prob-q" onclick="this.parentElement.classList.toggle('open')" style="font-family:var(--h);font-size:17px;color:var(--black);padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .18s">
+<span>My loaf came out flat with no oven spring</span><span style="font-family:var(--s);font-size:18px;color:var(--rust);font-weight:300">+</span></div>
+<div class="prob-a" style="display:none;padding:0 24px 22px;border-top:1px solid var(--border)"><p style='font-family:var(--s);font-size:15px;color:var(--text2);line-height:1.8;margin-top:18px'><strong>Most likely cause:</strong> Over-proofing, weak starter, or oven/Dutch oven not hot enough.</p><ul style='font-family:var(--s);font-size:14px;color:var(--text2);padding-left:22px;margin-top:12px'><li style='margin-bottom:8px'>Test starter with float test before using</li><li style='margin-bottom:8px'>Make sure Dutch oven preheats for 45+ minutes at 500°F</li><li style='margin-bottom:8px'>Score at least ½ inch deep at a 30–45° angle</li><li>If over-proofed, shorten cold proof next time</li></ul></div>
+</div>
+
+<div class="prob" data-t="starter inactive dead not rising bubbling" style="border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:12px;background:var(--white)">
+<div class="prob-q" onclick="this.parentElement.classList.toggle('open')" style="font-family:var(--h);font-size:17px;color:var(--black);padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .18s">
+<span>My starter isn't bubbling or rising</span><span style="font-family:var(--s);font-size:18px;color:var(--rust);font-weight:300">+</span></div>
+<div class="prob-a" style="display:none;padding:0 24px 22px;border-top:1px solid var(--border)"><p style='font-family:var(--s);font-size:15px;color:var(--text2);line-height:1.8;margin-top:18px'><strong>Most likely cause:</strong> Temperature too cool, chlorinated water, or needs more time.</p><ul style='font-family:var(--s);font-size:14px;color:var(--text2);padding-left:22px;margin-top:12px'><li style='margin-bottom:8px'>Keep starter at 75–80°F — cool kitchens slow yeast dramatically</li><li style='margin-bottom:8px'>Use filtered water or water left out overnight</li><li style='margin-bottom:8px'>Try whole wheat or rye flour for a few feedings</li><li>Feed daily at the same time and be patient</li></ul></div>
+</div>
+
+<div class="prob" data-t="too sour acidic taste" style="border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:12px;background:var(--white)">
+<div class="prob-q" onclick="this.parentElement.classList.toggle('open')" style="font-family:var(--h);font-size:17px;color:var(--black);padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .18s">
+<span>My bread tastes way too sour</span><span style="font-family:var(--s);font-size:18px;color:var(--rust);font-weight:300">+</span></div>
+<div class="prob-a" style="display:none;padding:0 24px 22px;border-top:1px solid var(--border)"><p style='font-family:var(--s);font-size:15px;color:var(--text2);line-height:1.8;margin-top:18px'><strong>Most likely cause:</strong> Over-fermentation or too long a cold proof.</p><ul style='font-family:var(--s);font-size:14px;color:var(--text2);padding-left:22px;margin-top:12px'><li style='margin-bottom:8px'>Shorten bulk fermentation time</li><li style='margin-bottom:8px'>Use starter just at peak — not past it</li><li style='margin-bottom:8px'>Reduce cold proof to 8 hours instead of 16</li><li>Use a higher ratio of starter for faster, less acidic fermentation</li></ul></div>
+</div>
+
+<div class="prob" data-t="sticky dough wet hard shape" style="border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:12px;background:var(--white)">
+<div class="prob-q" onclick="this.parentElement.classList.toggle('open')" style="font-family:var(--h);font-size:17px;color:var(--black);padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .18s">
+<span>My dough is too sticky to handle</span><span style="font-family:var(--s);font-size:18px;color:var(--rust);font-weight:300">+</span></div>
+<div class="prob-a" style="display:none;padding:0 24px 22px;border-top:1px solid var(--border)"><p style='font-family:var(--s);font-size:15px;color:var(--text2);line-height:1.8;margin-top:18px'><strong>Most likely cause:</strong> High hydration or under-developed gluten.</p><ul style='font-family:var(--s);font-size:14px;color:var(--text2);padding-left:22px;margin-top:12px'><li style='margin-bottom:8px'>Use wet hands instead of floured hands</li><li style='margin-bottom:8px'>Complete all stretch-and-fold sets during bulk fermentation</li><li style='margin-bottom:8px'>Try reducing hydration by 5–10% on your next bake</li><li>Extend bench rest before final shaping</li></ul></div>
+</div>
+
+<div class="prob" data-t="hard crust thick tough" style="border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:12px;background:var(--white)">
+<div class="prob-q" onclick="this.parentElement.classList.toggle('open')" style="font-family:var(--h);font-size:17px;color:var(--black);padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .18s">
+<span>My crust is too hard or too thick</span><span style="font-family:var(--s);font-size:18px;color:var(--rust);font-weight:300">+</span></div>
+<div class="prob-a" style="display:none;padding:0 24px 22px;border-top:1px solid var(--border)"><p style='font-family:var(--s);font-size:15px;color:var(--text2);line-height:1.8;margin-top:18px'><strong>Most likely cause:</strong> Too long uncovered in the oven, or improper cooling.</p><ul style='font-family:var(--s);font-size:14px;color:var(--text2);padding-left:22px;margin-top:12px'><li style='margin-bottom:8px'>Reduce uncovered baking time by 5 minutes</li><li style='margin-bottom:8px'>Cool on a wire rack with good airflow — never in a bag or sealed container</li><li>Lower the uncovered oven temp by 25°F</li></ul></div>
+</div>
+
+<div class="prob" data-t="mold smell bad rotten fuzzy" style="border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:12px;background:var(--white)">
+<div class="prob-q" onclick="this.parentElement.classList.toggle('open')" style="font-family:var(--h);font-size:17px;color:var(--black);padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .18s">
+<span>My starter has mold or smells terrible</span><span style="font-family:var(--s);font-size:18px;color:var(--rust);font-weight:300">+</span></div>
+<div class="prob-a" style="display:none;padding:0 24px 22px;border-top:1px solid var(--border)"><p style='font-family:var(--s);font-size:15px;color:var(--text2);line-height:1.8;margin-top:18px'><strong>Key distinction:</strong> Pink, orange, or fuzzy growth = throw it out. Liquid on top (hooch) = normal, stir it in.</p><ul style='font-family:var(--s);font-size:14px;color:var(--text2);padding-left:22px;margin-top:12px'><li style='margin-bottom:8px'>A sharp, tangy smell is fine. Rotten or putrid = start over</li><li style='margin-bottom:8px'>Always use a clean jar and clean utensils</li><li>Feed more frequently to prevent neglect</li></ul></div>
+</div>
+</div>
+</div></div>
+</section>
+<section style="padding:64px 0;background:var(--cream)">
+<div class="wrap">
+<h3 style="font-family:var(--h);font-size:28px;color:var(--black);margin-bottom:32px;letter-spacing:-.01em">Troubleshooting Articles</h3>
+<div class="post-grid" id="tPosts"><div class="loading">Loading...</div></div>
+</div>
+</section>
+
+<section class="nl-section">
+  <div class="wrap">
+    <div class="nl">
+      <span class="sec-label">Newsletter</span>
+      <h2>Get better at sourdough,<br>one email at a time.</h2>
+      <p>New guides, troubleshooting tips, and seasonal recipes delivered to your inbox. No spam, ever.</p>
+      <form class="nl-form" onsubmit="handleSub(event)">
+        <input type="email" placeholder="Your email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
     </div>
   </div>
 </section>
-
-<!-- TROUBLESHOOTING POSTS -->
-<section style="padding:56px 0;background:var(--cream-dark)">
-  <div class="container">
-    <div class="sh"><div class="sh-line"></div><h2 class="sh-title">Troubleshooting Articles</h2><div class="sh-line"></div></div>
-    <div class="post-grid" id="troublePosts"><div class="loading">Loading...</div></div>
+<div class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-logo"><div class="footer-logo-mark">🌾</div><span class="footer-brand-name">The Sourdough Guide</span></div>
+        <p>Your complete resource for sourdough baking — from first starter to master loaf.</p>
+      </div>
+      <div class="footer-col"><h5>Learn</h5><a href="/beginner.html">Beginner's Guide</a><a href="/beginner.html">Starter Guide</a><a href="/recipes.html">Techniques</a></div>
+      <div class="footer-col"><h5>Recipes</h5><a href="/recipes.html">All Recipes</a><a href="/recipes.html?cat=recipe">Country Loaf</a><a href="/recipes.html?cat=recipe">Discard Recipes</a></div>
+      <div class="footer-col"><h5>Help</h5><a href="/troubleshooting.html">Troubleshooting</a><a href="/equipment.html">Equipment</a><a href="/about.html">About</a></div>
+      <div class="footer-col"><h5>Legal</h5><a href="/privacy.html">Privacy Policy</a><a href="/affiliate.html">Affiliate Disclosure</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 ThesourdoughGuide.com · All rights reserved</p>
+      <p>Some links are affiliate links. We earn a small commission at no extra cost to you.</p>
+    </div>
   </div>
-</section>
-
-<div id="footer-placeholder"></div>
-
-<style>
-.trouble-search input{width:100%;padding:14px 18px;border:1.5px solid var(--parchment);border-radius:var(--radius-lg);font-family:var(--fs);font-size:15px;background:var(--white);color:var(--text);margin-bottom:36px;outline:none;transition:border-color .2s}
-.trouble-search input:focus{border-color:var(--wheat)}
-.problem-card{border:1.5px solid var(--parchment);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:14px;background:var(--white)}
-.problem-q{font-family:var(--fd);font-size:17px;font-weight:700;color:var(--brown-deep);padding:18px 22px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .18s}
-.problem-q:hover{background:var(--cream)}
-.problem-q::after{content:'＋';font-family:var(--fs);font-size:18px;color:var(--terra);font-weight:300;flex-shrink:0;margin-left:12px}
-.problem-card.open .problem-q::after{content:'－'}
-.problem-a{display:none;padding:0 22px 20px;border-top:1px solid var(--parchment)}
-.problem-card.open .problem-a{display:block}
-.problem-a p{font-size:15px;color:var(--text-mid);margin:16px 0 10px;line-height:1.7}
-.problem-a strong{color:var(--brown-deep)}
-.problem-a ul{padding-left:20px}
-.problem-a li{font-size:14px;color:var(--text-mid);margin-bottom:6px;line-height:1.6}
-.problem-card.hidden{display:none}
-</style>
-
-<script src="/js/layout.js"></script>
-<script src="/js/main.js"></script>
+</div>
 <script>
-  document.getElementById('nav-placeholder').innerHTML = renderNav('troubleshooting');
-  document.getElementById('footer-placeholder').innerHTML = renderFooter();
-
-  // Accordion
-  document.querySelectorAll('.problem-q').forEach(q=>{
-    q.addEventListener('click',()=>{
-      q.parentElement.classList.toggle('open');
-    });
-  });
-
-  // Search
-  function filterProblems(val){
-    const v = val.toLowerCase();
-    document.querySelectorAll('.problem-card').forEach(card=>{
-      const tags = card.dataset.tags||'';
-      const text = card.querySelector('.problem-q').textContent.toLowerCase();
-      card.classList.toggle('hidden', v && !tags.includes(v) && !text.includes(v));
-    });
-  }
-
-  loadPosts().then(posts=>{
-    const tp = posts.filter(p=>p.category==='troubleshooting').slice(0,3);
-    const el = document.getElementById('troublePosts');
-    el.innerHTML = tp.length ? tp.map(buildPostCard).join('') : '<p style="color:var(--text-light);font-size:14px;grid-column:1/-1">No articles yet — check back soon!</p>';
-  });
+function handleSub(e){e.preventDefault();const btn=e.target.querySelector('button');const inp=e.target.querySelector('input');btn.textContent='Subscribed ✓';btn.style.background='#2D6A4F';inp.value='';inp.disabled=true;inp.placeholder="You're on the list!";setTimeout(()=>{btn.textContent='Subscribe';btn.style.background='';inp.disabled=false;inp.placeholder='Your email address'},4000);}
+function catImgClass(cat){const m={beginner:'pi-beginner',recipe:'pi-recipe',troubleshooting:'pi-troubleshooting',equipment:'pi-equipment',advanced:'pi-advanced'};return m[cat]||'pi-default';}
+function fmtDate(s){if(!s)return'';try{return new Date(s).toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'})}catch(e){return s}}
+function buildCard(p){return`<article class="pc"><a href="/post.html?slug=${p.slug}" class="pc-img ${catImgClass(p.category)}"><span class="pc-tag">${p.category||'Post'}</span></a><div class="pc-body"><p class="pc-meta">${fmtDate(p.date)}${p.readtime?' &middot; '+p.readtime:''}</p><h3 class="pc-title"><a href="/post.html?slug=${p.slug}">${p.title}</a></h3><p class="pc-excerpt">${p.excerpt||''}</p><a href="/post.html?slug=${p.slug}" class="pc-read">Read More →</a></div></article>`;}
 </script>
-</body>
-</html>
+<script>
+document.querySelectorAll('.prob-q').forEach(q=>{q.addEventListener('click',()=>{const sym=q.querySelector('span:last-child');sym.textContent=q.parentElement.classList.contains('open')?'+':'−';q.querySelector('.prob-a')||q.nextElementSibling.style.display=q.parentElement.classList.contains('open')?'block':'none';})});
+document.querySelectorAll('.prob').forEach(p=>{const a=p.querySelector('.prob-a');const q=p.querySelector('.prob-q');q.addEventListener('click',()=>{const open=p.classList.toggle('open');a.style.display=open?'block':'none';q.querySelector('span:last-child').textContent=open?'−':'+'})});
+function filterProbs(v){const val=v.toLowerCase();document.querySelectorAll('.prob').forEach(p=>{const t=(p.dataset.t||'')+(p.querySelector('.prob-q span').textContent||'');p.style.display=val&&!t.toLowerCase().includes(val)?'none':''})}
+fetch('/posts/manifest.json').then(r=>r.json()).then(posts=>{const el=document.getElementById('tPosts');const f=posts.filter(p=>p.category==='troubleshooting').slice(0,3);el.innerHTML=f.length?f.map(buildCard).join(''):'<p style="color:var(--text3);font-family:var(--s);font-size:14px;grid-column:1/-1">Coming soon!</p>'}).catch(()=>{document.getElementById('tPosts').innerHTML='<p style="color:var(--text3);font-family:var(--s);font-size:14px;grid-column:1/-1">Coming soon!</p>'});
+</script>
+</body></html>
