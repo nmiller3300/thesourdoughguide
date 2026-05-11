@@ -1,194 +1,566 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Sourdough Guide — From First Loaf to Mastery</title>
-  <meta name="description" content="Your complete sourdough resource. From building your first starter to mastering advanced techniques.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/home.css">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6666741024266551" crossorigin="anonymous"></script>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sourdough Guide — From First Loaf to Mastery</title>
+<meta name="description" content="Your complete sourdough resource. From building your first starter to mastering advanced techniques.">
+<meta name="google-adsense-account" content="ca-pub-6666741024266551">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6666741024266551" crossorigin="anonymous"></script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+:root{
+  --white:#FFFFFF;
+  --off-white:#FAFAF7;
+  --cream:#F5EDE0;
+  --cream2:#EDE0CC;
+  --warm-gray:#F0EBE3;
+  --border:#E8E0D5;
+  --text:#1C1410;
+  --text2:#4A3728;
+  --text3:#8B7355;
+  --rust:#B5451B;
+  --rust2:#9A3A16;
+  --brown:#5C3317;
+  --tan:#C49A6C;
+  --tan2:#A67C52;
+  --black:#0F0A07;
+  --h:'DM Serif Display',Georgia,serif;
+  --b:'Lora',Georgia,serif;
+  --s:'Inter',system-ui,sans-serif;
+}
+body{background:var(--off-white);color:var(--text);font-family:var(--b);line-height:1.75;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+
+/* ── NAV ─────────────────────────── */
+.nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{display:flex;align-items:center;height:72px;max-width:1200px;margin:0 auto;padding:0 32px;gap:12px}
+.nav-brand{display:flex;align-items:center;gap:14px;flex-shrink:0}
+.nav-logo-mark{width:38px;height:38px;background:var(--rust);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:18px;flex-shrink:0}
+.nav-title{font-family:var(--h);font-size:20px;color:var(--black);line-height:1}
+.nav-tagline{font-family:var(--s);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);font-weight:400;margin-top:2px}
+.nav-links{display:flex;gap:0;margin-left:auto;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.nav-links a{font-family:var(--s);font-size:13px;font-weight:500;color:var(--text2);padding:8px 16px;transition:all .18s;border-right:1px solid var(--border)}
+.nav-links a:last-child{border-right:none}
+.nav-links a:hover{background:var(--cream);color:var(--rust)}
+.nav-links a.active{background:var(--rust);color:var(--white)}
+.nav-toggle{display:none;background:none;border:1px solid var(--border);border-radius:6px;padding:8px 10px;cursor:pointer;margin-left:auto;flex-direction:column;gap:4px}
+.nav-toggle span{display:block;width:18px;height:1.5px;background:var(--text)}
+.mob-nav{display:none;background:var(--white);border-top:1px solid var(--border)}
+.mob-nav.open{display:block}
+.mob-nav a{display:block;font-family:var(--s);font-size:14px;font-weight:500;color:var(--text2);padding:14px 32px;border-bottom:1px solid var(--border);transition:background .15s}
+.mob-nav a:hover{background:var(--cream)}
+
+/* ── BUTTONS ─────────────────────── */
+.btn{display:inline-block;font-family:var(--s);font-size:13px;font-weight:600;letter-spacing:.03em;padding:12px 24px;border-radius:6px;transition:all .2s;cursor:pointer;border:none}
+.btn-primary{background:var(--rust);color:var(--white)}
+.btn-primary:hover{background:var(--rust2);transform:translateY(-1px);box-shadow:0 6px 20px rgba(181,69,27,.3)}
+.btn-secondary{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.4)}
+.btn-secondary:hover{border-color:var(--white);background:rgba(255,255,255,.1)}
+.btn-outline{background:transparent;color:var(--brown);border:1.5px solid var(--border)}
+.btn-outline:hover{border-color:var(--tan);background:var(--cream)}
+.btn-dark{background:var(--black);color:var(--white)}
+.btn-dark:hover{background:var(--brown)}
+
+/* ── HERO ─────────────────────────── */
+.hero{position:relative;min-height:92vh;display:flex;align-items:center;overflow:hidden;background:#1C0E07}
+.hero-img{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=1800&q=90&fit=crop');background-size:cover;background-position:center 40%}
+.hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(105deg,rgba(15,10,7,.95) 0%,rgba(15,10,7,.75) 45%,rgba(15,10,7,.2) 100%)}
+.hero-content{position:relative;z-index:2;padding:0 32px;max-width:1200px;margin:0 auto;width:100%}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--s);font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--tan);margin-bottom:24px}
+.hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--tan)}
+.hero h1{font-family:var(--h);font-size:clamp(52px,8vw,96px);color:var(--white);line-height:1.0;margin-bottom:24px;letter-spacing:-.02em}
+.hero h1 em{font-style:italic;color:var(--tan)}
+.hero-desc{font-family:var(--s);font-size:17px;color:rgba(255,255,255,.72);max-width:500px;margin-bottom:40px;line-height:1.7;font-weight:300}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.hero-scroll{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.4);font-family:var(--s);font-size:9px;letter-spacing:.2em;text-transform:uppercase;z-index:2}
+.hero-scroll-line{width:1px;height:48px;background:linear-gradient(to bottom,rgba(255,255,255,.3),transparent);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:.4}50%{opacity:.9}}
+
+/* ── STATS BAR ───────────────────── */
+.stats-bar{background:var(--black);padding:0}
+.stats-inner{display:flex;border-bottom:1px solid rgba(255,255,255,.06)}
+.stat{flex:1;padding:28px 24px;text-align:center;border-right:1px solid rgba(255,255,255,.06)}
+.stat:last-child{border-right:none}
+.stat-num{font-family:var(--h);font-size:36px;color:var(--tan);line-height:1;display:block}
+.stat-label{font-family:var(--s);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:6px;display:block}
+
+/* ── SECTION UTILS ───────────────── */
+.sec{padding:80px 0}
+.sec-cream{background:var(--cream);padding:80px 0}
+.sec-white{background:var(--white);padding:80px 0}
+.sec-dark{background:var(--black);padding:80px 0}
+.sec-header{text-align:center;margin-bottom:56px}
+.sec-label{display:inline-block;font-family:var(--s);font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);margin-bottom:14px}
+.sec-title{font-family:var(--h);font-size:clamp(28px,4vw,44px);color:var(--black);line-height:1.15;letter-spacing:-.01em}
+.sec-title-light{color:var(--white)}
+.sec-sub{font-family:var(--s);font-size:15px;color:var(--text3);margin-top:12px;max-width:520px;margin-left:auto;margin-right:auto;font-weight:300}
+.divider{display:flex;align-items:center;gap:20px;margin-bottom:56px}
+.divider-line{flex:1;height:1px;background:var(--border)}
+.divider-icon{color:var(--tan2);font-size:20px;font-family:Georgia,serif;flex-shrink:0}
+.divider-text{font-family:var(--h);font-size:28px;color:var(--black);white-space:nowrap}
+
+/* ── START STRIP ─────────────────── */
+.start-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start}
+.start-label{font-family:var(--s);font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--tan);margin-bottom:12px}
+.start-title{font-family:var(--h);font-size:clamp(30px,3.5vw,44px);color:var(--white);margin-bottom:20px;line-height:1.15}
+.start-desc{font-family:var(--s);font-size:15px;color:rgba(255,255,255,.6);margin-bottom:32px;line-height:1.7;font-weight:300}
+.steps-list{display:flex;flex-direction:column}
+.step{display:flex;gap:20px;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.step:last-child{border-bottom:none}
+.step-num{font-family:var(--h);font-size:22px;color:rgba(196,154,108,.25);line-height:1;flex-shrink:0;width:36px;font-style:italic}
+.step-title{font-family:var(--h);font-size:17px;color:var(--white);margin-bottom:4px}
+.step-desc{font-family:var(--s);font-size:13px;color:rgba(255,255,255,.48);line-height:1.6;font-weight:300}
+
+/* ── CATEGORY GRID ───────────────── */
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border)}
+.cat-card{background:var(--white);padding:36px 32px;transition:all .22s;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.cat-card::after{content:'';position:absolute;bottom:0;left:0;width:0;height:3px;background:var(--rust);transition:width .3s}
+.cat-card:hover{background:var(--off-white)}
+.cat-card:hover::after{width:100%}
+.cat-card-wide{grid-column:span 3;display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--cream)}
+.cat-img-wide{background-image:url('https://images.unsplash.com/photo-1549931319-a545dcf3bc7c?w=800&q=80&fit=crop');background-size:cover;background-position:center;min-height:280px}
+.cat-content-wide{padding:48px 48px;display:flex;flex-direction:column;justify-content:center;background:var(--cream)}
+.cat-icon{font-size:28px;margin-bottom:16px}
+.cat-title{font-family:var(--h);font-size:22px;color:var(--black);margin-bottom:10px;line-height:1.2}
+.cat-content-wide .cat-title{font-size:30px}
+.cat-desc{font-family:var(--s);font-size:13px;color:var(--text3);line-height:1.7;flex:1;font-weight:400}
+.cat-link{font-family:var(--s);font-size:12px;font-weight:600;color:var(--rust);margin-top:20px;display:inline-flex;align-items:center;gap:6px;letter-spacing:.03em}
+.cat-link::after{content:'→';transition:transform .2s}
+.cat-card:hover .cat-link::after{transform:translateX(4px)}
+
+/* ── POST CARDS ──────────────────── */
+.post-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pc{background:var(--white);border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:all .22s}
+.pc:hover{box-shadow:0 12px 40px rgba(28,20,16,.12);transform:translateY(-4px);border-color:transparent}
+.pc-img{height:200px;background-size:cover;background-position:center;position:relative}
+.pc-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(15,10,7,.6),transparent 60%)}
+.pc-tag{position:absolute;bottom:14px;left:14px;font-family:var(--s);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);color:var(--white);padding:4px 10px;border-radius:4px;border:1px solid rgba(255,255,255,.2)}
+.pc-body{padding:22px;flex:1;display:flex;flex-direction:column}
+.pc-meta{font-family:var(--s);font-size:11px;color:var(--text3);margin-bottom:10px;font-weight:400}
+.pc-title{font-family:var(--h);font-size:17px;color:var(--black);line-height:1.35;margin-bottom:10px}
+.pc-title a:hover{color:var(--rust)}
+.pc-excerpt{font-family:var(--s);font-size:13px;color:var(--text3);line-height:1.65;flex:1;font-weight:400}
+.pc-read{font-family:var(--s);font-size:12px;font-weight:600;color:var(--rust);margin-top:16px;display:inline-flex;align-items:center;gap:5px;letter-spacing:.02em}
+
+/* Post image colors by category */
+.pi-beginner{background-image:url('https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=600&q=80&fit=crop')}
+.pi-recipe{background-image:url('https://images.unsplash.com/photo-1549931319-a545dcf3bc7c?w=600&q=80&fit=crop')}
+.pi-troubleshooting{background-image:url('https://images.unsplash.com/photo-1574085733277-851d9d856a3a?w=600&q=80&fit=crop')}
+.pi-equipment{background-image:url('https://images.unsplash.com/photo-1595356700395-b647f3ca2306?w=600&q=80&fit=crop')}
+.pi-advanced{background-image:url('https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80&fit=crop')}
+.pi-default{background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&fit=crop')}
+
+/* ── TROUBLE SECTION ─────────────── */
+.trouble-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.trouble-title{font-family:var(--h);font-size:clamp(28px,4vw,48px);color:var(--white);line-height:1.1;margin-bottom:16px}
+.trouble-desc{font-family:var(--s);font-size:15px;color:rgba(255,255,255,.6);margin-bottom:32px;line-height:1.7;font-weight:300;max-width:440px}
+.trouble-links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.trouble-link{font-family:var(--s);font-size:13px;color:rgba(255,255,255,.75);padding:11px 14px;border-radius:6px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);transition:all .18s;font-weight:400}
+.trouble-link:hover{background:rgba(181,69,27,.2);color:var(--white);border-color:rgba(181,69,27,.4)}
+.trouble-visual{text-align:center}
+.trouble-circle{width:200px;height:200px;border-radius:50%;border:1px solid rgba(196,154,108,.2);background:rgba(196,154,108,.05);display:flex;align-items:center;justify-content:center;margin:0 auto;font-family:var(--h);font-size:80px;color:rgba(196,154,108,.25);font-style:italic}
+
+/* ── EQUIP GRID ──────────────────── */
+.equip-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.eq{background:var(--white);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:all .22s;display:flex;flex-direction:column}
+.eq:hover{box-shadow:0 8px 32px rgba(28,20,16,.1);transform:translateY(-3px);border-color:transparent}
+.eq-img{height:140px;background-size:cover;background-position:center}
+.eq-body{padding:18px;flex:1;display:flex;flex-direction:column}
+.eq-title{font-family:var(--h);font-size:17px;color:var(--black);margin-bottom:8px}
+.eq-desc{font-family:var(--s);font-size:12px;color:var(--text3);line-height:1.6;flex:1;font-weight:400}
+.eq-link{font-family:var(--s);font-size:11px;font-weight:600;color:var(--rust);margin-top:12px;letter-spacing:.03em}
+
+/* ── ABOUT STRIP ─────────────────── */
+.about-grid{display:grid;grid-template-columns:1fr 1fr}
+.about-img{background-image:url('https://images.unsplash.com/photo-1549931319-a545dcf3bc7c?w=900&q=85&fit=crop');background-size:cover;background-position:center;min-height:480px}
+.about-content{padding:64px 56px;background:var(--cream2);display:flex;flex-direction:column;justify-content:center}
+.about-content h2{font-family:var(--h);font-size:clamp(24px,3vw,36px);color:var(--black);margin-bottom:20px;line-height:1.2}
+.about-content p{font-family:var(--s);font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:16px;font-weight:400}
+.about-quote{border-left:3px solid var(--tan2);padding-left:20px;margin-top:24px}
+.about-quote blockquote{font-family:var(--h);font-size:clamp(16px,2vw,20px);font-style:italic;color:var(--brown);line-height:1.5}
+.about-quote em{color:var(--rust)}
+
+/* ── NEWSLETTER ──────────────────── */
+.nl{max-width:580px;margin:0 auto;text-align:center}
+.nl h2{font-family:var(--h);font-size:clamp(28px,4vw,44px);color:var(--white);margin-bottom:14px;line-height:1.15}
+.nl p{font-family:var(--s);font-size:15px;color:rgba(255,255,255,.6);margin-bottom:32px;font-weight:300}
+.nl-form{display:flex;border-radius:6px;overflow:hidden;border:1px solid rgba(255,255,255,.15)}
+.nl-form input{flex:1;background:rgba(255,255,255,.07);border:none;outline:none;color:var(--white);font-family:var(--s);font-size:14px;padding:14px 18px;font-weight:300}
+.nl-form input::placeholder{color:rgba(255,255,255,.3)}
+.nl-form button{background:var(--rust);color:var(--white);border:none;font-family:var(--s);font-size:13px;font-weight:600;padding:14px 24px;cursor:pointer;white-space:nowrap;transition:background .2s;letter-spacing:.03em}
+.nl-form button:hover{background:var(--rust2)}
+
+/* ── FOOTER ──────────────────────── */
+.footer{background:#0F0A07;padding:64px 0 0}
+.footer-grid{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.07)}
+.footer-brand-logo{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.footer-logo-mark{width:36px;height:36px;background:var(--rust);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:16px}
+.footer-brand-name{font-family:var(--h);font-size:18px;color:var(--white)}
+.footer-brand p{font-family:var(--s);font-size:13px;color:rgba(255,255,255,.4);line-height:1.7;max-width:220px;font-weight:300}
+.footer-col h5{font-family:var(--s);font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--tan);margin-bottom:16px}
+.footer-col a{display:block;font-family:var(--s);font-size:13px;color:rgba(255,255,255,.45);margin-bottom:9px;transition:color .18s;font-weight:400}
+.footer-col a:hover{color:var(--white)}
+.footer-bottom{padding:20px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.footer-bottom p{font-family:var(--s);font-size:11px;color:rgba(255,255,255,.25);font-weight:300}
+
+/* ── AD SLOTS ────────────────────── */
+.ad-slot{background:var(--warm-gray);border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;justify-content:center;align-items:center;min-height:90px;padding:8px}
+.ad-label{font-family:var(--s);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);opacity:.5}
+
+/* ── LOADING ─────────────────────── */
+.loading{text-align:center;padding:60px;color:var(--text3);font-family:var(--s);font-size:14px;font-weight:300}
+
+/* ── RESPONSIVE ──────────────────── */
+@media(max-width:1024px){
+  .cat-grid{grid-template-columns:1fr 1fr}
+  .cat-card-wide{grid-column:span 2}
+  .equip-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr 1fr}
+  .footer-brand{grid-column:1/-1}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .nav-toggle{display:flex}
+  .hero h1{font-size:48px}
+  .hero-desc{font-size:15px}
+  .start-grid,.trouble-grid,.about-grid{grid-template-columns:1fr}
+  .cat-grid{grid-template-columns:1fr}
+  .cat-card-wide{grid-column:span 1;grid-template-columns:1fr}
+  .cat-img-wide{height:220px}
+  .post-grid{grid-template-columns:1fr}
+  .stats-inner{flex-wrap:wrap}
+  .stat{flex:1 1 50%;border-right:none;border-bottom:1px solid rgba(255,255,255,.06)}
+  .trouble-grid,.about-grid{grid-template-columns:1fr}
+  .trouble-visual{display:none}
+  .about-img{min-height:280px}
+  .about-content{padding:40px 32px}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .nl-form{flex-direction:column}
+}
+@media(max-width:480px){
+  .wrap,.hero-content{padding-left:20px;padding-right:20px}
+  .equip-grid{grid-template-columns:1fr}
+  .trouble-links{grid-template-columns:1fr}
+  .post-grid{grid-template-columns:1fr}
+}
+
+/* ── ANIMATIONS ──────────────────── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.hero-eyebrow{animation:fadeUp .7s ease both}
+.hero h1{animation:fadeUp .7s ease .12s both}
+.hero-desc{animation:fadeUp .7s ease .24s both}
+.hero-ctas{animation:fadeUp .7s ease .36s both}
+</style>
 </head>
 <body>
 
-<div id="nav-placeholder"></div>
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <div class="nav-logo-mark">🌾</div>
+      <div>
+        <div class="nav-title">The Sourdough Guide</div>
+        <div class="nav-tagline">From First Loaf to Mastery</div>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a href="/beginner.html">Start Here</a>
+      <a href="/recipes.html">Recipes</a>
+      <a href="/troubleshooting.html">Troubleshooting</a>
+      <a href="/equipment.html">Equipment</a>
+      <a href="/about.html">About</a>
+    </nav>
+    <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mob-nav">
+    <a href="/beginner.html">Start Here</a>
+    <a href="/recipes.html">Recipes</a>
+    <a href="/troubleshooting.html">Troubleshooting</a>
+    <a href="/equipment.html">Equipment</a>
+    <a href="/about.html">About</a>
+  </nav>
+</header>
 
+<!-- HERO -->
 <section class="hero">
-  <div class="hero-photo"></div>
-  <div class="hero-overlay"></div>
+  <div class="hero-img"></div>
   <div class="hero-content">
-    <div class="hero-badge">Welcome to The Sourdough Guide</div>
+    <div class="hero-eyebrow">Welcome to The Sourdough Guide</div>
     <h1>Real Bread.<br><em>Real Simple.</em></h1>
     <p class="hero-desc">From nurturing your first starter to pulling a perfect open-crumb loaf from the oven — every step, every mistake, every triumph.</p>
     <div class="hero-ctas">
-      <a href="/beginner.html" class="btn btn-rust">Start Your Journey</a>
-      <a href="/recipes.html" class="btn btn-wire">Browse Recipes</a>
+      <a href="/beginner.html" class="btn btn-primary">Start Your Journey</a>
+      <a href="/recipes.html" class="btn btn-secondary">Browse Recipes</a>
     </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Explore</span>
+    <div class="hero-scroll-line"></div>
   </div>
 </section>
 
-<div class="barnwood">
-  <div class="container">
-    <div class="chalk-strip">
-      <div class="chalk-inner">
-        <div class="chalk-stat"><div class="chalk-num">50+</div><div class="chalk-label">Guides & Recipes</div></div>
-        <div class="chalk-div"></div>
-        <div class="chalk-stat"><div class="chalk-num">7</div><div class="chalk-label">Days to First Loaf</div></div>
-        <div class="chalk-div"></div>
-        <div class="chalk-stat"><div class="chalk-num">100%</div><div class="chalk-label">Free to Read</div></div>
-        <div class="chalk-div"></div>
-        <div class="chalk-stat"><div class="chalk-num">All</div><div class="chalk-label">Skill Levels</div></div>
-      </div>
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="wrap">
+    <div class="stats-inner">
+      <div class="stat"><span class="stat-num">50+</span><span class="stat-label">Guides & Recipes</span></div>
+      <div class="stat"><span class="stat-num">7</span><span class="stat-label">Days to First Loaf</span></div>
+      <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Free to Read</span></div>
+      <div class="stat"><span class="stat-num">All</span><span class="stat-label">Skill Levels Welcome</span></div>
     </div>
   </div>
 </div>
 
-<div class="rope"></div>
-
+<!-- ADSENSE -->
 <div class="ad-slot">
   <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6666741024266551" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
   <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
 </div>
 
-<div class="wood-bg">
-  <div class="container">
+<!-- BEGIN WITH BASICS -->
+<section class="sec-dark">
+  <div class="wrap">
     <div class="start-grid">
-      <div class="start-left">
-        <span class="tag" style="color:var(--hay2);background:rgba(200,150,60,.12);border-color:rgba(200,150,60,.3)">New Here?</span>
-        <h2>Begin with the basics</h2>
-        <p>Never made sourdough? Start here. We'll walk you through building your starter from scratch, your first loaf, and everything in between — no experience required.</p>
-        <a href="/beginner.html" class="btn btn-rust">Read the Beginner's Guide →</a>
+      <div>
+        <div class="start-label">New to Sourdough?</div>
+        <h2 class="start-title">Begin with<br>the basics</h2>
+        <p class="start-desc">Never made sourdough? Start here. We'll walk you through building your starter from scratch, your first loaf, and everything in between — no experience required.</p>
+        <a href="/beginner.html" class="btn btn-primary">Read the Beginner's Guide →</a>
       </div>
       <div class="steps-list">
-        <div class="step-row"><div class="step-n">01</div><div><div class="step-t">Build Your Starter</div><p class="step-p">Flour, water, and patience. We show you exactly how.</p></div></div>
-        <div class="step-row"><div class="step-n">02</div><div><div class="step-t">Mix Your First Dough</div><p class="step-p">Simple ratios, clear steps, no confusing baker's math.</p></div></div>
-        <div class="step-row"><div class="step-n">03</div><div><div class="step-t">Bake Your First Loaf</div><p class="step-p">Into the Dutch oven it goes. Pull out something you're proud of.</p></div></div>
-        <div class="step-row"><div class="step-n">04</div><div><div class="step-t">Keep Improving</div><p class="step-p">Every bake teaches you something. We help you read the results.</p></div></div>
+        <div class="step"><div class="step-num">01</div><div><div class="step-title">Build Your Starter</div><p class="step-desc">Flour, water, and patience. We show you exactly how to create a thriving starter from scratch.</p></div></div>
+        <div class="step"><div class="step-num">02</div><div><div class="step-title">Mix Your First Dough</div><p class="step-desc">Simple ratios, clear steps, no confusing baker's math — just straightforward guidance.</p></div></div>
+        <div class="step"><div class="step-num">03</div><div><div class="step-title">Bake Your First Loaf</div><p class="step-desc">Into the Dutch oven it goes. Pull out something you're genuinely proud of.</p></div></div>
+        <div class="step"><div class="step-num">04</div><div><div class="step-title">Keep Improving</div><p class="step-desc">Every bake teaches you something. We help you read the results and get better.</p></div></div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<div class="rope"></div>
-
-<section class="sec">
-  <div class="container">
-    <div class="sh"><div class="sh-line"></div><span class="sh-ornament">❧</span><h2 class="sh-title">Everything Sourdough</h2><span class="sh-ornament">❧</span><div class="sh-line"></div></div>
+<!-- CATEGORIES -->
+<section class="sec-white">
+  <div class="wrap">
+    <div class="sec-header">
+      <span class="sec-label">Explore</span>
+      <h2 class="sec-title">Everything Sourdough</h2>
+      <p class="sec-sub">From your first starter to advanced techniques — organized for every skill level.</p>
+    </div>
     <div class="cat-grid">
-      <a href="/beginner.html" class="cat-big">
-        <div class="cat-big-img"></div>
-        <div class="cat-big-body burlap-bg">
-          <span class="tag">Most Popular</span>
-          <h3>🌾 Beginner Guides</h3>
-          <p>Start from zero. Build your sourdough foundation the right way with step-by-step guides designed for complete beginners.</p>
-          <span class="cat-lnk">Explore all guides →</span>
+      <a href="/beginner.html" class="cat-card cat-card-wide">
+        <div class="cat-img-wide"></div>
+        <div class="cat-content-wide">
+          <span class="sec-label">Most Popular</span>
+          <div class="cat-title">🌾 Beginner Guides</div>
+          <p class="cat-desc">Start from zero. Build your sourdough foundation the right way with step-by-step guides designed for complete beginners — no experience necessary.</p>
+          <span class="cat-link">Explore all beginner guides</span>
         </div>
       </a>
-      <a href="/recipes.html" class="cat-card"><div class="cat-img" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&fit=crop')"></div><div class="cat-body"><div class="cat-icon">🍞</div><h3>Recipes</h3><p>Classic loaves, flavored breads, discard recipes & more.</p><span class="cat-lnk">Explore →</span></div></a>
-      <a href="/troubleshooting.html" class="cat-card"><div class="cat-img" style="background-image:url('https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80&fit=crop')"></div><div class="cat-body"><div class="cat-icon">🔍</div><h3>Troubleshooting</h3><p>Dense crumb? Flat loaf? We've seen it all and know the fix.</p><span class="cat-lnk">Explore →</span></div></a>
-      <a href="/equipment.html" class="cat-card"><div class="cat-img" style="background-image:url('https://images.unsplash.com/photo-1574085733277-851d9d856a3a?w=600&q=80&fit=crop')"></div><div class="cat-body"><div class="cat-icon">🫙</div><h3>Equipment</h3><p>What you actually need — and what's just nice to have.</p><span class="cat-lnk">Explore →</span></div></a>
-      <a href="/recipes.html?cat=advanced" class="cat-card"><div class="cat-img" style="background-image:url('https://images.unsplash.com/photo-1595356700395-b647f3ca2306?w=600&q=80&fit=crop')"></div><div class="cat-body"><div class="cat-icon">📐</div><h3>Advanced Techniques</h3><p>Lamination, scoring art, high-hydration doughs & beyond.</p><span class="cat-lnk">Explore →</span></div></a>
+      <a href="/recipes.html?cat=recipe" class="cat-card">
+        <div class="cat-icon">🍞</div>
+        <div class="cat-title">Recipes</div>
+        <p class="cat-desc">Classic loaves, flavored breads, discard recipes & more. Every recipe tested and refined.</p>
+        <span class="cat-link">Browse recipes</span>
+      </a>
+      <a href="/troubleshooting.html" class="cat-card">
+        <div class="cat-icon">🔍</div>
+        <div class="cat-title">Troubleshooting</div>
+        <p class="cat-desc">Dense crumb? Flat loaf? Starter won't bubble? We've diagnosed every common problem.</p>
+        <span class="cat-link">Find your fix</span>
+      </a>
+      <a href="/equipment.html" class="cat-card">
+        <div class="cat-icon">🫙</div>
+        <div class="cat-title">Equipment</div>
+        <p class="cat-desc">What you actually need and what's just nice to have — honest reviews at every budget.</p>
+        <span class="cat-link">Shop recommendations</span>
+      </a>
+      <a href="/recipes.html?cat=advanced" class="cat-card">
+        <div class="cat-icon">📐</div>
+        <div class="cat-title">Advanced Techniques</div>
+        <p class="cat-desc">Lamination, scoring art, high-hydration doughs & the science behind great bread.</p>
+        <span class="cat-link">Level up</span>
+      </a>
     </div>
   </div>
 </section>
 
-<section class="sec-alt">
-  <div class="container">
-    <div class="sh"><div class="sh-line"></div><span class="sh-ornament">❧</span><h2 class="sh-title">Latest from the Guide</h2><span class="sh-ornament">❧</span><div class="sh-line"></div></div>
+<!-- LATEST POSTS -->
+<section class="sec-cream">
+  <div class="wrap">
+    <div class="divider">
+      <div class="divider-line"></div>
+      <div class="divider-icon">❧</div>
+      <div class="divider-text">Latest from the Guide</div>
+      <div class="divider-icon">❧</div>
+      <div class="divider-line"></div>
+    </div>
     <div class="post-grid" id="latestPosts"><div class="loading">Loading posts...</div></div>
-    <div style="text-align:center;margin-top:40px"><a href="/recipes.html" class="btn btn-outline">View All Articles</a></div>
+    <div style="text-align:center;margin-top:48px"><a href="/recipes.html" class="btn btn-outline">View All Articles</a></div>
   </div>
 </section>
 
+<!-- ADSENSE MID -->
 <div class="ad-slot" style="min-height:250px">
   <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6666741024266551" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
   <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
 </div>
 
-<div class="barnwood">
-  <div class="container">
-    <section class="trouble-banner">
-      <div class="trouble-grid">
-        <div class="trouble-text">
-          <span class="tag" style="color:var(--hay2);background:rgba(200,150,60,.12);border-color:rgba(200,150,60,.25)">Troubleshooting Hub</span>
-          <h2>Something went wrong?<br>We've got the answer.</h2>
-          <p>Every common sourdough problem — dense crumb, no oven spring, sticky dough, flat starters — diagnosed and fixed fast.</p>
-          <div class="trouble-links">
-            <a href="/troubleshooting.html">→ My starter isn't bubbling</a>
-            <a href="/troubleshooting.html">→ My loaf came out flat</a>
-            <a href="/troubleshooting.html">→ My bread is too sour</a>
-            <a href="/troubleshooting.html">→ My dough is too sticky</a>
-            <a href="/troubleshooting.html">→ My crust is too hard</a>
-            <a href="/troubleshooting.html">→ Browse all problems</a>
-          </div>
+<!-- TROUBLESHOOTING -->
+<section class="sec-dark">
+  <div class="wrap">
+    <div class="trouble-grid">
+      <div>
+        <span class="sec-label">Troubleshooting Hub</span>
+        <h2 class="trouble-title">Something went wrong?<br>We've got the answer.</h2>
+        <p class="trouble-desc">Every common sourdough problem — dense crumb, no oven spring, sticky dough, inactive starters — diagnosed and fixed with clear explanations.</p>
+        <div class="trouble-links">
+          <a href="/troubleshooting.html" class="trouble-link">→ My starter isn't bubbling</a>
+          <a href="/troubleshooting.html" class="trouble-link">→ My loaf came out flat</a>
+          <a href="/troubleshooting.html" class="trouble-link">→ My bread is too sour</a>
+          <a href="/troubleshooting.html" class="trouble-link">→ My dough is too sticky</a>
+          <a href="/troubleshooting.html" class="trouble-link">→ My crust is too hard</a>
+          <a href="/troubleshooting.html" class="trouble-link">→ Browse all problems</a>
         </div>
+      </div>
+      <div class="trouble-visual">
         <div class="trouble-circle">?</div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPMENT -->
+<section class="sec-white">
+  <div class="wrap">
+    <div class="sec-header">
+      <span class="sec-label">Equipment</span>
+      <h2 class="sec-title">Tools of the Trade</h2>
+      <p class="sec-sub">Honest recommendations at every price point — only what actually makes a difference.</p>
+    </div>
+    <div class="equip-grid">
+      <a href="/equipment.html" class="eq"><div class="eq-img" style="background-image:url('https://images.unsplash.com/photo-1595356700395-b647f3ca2306?w=400&q=80&fit=crop')"></div><div class="eq-body"><div class="eq-title">Dutch Ovens</div><p class="eq-desc">The single most important piece of equipment for a great crust and proper oven spring.</p><span class="eq-link">Shop Picks →</span></div></a>
+      <a href="/equipment.html" class="eq"><div class="eq-img" style="background-image:url('https://images.unsplash.com/photo-1574085733277-851d9d856a3a?w=400&q=80&fit=crop')"></div><div class="eq-body"><div class="eq-title">Bannetons</div><p class="eq-desc">Shape your loaves right. We explain sizes, shapes, liners, and long-term care.</p><span class="eq-link">Shop Picks →</span></div></a>
+      <a href="/equipment.html" class="eq"><div class="eq-img" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80&fit=crop')"></div><div class="eq-body"><div class="eq-title">Kitchen Scales</div><p class="eq-desc">Baking by weight is everything in sourdough. Here's what we actually use daily.</p><span class="eq-link">Shop Picks →</span></div></a>
+      <a href="/equipment.html" class="eq"><div class="eq-img" style="background-image:url('https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&q=80&fit=crop')"></div><div class="eq-body"><div class="eq-title">Flour Guide</div><p class="eq-desc">Not all flour is equal for sourdough. We break down protein content, brands, and what works.</p><span class="eq-link">Read Guide →</span></div></a>
+    </div>
+    <p style="text-align:center;font-family:var(--s);font-size:12px;color:var(--text3);margin-top:32px;font-weight:300;font-style:italic">Some links are affiliate links. We only recommend products we genuinely believe in — your purchase helps keep this site free.</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<div class="about-grid">
+  <div class="about-img"></div>
+  <div class="about-content">
+    <span class="sec-label">About This Site</span>
+    <h2>Built for bakers, by people who love bread.</h2>
+    <p>The Sourdough Guide was built because great sourdough information was scattered — buried in forums, conflicting between sources, and impossible to follow as a beginner.</p>
+    <p>We built one clear, reliable place to find everything. Whether you're feeding your first starter or perfecting your scoring technique, everything you need is here.</p>
+    <div class="about-quote">
+      <blockquote>"Good bread takes time. <em>Learning</em> to make it shouldn't."</blockquote>
+    </div>
   </div>
 </div>
 
-<div class="rope"></div>
-
-<section class="sec">
-  <div class="container">
-    <div class="sh"><div class="sh-line"></div><span class="sh-ornament">❧</span><h2 class="sh-title">Tools of the Trade</h2><span class="sh-ornament">❧</span><div class="sh-line"></div></div>
-    <p style="text-align:center;color:var(--text3);font-size:14px;margin:-24px 0 36px">Honest recommendations at every price point. No fluff.</p>
-    <div class="equip-grid">
-      <a href="/equipment.html" class="equip-card"><div class="equip-img" style="background-image:url('https://images.unsplash.com/photo-1595356700395-b647f3ca2306?w=400&q=80&fit=crop')"></div><div class="equip-body"><h4>Dutch Ovens</h4><p>The most important piece of equipment for a great crust.</p><span class="equip-lnk">Shop Picks →</span></div></a>
-      <a href="/equipment.html" class="equip-card"><div class="equip-img" style="background-image:url('https://images.unsplash.com/photo-1574085733277-851d9d856a3a?w=400&q=80&fit=crop')"></div><div class="equip-body"><h4>Bannetons</h4><p>Shape your loaves right. Sizes, shapes & care explained.</p><span class="equip-lnk">Shop Picks →</span></div></a>
-      <a href="/equipment.html" class="equip-card"><div class="equip-img" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80&fit=crop')"></div><div class="equip-body"><h4>Kitchen Scales</h4><p>Baking by weight is everything. Here's what we use.</p><span class="equip-lnk">Shop Picks →</span></div></a>
-      <a href="/equipment.html" class="equip-card"><div class="equip-img" style="background-image:url('https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&q=80&fit=crop')"></div><div class="equip-body"><h4>Flour Guides</h4><p>Not all flour is equal. We break down what works.</p><span class="equip-lnk">Read Guide →</span></div></a>
+<!-- NEWSLETTER -->
+<section class="sec-dark">
+  <div class="wrap">
+    <div class="nl">
+      <span class="sec-label">Newsletter</span>
+      <h2>Get better at sourdough,<br>one email at a time.</h2>
+      <p>New guides, troubleshooting tips, and seasonal recipes delivered to your inbox. No spam, ever. Unsubscribe anytime.</p>
+      <form class="nl-form" onsubmit="handleSub(event)">
+        <input type="email" placeholder="Your email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
     </div>
-    <p style="text-align:center;font-size:11px;color:var(--text3);margin-top:24px;font-style:italic">Some links are affiliate links. We only recommend products we genuinely believe in.</p>
   </div>
 </section>
 
-<section class="sec-alt">
-  <div class="container">
-    <div class="sh"><div class="sh-line"></div><span class="sh-ornament">❧</span><h2 class="sh-title">About the Guide</h2><span class="sh-ornament">❧</span><div class="sh-line"></div></div>
-    <div class="about-grid">
-      <div class="about-photo"></div>
-      <div class="about-text">
-        <span class="tag">Our Story</span>
-        <h2>Built for bakers,<br>by people who love bread.</h2>
-        <p>The Sourdough Guide was built because great sourdough information was scattered — buried in forums, conflicting with itself, impossible to follow.</p>
-        <p>One place. Everything. Every skill level.</p>
-        <div class="about-quote">
-          <blockquote>"Good bread takes time. <em>Learning</em> to make it shouldn't."</blockquote>
-        </div>
+<!-- FOOTER -->
+<div class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-logo"><div class="footer-logo-mark">🌾</div><span class="footer-brand-name">The Sourdough Guide</span></div>
+        <p>Your complete resource for sourdough baking — from first starter to master loaf. Free, honest, and built for real home bakers.</p>
       </div>
+      <div class="footer-col"><h5>Learn</h5><a href="/beginner.html">Beginner's Guide</a><a href="/beginner.html">Starter Guide</a><a href="/recipes.html">Techniques</a><a href="/recipes.html">Hydration Guide</a></div>
+      <div class="footer-col"><h5>Recipes</h5><a href="/recipes.html">All Recipes</a><a href="/recipes.html?cat=recipe">Country Loaf</a><a href="/recipes.html?cat=recipe">Discard Recipes</a><a href="/recipes.html?cat=advanced">Advanced</a></div>
+      <div class="footer-col"><h5>Help</h5><a href="/troubleshooting.html">Troubleshooting</a><a href="/equipment.html">Equipment</a><a href="/about.html">About</a><a href="/about.html">Contact</a></div>
+      <div class="footer-col"><h5>Legal</h5><a href="/privacy.html">Privacy Policy</a><a href="/affiliate.html">Affiliate Disclosure</a><a href="/terms.html">Terms of Use</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 ThesourdoughGuide.com · All rights reserved</p>
+      <p>Some links are affiliate links. We earn a small commission at no extra cost to you.</p>
     </div>
   </div>
-</section>
+</div>
 
-<div id="footer-placeholder"></div>
-
-<script src="/js/layout.js"></script>
-<script src="/js/main.js"></script>
 <script>
-  document.getElementById('nav-placeholder').innerHTML = renderNav('home');
-  document.getElementById('footer-placeholder').innerHTML = renderFooter();
-  loadPosts().then(posts=>{
-    const el=document.getElementById('latestPosts');
-    if(!posts.length){el.innerHTML='<p style="color:var(--text3);font-size:14px;grid-column:1/-1;text-align:center">No posts yet — check back soon!</p>';return;}
-    el.innerHTML=posts.slice(0,6).map(buildPostCard).join('');
+// Newsletter
+function handleSub(e){
+  e.preventDefault();
+  const btn=e.target.querySelector('button');
+  const inp=e.target.querySelector('input');
+  btn.textContent='Subscribed ✓';btn.style.background='#2D6A4F';
+  inp.value='';inp.disabled=true;inp.placeholder="You're on the list!";
+  setTimeout(()=>{btn.textContent='Subscribe';btn.style.background='';inp.disabled=false;inp.placeholder='Your email address'},4000);
+}
+
+// Netlify Identity redirect to admin
+if(window.netlifyIdentity){
+  window.netlifyIdentity.on('init',user=>{
+    if(!user){window.netlifyIdentity.on('login',()=>{document.location.href='/admin/';})}
   });
-</script>
-<script>
-  if(window.netlifyIdentity){
-    window.netlifyIdentity.on('init', user => {
-      if(!user){
-        window.netlifyIdentity.on('login', () => {
-          document.location.href = '/admin/';
-        });
-      }
-    });
-  }
+}
+
+// Load posts from manifest
+function catImgClass(cat){
+  const m={beginner:'pi-beginner',recipe:'pi-recipe',troubleshooting:'pi-troubleshooting',equipment:'pi-equipment',advanced:'pi-advanced'};
+  return m[cat]||'pi-default';
+}
+function fmtDate(s){
+  if(!s)return'';
+  try{return new Date(s).toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'})}catch(e){return s}
+}
+function buildCard(p){
+  return`<article class="pc">
+    <a href="/post.html?slug=${p.slug}" class="pc-img ${catImgClass(p.category)}">
+      <span class="pc-tag">${p.category||'Post'}</span>
+    </a>
+    <div class="pc-body">
+      <p class="pc-meta">${fmtDate(p.date)}${p.readtime?' &middot; '+p.readtime:''}</p>
+      <h3 class="pc-title"><a href="/post.html?slug=${p.slug}">${p.title}</a></h3>
+      <p class="pc-excerpt">${p.excerpt||''}</p>
+      <a href="/post.html?slug=${p.slug}" class="pc-read">Read More →</a>
+    </div>
+  </article>`;
+}
+
+fetch('/posts/manifest.json')
+  .then(r=>r.json())
+  .then(posts=>{
+    const el=document.getElementById('latestPosts');
+    if(!posts||!posts.length){el.innerHTML='<p style="color:var(--text3);font-family:var(--s);font-size:14px;grid-column:1/-1;text-align:center;padding:40px">No posts yet — check back soon!</p>';return;}
+    el.innerHTML=posts.slice(0,6).map(buildCard).join('');
+  })
+  .catch(()=>{
+    document.getElementById('latestPosts').innerHTML='<p style="color:var(--text3);font-family:var(--s);font-size:14px;grid-column:1/-1;text-align:center;padding:40px">No posts yet — check back soon!</p>';
+  });
+
+// Scroll fade in
+const obs=new IntersectionObserver(e=>{e.forEach(i=>{if(i.isIntersecting){i.target.style.opacity='1';i.target.style.transform='translateY(0)';obs.unobserve(i.target)}})},{threshold:.08});
+document.querySelectorAll('.pc,.cat-card,.eq,.step').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity .5s ease,transform .5s ease';obs.observe(el)});
 </script>
 </body>
 </html>

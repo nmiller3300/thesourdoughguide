@@ -1,22 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Affiliate Disclosure — The Sourdough Guide</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Affiliate Disclosure — The Sourdough Guide</title>
+<meta name="description" content="Your complete sourdough resource.">
+<meta name="google-adsense-account" content="ca-pub-6666741024266551">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6666741024266551" crossorigin="anonymous"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+:root{
+  --white:#FFFFFF;--off-white:#FAFAF7;--cream:#F5EDE0;--cream2:#EDE0CC;
+  --warm-gray:#F0EBE3;--border:#E8E0D5;--text:#1C1410;--text2:#4A3728;
+  --text3:#8B7355;--rust:#B5451B;--rust2:#9A3A16;--brown:#5C3317;
+  --tan:#C49A6C;--tan2:#A67C52;--black:#0F0A07;
+  --h:'DM Serif Display',Georgia,serif;--b:'Lora',Georgia,serif;--s:'Inter',system-ui,sans-serif;
+}
+body{background:var(--off-white);color:var(--text);font-family:var(--b);line-height:1.75;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+.nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{display:flex;align-items:center;height:72px;max-width:1200px;margin:0 auto;padding:0 32px;gap:12px}
+.nav-brand{display:flex;align-items:center;gap:14px;flex-shrink:0;text-decoration:none}
+.nav-logo-mark{width:38px;height:38px;background:var(--rust);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:18px;flex-shrink:0}
+.nav-title{font-family:var(--h);font-size:20px;color:var(--black);line-height:1}
+.nav-tagline{font-family:var(--s);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);font-weight:400;margin-top:2px}
+.nav-links{display:flex;gap:0;margin-left:auto;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.nav-links a{font-family:var(--s);font-size:13px;font-weight:500;color:var(--text2);padding:8px 16px;transition:all .18s;border-right:1px solid var(--border)}
+.nav-links a:last-child{border-right:none}
+.nav-links a:hover{background:var(--cream);color:var(--rust)}
+.nav-links a.active{background:var(--rust);color:var(--white)}
+.nav-toggle{display:none;background:none;border:1px solid var(--border);border-radius:6px;padding:8px 10px;cursor:pointer;margin-left:auto;flex-direction:column;gap:4px}
+.nav-toggle span{display:block;width:18px;height:1.5px;background:var(--text)}
+.mob-nav{display:none;background:var(--white);border-top:1px solid var(--border)}
+.mob-nav.open{display:block}
+.mob-nav a{display:block;font-family:var(--s);font-size:14px;font-weight:500;color:var(--text2);padding:14px 32px;border-bottom:1px solid var(--border);transition:background .15s}
+.btn{display:inline-block;font-family:var(--s);font-size:13px;font-weight:600;letter-spacing:.03em;padding:12px 24px;border-radius:6px;transition:all .2s;cursor:pointer;border:none}
+.btn-primary{background:var(--rust);color:var(--white)}
+.btn-primary:hover{background:var(--rust2);transform:translateY(-1px);box-shadow:0 6px 20px rgba(181,69,27,.3)}
+.btn-outline{background:transparent;color:var(--brown);border:1.5px solid var(--border)}
+.btn-outline:hover{border-color:var(--tan);background:var(--cream)}
+.btn-dark{background:var(--black);color:var(--white)}
+.sec-label{display:inline-block;font-family:var(--s);font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);margin-bottom:14px}
+.page-hero{background:var(--black);padding:72px 0;text-align:center}
+.page-hero-label{display:inline-block;font-family:var(--s);font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--tan);margin-bottom:16px}
+.page-hero h1{font-family:var(--h);font-size:clamp(36px,5vw,60px);color:var(--white);margin-bottom:14px;letter-spacing:-.02em}
+.page-hero p{font-family:var(--s);font-size:16px;color:rgba(255,255,255,.6);max-width:520px;margin:0 auto;font-weight:300}
+.post-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pc{background:var(--white);border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:all .22s}
+.pc:hover{box-shadow:0 12px 40px rgba(28,20,16,.12);transform:translateY(-4px);border-color:transparent}
+.pc-img{height:200px;background-size:cover;background-position:center;position:relative}
+.pc-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(15,10,7,.6),transparent 60%)}
+.pc-tag{position:absolute;bottom:14px;left:14px;font-family:var(--s);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);color:var(--white);padding:4px 10px;border-radius:4px;border:1px solid rgba(255,255,255,.2)}
+.pc-body{padding:22px;flex:1;display:flex;flex-direction:column}
+.pc-meta{font-family:var(--s);font-size:11px;color:var(--text3);margin-bottom:10px}
+.pc-title{font-family:var(--h);font-size:17px;color:var(--black);line-height:1.35;margin-bottom:10px}
+.pc-title a:hover{color:var(--rust)}
+.pc-excerpt{font-family:var(--s);font-size:13px;color:var(--text3);line-height:1.65;flex:1;font-weight:400}
+.pc-read{font-family:var(--s);font-size:12px;font-weight:600;color:var(--rust);margin-top:16px;display:inline-flex;align-items:center;gap:5px}
+.pi-beginner{background-image:url('https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=600&q=80&fit=crop')}
+.pi-recipe{background-image:url('https://images.unsplash.com/photo-1549931319-a545dcf3bc7c?w=600&q=80&fit=crop')}
+.pi-troubleshooting{background-image:url('https://images.unsplash.com/photo-1574085733277-851d9d856a3a?w=600&q=80&fit=crop')}
+.pi-equipment{background-image:url('https://images.unsplash.com/photo-1595356700395-b647f3ca2306?w=600&q=80&fit=crop')}
+.pi-advanced{background-image:url('https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80&fit=crop')}
+.pi-default{background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&fit=crop')}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:40px}
+.filter-btn{font-family:var(--s);font-size:12px;font-weight:500;padding:8px 16px;border-radius:6px;border:1.5px solid var(--border);background:var(--white);color:var(--text2);cursor:pointer;transition:all .18s}
+.filter-btn:hover,.filter-btn.active{background:var(--rust);color:var(--white);border-color:var(--rust)}
+.ad-slot{background:var(--warm-gray);border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;justify-content:center;align-items:center;min-height:90px;padding:8px}
+.nl-section{background:var(--black);padding:80px 0}
+.nl{max-width:560px;margin:0 auto;text-align:center}
+.nl h2{font-family:var(--h);font-size:clamp(28px,4vw,42px);color:var(--white);margin-bottom:14px;line-height:1.15}
+.nl p{font-family:var(--s);font-size:15px;color:rgba(255,255,255,.6);margin-bottom:32px;font-weight:300}
+.nl-form{display:flex;border-radius:6px;overflow:hidden;border:1px solid rgba(255,255,255,.15)}
+.nl-form input{flex:1;background:rgba(255,255,255,.07);border:none;outline:none;color:var(--white);font-family:var(--s);font-size:14px;padding:14px 18px;font-weight:300}
+.nl-form input::placeholder{color:rgba(255,255,255,.3)}
+.nl-form button{background:var(--rust);color:var(--white);border:none;font-family:var(--s);font-size:13px;font-weight:600;padding:14px 24px;cursor:pointer;transition:background .2s;letter-spacing:.03em}
+.nl-form button:hover{background:var(--rust2)}
+.footer{background:#0F0A07;padding:64px 0 0}
+.footer-grid{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.07)}
+.footer-brand-logo{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.footer-logo-mark{width:36px;height:36px;background:var(--rust);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:16px}
+.footer-brand-name{font-family:var(--h);font-size:18px;color:var(--white)}
+.footer-brand p{font-family:var(--s);font-size:13px;color:rgba(255,255,255,.4);line-height:1.7;max-width:220px;font-weight:300}
+.footer-col h5{font-family:var(--s);font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--tan);margin-bottom:16px}
+.footer-col a{display:block;font-family:var(--s);font-size:13px;color:rgba(255,255,255,.45);margin-bottom:9px;transition:color .18s;font-weight:400}
+.footer-col a:hover{color:var(--white)}
+.footer-bottom{padding:20px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.footer-bottom p{font-family:var(--s);font-size:11px;color:rgba(255,255,255,.25)}
+.prose{max-width:740px;margin:0 auto;padding:60px 32px}
+.prose h1,.prose h2,.prose h3{font-family:var(--h);color:var(--black);margin:36px 0 16px;line-height:1.2;letter-spacing:-.01em}
+.prose h1{font-size:clamp(30px,4vw,44px)}
+.prose h2{font-size:clamp(22px,3vw,30px)}
+.prose h3{font-size:20px}
+.prose p{margin-bottom:22px;font-size:17px;line-height:1.85;color:var(--text2)}
+.prose ul,.prose ol{margin:0 0 22px 26px}
+.prose li{margin-bottom:10px;font-size:16px;color:var(--text2);line-height:1.7}
+.prose blockquote{border-left:3px solid var(--tan2);padding-left:22px;margin:28px 0;font-family:var(--h);font-style:italic;color:var(--brown);font-size:20px;line-height:1.5}
+.prose strong{color:var(--black);font-weight:600}
+.prose hr{border:none;border-top:1px solid var(--border);margin:40px 0}
+.prose a{color:var(--rust)}
+.prose img{border-radius:8px;margin:36px 0;width:100%}
+.prose table{width:100%;border-collapse:collapse;margin:24px 0;font-family:var(--s);font-size:14px}
+.prose table th{background:var(--cream);padding:10px 14px;text-align:left;font-weight:600;border-bottom:2px solid var(--border)}
+.prose table td{padding:10px 14px;border-bottom:1px solid var(--border)}
+.loading{text-align:center;padding:60px;color:var(--text3);font-family:var(--s);font-size:14px;font-weight:300}
+@media(max-width:768px){
+  .nav-links{display:none}.nav-toggle{display:flex}
+  .post-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .footer-brand{grid-column:1/-1}
+  .nl-form{flex-direction:column}
+  .prose{padding:40px 20px}
+}
+@media(max-width:480px){.wrap{padding-left:20px;padding-right:20px}}
+</style>
 </head>
 <body>
-<div id="nav-placeholder"></div>
-<div class="page-hero"><div class="container"><h1>Affiliate Disclosure</h1></div></div>
-<section style="padding:72px 0"><div class="container"><div style="max-width:720px;margin:0 auto" class="prose" style="padding:0">
-  <p>ThesourdoughGuide.com is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com.</p>
-  <p>When you click on links to Amazon or other affiliate partners and make a purchase, we earn a small commission at no additional cost to you. These commissions help us maintain and grow the site so we can keep producing free content.</p>
-  <p>We only recommend products we genuinely believe in. Our recommendations are not influenced by commission rates — we would rather recommend a cheaper product that works than an expensive one that doesn't.</p>
-  <p>If you have any questions about our affiliate relationships, contact us at hello@thesourdoughguide.com</p>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <div class="nav-logo-mark">🌾</div>
+      <div>
+        <div class="nav-title">The Sourdough Guide</div>
+        <div class="nav-tagline">From First Loaf to Mastery</div>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a href="/beginner.html" id="nl-beginner">Start Here</a>
+      <a href="/recipes.html" id="nl-recipes">Recipes</a>
+      <a href="/troubleshooting.html" id="nl-troubleshooting">Troubleshooting</a>
+      <a href="/equipment.html" id="nl-equipment">Equipment</a>
+      <a href="/about.html" id="nl-about">About</a>
+    </nav>
+    <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mob-nav">
+    <a href="/beginner.html">Start Here</a>
+    <a href="/recipes.html">Recipes</a>
+    <a href="/troubleshooting.html">Troubleshooting</a>
+    <a href="/equipment.html">Equipment</a>
+    <a href="/about.html">About</a>
+  </nav>
+</header>
+<script>document.getElementById('nl-')?.classList.add('active')</script>
+<div class="page-hero"><div class="wrap"><h1>Affiliate Disclosure</h1></div></div>
+<section style="padding:72px 0"><div class="wrap"><div class="prose" style="padding:0">
+<p>ThesourdoughGuide.com is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com.</p>
+<p>When you click on links to Amazon or other affiliate partners and make a purchase, we earn a small commission at no additional cost to you. These commissions help us maintain and grow the site so we can keep producing free content.</p>
+<p>We only recommend products we genuinely believe in. Our recommendations are not influenced by commission rates.</p>
+<p>Questions? hello@thesourdoughguide.com</p>
 </div></div></section>
-<div id="footer-placeholder"></div>
-<script src="/js/layout.js"></script><script src="/js/main.js"></script>
-<script>document.getElementById('nav-placeholder').innerHTML=renderNav('');document.getElementById('footer-placeholder').innerHTML=renderFooter();</script>
-</body></html>
+<section class="nl-section">
+  <div class="wrap">
+    <div class="nl">
+      <span class="sec-label">Newsletter</span>
+      <h2>Get better at sourdough,<br>one email at a time.</h2>
+      <p>New guides, troubleshooting tips, and seasonal recipes delivered to your inbox. No spam, ever.</p>
+      <form class="nl-form" onsubmit="handleSub(event)">
+        <input type="email" placeholder="Your email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+<div class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-logo"><div class="footer-logo-mark">🌾</div><span class="footer-brand-name">The Sourdough Guide</span></div>
+        <p>Your complete resource for sourdough baking — from first starter to master loaf.</p>
+      </div>
+      <div class="footer-col"><h5>Learn</h5><a href="/beginner.html">Beginner's Guide</a><a href="/beginner.html">Starter Guide</a><a href="/recipes.html">Techniques</a></div>
+      <div class="footer-col"><h5>Recipes</h5><a href="/recipes.html">All Recipes</a><a href="/recipes.html?cat=recipe">Country Loaf</a><a href="/recipes.html?cat=recipe">Discard Recipes</a></div>
+      <div class="footer-col"><h5>Help</h5><a href="/troubleshooting.html">Troubleshooting</a><a href="/equipment.html">Equipment</a><a href="/about.html">About</a></div>
+      <div class="footer-col"><h5>Legal</h5><a href="/privacy.html">Privacy Policy</a><a href="/affiliate.html">Affiliate Disclosure</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 ThesourdoughGuide.com · All rights reserved</p>
+      <p>Some links are affiliate links. We earn a small commission at no extra cost to you.</p>
+    </div>
+  </div>
+</div>
+<script>
+function handleSub(e){e.preventDefault();const btn=e.target.querySelector('button');const inp=e.target.querySelector('input');btn.textContent='Subscribed ✓';btn.style.background='#2D6A4F';inp.value='';inp.disabled=true;inp.placeholder="You're on the list!";setTimeout(()=>{btn.textContent='Subscribe';btn.style.background='';inp.disabled=false;inp.placeholder='Your email address'},4000);}
+function catImgClass(cat){const m={beginner:'pi-beginner',recipe:'pi-recipe',troubleshooting:'pi-troubleshooting',equipment:'pi-equipment',advanced:'pi-advanced'};return m[cat]||'pi-default';}
+function fmtDate(s){if(!s)return'';try{return new Date(s).toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'})}catch(e){return s}}
+function buildCard(p){return`<article class="pc"><a href="/post.html?slug=${p.slug}" class="pc-img ${catImgClass(p.category)}"><span class="pc-tag">${p.category||'Post'}</span></a><div class="pc-body"><p class="pc-meta">${fmtDate(p.date)}${p.readtime?' &middot; '+p.readtime:''}</p><h3 class="pc-title"><a href="/post.html?slug=${p.slug}">${p.title}</a></h3><p class="pc-excerpt">${p.excerpt||''}</p><a href="/post.html?slug=${p.slug}" class="pc-read">Read More →</a></div></article>`;}
+</script></body></html>
