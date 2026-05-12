@@ -6,7 +6,8 @@ import random
 from datetime import datetime
 from pathlib import Path
 
-api_key = os.environ.get("ANTHROPIC_API_KEY", "") client = anthropic.Anthropic(api_key=api_key)
+api_key = os.environ.get("ANTHROPIC_API_KEY", "")
+client = anthropic.Anthropic(api_key=api_key)
 
 script_dir = Path(__file__).resolve().parent
 repo_root = script_dir.parent.parent
