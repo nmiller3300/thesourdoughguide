@@ -1,10 +1,9 @@
 ---
 title: 8 Ways to Use Sourdough Discard (That Actually Taste Good)
-category: beginner
 date: 2025-06-03
+category: recipe
 readtime: 6 min read
-excerpt: Stop throwing away your sourdough discard. These 8 recipes are quick,
-  delicious, and use up every bit of it.
+excerpt: Stop throwing away your sourdough discard. These 8 recipes are quick, delicious, and use up every bit of it.
 ---
 
 # 8 Ways to Use Sourdough Discard

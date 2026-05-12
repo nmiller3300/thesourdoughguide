@@ -1,11 +1,91 @@
 [
   {
-    "slug": "why-is-my-sourdough-dense",
-    "title": "Why Is My Sourdough Dense? 7 Reasons and How to Fix Each One",
-    "date": "2025-06-05",
-    "category": "troubleshooting",
+    "slug": "sourdough-chocolate-chip-cookies",
+    "title": "Sourdough Discard Chocolate Chip Cookies \u2014 The Only Cookie Recipe You Need",
+    "date": "2025-05-26",
+    "category": "recipe",
+    "readtime": "6 min read",
+    "excerpt": "Sourdough discard transforms chocolate chip cookies with a subtle tang, chewier texture, and complex flavor that makes these the best chocolate chip cookies most people have ever eaten."
+  },
+  {
+    "slug": "sourdough-english-muffins",
+    "title": "Sourdough English Muffins \u2014 Nooks, Crannies, and Better Than Store-Bought",
+    "date": "2025-05-28",
+    "category": "recipe",
     "readtime": "8 min read",
-    "excerpt": "A dense, gummy sourdough loaf is the most common beginner problem. Here are the 7 most likely causes and the exact fix for each."
+    "excerpt": "Homemade sourdough English muffins with real nooks and crannies, a slightly tangy flavor, and a texture that holds up under any topping. Split with a fork, never a knife."
+  },
+  {
+    "slug": "dark-rye-sourdough",
+    "title": "Dark Rye Sourdough \u2014 Dense, Earthy, and Deeply Satisfying",
+    "date": "2025-05-30",
+    "category": "recipe",
+    "readtime": "9 min read",
+    "excerpt": "A bold, earthy rye loaf with caraway seeds and a tight crumb perfect for open-faced sandwiches. Once you try rye sourdough, you'll keep coming back."
+  },
+  {
+    "slug": "sourdough-sandwich-loaf",
+    "title": "Sourdough Sandwich Loaf \u2014 Soft, Sliceable, and Perfect for Everyday Bread",
+    "date": "2025-06-02",
+    "category": "recipe",
+    "readtime": "7 min read",
+    "excerpt": "A soft, enriched sourdough loaf with a tight crumb perfect for sandwiches, toast, and French toast. The everyday bread your kitchen has been missing."
+  },
+  {
+    "slug": "sourdough-bagels",
+    "title": "Sourdough Bagels \u2014 Chewy, Glossy, and Worth Every Minute",
+    "date": "2025-06-03",
+    "category": "recipe",
+    "readtime": "10 min read",
+    "excerpt": "Real New York-style bagels at home, leavened with sourdough starter. Dense, chewy, with that signature glossy crust \u2014 better than anything you'll find at a grocery store."
+  },
+  {
+    "slug": "rosemary-olive-oil-sourdough",
+    "title": "Rosemary Olive Oil Sourdough \u2014 Fragrant, Golden, and Unforgettable",
+    "date": "2025-06-04",
+    "category": "recipe",
+    "readtime": "8 min read",
+    "excerpt": "Fresh rosemary and good olive oil folded into a sourdough loaf produce a golden, aromatic bread that's perfect with everything from cheese boards to Sunday roasts."
+  },
+  {
+    "slug": "sourdough-pizza-dough",
+    "title": "Sourdough Pizza Dough \u2014 Chewy, Crispy, and Packed with Flavor",
+    "date": "2025-06-05",
+    "category": "recipe",
+    "readtime": "7 min read",
+    "excerpt": "The best pizza dough you'll ever make. Sourdough starter gives it a complex, slightly tangy flavor and a chewy-crispy crust that commercial yeast can't touch."
+  },
+  {
+    "slug": "sourdough-cinnamon-rolls",
+    "title": "Sourdough Cinnamon Rolls \u2014 Fluffy, Tangy, and Better Than Any Bakery",
+    "date": "2025-06-06",
+    "category": "recipe",
+    "readtime": "10 min read",
+    "excerpt": "Sourdough starter transforms ordinary cinnamon rolls into something extraordinary \u2014 pillowy, slightly tangy, with the most incredible depth of flavor."
+  },
+  {
+    "slug": "whole-wheat-sourdough",
+    "title": "Whole Wheat Sourdough \u2014 Hearty, Nutty, and Full of Flavor",
+    "date": "2025-06-07",
+    "category": "recipe",
+    "readtime": "8 min read",
+    "excerpt": "A 30% whole wheat sourdough that adds deep nutty flavor and nutrition without sacrificing the open crumb you've worked hard to achieve."
+  },
+  {
+    "slug": "sourdough-focaccia",
+    "title": "Sourdough Focaccia \u2014 Crispy, Olive Oil-Drenched, and Impossible to Stop Eating",
+    "date": "2025-06-08",
+    "category": "recipe",
+    "readtime": "7 min read",
+    "excerpt": "Thick, pillowy, and dripping with olive oil. This sourdough focaccia is easier than a loaf and ready to impress anyone who tries it."
+  },
+  {
+    "slug": "jalapeno-cheddar-sourdough",
+    "title": "Jalape\u00f1o Cheddar Sourdough \u2014 Bold Flavor, Perfect Crumb",
+    "date": "2025-06-10",
+    "category": "recipe",
+    "readtime": "9 min read",
+    "excerpt": "Spicy jalape\u00f1os and sharp cheddar baked into a golden sourdough loaf. The most-requested recipe on the site for a reason."
   },
   {
     "slug": "best-dutch-ovens-for-sourdough",
@@ -14,6 +94,14 @@
     "category": "equipment",
     "readtime": "7 min read",
     "excerpt": "A Dutch oven is the single most important piece of equipment for home sourdough. Here's what to look for and what we actually recommend."
+  },
+  {
+    "slug": "how-to-start-a-sourdough-starter",
+    "title": "How to Start a Sourdough Starter From Scratch (Day-by-Day Guide)",
+    "date": "2025-06-01",
+    "category": "beginner",
+    "readtime": "8 min read",
+    "excerpt": "Everything you need to build an active, bubbly starter in 7 days \u2014 even if you've failed before."
   },
   {
     "slug": "understanding-bulk-fermentation",
@@ -32,14 +120,6 @@
     "excerpt": "Baker's percentages and hydration ratios don't have to be intimidating. Here's exactly what they mean and how to use them."
   },
   {
-    "slug": "sourdough-discard-recipes",
-    "title": "8 Ways to Use Sourdough Discard (That Actually Taste Good)",
-    "date": "2025-06-03",
-    "category": "recipe",
-    "readtime": "6 min read",
-    "excerpt": "Stop throwing away your sourdough discard. These 8 recipes are quick, delicious, and use up every bit of it."
-  },
-  {
     "slug": "classic-country-sourdough-loaf",
     "title": "Classic Country Sourdough Loaf \u2014 The Only Recipe You Need",
     "date": "2025-06-01",
@@ -48,11 +128,19 @@
     "excerpt": "Simple, reliable, and deeply satisfying. This is the recipe most home bakers come back to again and again."
   },
   {
-    "slug": "how-to-start-a-sourdough-starter",
-    "title": "How to Start a Sourdough Starter From Scratch (Day-by-Day Guide)",
-    "date": "2025-06-01",
-    "category": "beginner",
+    "slug": "why-is-my-sourdough-dense",
+    "title": "Why Is My Sourdough Dense? 7 Reasons and How to Fix Each One",
+    "date": "2025-06-05",
+    "category": "troubleshooting",
     "readtime": "8 min read",
-    "excerpt": "Everything you need to build an active, bubbly starter in 7 days \u2014 even if you've failed before."
+    "excerpt": "A dense, gummy sourdough loaf is the most common beginner problem. Here are the 7 most likely causes and the exact fix for each."
+  },
+  {
+    "slug": "sourdough-discard-recipes",
+    "title": "8 Ways to Use Sourdough Discard (That Actually Taste Good)",
+    "date": "2025-06-03",
+    "category": "recipe",
+    "readtime": "6 min read",
+    "excerpt": "Stop throwing away your sourdough discard. These 8 recipes are quick, delicious, and use up every bit of it."
   }
 ]
