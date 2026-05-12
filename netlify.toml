@@ -1,16 +1,7 @@
 [[redirects]]
-  from = "http://thesourdoughguide.com/*"
-  to = "https://thesourdoughguide.com/:splat"
-  status = 301
-  force = true
+  from = "/admin"
+  to = "/admin/index.html"
+  status = 200
 
-[[redirects]]
-  from = "http://www.thesourdoughguide.com/*"
-  to = "https://thesourdoughguide.com/:splat"
-  status = 301
-  force = true
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+[build]
+  publish = "/"

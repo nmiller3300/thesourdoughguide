@@ -4,241 +4,812 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Sourdough Guide</title>
-<meta name="description" content="">
+<meta name="description" content="Sourdough recipes, guides and troubleshooting.">
 <meta name="google-adsense-account" content="ca-pub-6666741024266551">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6666741024266551" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:16px}
 :root{
-  --white:#FFFFFF;--off-white:#FAFAF7;--cream:#F5EDE0;--cream2:#EDE0CC;
-  --warm-gray:#F0EBE3;--border:#E8E0D5;--text:#1C1410;--text2:#4A3728;
-  --text3:#8B7355;--rust:#B5451B;--rust2:#9A3A16;--brown:#5C3317;
-  --tan:#C49A6C;--tan2:#A67C52;--black:#0F0A07;
+  --white:#fff;--off:#FAFAF7;--cream:#F5EDE0;--cream2:#EDE0CC;--border:#E8E0D5;
+  --text:#1C1410;--text2:#4A3728;--text3:#8B7355;
+  --rust:#B5451B;--rust2:#9A3A16;--brown:#5C3317;--tan:#C49A6C;--tan2:#A67C52;
+  --black:#0F0A07;--green:#1A5C30;--green-bg:#E8F5EE;
   --h:'DM Serif Display',Georgia,serif;--b:'Lora',Georgia,serif;--s:'Inter',system-ui,sans-serif;
 }
-body{background:var(--off-white);color:var(--text);font-family:var(--b);line-height:1.75;overflow-x:hidden}
+html{scroll-behavior:smooth}
+body{background:var(--off);color:var(--text);font-family:var(--s);overflow-x:hidden}
 a{text-decoration:none;color:inherit}
-img{max-width:100%;display:block}
 .wrap{max-width:1200px;margin:0 auto;padding:0 32px}
-.nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+
+/* NAV */
+.nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
 .nav-inner{display:flex;align-items:center;height:72px;max-width:1200px;margin:0 auto;padding:0 32px;gap:12px}
-.nav-brand{display:flex;align-items:center;gap:14px;flex-shrink:0;text-decoration:none}
-.nav-logo-mark{width:38px;height:38px;background:var(--rust);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:18px;flex-shrink:0}
+.nav-brand{display:flex;align-items:center;gap:14px}
+.nav-logo{width:38px;height:38px;background:var(--rust);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px}
 .nav-title{font-family:var(--h);font-size:20px;color:var(--black);line-height:1}
-.nav-tagline{font-family:var(--s);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);font-weight:400;margin-top:2px}
-.nav-links{display:flex;gap:0;margin-left:auto;border:1px solid var(--border);border-radius:8px;overflow:hidden}
-.nav-links a{font-family:var(--s);font-size:13px;font-weight:500;color:var(--text2);padding:8px 16px;transition:all .18s;border-right:1px solid var(--border)}
+.nav-tagline{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);margin-top:2px}
+.nav-links{display:flex;margin-left:auto;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.nav-links a{font-size:13px;font-weight:500;color:var(--text2);padding:8px 16px;border-right:1px solid var(--border);transition:all .18s}
 .nav-links a:last-child{border-right:none}
 .nav-links a:hover{background:var(--cream);color:var(--rust)}
-.nav-links a.active{background:var(--rust);color:var(--white)}
 .nav-toggle{display:none;background:none;border:1px solid var(--border);border-radius:6px;padding:8px 10px;cursor:pointer;margin-left:auto;flex-direction:column;gap:4px}
 .nav-toggle span{display:block;width:18px;height:1.5px;background:var(--text)}
-.mob-nav{display:none;background:var(--white);border-top:1px solid var(--border)}
+.mob-nav{display:none;background:#fff;border-top:1px solid var(--border)}
 .mob-nav.open{display:block}
-.mob-nav a{display:block;font-family:var(--s);font-size:14px;font-weight:500;color:var(--text2);padding:14px 32px;border-bottom:1px solid var(--border);transition:background .15s}
-.btn{display:inline-block;font-family:var(--s);font-size:13px;font-weight:600;letter-spacing:.03em;padding:12px 24px;border-radius:6px;transition:all .2s;cursor:pointer;border:none}
-.btn-primary{background:var(--rust);color:var(--white)}
-.btn-primary:hover{background:var(--rust2);transform:translateY(-1px);box-shadow:0 6px 20px rgba(181,69,27,.3)}
-.btn-outline{background:transparent;color:var(--brown);border:1.5px solid var(--border)}
-.btn-outline:hover{border-color:var(--tan);background:var(--cream)}
-.btn-dark{background:var(--black);color:var(--white)}
-.sec-label{display:inline-block;font-family:var(--s);font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);margin-bottom:14px}
-.page-hero{background:var(--black);padding:72px 0;text-align:center}
-.page-hero-label{display:inline-block;font-family:var(--s);font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--tan);margin-bottom:16px}
-.page-hero h1{font-family:var(--h);font-size:clamp(36px,5vw,60px);color:var(--white);margin-bottom:14px;letter-spacing:-.02em}
-.page-hero p{font-family:var(--s);font-size:16px;color:rgba(255,255,255,.6);max-width:520px;margin:0 auto;font-weight:300}
-.post-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.pc{background:var(--white);border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:all .22s}
-.pc:hover{box-shadow:0 12px 40px rgba(28,20,16,.12);transform:translateY(-4px);border-color:transparent}
-.pc-img{height:200px;background-size:cover;background-position:center;position:relative}
-.pc-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(15,10,7,.6),transparent 60%)}
-.pc-tag{position:absolute;bottom:14px;left:14px;font-family:var(--s);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);color:var(--white);padding:4px 10px;border-radius:4px;border:1px solid rgba(255,255,255,.2)}
-.pc-body{padding:22px;flex:1;display:flex;flex-direction:column}
-.pc-meta{font-family:var(--s);font-size:11px;color:var(--text3);margin-bottom:10px}
-.pc-title{font-family:var(--h);font-size:17px;color:var(--black);line-height:1.35;margin-bottom:10px}
-.pc-title a:hover{color:var(--rust)}
-.pc-excerpt{font-family:var(--s);font-size:13px;color:var(--text3);line-height:1.65;flex:1;font-weight:400}
-.pc-read{font-family:var(--s);font-size:12px;font-weight:600;color:var(--rust);margin-top:16px;display:inline-flex;align-items:center;gap:5px}
-.pi-beginner{background-image:url('https://images.pexels.com/photos/4881602/pexels-photo-4881602.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop');background-size:cover;background-position:center}
-.pi-recipe{background-image:url('https://images.pexels.com/photos/36930978/pexels-photo-36930978.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop');background-size:cover;background-position:center}
-.pi-troubleshooting{background-image:url('https://images.pexels.com/photos/4881589/pexels-photo-4881589.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop');background-size:cover;background-position:center}
-.pi-equipment{background-image:url('https://images.pexels.com/photos/36202913/pexels-photo-36202913.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop');background-size:cover;background-position:center}
-.pi-advanced{background-image:url('https://images.pexels.com/photos/36931181/pexels-photo-36931181.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop');background-size:cover;background-position:center}
-.pi-default{background-image:url('https://images.pexels.com/photos/600620/pexels-photo-600620.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop');background-size:cover;background-position:center}
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:40px}
-.filter-btn{font-family:var(--s);font-size:12px;font-weight:500;padding:8px 16px;border-radius:6px;border:1.5px solid var(--border);background:var(--white);color:var(--text2);cursor:pointer;transition:all .18s}
-.filter-btn:hover,.filter-btn.active{background:var(--rust);color:var(--white);border-color:var(--rust)}
-.ad-slot{background:var(--warm-gray);border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;justify-content:center;align-items:center;min-height:90px;padding:8px}
-.nl-section{background:var(--black);padding:80px 0}
-.nl{max-width:560px;margin:0 auto;text-align:center}
-.nl h2{font-family:var(--h);font-size:clamp(28px,4vw,42px);color:var(--white);margin-bottom:14px;line-height:1.15}
-.nl p{font-family:var(--s);font-size:15px;color:rgba(255,255,255,.6);margin-bottom:32px;font-weight:300}
-.nl-form{display:flex;border-radius:6px;overflow:hidden;border:1px solid rgba(255,255,255,.15)}
-.nl-form input{flex:1;background:rgba(255,255,255,.07);border:none;outline:none;color:var(--white);font-family:var(--s);font-size:14px;padding:14px 18px;font-weight:300}
-.nl-form input::placeholder{color:rgba(255,255,255,.3)}
-.nl-form button{background:var(--rust);color:var(--white);border:none;font-family:var(--s);font-size:13px;font-weight:600;padding:14px 24px;cursor:pointer;transition:background .2s;letter-spacing:.03em}
-.nl-form button:hover{background:var(--rust2)}
-.footer{background:#0F0A07;padding:64px 0 0}
-.footer-grid{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.07)}
-.footer-brand-logo{display:flex;align-items:center;gap:12px;margin-bottom:16px}
-.footer-logo-mark{width:36px;height:36px;background:var(--rust);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:16px}
-.footer-brand-name{font-family:var(--h);font-size:18px;color:var(--white)}
-.footer-brand p{font-family:var(--s);font-size:13px;color:rgba(255,255,255,.4);line-height:1.7;max-width:220px;font-weight:300}
-.footer-col h5{font-family:var(--s);font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--tan);margin-bottom:16px}
-.footer-col a{display:block;font-family:var(--s);font-size:13px;color:rgba(255,255,255,.45);margin-bottom:9px;transition:color .18s;font-weight:400}
-.footer-col a:hover{color:var(--white)}
-.footer-bottom{padding:20px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
-.footer-bottom p{font-family:var(--s);font-size:11px;color:rgba(255,255,255,.25)}
-.prose{max-width:740px;margin:0 auto;padding:60px 32px}
-.prose h1,.prose h2,.prose h3{font-family:var(--h);color:var(--black);margin:36px 0 16px;line-height:1.2;letter-spacing:-.01em}
-.prose h1{font-size:clamp(30px,4vw,44px)}
-.prose h2{font-size:clamp(22px,3vw,30px)}
-.prose h3{font-size:20px}
-.prose p{margin-bottom:22px;font-size:17px;line-height:1.85;color:var(--text2)}
-.prose ul,.prose ol{margin:0 0 22px 26px}
-.prose li{margin-bottom:10px;font-size:16px;color:var(--text2);line-height:1.7}
-.prose blockquote{border-left:3px solid var(--tan2);padding-left:22px;margin:28px 0;font-family:var(--h);font-style:italic;color:var(--brown);font-size:20px;line-height:1.5}
+.mob-nav a{display:block;font-size:14px;font-weight:500;color:var(--text2);padding:14px 32px;border-bottom:1px solid var(--border)}
+
+/* ARTICLE LAYOUT */
+.article-layout{display:grid;grid-template-columns:1fr 320px;gap:40px;max-width:1200px;margin:0 auto;padding:40px 32px}
+.article-main{}
+.article-sidebar{position:sticky;top:88px;height:fit-content}
+
+/* POST HERO */
+.post-hero{background:var(--black);padding:56px 0}
+.post-hero-inner{max-width:1200px;margin:0 auto;padding:0 32px}
+.post-cat-badge{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--tan);margin-bottom:14px}
+.post-hero h1{font-family:var(--h);font-size:clamp(28px,4vw,50px);color:#fff;margin-bottom:14px;line-height:1.15;letter-spacing:-.02em;max-width:760px}
+.post-meta-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.post-meta-item{font-size:12px;color:rgba(255,255,255,.5);display:flex;align-items:center;gap:5px}
+.post-actions{display:flex;gap:10px;margin-left:auto}
+.btn-action{font-family:var(--s);font-size:12px;font-weight:500;padding:8px 14px;border-radius:6px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:rgba(255,255,255,.8);cursor:pointer;transition:all .18s;display:flex;align-items:center;gap:6px}
+.btn-action:hover{background:rgba(255,255,255,.15);color:#fff}
+
+/* AD */
+.ad-slot{background:#F0EBE3;border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;justify-content:center;align-items:center;min-height:90px;padding:8px}
+
+/* RECIPE TOOLBAR - sticky scaler + progress */
+.recipe-toolbar{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:20px;margin-bottom:28px}
+.toolbar-title{font-family:var(--h);font-size:16px;color:var(--black);margin-bottom:14px}
+.scaler-row{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.scaler-label{font-size:12px;font-weight:600;color:var(--text3);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.scaler-controls{display:flex;align-items:center;gap:0;border:1px solid var(--border);border-radius:6px;overflow:hidden}
+.scaler-btn{width:34px;height:34px;background:var(--off);border:none;cursor:pointer;font-size:18px;color:var(--rust);font-weight:300;display:flex;align-items:center;justify-content:center;transition:background .15s}
+.scaler-btn:hover{background:var(--cream)}
+.scaler-val{min-width:44px;text-align:center;font-family:var(--h);font-size:18px;color:var(--black);background:#fff;padding:0 8px;line-height:34px}
+.scaler-note{font-size:11px;color:var(--text3)}
+.progress-row{display:flex;align-items:center;gap:10px}
+.progress-label{font-size:11px;color:var(--text3);white-space:nowrap}
+.progress-bar-outer{flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden}
+.progress-bar-inner{height:100%;background:var(--rust);border-radius:3px;transition:width .4s ease;width:0%}
+.progress-pct{font-size:11px;font-weight:600;color:var(--rust);white-space:nowrap}
+
+/* PROSE */
+.prose{font-family:var(--b);font-size:17px;line-height:1.85;color:var(--text2)}
+.prose h1{font-family:var(--h);font-size:clamp(26px,3vw,38px);color:var(--black);margin:40px 0 18px;letter-spacing:-.01em}
+.prose h2{font-family:var(--h);font-size:clamp(20px,2.5vw,28px);color:var(--black);margin:36px 0 14px;letter-spacing:-.01em;padding-bottom:10px;border-bottom:1px solid var(--border)}
+.prose h3{font-family:var(--h);font-size:20px;color:var(--black);margin:28px 0 12px}
+.prose h4{font-family:var(--s);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--rust);margin:22px 0 10px}
+.prose p{margin-bottom:20px}
+.prose ul,.prose ol{margin:0 0 20px 24px}
+.prose li{margin-bottom:8px;line-height:1.7}
 .prose strong{color:var(--black);font-weight:600}
-.prose hr{border:none;border-top:1px solid var(--border);margin:40px 0}
+.prose em{font-style:italic}
 .prose a{color:var(--rust)}
-.prose img{border-radius:8px;margin:36px 0;width:100%}
-.prose table{width:100%;border-collapse:collapse;margin:24px 0;font-family:var(--s);font-size:14px}
+.prose hr{border:none;border-top:1px solid var(--border);margin:36px 0}
+.prose blockquote{border-left:3px solid var(--tan2);padding:14px 20px;margin:24px 0;background:var(--cream);border-radius:0 8px 8px 0}
+.prose blockquote p{margin:0;font-family:var(--h);font-style:italic;color:var(--brown);font-size:18px}
+.prose table{width:100%;border-collapse:collapse;margin:20px 0;font-family:var(--s);font-size:14px}
 .prose table th{background:var(--cream);padding:10px 14px;text-align:left;font-weight:600;border-bottom:2px solid var(--border)}
 .prose table td{padding:10px 14px;border-bottom:1px solid var(--border)}
-.loading{text-align:center;padding:60px;color:var(--text3);font-family:var(--s);font-size:14px;font-weight:300}
-@media(max-width:768px){
+.prose img{border-radius:8px;margin:28px 0;width:100%}
+
+/* INTERACTIVE INGREDIENTS */
+.ingredient-card{background:var(--cream);border:1.5px solid var(--border);border-radius:10px;padding:22px;margin:24px 0}
+.ingredient-card-title{font-family:var(--s);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);margin-bottom:14px}
+.ingredient-list{list-style:none;display:flex;flex-direction:column;gap:0}
+.ingredient-item{display:flex;align-items:baseline;gap:10px;padding:9px 0;border-bottom:1px solid var(--border)}
+.ingredient-item:last-child{border-bottom:none}
+.ingredient-amount{font-family:var(--s);font-size:14px;font-weight:700;color:var(--rust);min-width:80px;flex-shrink:0}
+.ingredient-name{font-family:var(--s);font-size:14px;color:var(--text2)}
+
+/* INTERACTIVE STEPS */
+.step-card{background:#fff;border:1.5px solid var(--border);border-radius:10px;margin:12px 0;overflow:hidden;transition:all .2s}
+.step-card.done{border-color:var(--green);background:var(--green-bg)}
+.step-header{display:flex;align-items:flex-start;gap:14px;padding:18px 20px;cursor:pointer}
+.step-check{width:28px;height:28px;border-radius:50%;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s;margin-top:2px;cursor:pointer}
+.step-card.done .step-check{background:var(--green);border-color:var(--green);color:#fff}
+.step-num{font-family:var(--h);font-size:13px;color:var(--text3);font-style:italic;flex-shrink:0;margin-top:4px}
+.step-text{font-family:var(--s);font-size:14px;color:var(--text2);line-height:1.65;flex:1}
+.step-card.done .step-text{color:var(--text3);text-decoration:line-through;text-decoration-color:var(--green)}
+.step-timer-btn{margin-left:auto;flex-shrink:0;background:var(--rust);color:#fff;border:none;border-radius:6px;font-family:var(--s);font-size:11px;font-weight:600;padding:6px 12px;cursor:pointer;transition:all .18s;white-space:nowrap}
+.step-timer-btn:hover{background:var(--rust2)}
+.step-timer-btn.running{background:var(--green)}
+.step-timer-btn.done-timer{background:var(--green)}
+
+/* TIMER POPUP */
+.timer-popup{position:fixed;bottom:24px;right:24px;background:var(--black);color:#fff;border-radius:12px;padding:20px 24px;z-index:999;box-shadow:0 20px 60px rgba(0,0,0,.4);min-width:220px;display:none}
+.timer-popup.active{display:block;animation:slideUp .3s ease}
+@keyframes slideUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+.timer-step-name{font-size:11px;color:rgba(255,255,255,.5);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+.timer-display{font-family:var(--h);font-size:48px;color:#fff;line-height:1;margin-bottom:12px;letter-spacing:-.02em}
+.timer-display.done{color:var(--tan)}
+.timer-controls{display:flex;gap:8px}
+.timer-ctrl{flex:1;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:#fff;font-family:var(--s);font-size:12px;font-weight:500;padding:8px;border-radius:6px;cursor:pointer;transition:all .18s;text-align:center}
+.timer-ctrl:hover{background:rgba(255,255,255,.2)}
+.timer-ctrl.close-btn{flex:0;padding:8px 12px}
+
+/* SIDEBAR */
+.sidebar-card{background:#fff;border:1.5px solid var(--border);border-radius:10px;padding:20px;margin-bottom:20px}
+.sidebar-card-title{font-family:var(--s);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);margin-bottom:14px}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:4px}
+.toc-list a{font-size:13px;color:var(--text3);display:block;padding:6px 0;border-bottom:1px solid var(--border);transition:color .15s;line-height:1.4}
+.toc-list a:last-child{border-bottom:none}
+.toc-list a:hover,.toc-list a.active-toc{color:var(--rust);font-weight:500}
+.related-list{display:flex;flex-direction:column;gap:10px}
+.related-item{display:flex;gap:10px;align-items:center}
+.related-img{width:52px;height:52px;border-radius:6px;background-size:cover;background-position:center;flex-shrink:0}
+.related-title{font-size:13px;color:var(--text);line-height:1.4;font-weight:500}
+.related-title:hover{color:var(--rust)}
+.related-cat{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px}
+
+/* RELATED POSTS */
+.related-section{background:var(--cream);padding:56px 0}
+.post-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.pc{background:#fff;border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:all .22s}
+.pc:hover{box-shadow:0 10px 36px rgba(28,20,16,.12);transform:translateY(-3px);border-color:transparent}
+.pc-img{height:180px;background-size:cover;background-position:center;position:relative}
+.pc-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(15,10,7,.6),transparent 60%)}
+.pc-tag{position:absolute;bottom:12px;left:12px;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);color:#fff;padding:4px 10px;border-radius:4px;border:1px solid rgba(255,255,255,.2)}
+.pc-body{padding:18px;flex:1;display:flex;flex-direction:column}
+.pc-meta{font-size:11px;color:var(--text3);margin-bottom:8px}
+.pc-title{font-family:var(--h);font-size:16px;color:var(--black);line-height:1.35;margin-bottom:8px}
+.pc-excerpt{font-size:13px;color:var(--text3);line-height:1.65;flex:1}
+.pc-read{font-size:12px;font-weight:600;color:var(--rust);margin-top:12px;display:inline-flex;align-items:center;gap:4px}
+.pi-beginner{background-image:url('https://images.pexels.com/photos/30895275/pexels-photo-30895275.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop')}
+.pi-recipe{background-image:url('https://images.pexels.com/photos/36930978/pexels-photo-36930978.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop')}
+.pi-troubleshooting{background-image:url('https://images.pexels.com/photos/4881589/pexels-photo-4881589.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop')}
+.pi-equipment{background-image:url('https://images.pexels.com/photos/36202913/pexels-photo-36202913.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop')}
+.pi-advanced{background-image:url('https://images.pexels.com/photos/36931181/pexels-photo-36931181.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop')}
+.pi-default{background-image:url('https://images.pexels.com/photos/600620/pexels-photo-600620.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop')}
+
+/* NEWSLETTER */
+.nl-section{background:var(--black);padding:64px 0}
+.nl{max-width:540px;margin:0 auto;text-align:center}
+.nl h2{font-family:var(--h);font-size:clamp(26px,4vw,40px);color:#fff;margin-bottom:12px;line-height:1.15}
+.nl p{font-size:15px;color:rgba(255,255,255,.6);margin-bottom:26px;font-weight:300}
+.nl-form{display:flex;border-radius:6px;overflow:hidden;border:1px solid rgba(255,255,255,.15)}
+.nl-form input{flex:1;background:rgba(255,255,255,.07);border:none;outline:none;color:#fff;font-size:14px;padding:13px 18px}
+.nl-form input::placeholder{color:rgba(255,255,255,.3)}
+.nl-form button{background:var(--rust);color:#fff;border:none;font-size:13px;font-weight:600;padding:13px 22px;cursor:pointer;transition:background .2s;letter-spacing:.03em}
+.nl-form button:hover{background:var(--rust2)}
+
+/* FOOTER */
+.footer{background:#0F0A07;padding:48px 0 0}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.07)}
+.footer-brand-row{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.footer-logo{width:32px;height:32px;background:var(--rust);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px}
+.footer-name{font-family:var(--h);font-size:17px;color:#fff}
+.footer-brand p{font-size:12px;color:rgba(255,255,255,.38);line-height:1.7;max-width:200px}
+.footer-col h5{font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--tan);margin-bottom:14px}
+.footer-col a{display:block;font-size:12px;color:rgba(255,255,255,.4);margin-bottom:8px;transition:color .18s}
+.footer-col a:hover{color:#fff}
+.footer-bottom{padding:16px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.footer-bottom p{font-size:11px;color:rgba(255,255,255,.22)}
+
+/* PRINT */
+@media print{
+  .nav,.ad-slot,.recipe-toolbar,.timer-popup,.related-section,.nl-section,.footer,.article-sidebar{display:none!important}
+  .article-layout{grid-template-columns:1fr;padding:0}
+  .post-hero{background:#fff;padding:20px 0}
+  .post-hero h1{color:#000}
+  .step-card{break-inside:avoid}
+}
+
+@media(max-width:900px){
+  .article-layout{grid-template-columns:1fr;padding:20px}
+  .article-sidebar{display:none}
+  .post-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
   .nav-links{display:none}.nav-toggle{display:flex}
   .post-grid{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr 1fr}
-  .footer-brand{grid-column:1/-1}
   .nl-form{flex-direction:column}
-  .prose{padding:40px 20px}
+  .wrap{padding:0 20px}
+  .post-hero-inner{padding:0 20px}
+  .post-actions{display:none}
+  .article-layout{padding:16px}
 }
-@media(max-width:480px){.wrap{padding-left:20px;padding-right:20px}}
+
+@media print {
+  /* Hide everything except article content */
+  .nav, .mob-nav, .ad-slot, .recipe-toolbar, .timer-popup,
+  .related-section, .nl-section, .footer, .article-sidebar,
+  .post-actions, .pc-read, .ans-read-more { display:none!important }
+
+  body { background:#fff!important; font-size:12pt; font-family:'Georgia',serif }
+  .post-hero { background:#fff!important; padding:20px 0 10px!important }
+  .post-hero h1 { color:#000!important; font-size:24pt!important }
+  .post-cat-badge { color:#B5451B!important; border:1px solid #B5451B; padding:2px 8px; border-radius:4px }
+  .post-meta-bar { color:#666!important }
+  .post-meta-item { color:#666!important }
+  .post-hero-inner { padding:0 20px!important }
+
+  .article-layout { display:block!important; padding:10px 20px!important }
+  .article-main { width:100%!important }
+
+  /* Recipe print card */
+  .ingredient-card {
+    background:#f9f6f0!important;
+    border:1px solid #ccc!important;
+    border-radius:6px;
+    page-break-inside:avoid;
+    margin-bottom:16pt!important;
+  }
+  .ingredient-amount { color:#B5451B!important; font-weight:700 }
+
+  /* Step cards */
+  .step-card {
+    border:1px solid #ddd!important;
+    border-radius:4px;
+    margin-bottom:8pt!important;
+    page-break-inside:avoid;
+    background:#fff!important;
+  }
+  .step-card.done { border-color:#1A5C30!important; background:#f0f9f4!important }
+  .step-check { border:1px solid #ccc!important }
+  .step-timer-btn { display:none!important }
+
+  /* Prose */
+  .prose h2 { font-size:16pt; border-bottom:1px solid #ccc; margin-top:20pt }
+  .prose h3 { font-size:13pt }
+  .prose p, .prose li { font-size:11pt; line-height:1.6 }
+  .prose blockquote { background:#f9f6f0!important; border-left:3px solid #B5451B!important }
+
+  /* Print header branding */
+  @page { margin:1.5cm; }
+}
+
+/* PRINT RECIPE BUTTON styling */
+.print-recipe-btn {
+  display:inline-flex;align-items:center;gap:6px;
+  background:#fff;border:1.5px solid var(--border);
+  color:var(--text2);font-family:var(--s);font-size:12px;font-weight:500;
+  padding:8px 16px;border-radius:6px;cursor:pointer;
+  transition:all .18s;margin-bottom:20px;
+}
+.print-recipe-btn:hover{border-color:var(--rust);color:var(--rust)}
+
 </style>
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 </head>
 <body>
 
+<!-- NAV -->
 <header class="nav">
   <div class="nav-inner">
     <a href="/" class="nav-brand">
-      <div class="nav-logo-mark">🌾</div>
+      <div class="nav-logo">🌾</div>
       <div>
         <div class="nav-title">The Sourdough Guide</div>
         <div class="nav-tagline">From First Loaf to Mastery</div>
       </div>
     </a>
     <nav class="nav-links">
-      <a href="/beginner.html" id="nl-beginner">Start Here</a>
-      <a href="/recipes.html" id="nl-recipes">Recipes</a>
-      <a href="/troubleshooting.html" id="nl-troubleshooting">Troubleshooting</a>
-      <a href="/equipment.html" id="nl-equipment">Equipment</a>
-      <a href="/about.html" id="nl-about">About</a>
+      <a href="/beginner.html">Start Here</a>
+      <a href="/recipes.html?cat=recipe">Recipes</a>
+      <a href="/troubleshooting.html">Troubleshooting</a>
+      <a href="/equipment.html">Equipment</a>
+      <a href="/about.html">About</a>
     </nav>
-    <button class="nav-toggle" onclick="this.closest('.nav').querySelector('.mob-nav').classList.toggle('open')" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="nav-toggle" onclick="this.closest('.nav').querySelector('.mob-nav').classList.toggle('open')"><span></span><span></span><span></span></button>
   </div>
   <nav class="mob-nav">
-    <a href="/beginner.html">Start Here</a>
-    <a href="/recipes.html?cat=recipe">Recipes</a>
-    <a href="/troubleshooting.html">Troubleshooting</a>
-    <a href="/equipment.html">Equipment</a>
-    <a href="/about.html">About</a>
+    <a href="/beginner.html">Start Here</a><a href="/recipes.html?cat=recipe">Recipes</a>
+    <a href="/troubleshooting.html">Troubleshooting</a><a href="/equipment.html">Equipment</a><a href="/about.html">About</a>
   </nav>
 </header>
-<script>document.getElementById('nl-')?.classList.add('active')</script>
-<div id="post-hero" class="page-hero" style="display:none">
-  <div class="wrap">
-    <div id="ph-label" class="page-hero-label"></div>
-    <h1 id="ph-title"></h1>
-    <p id="ph-meta" style="font-family:var(--s);font-size:13px;color:rgba(255,255,255,.5);margin-top:10px"></p>
+
+<!-- POST HERO -->
+<div id="post-hero" style="display:none">
+  <div class="post-hero">
+    <div class="post-hero-inner">
+      <div id="ph-cat" class="post-cat-badge"></div>
+      <h1 id="ph-title"></h1>
+      <div class="post-meta-bar">
+        <span class="post-meta-item">📅 <span id="ph-date"></span></span>
+        <span class="post-meta-item">⏱ <span id="ph-time"></span></span>
+        <span class="post-meta-item" id="ph-steps-meta" style="display:none">✅ <span id="ph-steps-count"></span> steps</span>
+        <div class="post-actions">
+          <button class="btn-action" onclick="window.print()">🖨 Print</button>
+          <button class="btn-action" onclick="sharePost()">🔗 Share</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ad-slot">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6666741024266551" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
   </div>
 </div>
-<div class="ad-slot">
-  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6666741024266551" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+
+<div id="loading" style="text-align:center;padding:80px;font-family:var(--s);font-size:14px;color:var(--text3)">Loading...</div>
+
+<!-- ARTICLE -->
+<div id="article-wrap" style="display:none">
+  <div class="article-layout">
+    <!-- MAIN CONTENT -->
+    <main class="article-main">
+      <!-- Recipe toolbar (shown for recipe posts) -->
+      <div id="recipe-toolbar" class="recipe-toolbar" style="display:none">
+        <div class="toolbar-title">🧾 Interactive Recipe</div>
+        <div class="scaler-row">
+          <span class="scaler-label">Servings</span>
+          <div class="scaler-controls">
+            <button class="scaler-btn" onclick="changeServings(-1)">−</button>
+            <div class="scaler-val" id="servings-val">1</div>
+            <button class="scaler-btn" onclick="changeServings(1)">+</button>
+          </div>
+          <span class="scaler-note" id="scaler-note"></span>
+        </div>
+        <div class="progress-row">
+          <span class="progress-label">Steps completed:</span>
+          <div class="progress-bar-outer"><div class="progress-bar-inner" id="prog-bar"></div></div>
+          <span class="progress-pct" id="prog-pct">0%</span>
+        </div>
+      </div>
+
+      <div id="print-btn-wrap" style="display:none">
+        <button class="print-recipe-btn" onclick="window.print()">🖨 Print this Recipe</button>
+      </div>
+      <div id="post-body" class="prose"></div>
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="article-sidebar">
+      <div class="sidebar-card" id="toc-card" style="display:none">
+        <div class="sidebar-card-title">Contents</div>
+        <ul class="toc-list" id="toc-list"></ul>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">Related Articles</div>
+        <div class="related-list" id="sidebar-related"></div>
+      </div>
+      <div class="ad-slot" style="border-radius:8px;overflow:hidden;margin-top:20px">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6666741024266551" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+      </div>
+    </aside>
+  </div>
 </div>
-<div id="post-content"><div class="loading" style="padding:80px">Loading...</div></div>
+
+<!-- TIMER POPUP -->
+<div class="timer-popup" id="timer-popup">
+  <div class="timer-step-name" id="timer-step-name">Timer</div>
+  <div class="timer-display" id="timer-display">0:00</div>
+  <div class="timer-controls">
+    <button class="timer-ctrl" id="timer-toggle-btn" onclick="toggleTimer()">Pause</button>
+    <button class="timer-ctrl" onclick="resetTimer()">Reset</button>
+    <button class="timer-ctrl close-btn" onclick="closeTimer()">✕</button>
+  </div>
+</div>
+
+<!-- RELATED POSTS -->
+<section class="related-section" id="related-section" style="display:none">
+  <div class="wrap">
+    <h3 style="font-family:var(--h);font-size:28px;color:var(--black);margin-bottom:28px">More from the Guide</h3>
+    <div class="post-grid" id="related-posts"></div>
+  </div>
+</section>
+
+<!-- AD -->
 <div class="ad-slot" style="min-height:250px">
   <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6666741024266551" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
   <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
 </div>
-<section style="padding:64px 0;background:var(--cream)">
-  <div class="wrap">
-    <h3 style="font-family:var(--h);font-size:28px;color:var(--black);margin-bottom:32px;letter-spacing:-.01em">More from the Guide</h3>
-    <div class="post-grid" id="relatedPosts"></div>
-  </div>
-</section>
 
+<!-- NEWSLETTER -->
 <section class="nl-section">
   <div class="wrap">
     <div class="nl">
-      <span class="sec-label">Newsletter</span>
+      <span style="font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--tan);display:block;margin-bottom:12px">Newsletter</span>
       <h2>Get better at sourdough,<br>one email at a time.</h2>
-      <p>New guides, troubleshooting tips, and seasonal recipes delivered to your inbox. No spam, ever.</p>
+      <p>New guides, recipes, and tips delivered to your inbox. No spam, ever.</p>
       <form class="nl-form" name="newsletter" netlify netlify-honeypot="bot-field" onsubmit="handleSub(event)">
-        <input type="hidden" name="form-name" value="newsletter"><input type="text" name="bot-field" style="display:none"><input type="email" name="email" placeholder="Your email address" required>
+        <input type="hidden" name="form-name" value="newsletter">
+        <input type="text" name="bot-field" style="display:none">
+        <input type="email" name="email" placeholder="Your email address" required>
         <button type="submit">Subscribe</button>
       </form>
     </div>
   </div>
 </section>
+
+<!-- FOOTER -->
 <div class="footer">
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="footer-brand-logo"><div class="footer-logo-mark">🌾</div><span class="footer-brand-name">The Sourdough Guide</span></div>
+        <div class="footer-brand-row"><div class="footer-logo">🌾</div><span class="footer-name">The Sourdough Guide</span></div>
         <p>Your complete resource for sourdough baking — from first starter to master loaf.</p>
       </div>
-      <div class="footer-col"><h5>Learn</h5><a href="/beginner.html">Beginner's Guide</a><a href="/beginner.html">Starter Guide</a><a href="/recipes.html">Techniques</a></div>
-      <div class="footer-col"><h5>Recipes</h5><a href="/recipes.html">All Recipes</a><a href="/recipes.html?cat=recipe">Country Loaf</a><a href="/recipes.html?cat=recipe">Discard Recipes</a></div>
-      <div class="footer-col"><h5>Help</h5><a href="/troubleshooting.html">Troubleshooting</a><a href="/equipment.html">Equipment</a><a href="/about.html">About</a></div>
-      <div class="footer-col"><h5>Legal</h5><a href="/privacy.html">Privacy Policy</a><a href="/affiliate.html">Affiliate Disclosure</a></div>
+      <div class="footer-col"><h5>Learn</h5><a href="/beginner.html">Beginner's Guide</a><a href="/troubleshooting.html">Troubleshooting</a><a href="/recipes.html">All Recipes</a></div>
+      <div class="footer-col"><h5>Recipes</h5><a href="/recipes.html?cat=recipe">Sourdough Loaves</a><a href="/recipes.html?cat=recipe">Discard Recipes</a><a href="/recipes.html?cat=advanced">Advanced</a></div>
+      <div class="footer-col"><h5>Site</h5><a href="/about.html">About</a><a href="/privacy.html">Privacy</a><a href="/affiliate.html">Affiliate Disclosure</a></div>
     </div>
     <div class="footer-bottom">
       <p>© 2025 ThesourdoughGuide.com · All rights reserved</p>
-      <p>Some links are affiliate links. We earn a small commission at no extra cost to you.</p>
+      <p>Some links are affiliate links.</p>
     </div>
   </div>
 </div>
+
 <script>
-function handleSub(e){e.preventDefault();const btn=e.target.querySelector('button');const inp=e.target.querySelector('input');btn.textContent='Subscribed ✓';btn.style.background='#2D6A4F';inp.value='';inp.disabled=true;inp.placeholder="You're on the list!";setTimeout(()=>{btn.textContent='Subscribe';btn.style.background='';inp.disabled=false;inp.placeholder='Your email address'},4000);}
-const POST_IMAGES={"sourdough-cinnamon-rolls": "https://images.pexels.com/photos/3951310/pexels-photo-3951310.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "sourdough-bagels": "https://images.pexels.com/photos/3957500/pexels-photo-3957500.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "sourdough-pizza-dough": "https://images.pexels.com/photos/2909822/pexels-photo-2909822.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "sourdough-focaccia": "https://images.pexels.com/photos/19165814/pexels-photo-19165814.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "sourdough-chocolate-chip-cookies": "https://images.pexels.com/photos/230325/pexels-photo-230325.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "sourdough-english-muffins": "https://images.pexels.com/photos/4110104/pexels-photo-4110104.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "sourdough-sandwich-loaf": "https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "sourdough-discard-recipes": "https://images.pexels.com/photos/6605304/pexels-photo-6605304.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "jalapeno-cheddar-sourdough": "https://images.pexels.com/photos/36931181/pexels-photo-36931181.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "classic-country-sourdough-loaf": "https://images.pexels.com/photos/30548099/pexels-photo-30548099.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "whole-wheat-sourdough": "https://images.pexels.com/photos/4881602/pexels-photo-4881602.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "rosemary-olive-oil-sourdough": "https://images.pexels.com/photos/30895278/pexels-photo-30895278.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "dark-rye-sourdough": "https://images.pexels.com/photos/7693927/pexels-photo-7693927.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "why-is-my-sourdough-dense": "https://images.pexels.com/photos/30888597/pexels-photo-30888597.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "sourdough-starter-not-rising": "https://images.pexels.com/photos/4881595/pexels-photo-4881595.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "sourdough-no-oven-spring": "https://images.pexels.com/photos/36930991/pexels-photo-36930991.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "sourdough-too-sour": "https://images.pexels.com/photos/4881593/pexels-photo-4881593.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "sourdough-too-sticky": "https://images.pexels.com/photos/4881589/pexels-photo-4881589.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "sourdough-spread-sideways": "https://images.pexels.com/photos/30632198/pexels-photo-30632198.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "how-to-start-a-sourdough-starter": "https://images.pexels.com/photos/30895275/pexels-photo-30895275.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "sourdough-hydration-explained": "https://images.pexels.com/photos/30895289/pexels-photo-30895289.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "best-dutch-ovens-for-sourdough": "https://images.pexels.com/photos/36202913/pexels-photo-36202913.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "understanding-bulk-fermentation": "https://images.pexels.com/photos/31546233/pexels-photo-31546233.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop"};
-function catImgClass(cat){const m={beginner:'pi-beginner',recipe:'pi-recipe',troubleshooting:'pi-troubleshooting',equipment:'pi-equipment',advanced:'pi-advanced'};return m[cat]||'pi-default';}
-function getPostImg(slug,cat){if(POST_IMAGES[slug])return`background-image:url('${POST_IMAGES[slug]}');background-size:cover;background-position:center`;return'';}
-function fmtDate(s){if(!s)return'';try{return new Date(s).toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'})}catch(e){return s}}
-function buildCard(p){const imgStyle=getPostImg(p.slug,p.category);const imgClass=imgStyle?'':catImgClass(p.category);return`<article class="pc"><a href="/post.html?slug=${p.slug}" class="pc-img ${imgClass}" style="${imgStyle}"><span class="pc-tag">${p.category||'Post'}</span></a><div class="pc-body"><p class="pc-meta">${fmtDate(p.date)}${p.readtime?' &middot; '+p.readtime:''}</p><h3 class="pc-title"><a href="/post.html?slug=${p.slug}">${p.title}</a></h3><p class="pc-excerpt">${p.excerpt||''}</p><a href="/post.html?slug=${p.slug}" class="pc-read">Read More →</a></div></article>`;}
-</script>
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<script>
-const slug=new URLSearchParams(window.location.search).get('slug');
+// ── POST IMAGE MAP ─────────────────────────────────────────────────
+const POST_IMAGES={"sourdough-cinnamon-rolls":"https://images.pexels.com/photos/3951310/pexels-photo-3951310.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop","sourdough-bagels":"https://images.pexels.com/photos/3957500/pexels-photo-3957500.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop","sourdough-pizza-dough":"https://images.pexels.com/photos/2909822/pexels-photo-2909822.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop","sourdough-focaccia":"https://images.pexels.com/photos/19165814/pexels-photo-19165814.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop","sourdough-chocolate-chip-cookies":"https://images.pexels.com/photos/230325/pexels-photo-230325.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop","sourdough-english-muffins":"https://images.pexels.com/photos/4110104/pexels-photo-4110104.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop","sourdough-sandwich-loaf":"https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop","sourdough-discard-recipes":"https://images.pexels.com/photos/6605304/pexels-photo-6605304.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop","jalapeno-cheddar-sourdough":"https://images.pexels.com/photos/36931181/pexels-photo-36931181.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop","classic-country-sourdough-loaf":"https://images.pexels.com/photos/30548099/pexels-photo-30548099.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop","whole-wheat-sourdough":"https://images.pexels.com/photos/4881602/pexels-photo-4881602.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop","rosemary-olive-oil-sourdough":"https://images.pexels.com/photos/30895278/pexels-photo-30895278.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop","dark-rye-sourdough":"https://images.pexels.com/photos/7693927/pexels-photo-7693927.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop","why-is-my-sourdough-dense":"https://images.pexels.com/photos/30888597/pexels-photo-30888597.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop","sourdough-starter-not-rising":"https://images.pexels.com/photos/4881595/pexels-photo-4881595.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop","sourdough-no-oven-spring":"https://images.pexels.com/photos/36930991/pexels-photo-36930991.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop","sourdough-too-sour":"https://images.pexels.com/photos/4881593/pexels-photo-4881593.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop","sourdough-too-sticky":"https://images.pexels.com/photos/4881589/pexels-photo-4881589.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop","sourdough-spread-sideways":"https://images.pexels.com/photos/30632198/pexels-photo-30632198.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop","how-to-start-a-sourdough-starter":"https://images.pexels.com/photos/30895275/pexels-photo-30895275.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop","sourdough-hydration-explained":"https://images.pexels.com/photos/30895289/pexels-photo-30895289.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop","best-dutch-ovens-for-sourdough":"https://images.pexels.com/photos/36202913/pexels-photo-36202913.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop","understanding-bulk-fermentation":"https://images.pexels.com/photos/31546233/pexels-photo-31546233.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop"};
+
+// ── STATE ──────────────────────────────────────────────────────────
+let servingsBase = 1;
+let servingsCurrent = 1;
+let allIngredients = []; // {el, originalText, amounts:[{value,unit,text}]}
+let totalSteps = 0;
+let completedSteps = 0;
+let timerInterval = null;
+let timerSeconds = 0;
+let timerRunning = false;
+let currentSlug = '';
+let isRecipe = false;
+
+// ── UTILS ──────────────────────────────────────────────────────────
 function parseFM(text){
   const m=text.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
   if(!m)return{data:{},body:text};
-  const data={};
-  m[1].split('\n').forEach(l=>{const[k,...v]=l.split(':');if(k)data[k.trim()]=v.join(':').trim().replace(/^['"]/,'').replace(/['"]$/,'')});
-  return{data,body:m[2]};
+  const d={};
+  m[1].split('\n').forEach(l=>{const i=l.indexOf(':');if(i<0)return;const k=l.slice(0,i).trim(),v=l.slice(i+1).trim().replace(/^["']|["']$/g,'');d[k]=v});
+  return{data:d,body:m[2]};
 }
-if(!slug){document.getElementById('post-content').innerHTML='<div class="prose"><p>Post not found. <a href="/recipes.html">Browse all posts →</a></p></div>'}
-else{
-  fetch(`/posts/${slug}.md`).then(r=>{if(!r.ok)throw new Error();return r.text()}).then(text=>{
-    const{data,body}=parseFM(text);
-    document.title=(data.title||'Post')+' — The Sourdough Guide';
-    document.getElementById('post-hero').style.display='';
-    document.getElementById('ph-label').textContent=data.category||'';
-    document.getElementById('ph-title').textContent=data.title||'';
-    const d=data.date?new Date(data.date).toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'}):'';
-    document.getElementById('ph-meta').textContent=[d,data.readtime].filter(Boolean).join(' · ');
-    document.getElementById('post-content').innerHTML=`<div class="prose">${marked.parse(body)}</div>`;
-  }).catch(()=>{document.getElementById('post-content').innerHTML='<div class="prose"><p>Post not found. <a href="/recipes.html">Browse all posts →</a></p></div>'});
+function fmtDate(s){if(!s)return'';try{return new Date(s).toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'})}catch{return s}}
+function catImgClass(cat){return{beginner:'pi-beginner',recipe:'pi-recipe',troubleshooting:'pi-troubleshooting',equipment:'pi-equipment',advanced:'pi-advanced'}[cat]||'pi-default'}
+function getPostImg(slug,cat){if(POST_IMAGES[slug])return`background-image:url('${POST_IMAGES[slug]}');background-size:cover;background-position:center`;return''}
+function buildCard(p){const imgStyle=getPostImg(p.slug,p.category);const imgClass=imgStyle?'':catImgClass(p.category);return`<article class="pc"><a href="/post.html?slug=${p.slug}" class="pc-img ${imgClass}" style="${imgStyle}"><span class="pc-tag">${p.category||'Post'}</span></a><div class="pc-body"><p class="pc-meta">${fmtDate(p.date)}${p.readtime?' · '+p.readtime:''}</p><h3 class="pc-title"><a href="/post.html?slug=${p.slug}">${p.title}</a></h3><p class="pc-excerpt">${p.excerpt||''}</p><a href="/post.html?slug=${p.slug}" class="pc-read">Read More →</a></div></article>`;}
+
+// ── LOAD POST ──────────────────────────────────────────────────────
+const slug = new URLSearchParams(window.location.search).get('slug');
+currentSlug = slug || '';
+
+if(!slug){
+  document.getElementById('loading').innerHTML='<div style="padding:80px;text-align:center;font-family:var(--s)">Post not found. <a href="/recipes.html" style="color:var(--rust)">Browse all posts →</a></div>';
+}else{
+  fetch(`/posts/${slug}.md`)
+    .then(r=>{if(!r.ok)throw new Error('Not found');return r.text()})
+    .then(text=>{
+      const{data,body}=parseFM(text);
+      // Set page title
+      document.title=(data.title||'Post')+' — The Sourdough Guide';
+      // Hero
+      document.getElementById('post-hero').style.display='';
+      document.getElementById('ph-cat').textContent=data.category||'';
+      document.getElementById('ph-title').textContent=data.title||'';
+      document.getElementById('ph-date').textContent=fmtDate(data.date);
+      document.getElementById('ph-time').textContent=data.readtime||'';
+      // Detect recipe
+      isRecipe = data.category === 'recipe';
+      // Render
+      document.getElementById('loading').style.display='none';
+      document.getElementById('article-wrap').style.display='';
+      const html = marked.parse(body);
+      if(isRecipe){
+        document.getElementById('print-btn-wrap').style.display='';
+        renderInteractive(html, data);
+      }else{
+        renderProse(html, data);
+      }
+      // Related posts
+      loadRelated(slug, data.category);
+    })
+    .catch(()=>{
+      document.getElementById('loading').innerHTML='<div style="padding:80px;text-align:center;font-family:var(--s)">Post not found. <a href="/recipes.html" style="color:var(--rust)">Browse all posts →</a></div>';
+    });
 }
-fetch('/posts/manifest.json').then(r=>r.json()).then(posts=>{
-  const rel=posts.filter(p=>p.slug!==slug).slice(0,3);
-  document.getElementById('relatedPosts').innerHTML=rel.map(buildCard).join('');
-}).catch(()=>{});
+
+// ── PROSE (non-recipe) RENDER ──────────────────────────────────────
+function renderProse(html, data){
+  document.getElementById('post-body').innerHTML = html;
+  buildTOC();
+}
+
+// ── INTERACTIVE RECIPE RENDER ──────────────────────────────────────
+function renderInteractive(html, data){
+  // Parse into DOM
+  const tmp = document.createElement('div');
+  tmp.innerHTML = html;
+
+  const bodyEl = document.getElementById('post-body');
+  bodyEl.innerHTML = '';
+
+  let ingredientSection = null;
+  let stepCount = 0;
+  let inIngredients = false;
+  let ingredientData = []; // {text, amounts}
+
+  // Walk through all nodes
+  Array.from(tmp.childNodes).forEach(node=>{
+    if(node.nodeType===3)return; // skip text nodes
+
+    const tag = node.tagName?.toLowerCase();
+    const text = node.textContent?.trim()||'';
+
+    // Detect ingredients section
+    if((tag==='h2'||tag==='h3')&&/ingredient/i.test(text)){
+      inIngredients=true;
+      // Add ingredients card later
+      if(!ingredientSection){
+        ingredientSection = document.createElement('div');
+        bodyEl.appendChild(ingredientSection);
+      }
+      return;
+    }
+    // End of ingredients section on next h2/h3
+    if(inIngredients&&(tag==='h2'||tag==='h3')&&!/ingredient/i.test(text)){
+      inIngredients=false;
+      renderIngredients(ingredientSection, ingredientData, text==='method'||/method|step|instruction/i.test(text));
+    }
+
+    // Collect ingredient list items
+    if(inIngredients&&tag==='ul'){
+      Array.from(node.querySelectorAll('li')).forEach(li=>{
+        ingredientData.push({text:li.innerHTML, raw:li.textContent.trim()});
+      });
+      return;
+    }
+
+    // Detect numbered steps (ol)
+    if(tag==='ol'){
+      const stepsWrap = document.createElement('div');
+      stepsWrap.className='interactive-steps';
+      Array.from(node.querySelectorAll('li')).forEach((li,i)=>{
+        stepCount++;
+        totalSteps++;
+        const card = buildStepCard(li.innerHTML, stepCount);
+        stepsWrap.appendChild(card);
+      });
+      bodyEl.appendChild(stepsWrap);
+      // Update hero step count
+      document.getElementById('ph-steps-meta').style.display='flex';
+      document.getElementById('ph-steps-count').textContent=totalSteps;
+      return;
+    }
+
+    // Everything else renders normally
+    bodyEl.appendChild(node.cloneNode(true));
+  });
+
+  // If ingredients were at end
+  if(inIngredients&&ingredientSection&&ingredientData.length){
+    renderIngredients(ingredientSection, ingredientData, false);
+  }
+
+  // Show toolbar
+  if(isRecipe){
+    document.getElementById('recipe-toolbar').style.display='';
+    const serNote = document.getElementById('scaler-note');
+    serNote.textContent = 'Drag to scale all amounts';
+  }
+
+  buildTOC();
+}
+
+function renderIngredients(container, items, hasTitle){
+  const card = document.createElement('div');
+  card.className='ingredient-card';
+  card.innerHTML=`<div class="ingredient-card-title">📋 Ingredients</div><ul class="ingredient-list" id="ingredient-list"></ul>`;
+  container.appendChild(card);
+
+  const list = card.querySelector('#ingredient-list');
+  allIngredients = [];
+
+  items.forEach(item=>{
+    const li = document.createElement('li');
+    li.className='ingredient-item';
+    // Parse amounts from text
+    const parsed = parseIngredient(item.raw);
+    li.innerHTML=`<span class="ingredient-amount" data-amounts='${JSON.stringify(parsed.amounts)}'>${parsed.amountText}</span><span class="ingredient-name">${parsed.name}</span>`;
+    list.appendChild(li);
+    allIngredients.push({amountEl:li.querySelector('.ingredient-amount'), amounts:parsed.amounts, baseAmounts:JSON.parse(JSON.stringify(parsed.amounts))});
+  });
+}
+
+function parseIngredient(text){
+  // Extract amounts: supports "450g", "2 cups", "1.5 tsp", "1/2 tbsp"
+  const pattern = /(\d+(?:[\/\.]\d+)?)\s*(g|kg|ml|l|tsp|tbsp|cup|cups|oz|lb|pinch|clove|cloves|large|small|medium)?/gi;
+  const amounts = [];
+  let amountText = '';
+  let name = text;
+
+  const match = text.match(/^([\d\/\.\s]*(g|kg|ml|l|tsp|tbsp|cup|cups|oz|lb|pinch)?)/i);
+  if(match&&match[0].trim()){
+    amountText = match[0].trim();
+    name = text.slice(amountText.length).trim().replace(/^[,—\-–]\s*/,'');
+
+    let m;
+    const p=/(\d+(?:[\/\.]\d+)?)\s*(g|kg|ml|l|tsp|tbsp|cup|cups|oz|lb|pinch)?/gi;
+    while((m=p.exec(amountText))!==null){
+      let val = m[1].includes('/')?eval(m[1]):parseFloat(m[1]);
+      amounts.push({value:val, unit:m[2]||''});
+    }
+  }else{
+    amountText = '';
+    name = text;
+  }
+
+  return{amountText:amountText||'—', name, amounts};
+}
+
+function buildStepCard(html, num){
+  // Detect timer hints in text (e.g. "30 minutes", "1 hour", "45 min")
+  const timerMatch = html.match(/(\d+)\s*(hour|hr|minute|min)/i);
+  let timerSeconds = 0;
+  let timerLabel = '';
+  if(timerMatch){
+    const val = parseInt(timerMatch[1]);
+    const unit = timerMatch[2].toLowerCase();
+    timerSeconds = unit.startsWith('h') ? val*3600 : val*60;
+    timerLabel = timerMatch[0];
+  }
+
+  const card = document.createElement('div');
+  card.className='step-card';
+  card.dataset.stepNum=num;
+
+  const timerBtn = timerSeconds>0?`<button class="step-timer-btn" onclick="startTimer(event,${timerSeconds},'Step ${num}: ${timerLabel}')" data-secs="${timerSeconds}">⏱ ${timerLabel}</button>`:'';
+
+  card.innerHTML=`
+    <div class="step-header">
+      <div class="step-check" onclick="toggleStep(this.closest('.step-card'))">
+        <span class="check-icon" style="display:none;color:#fff;font-size:14px">✓</span>
+      </div>
+      <span class="step-num">Step ${num}</span>
+      <div class="step-text">${html}</div>
+      ${timerBtn}
+    </div>`;
+
+  card.querySelector('.step-header').addEventListener('click', e=>{
+    if(e.target.closest('.step-timer-btn'))return;
+    toggleStep(card);
+  });
+
+  return card;
+}
+
+function toggleStep(card){
+  const wasDown = card.classList.contains('done');
+  card.classList.toggle('done');
+  const icon = card.querySelector('.check-icon');
+  icon.style.display = card.classList.contains('done')?'':'none';
+  completedSteps = document.querySelectorAll('.step-card.done').length;
+  updateProgress();
+}
+
+function updateProgress(){
+  const pct = totalSteps>0?Math.round((completedSteps/totalSteps)*100):0;
+  document.getElementById('prog-bar').style.width=pct+'%';
+  document.getElementById('prog-pct').textContent=pct+'%';
+}
+
+// ── INGREDIENT SCALER ──────────────────────────────────────────────
+function changeServings(delta){
+  const next = servingsCurrent + delta;
+  if(next<1||next>10)return;
+  servingsCurrent=next;
+  document.getElementById('servings-val').textContent=servingsCurrent;
+  const ratio = servingsCurrent/servingsBase;
+  allIngredients.forEach(({amountEl, baseAmounts})=>{
+    if(!baseAmounts.length)return;
+    let display = baseAmounts.map(a=>{
+      const scaled = a.value*ratio;
+      const neat = scaled%1===0?scaled:Math.round(scaled*100)/100;
+      return neat+(a.unit?(' '+a.unit):'');
+    }).join(' + ');
+    amountEl.textContent=display;
+  });
+}
+
+// ── TIMER ──────────────────────────────────────────────────────────
+function startTimer(e, secs, label){
+  e.stopPropagation();
+  timerSeconds = secs;
+  timerRunning = true;
+  clearInterval(timerInterval);
+  document.getElementById('timer-step-name').textContent=label;
+  document.getElementById('timer-popup').classList.add('active');
+  document.getElementById('timer-toggle-btn').textContent='Pause';
+  document.getElementById('timer-display').classList.remove('done');
+  updateTimerDisplay();
+  timerInterval=setInterval(()=>{
+    if(!timerRunning)return;
+    timerSeconds--;
+    updateTimerDisplay();
+    if(timerSeconds<=0){
+      clearInterval(timerInterval);
+      timerRunning=false;
+      document.getElementById('timer-display').classList.add('done');
+      document.getElementById('timer-display').textContent='Done! 🎉';
+      document.getElementById('timer-toggle-btn').textContent='Done';
+      // Vibrate if supported
+      if(navigator.vibrate)navigator.vibrate([300,100,300]);
+    }
+  },1000);
+}
+function updateTimerDisplay(){
+  const m=Math.floor(timerSeconds/60);
+  const s=timerSeconds%60;
+  document.getElementById('timer-display').textContent=m+':'+(s<10?'0':'')+s;
+}
+function toggleTimer(){
+  timerRunning=!timerRunning;
+  document.getElementById('timer-toggle-btn').textContent=timerRunning?'Pause':'Resume';
+}
+function resetTimer(){
+  clearInterval(timerInterval);
+  timerRunning=false;
+  timerSeconds=0;
+  document.getElementById('timer-display').textContent='0:00';
+  document.getElementById('timer-toggle-btn').textContent='Start';
+}
+function closeTimer(){
+  clearInterval(timerInterval);
+  timerRunning=false;
+  document.getElementById('timer-popup').classList.remove('active');
+}
+
+// ── TABLE OF CONTENTS ──────────────────────────────────────────────
+function buildTOC(){
+  const headings=document.querySelectorAll('#post-body h2, #post-body h3');
+  if(headings.length<3)return;
+  const toc=document.getElementById('toc-list');
+  const card=document.getElementById('toc-card');
+  card.style.display='';
+  headings.forEach((h,i)=>{
+    h.id='section-'+i;
+    const li=document.createElement('li');
+    const a=document.createElement('a');
+    a.href='#section-'+i;
+    a.textContent=h.textContent;
+    if(h.tagName==='H3')a.style.paddingLeft='12px';
+    li.appendChild(a);
+    toc.appendChild(li);
+  });
+  // Scroll spy
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('.toc-list a').forEach(a=>a.classList.remove('active-toc'));const link=toc.querySelector(`a[href="#${e.target.id}"]`);if(link)link.classList.add('active-toc')}});
+  },{rootMargin:'-20% 0px -70% 0px'});
+  headings.forEach(h=>obs.observe(h));
+}
+
+// ── RELATED POSTS ──────────────────────────────────────────────────
+function loadRelated(slug, category){
+  fetch('/posts/manifest.json').then(r=>r.json()).then(posts=>{
+    // Same category first, then any
+    const same=posts.filter(p=>p.slug!==slug&&p.category===category).slice(0,3);
+    const fill=posts.filter(p=>p.slug!==slug&&p.category!==category).slice(0,3-same.length);
+    const related=[...same,...fill].slice(0,3);
+    if(!related.length)return;
+
+    // Sidebar related
+    const sideEl=document.getElementById('sidebar-related');
+    related.forEach(p=>{
+      const imgStyle=getPostImg(p.slug,p.category);
+      const imgClass=imgStyle?'':catImgClass(p.category);
+      sideEl.innerHTML+=`<div class="related-item"><a href="/post.html?slug=${p.slug}" class="related-img ${imgClass}" style="${imgStyle}"></a><div><div class="related-cat">${p.category}</div><a href="/post.html?slug=${p.slug}" class="related-title">${p.title}</a></div></div>`;
+    });
+
+    // Bottom related
+    document.getElementById('related-section').style.display='';
+    document.getElementById('related-posts').innerHTML=related.map(buildCard).join('');
+  }).catch(()=>{});
+}
+
+// ── SHARE ──────────────────────────────────────────────────────────
+function sharePost(){
+  if(navigator.share){navigator.share({title:document.title,url:location.href})}
+  else{navigator.clipboard?.writeText(location.href);alert('Link copied!')}
+}
+
+// ── NEWSLETTER ────────────────────────────────────────────────────
+function handleSub(e){e.preventDefault();const btn=e.target.querySelector('button');const inp=e.target.querySelector('input[type="email"]');btn.textContent='Subscribed ✓';btn.style.background='#2D6A4F';inp.value='';inp.disabled=true;inp.placeholder="You're on the list!";setTimeout(()=>{btn.textContent='Subscribe';btn.style.background='';inp.disabled=false;inp.placeholder='Your email address'},4000);}
 </script>
-</body></html>
+</body>
+</html>
