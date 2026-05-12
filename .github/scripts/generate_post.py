@@ -7,7 +7,11 @@ from datetime import datetime
 from pathlib import Path
 
 client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
-import os script_dir = Path(__file__).parent.parent.parent posts_dir = script_dir / "posts" print(f"Posts directory: {posts_dir}")
+
+script_dir = Path(__file__).resolve().parent
+repo_root = script_dir.parent.parent
+posts_dir = repo_root / "posts"
+print(f"Posts directory: {posts_dir}")
 
 existing_titles = []
 existing_categories = []
@@ -30,31 +34,11 @@ chosen = random.choices(list(weights.keys()), weights=list(weights.values()), k=
 print(f"Writing category: {chosen}")
 
 instructions = {
-    'recipe': """Write a COMPLETE SOURDOUGH RECIPE with ALL of the following:
-- Yield (servings/loaves/pieces)
-- Full ingredients list with EXACT measurements in grams AND cups/tbsp
-- Step-by-step numbered method with timing for each step
-- At least one tip or callout
-- Storage instructions
-- At least one variation
-Choose something not already published. Options: sourdough pretzels, sourdough waffles, sourdough pita, sourdough crumpets, sourdough naan, sourdough dinner rolls, sourdough brioche, sourdough muffins, sourdough scones, sourdough tortillas, sourdough brownies, sourdough banana bread, sourdough crepes, sourdough hot cross buns, sourdough ciabatta.
-Minimum 700 words.""",
-    'beginner': """Write a comprehensive BEGINNER GUIDE on ONE specific sourdough topic not yet covered.
-Options: choosing the right flour, how temperature affects fermentation, how to read your dough, autolyse method, stretch and fold vs coil folding, shaping a boule, shaping a batard, scoring patterns, why steam matters, maintaining a starter long-term, baker's percentages explained.
-Must include: clear explanation, common mistakes, FAQ with 3+ questions, practical takeaways.
-Minimum 650 words.""",
-    'troubleshooting': """Write a TROUBLESHOOTING GUIDE for ONE specific problem not yet covered.
-Options: bread sticks to Dutch oven, loaf cracks on side not score, bread too pale, doesn't brown, crumb has huge holes but gummy, starter smells like acetone, crust softens after cooling, lopsided loaf, dough tears during shaping, scoring doesn't open up.
-For each cause: explain WHY, HOW to fix it, HOW to prevent it.
-Minimum 600 words.""",
-    'equipment': """Write an EQUIPMENT GUIDE on ONE item not yet covered.
-Options: bread lame buying guide, instant-read thermometer for bread, bench scraper uses, proofing box guide, baking steel vs Dutch oven, loaf pan materials, starter jar types, flour storage, kitchen scale comparison, oven thermometer importance.
-Include: honest pros/cons, specific products at budget/mid/premium price points.
-Minimum 600 words.""",
-    'advanced': """Write an ADVANCED TECHNIQUE guide on ONE topic not yet covered.
-Options: lamination technique, coil folding deep dive, open crumb scoring, building a levain, bassinage method, extended cold retard 72+ hours, shaping high-hydration dough, calculating desired dough temperature, feeding ratios explained, maintaining multiple starters.
-Include: science behind it, step-by-step, common mistakes, when to use it.
-Minimum 650 words."""
+    'recipe': """Write a COMPLETE SOURDOUGH RECIPE with ALL of the following:\n- Yield\n- Full ingredients with grams AND cups\n- Step-by-step numbered method with timing\n- At least one tip\n- Storage instructions\n- At least one variation\nChoose something not already published. Options: sourdough pretzels, sourdough waffles, sourdough pita, sourdough naan, sourdough dinner rolls, sourdough brioche, sourdough scones, sourdough tortillas, sourdough brownies, sourdough banana bread, sourdough crepes, sourdough ciabatta.\nMinimum 700 words.""",
+    'beginner': """Write a BEGINNER GUIDE on ONE sourdough topic not yet covered.\nOptions: choosing flour, temperature and fermentation, reading your dough, autolyse method, stretch and fold, shaping a boule, shaping a batard, scoring patterns, why steam matters, maintaining a starter, baker percentages.\nInclude: clear explanation, common mistakes, FAQ with 3 questions, practical takeaways.\nMinimum 650 words.""",
+    'troubleshooting': """Write a TROUBLESHOOTING GUIDE for ONE problem not yet covered.\nOptions: bread sticks to Dutch oven, loaf cracks on side, bread too pale, huge holes but gummy, starter smells like acetone, crust softens after cooling, lopsided loaf, scoring doesn't open up.\nFor each cause: explain WHY, HOW to fix, HOW to prevent.\nMinimum 600 words.""",
+    'equipment': """Write an EQUIPMENT GUIDE on ONE item not yet covered.\nOptions: bread lame guide, instant-read thermometer, bench scraper, proofing box, baking steel vs Dutch oven, loaf pan materials, starter jars, flour storage, kitchen scale comparison.\nInclude honest pros/cons and product recommendations at budget/mid/premium.\nMinimum 600 words.""",
+    'advanced': """Write an ADVANCED TECHNIQUE guide on ONE topic not yet covered.\nOptions: lamination, coil folding, open crumb scoring, building a levain, bassinage, 72 hour cold retard, shaping high-hydration dough, desired dough temperature, feeding ratios, multiple starters.\nInclude: science, step-by-step, common mistakes, when to use it.\nMinimum 650 words."""
 }
 
 prompt = f"""You are an expert sourdough baker writing for TheSourdoughGuide.com.
@@ -78,3 +62,15 @@ Respond with ONLY valid JSON (no markdown code blocks, no other text):
 }}"""
 
 print("Calling Claude API...")
+msg = client.messages.create(model="claude-sonnet-4-20250514", max_tokens=4000, messages=[{"role":"user","content":prompt}])
+raw = msg.content[0].text.strip()
+raw = re.sub(r'^```json\s*', '', raw)
+raw = re.sub(r'\s*```$', '', raw)
+data = json.loads(raw)
+print(f"Generated: [{data['category']}] {data['title']}")
+
+sl = re.sub(r'[^a-z0-9]+', '-', data['title'].lower()).strip('-')[:60]
+content = f"---\ntitle: {data['title']}\ndate: {datetime.now().strftime('%Y-%m-%d')}\ncategory: {data['category']}\nreadtime: {data['readtime']}\nexcerpt: {data['excerpt']}\n---\n\n{data['body']}"
+output_path = posts_dir / f"{sl}.md"
+output_path.write_text(content)
+print(f"Saved: {output_path}")
