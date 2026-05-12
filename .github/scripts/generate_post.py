@@ -6,7 +6,7 @@ import random
 from datetime import datetime
 from pathlib import Path
 
-client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+api_key = os.environ.get("ANTHROPIC_API_KEY", "") client = anthropic.Anthropic(api_key=api_key)
 
 script_dir = Path(__file__).resolve().parent
 repo_root = script_dir.parent.parent
@@ -62,7 +62,7 @@ Respond with ONLY valid JSON (no markdown code blocks, no other text):
 }}"""
 
 print("Calling Claude API...")
-msg = client.messages.create(model="claude-sonnet-4-20250514", max_tokens=4000, messages=[{"role":"user","content":prompt}])
+msg = client.messages.create(model="claude-opus-4-5", max_tokens=4000, messages=[{"role":"user","content":prompt}])
 raw = msg.content[0].text.strip()
 raw = re.sub(r'^```json\s*', '', raw)
 raw = re.sub(r'\s*```$', '', raw)
