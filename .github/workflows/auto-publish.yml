@@ -16,13 +16,18 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install anthropic
-      - run: python .github/scripts/generate_post.py
+      - name: Generate post
+        run: python .github/scripts/generate_post.py
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-      - run: python .github/scripts/rebuild_manifest.py
-      - run: |
+      - name: Rebuild manifest
+        run: python .github/scripts/rebuild_manifest.py
+      - name: Commit and push
+        run: |
           git config --global user.name "Sourdough Bot"
           git config --global user.email "bot@thesourdoughguide.com"
-          git add -A
+          git status
+          git add posts/
+          git status
           git diff --staged --quiet || git commit -m "Auto: new post"
           git push
