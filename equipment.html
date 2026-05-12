@@ -66,7 +66,7 @@ a{text-decoration:none;color:inherit}
 .nice-have{background:var(--green-bg);color:var(--green)}
 .advanced-badge{background:#F0F0FA;color:#4040A0}
 .equip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.equip-card{background:#fff;border:1.5px solid var(--border);border-radius:12px;overflow:hidden;transition:all .22s;position:relative;cursor:pointer}
+.equip-card{background:#fff;border:1.5px solid var(--border);border-radius:12px;overflow:hidden;transition:all .22s;position:relative;cursor:pointer;text-decoration:none}
 .equip-card:hover{box-shadow:0 12px 40px rgba(28,20,16,.12);transform:translateY(-3px);border-color:var(--border)}
 .equip-card.selected{border-color:var(--rust);box-shadow:0 0 0 2px var(--rust)}
 .equip-card[data-hidden="true"]{display:none}
@@ -498,8 +498,13 @@ function toggleCompareMode(){
   if(!compareMode){compareItems=[];updateCompareUI()}
   document.getElementById('compare-toggle-btn').style.color=compareMode?'var(--rust)':'';
 }
+const PRODUCT_URLS={"Lodge Enameled Cast Iron Dutch Oven": "https://www.lodgecastiron.com/products/enameled-dutch-oven", "Lodge Cast Iron Combo Cooker": "https://www.amazon.com/dp/B00006JSUA", "Challenger Bread Pan": "https://challengerbreadware.com/product/the-challenger-bread-pan/", "OXO Good Grips 11lb Scale": "https://www.oxo.com/11-lb-stainless-steel-food-scale-w-pull-out-display.html", "Any Accurate Digital Scale": "https://www.amazon.com/s?k=digital+kitchen+scale+1g+accuracy", "Round Rattan Banneton (9 inch)": "https://www.amazon.com/s?k=9+inch+round+banneton+proofing+basket", "Bench Scraper (Metal)": "https://www.amazon.com/s?k=metal+bench+scraper+baking", "Bread Lame (Scoring Tool)": "https://www.amazon.com/s?k=bread+lame+scoring+tool+sourdough"};
 function toggleCompare(card, name){
-  if(!compareMode)return;
+  if(!compareMode){
+    const url=PRODUCT_URLS[name];
+    if(url)window.open(url,'_blank');
+    return;
+  }
   const idx=compareItems.indexOf(name);
   if(idx>-1){
     compareItems.splice(idx,1);
