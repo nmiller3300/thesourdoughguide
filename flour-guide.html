@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sourdough Flour Substitution Guide | The Sourdough Guide</title>
+<meta name="description" content="What to use instead of bread flour. Complete sourdough flour substitution guide — all-purpose, whole wheat, rye, spelt, and more with adjustment tips.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--rust:#B5451B;--cream:#F5EDE0;--border:#E8E0D5;--text:#1C1410;--text2:#4A3728;--text3:#8B7355;--black:#0F0A07;--tan:#C49A6C;--off:#FAFAF7;--h:'DM Serif Display',Georgia,serif;--s:'Inter',system-ui,sans-serif}
+body{background:var(--off);color:var(--text);font-family:var(--s)}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+.nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{display:flex;align-items:center;height:64px;max-width:1200px;margin:0 auto;padding:0 24px}
+.nav-brand{display:flex;align-items:center;gap:10px}
+.nav-logo{width:34px;height:34px;background:var(--rust);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+.nav-title{font-family:var(--h);font-size:18px;color:var(--black)}
+.nav-links{display:flex;margin-left:auto;gap:4px}
+.nav-links a{font-size:12px;font-weight:500;color:var(--text2);padding:6px 12px;border-radius:6px;transition:all .15s}
+.nav-links a:hover{background:var(--cream);color:var(--rust)}
+.nav-links a.active{background:var(--rust);color:#fff}
+.nav-toggle{display:none;background:none;border:1px solid var(--border);border-radius:6px;padding:8px 10px;cursor:pointer;margin-left:auto;flex-direction:column;gap:4px}
+.nav-toggle span{display:block;width:18px;height:1.5px;background:var(--text)}
+.mob-nav{display:none;background:#fff;border-bottom:1px solid var(--border)}
+.mob-nav.open{display:block}
+.mob-nav a{display:block;font-size:14px;font-weight:500;color:var(--text2);padding:12px 24px;border-bottom:1px solid var(--border)}
+.page-hero{background:var(--black);padding:48px 0}
+.page-hero h1{font-family:var(--h);font-size:clamp(32px,5vw,52px);color:#fff;margin-bottom:8px;letter-spacing:-.02em}
+.page-hero p{font-size:15px;color:rgba(255,255,255,.6);max-width:500px;font-weight:300}
+
+/* PICKER */
+.picker-card{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:24px;margin:28px 0}
+.picker-title{font-family:var(--h);font-size:20px;color:var(--black);margin-bottom:16px}
+.flour-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin-bottom:20px}
+.flour-btn{background:var(--off);border:1.5px solid var(--border);border-radius:8px;padding:12px;cursor:pointer;text-align:center;transition:all .2s;font-family:var(--s)}
+.flour-btn:hover,.flour-btn.selected{border-color:var(--rust);background:var(--cream)}
+.flour-btn .f-icon{font-size:24px;display:block;margin-bottom:4px}
+.flour-btn .f-name{font-size:13px;font-weight:500;color:var(--text2)}
+.flour-btn .f-protein{font-size:10px;color:var(--text3);margin-top:2px}
+.flour-btn.selected .f-name{color:var(--rust)}
+
+/* RESULT PANEL */
+.result-panel{display:none;background:#fff;border:1.5px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:28px;animation:fadeIn .3s ease}
+.result-panel.show{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.result-header{background:var(--black);padding:20px 24px}
+.result-from-to{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.flour-pill{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:13px;font-weight:600;padding:6px 14px;border-radius:20px}
+.arrow{color:rgba(255,255,255,.5);font-size:18px}
+.result-body{padding:24px}
+.section-title{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:10px}
+.adjustment-list{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+.adj-item{display:flex;gap:10px;padding:12px 14px;background:var(--off);border-radius:7px;align-items:flex-start;font-size:13px;color:var(--text2);line-height:1.6}
+.adj-icon{flex-shrink:0;font-size:16px;margin-top:1px}
+.flavor-bar{display:flex;gap:3px;margin-bottom:20px;flex-wrap:wrap}
+.flavor-tag{font-size:11px;padding:4px 10px;border-radius:20px;background:var(--cream);color:var(--text2)}
+.compat-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+.compat-card{border-radius:8px;padding:14px}
+.compat-easy{background:#E8F5EE;border:1px solid #A8D5B5}
+.compat-hard{background:#FEF3F0;border:1px solid #F2C4B8}
+.compat-title{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+.compat-easy .compat-title{color:#1A5C30}
+.compat-hard .compat-title{color:var(--rust)}
+.compat-item{font-size:12px;margin-bottom:4px;line-height:1.5}
+.compat-easy .compat-item{color:#1A3A25}
+.compat-hard .compat-item{color:#5A1A0A}
+
+/* FLOUR GUIDE TABLE */
+.flour-table-card{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:24px;margin-bottom:28px;overflow-x:auto}
+.flour-table{width:100%;border-collapse:collapse;font-size:13px}
+.flour-table th{background:var(--black);color:#fff;padding:10px 14px;text-align:left;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+.flour-table td{padding:12px 14px;border-bottom:1px solid var(--border);vertical-align:top}
+.flour-table tr:last-child td{border-bottom:none}
+.flour-table tr:hover td{background:var(--off)}
+.difficulty-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px}
+.diff-easy{background:#E8F5EE;color:#1A5C30}
+.diff-medium{background:#FFF8E6;color:#A07010}
+.diff-hard{background:#FEF3F0;color:var(--rust)}
+
+@media(max-width:640px){.nav-links{display:none}.nav-toggle{display:flex}.wrap{padding:0 16px}.compat-grid{grid-template-columns:1fr}.flour-grid{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand"><div class="nav-logo">🌾</div><div class="nav-title">The Sourdough Guide</div></a>
+    <nav class="nav-links">
+      <a href="/beginner.html">Start Here</a><a href="/recipes.html?cat=recipe">Recipes</a>
+      <a href="/troubleshooting.html">Troubleshooting</a><a href="/equipment.html">Equipment</a>
+      <a href="/tools.html" class="active">Tools</a><a href="/assistant.html">Doughy AI</a>
+    </nav>
+    <button class="nav-toggle" onclick="this.closest('.nav').querySelector('.mob-nav').classList.toggle('open')"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mob-nav">
+    <a href="/beginner.html">Start Here</a><a href="/recipes.html?cat=recipe">Recipes</a>
+    <a href="/troubleshooting.html">Troubleshooting</a><a href="/equipment.html">Equipment</a>
+    <a href="/tools.html">Tools</a><a href="/assistant.html">Doughy AI</a>
+  </nav>
+</header>
+
+<div class="page-hero"><div class="wrap">
+  <h1>Flour Substitution Guide</h1>
+  <p>Pick what you have, see what to substitute and how to adjust. Every flour compared.</p>
+</div></div>
+
+<div class="wrap" style="padding-bottom:60px">
+
+  <div class="picker-card">
+    <div class="picker-title">I want to replace...</div>
+    <div class="flour-grid" id="from-grid"></div>
+    <div style="display:none" id="to-section">
+      <div class="picker-title" style="font-size:16px;margin-bottom:12px">...with</div>
+      <div class="flour-grid" id="to-grid"></div>
+    </div>
+  </div>
+
+  <div class="result-panel" id="result-panel">
+    <div class="result-header">
+      <div class="result-from-to">
+        <span class="flour-pill" id="r-from"></span>
+        <span class="arrow">→</span>
+        <span class="flour-pill" id="r-to"></span>
+      </div>
+    </div>
+    <div class="result-body">
+      <div class="section-title">Adjustments needed</div>
+      <div class="adjustment-list" id="r-adjustments"></div>
+      <div class="section-title">Flavor impact</div>
+      <div class="flavor-bar" id="r-flavors"></div>
+      <div class="compat-grid">
+        <div class="compat-card compat-easy">
+          <div class="compat-title">✅ Works well for</div>
+          <div id="r-works"></div>
+        </div>
+        <div class="compat-card compat-hard">
+          <div class="compat-title">⚠️ Be careful with</div>
+          <div id="r-careful"></div>
+        </div>
+      </div>
+      <p style="font-size:12px;color:var(--text3);font-style:italic" id="r-note"></p>
+    </div>
+  </div>
+
+  <div class="flour-table-card">
+    <h2 style="font-family:var(--h);font-size:20px;color:var(--black);margin-bottom:16px">Quick Reference: All Flours</h2>
+    <table class="flour-table">
+      <thead><tr>
+        <th>Flour</th><th>Protein %</th><th>Water Absorption</th><th>Flavor</th><th>Difficulty</th><th>Best for</th>
+      </tr></thead>
+      <tbody>
+        <tr><td><strong>Bread Flour</strong></td><td>12-13%</td><td>70-80%</td><td>Neutral, mild</td><td><span class="difficulty-badge diff-easy">Easy</span></td><td>Classic sourdough, all recipes</td></tr>
+        <tr><td><strong>All-Purpose Flour</strong></td><td>10-12%</td><td>65-75%</td><td>Neutral</td><td><span class="difficulty-badge diff-easy">Easy</span></td><td>Beginner loaves, discard recipes</td></tr>
+        <tr><td><strong>Whole Wheat Flour</strong></td><td>13-14%</td><td>75-85%</td><td>Nutty, earthy</td><td><span class="difficulty-badge diff-medium">Medium</span></td><td>Whole wheat loaves, flavor enhancement</td></tr>
+        <tr><td><strong>Dark Rye Flour</strong></td><td>8-9%</td><td>85-100%</td><td>Intense, tangy</td><td><span class="difficulty-badge diff-hard">Experienced</span></td><td>Rye bread, starter feeding</td></tr>
+        <tr><td><strong>Spelt Flour</strong></td><td>13-15%</td><td>70-80%</td><td>Sweet, nutty</td><td><span class="difficulty-badge diff-medium">Medium</span></td><td>Artisan loaves, adding sweetness</td></tr>
+        <tr><td><strong>Einkorn Flour</strong></td><td>14-16%</td><td>60-70%</td><td>Buttery, rich</td><td><span class="difficulty-badge diff-hard">Experienced</span></td><td>Heritage grain loaves</td></tr>
+        <tr><td><strong>Semolina Flour</strong></td><td>12-13%</td><td>65-75%</td><td>Earthy, sweet</td><td><span class="difficulty-badge diff-medium">Medium</span></td><td>Italian-style breads, dusting</td></tr>
+        <tr><td><strong>High-Extraction Flour</strong></td><td>12-14%</td><td>75-85%</td><td>Complex, wheaty</td><td><span class="difficulty-badge diff-medium">Medium</span></td><td>Artisan loaves, added complexity</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+const FLOURS = [
+  {id:'bread',icon:'🌾',name:'Bread Flour',protein:'12-13%'},
+  {id:'ap',icon:'🍚',name:'All-Purpose Flour',protein:'10-12%'},
+  {id:'whole-wheat',icon:'🌿',name:'Whole Wheat',protein:'13-14%'},
+  {id:'rye',icon:'🌰',name:'Rye Flour',protein:'8-9%'},
+  {id:'spelt',icon:'🌱',name:'Spelt Flour',protein:'13-15%'},
+  {id:'einkorn',icon:'🏺',name:'Einkorn',protein:'14-16%'},
+];
+
+const SUBS = {
+  'bread→ap': {
+    adjustments:[
+      {icon:'💧',text:'Reduce water by 3-5%. All-purpose absorbs slightly less water than bread flour.'},
+      {icon:'🤲',text:'Add 3-4g vital wheat gluten per 100g all-purpose to restore gluten strength (optional but helpful).'},
+      {icon:'⏱',text:'Bulk ferment may be slightly faster — check at 4.5 hours instead of 5.'},
+    ],
+    flavors:['Similar flavor','Slightly softer crumb','Good overall'],
+    works:['Beginner loaves\nDiscard recipes\nFocaccia\nPizza dough'],
+    careful:['Very open crumb goals\nHigh hydration (above 78%)'],
+    note:'All-purpose is a perfectly fine substitute for bread flour in most recipes. The loaf will be slightly less chewy with a more tender crumb.'
+  },
+  'bread→whole-wheat': {
+    adjustments:[
+      {icon:'💧',text:'Increase water by 5-8%. Whole wheat bran absorbs significantly more water than white flour.'},
+      {icon:'🌾',text:'Start with 25-30% whole wheat blend (75% bread flour + 25% whole wheat). Go 100% only when experienced.'},
+      {icon:'⏱',text:'Fermentation is faster with whole wheat — reduce bulk ferment time by 30-60 minutes.'},
+      {icon:'🔬',text:'Autolyse is especially beneficial with whole wheat — the bran needs extra time to hydrate.'},
+    ],
+    flavors:['Nutty','Earthy','More complex','Slightly denser'],
+    works:['Hearty everyday bread\nAdded nutrition\nRicher flavor profile\nCountry-style loaves'],
+    careful:['Very open crumb\nHigh hydration blends\n100% whole wheat for beginners'],
+    note:'Whole wheat flour makes dough stickier and ferments faster. Start with a blend and work toward higher percentages as your technique develops.'
+  },
+  'bread→rye': {
+    adjustments:[
+      {icon:'💧',text:'Increase water significantly — rye absorbs 20-30% more water than bread flour.'},
+      {icon:'🌾',text:'Use no more than 20-30% rye in a blend with bread flour for your first rye loaves.'},
+      {icon:'⏱',text:'Fermentation is dramatically faster with rye. Reduce bulk by 1-2 hours.'},
+      {icon:'⚠️',text:'Rye contains less gluten and won\'t form a windowpane — expect a different texture.'},
+    ],
+    flavors:['Intense','Tangy','Earthy','Complex','Slightly sour'],
+    works:['Dark rye bread\nScandinavian-style loaves\nAdded tang\nStarter feeding'],
+    careful:['100% rye for beginners\nHigh-rise loaves\nOpen crumb goals'],
+    note:'Rye is a very different flour — expect a denser, stickier dough that ferments quickly. Use it in blends first to understand how it behaves.'
+  },
+  'bread→spelt': {
+    adjustments:[
+      {icon:'💧',text:'Reduce water by 5-10%. Spelt absorbs less water and produces a softer dough.'},
+      {icon:'🤲',text:'Handle gently — spelt gluten is more fragile and tears more easily than bread flour.'},
+      {icon:'⏱',text:'Fermentation is slightly faster with spelt — keep a close eye on bulk progress.'},
+      {icon:'🔪',text:'Score more gently — spelt dough has less surface tension and can deflate with aggressive scoring.'},
+    ],
+    flavors:['Sweet','Nutty','Mild','Slightly buttery'],
+    works:['Heritage grain loaves\nFlavored artisan breads\nPeople avoiding modern wheat'],
+    careful:['Very high hydration\nLong cold proofs\nAggressive shaping'],
+    note:'Spelt produces a delicious, slightly sweet loaf. The gluten is more delicate than modern wheat, so treat the dough gently at all stages.'
+  },
+  'ap→bread': {
+    adjustments:[
+      {icon:'💧',text:'Increase water by 3-5%. Bread flour absorbs more water than all-purpose.'},
+      {icon:'🕐',text:'Bulk fermentation may take slightly longer — the higher protein flour needs more time.'},
+      {icon:'✅',text:'No other changes needed. Bread flour is a direct upgrade with better structure.'},
+    ],
+    flavors:['Chewier','More structured','Better crust','Slightly more volume'],
+    works:['All sourdough recipes\nHigh hydration doughs\nImproved oven spring'],
+    careful:['Nothing — this is an improvement over all-purpose for most sourdough'],
+    note:'Switching to bread flour is generally an upgrade. Expect better oven spring, a chewier crumb, and easier shaping at higher hydrations.'
+  },
+};
+
+let fromFlour = null;
+let toFlour = null;
+
+function buildGrid(gridId, onSelect, excluding){
+  const grid = document.getElementById(gridId);
+  grid.innerHTML = FLOURS.filter(f=>f.id !== excluding).map(f=>`
+    <button class="flour-btn" id="${gridId}-${f.id}" onclick="${onSelect}('${f.id}')">
+      <span class="f-icon">${f.icon}</span>
+      <div class="f-name">${f.name}</div>
+      <div class="f-protein">${f.protein} protein</div>
+    </button>`).join('');
+}
+
+function selectFrom(id){
+  fromFlour = id;
+  document.querySelectorAll('#from-grid .flour-btn').forEach(b=>b.classList.remove('selected'));
+  document.getElementById(`from-grid-${id}`).classList.add('selected');
+  document.getElementById('to-section').style.display='';
+  buildGrid('to-grid','selectTo',id);
+  document.getElementById('result-panel').classList.remove('show');
+  toFlour = null;
+}
+
+function selectTo(id){
+  toFlour = id;
+  document.querySelectorAll('#to-grid .flour-btn').forEach(b=>b.classList.remove('selected'));
+  document.getElementById(`to-grid-${id}`).classList.add('selected');
+  showResult();
+}
+
+function showResult(){
+  const key = `${fromFlour}→${toFlour}`;
+  const fromF = FLOURS.find(f=>f.id===fromFlour);
+  const toF = FLOURS.find(f=>f.id===toFlour);
+  
+  document.getElementById('r-from').textContent = fromF.name;
+  document.getElementById('r-to').textContent = toF.name;
+
+  const sub = SUBS[key];
+  if(sub){
+    document.getElementById('r-adjustments').innerHTML = sub.adjustments.map(a=>`
+      <div class="adj-item"><span class="adj-icon">${a.icon}</span><span>${a.text}</span></div>`).join('');
+    document.getElementById('r-flavors').innerHTML = sub.flavors.map(f=>`<span class="flavor-tag">${f}</span>`).join('');
+    document.getElementById('r-works').innerHTML = sub.works.map(w=>`<div class="compat-item">${w}</div>`).join('');
+    document.getElementById('r-careful').innerHTML = sub.careful.map(c=>`<div class="compat-item">${c}</div>`).join('');
+    document.getElementById('r-note').textContent = sub.note;
+  } else {
+    document.getElementById('r-adjustments').innerHTML = `<div class="adj-item"><span class="adj-icon">💡</span><span>Substituting ${fromF.name} with ${toF.name} requires experimentation. Start with a 20-25% blend of ${toF.name} with ${fromF.name} and adjust from there. Hydration, fermentation timing, and handling will all need adjustment based on how the dough behaves.</span></div>`;
+    document.getElementById('r-flavors').innerHTML = `<span class="flavor-tag">Varies</span><span class="flavor-tag">Experiment needed</span>`;
+    document.getElementById('r-works').innerHTML = `<div class="compat-item">Start with a blend</div><div class="compat-item">20-25% substitute</div>`;
+    document.getElementById('r-careful').innerHTML = `<div class="compat-item">100% substitution</div><div class="compat-item">First bake at high hydration</div>`;
+    document.getElementById('r-note').textContent = `No specific guide for this combination yet. Ask Doughy AI for tailored advice on this substitution.`;
+  }
+
+  document.getElementById('result-panel').classList.add('show');
+  document.getElementById('result-panel').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+buildGrid('from-grid','selectFrom',null);
+</script>
+</body>
+</html>

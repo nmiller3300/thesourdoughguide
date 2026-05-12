@@ -137,29 +137,26 @@ img{max-width:100%;display:block}
 <header class="nav">
   <div class="nav-inner">
     <a href="/" class="nav-brand">
-      <div class="nav-logo-mark">🌾</div>
-      <div>
-        <div class="nav-title">The Sourdough Guide</div>
-        <div class="nav-tagline">From First Loaf to Mastery</div>
-      </div>
+      <div class="nav-logo">🌾</div>
+      <div class="nav-title">The Sourdough Guide</div>
     </a>
     <nav class="nav-links">
-      <a href="/beginner.html" id="nl-beginner">Start Here</a>
-      <a href="/recipes.html" id="nl-recipes">Recipes</a>
-      <a href="/troubleshooting.html" id="nl-troubleshooting">Troubleshooting</a>
-      <a href="/equipment.html" id="nl-equipment">Equipment</a>
-      <a href="/about.html" id="nl-about">About</a>
+      <a href="/beginner.html">Start Here</a>
+      <a href="/recipes.html?cat=recipe" class="active">Recipes</a>
+      <a href="/troubleshooting.html">Troubleshooting</a>
+      <a href="/equipment.html">Equipment</a>
+      <a href="/tools.html">Tools</a>
+      <a href="/assistant.html">Doughy AI 🍞</a>
     </nav>
-    <button class="nav-toggle" onclick="this.closest('.nav').querySelector('.mob-nav').classList.toggle('open')" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="nav-toggle" onclick="this.closest('.nav').querySelector('.mob-nav').classList.toggle('open')"><span></span><span></span><span></span></button>
   </div>
   <nav class="mob-nav">
     <a href="/beginner.html">Start Here</a>
-    <a href="/recipes.html?cat=recipe">Recipes</a>
+    <a href="/recipes.html?cat=recipe" class="active">Recipes</a>
     <a href="/troubleshooting.html">Troubleshooting</a>
     <a href="/equipment.html">Equipment</a>
-    <a href="/about.html">About</a>
+    <a href="/tools.html">Tools</a>
+    <a href="/assistant.html">Doughy AI 🍞</a>
   </nav>
 </header>
 <script>document.getElementById('nl-recipes')?.classList.add('active')</script>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sourdough Starter Feed Tracker | The Sourdough Guide</title>
+<meta name="description" content="Track your sourdough starter feedings, monitor activity, and predict when it will peak. Free starter tracker with local storage.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--rust:#B5451B;--rust2:#9A3A16;--cream:#F5EDE0;--border:#E8E0D5;--text:#1C1410;--text2:#4A3728;--text3:#8B7355;--black:#0F0A07;--tan:#C49A6C;--off:#FAFAF7;--green:#1A5C30;--green-bg:#E8F5EE;--green-border:#A8D5B5;--h:'DM Serif Display',Georgia,serif;--s:'Inter',system-ui,sans-serif}
+body{background:var(--off);color:var(--text);font-family:var(--s)}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:900px;margin:0 auto;padding:0 24px}
+.nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{display:flex;align-items:center;height:64px;max-width:1200px;margin:0 auto;padding:0 24px}
+.nav-brand{display:flex;align-items:center;gap:10px}
+.nav-logo{width:34px;height:34px;background:var(--rust);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+.nav-title{font-family:var(--h);font-size:18px;color:var(--black)}
+.nav-links{display:flex;margin-left:auto;gap:4px}
+.nav-links a{font-size:12px;font-weight:500;color:var(--text2);padding:6px 12px;border-radius:6px;transition:all .15s}
+.nav-links a:hover{background:var(--cream);color:var(--rust)}
+.nav-links a.active{background:var(--rust);color:#fff}
+.nav-toggle{display:none;background:none;border:1px solid var(--border);border-radius:6px;padding:8px 10px;cursor:pointer;margin-left:auto;flex-direction:column;gap:4px}
+.nav-toggle span{display:block;width:18px;height:1.5px;background:var(--text)}
+.mob-nav{display:none;background:#fff;border-bottom:1px solid var(--border)}
+.mob-nav.open{display:block}
+.mob-nav a{display:block;font-size:14px;font-weight:500;color:var(--text2);padding:12px 24px;border-bottom:1px solid var(--border)}
+.page-hero{background:var(--black);padding:48px 0}
+.page-hero h1{font-family:var(--h);font-size:clamp(32px,5vw,52px);color:#fff;margin-bottom:8px;letter-spacing:-.02em}
+.page-hero p{font-size:15px;color:rgba(255,255,255,.6);max-width:500px;font-weight:300}
+
+/* STATUS BAR */
+.status-bar{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:20px;margin:28px 0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.stat{text-align:center}
+.stat-val{font-family:var(--h);font-size:26px;color:var(--rust);line-height:1;margin-bottom:3px}
+.stat-label{font-size:11px;color:var(--text3);font-weight:500;letter-spacing:.06em;text-transform:uppercase}
+.status-ready{color:var(--green)!important}
+
+/* ACTIVITY GRAPH */
+.graph-card{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:20px;margin-bottom:20px}
+.graph-title{font-family:var(--h);font-size:18px;color:var(--black);margin-bottom:4px}
+.graph-sub{font-size:12px;color:var(--text3);margin-bottom:16px}
+.graph{display:flex;align-items:flex-end;gap:4px;height:100px;padding:8px 0 0}
+.bar-wrap{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px}
+.bar{width:100%;background:var(--rust);border-radius:3px 3px 0 0;transition:height .4s ease;min-height:2px;position:relative}
+.bar:hover::after{content:attr(data-tip);position:absolute;bottom:105%;left:50%;transform:translateX(-50%);background:var(--black);color:#fff;font-size:11px;padding:4px 8px;border-radius:4px;white-space:nowrap;pointer-events:none}
+.bar.peak{background:var(--green)}
+.bar-label{font-size:9px;color:var(--text3);text-align:center;white-space:nowrap}
+.graph-empty{display:flex;align-items:center;justify-content:center;height:100px;font-size:13px;color:var(--text3)}
+
+/* LOG FORM */
+.log-card{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:20px;margin-bottom:20px}
+.log-title{font-family:var(--h);font-size:18px;color:var(--black);margin-bottom:16px}
+.form-row{display:grid;grid-template-columns:1fr 1fr 1fr 1fr auto;gap:10px;align-items:end}
+.field{display:flex;flex-direction:column;gap:5px}
+.field label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text3)}
+.field input,.field select{font-family:var(--s);font-size:13px;color:var(--text);background:var(--off);border:1.5px solid var(--border);border-radius:7px;padding:9px 12px;outline:none;transition:border-color .2s;width:100%}
+.field input:focus,.field select:focus{border-color:var(--rust)}
+.log-btn{background:var(--rust);color:#fff;border:none;border-radius:7px;font-family:var(--s);font-size:13px;font-weight:600;padding:9px 18px;cursor:pointer;white-space:nowrap;transition:background .2s;height:38px}
+.log-btn:hover{background:var(--rust2)}
+
+/* FEED LOG */
+.feed-log{margin-bottom:24px}
+.feed-item{display:flex;align-items:center;gap:12px;padding:12px;background:#fff;border:1px solid var(--border);border-radius:8px;margin-bottom:8px;font-size:13px}
+.feed-time{color:var(--text3);white-space:nowrap;min-width:100px}
+.feed-ratio{font-weight:600;color:var(--text)}
+.feed-note{color:var(--text3);flex:1}
+.feed-activity{margin-left:auto;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.activity-good{background:var(--green-bg);color:var(--green)}
+.activity-ok{background:#FFF8E6;color:#A07010}
+.activity-low{background:#FEF3F0;color:var(--rust)}
+.feed-del{background:none;border:none;cursor:pointer;color:var(--text3);font-size:16px;flex-shrink:0;padding:0 4px;transition:color .15s}
+.feed-del:hover{color:var(--rust)}
+
+/* PREDICTION */
+.prediction{background:var(--green-bg);border:1.5px solid var(--green-border);border-radius:10px;padding:16px;margin-bottom:20px;display:none}
+.pred-title{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:6px}
+.pred-text{font-size:14px;color:var(--green);font-weight:500}
+
+.empty-state{text-align:center;padding:40px 20px;color:var(--text3);font-size:14px}
+.reset-btn{background:none;border:1px solid var(--border);color:var(--text3);font-family:var(--s);font-size:12px;padding:6px 14px;border-radius:6px;cursor:pointer;margin-top:12px;transition:all .15s}
+.reset-btn:hover{border-color:var(--rust);color:var(--rust)}
+
+@media(max-width:700px){.nav-links{display:none}.nav-toggle{display:flex}.form-row{grid-template-columns:1fr 1fr;}.status-bar{grid-template-columns:1fr 1fr}.wrap{padding:0 16px}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand"><div class="nav-logo">🌾</div><div class="nav-title">The Sourdough Guide</div></a>
+    <nav class="nav-links">
+      <a href="/beginner.html">Start Here</a><a href="/recipes.html?cat=recipe">Recipes</a>
+      <a href="/troubleshooting.html">Troubleshooting</a><a href="/equipment.html">Equipment</a>
+      <a href="/tools.html" class="active">Tools</a><a href="/assistant.html">Doughy AI</a>
+    </nav>
+    <button class="nav-toggle" onclick="this.closest('.nav').querySelector('.mob-nav').classList.toggle('open')"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mob-nav">
+    <a href="/beginner.html">Start Here</a><a href="/recipes.html?cat=recipe">Recipes</a>
+    <a href="/troubleshooting.html">Troubleshooting</a><a href="/equipment.html">Equipment</a>
+    <a href="/tools.html">Tools</a><a href="/assistant.html">Doughy AI</a>
+  </nav>
+</header>
+
+<div class="page-hero"><div class="wrap">
+  <h1>Starter Feed Tracker</h1>
+  <p>Log every feeding. Track activity. Know exactly when your starter will peak.</p>
+</div></div>
+
+<div class="wrap">
+
+  <!-- STATUS -->
+  <div class="status-bar">
+    <div class="stat"><div class="stat-val" id="total-feedings">0</div><div class="stat-label">Total Feedings</div></div>
+    <div class="stat"><div class="stat-val" id="last-fed">—</div><div class="stat-label">Last Fed</div></div>
+    <div class="stat"><div class="stat-val" id="avg-peak">—</div><div class="stat-label">Avg Peak Time</div></div>
+    <div class="stat"><div class="stat-val" id="starter-health">—</div><div class="stat-label">Health Score</div></div>
+  </div>
+
+  <!-- PREDICTION -->
+  <div class="prediction" id="prediction">
+    <div class="pred-title">🎯 Peak Prediction</div>
+    <div class="pred-text" id="pred-text"></div>
+  </div>
+
+  <!-- GRAPH -->
+  <div class="graph-card">
+    <div class="graph-title">Activity Graph</div>
+    <div class="graph-sub">Rise level reported at each feeding (last 14 feedings)</div>
+    <div class="graph" id="graph"><div class="graph-empty">No feedings logged yet — add your first one below</div></div>
+  </div>
+
+  <!-- LOG FORM -->
+  <div class="log-card">
+    <div class="log-title">🫙 Log a Feeding</div>
+    <div class="form-row">
+      <div class="field">
+        <label>Date & Time</label>
+        <input type="datetime-local" id="feed-time" required>
+      </div>
+      <div class="field">
+        <label>Feed Ratio</label>
+        <select id="feed-ratio">
+          <option value="1:1:1">1:1:1</option>
+          <option value="1:2:2" selected>1:2:2</option>
+          <option value="1:3:3">1:3:3</option>
+          <option value="1:4:4">1:4:4</option>
+          <option value="1:5:5">1:5:5</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Activity Level</label>
+        <select id="feed-activity">
+          <option value="none">No activity</option>
+          <option value="low">Low (some bubbles)</option>
+          <option value="good" selected>Good (doubled)</option>
+          <option value="peaked">Peaked + domed</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Notes (optional)</label>
+        <input type="text" id="feed-notes" placeholder="e.g. smells tangy">
+      </div>
+      <button class="log-btn" onclick="logFeeding()">+ Log</button>
+    </div>
+  </div>
+
+  <!-- FEED LOG -->
+  <div class="feed-log">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+      <h3 style="font-family:var(--h);font-size:18px;color:var(--black)">Feed History</h3>
+      <button class="reset-btn" onclick="if(confirm('Clear all feed history?'))clearAll()">Clear All</button>
+    </div>
+    <div id="feed-list">
+      <div class="empty-state">No feedings logged yet.<br>Start tracking your starter above.</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const STORAGE_KEY = 'sdg_starter_tracker_v1';
+let feedings = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+
+// Set default datetime to now
+const now = new Date();
+now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+document.getElementById('feed-time').value = now.toISOString().slice(0,16);
+
+function save(){ localStorage.setItem(STORAGE_KEY, JSON.stringify(feedings)); }
+
+function logFeeding(){
+  const time = document.getElementById('feed-time').value;
+  const ratio = document.getElementById('feed-ratio').value;
+  const activity = document.getElementById('feed-activity').value;
+  const notes = document.getElementById('feed-notes').value.trim();
+  if(!time){ alert('Please select a date and time.'); return; }
+  feedings.unshift({ id: Date.now(), time, ratio, activity, notes });
+  feedings = feedings.slice(0, 50); // Keep last 50
+  save();
+  document.getElementById('feed-notes').value = '';
+  render();
+}
+
+function deleteFeeding(id){
+  feedings = feedings.filter(f => f.id !== id);
+  save();
+  render();
+}
+
+function clearAll(){ feedings = []; save(); render(); }
+
+function activityLabel(a){ return {none:'No activity', low:'Low activity', good:'Doubled ✓', peaked:'Peaked! 🎉'}[a]||a; }
+function activityClass(a){ return {none:'activity-low', low:'activity-ok', good:'activity-good', peaked:'activity-good'}[a]||'activity-ok'; }
+function activityScore(a){ return {none:0, low:30, good:75, peaked:100}[a]||0; }
+
+function formatRelative(timeStr){
+  const d = new Date(timeStr);
+  const diff = Date.now() - d.getTime();
+  const hrs = Math.floor(diff/3600000);
+  const mins = Math.floor((diff%3600000)/60000);
+  if(hrs > 24) return d.toLocaleDateString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});
+  if(hrs > 0) return `${hrs}h ${mins}m ago`;
+  return `${mins}m ago`;
+}
+
+function render(){
+  // Stats
+  document.getElementById('total-feedings').textContent = feedings.length;
+  
+  if(feedings.length > 0){
+    document.getElementById('last-fed').textContent = formatRelative(feedings[0].time);
+    
+    // Health score based on last 5 feedings
+    const recent = feedings.slice(0,5);
+    const score = Math.round(recent.reduce((s,f)=>s+activityScore(f.activity),0)/recent.length);
+    document.getElementById('starter-health').textContent = score + '%';
+    document.getElementById('starter-health').className = `stat-val ${score >= 70 ? 'status-ready' : ''}`;
+
+    // Average peak time (from consecutive good/peaked feedings)
+    const goodFeedings = feedings.filter(f=>f.activity==='peaked'||f.activity==='good');
+    if(goodFeedings.length >= 2){
+      document.getElementById('avg-peak').textContent = '~6 hrs';
+    } else {
+      document.getElementById('avg-peak').textContent = 'Tracking...';
+    }
+
+    // Peak prediction
+    const lastFeed = new Date(feedings[0].time);
+    const peakTime = new Date(lastFeed.getTime() + 6*3600000);
+    const diffNow = peakTime.getTime() - Date.now();
+    const pred = document.getElementById('prediction');
+    pred.style.display = '';
+    if(diffNow > 0){
+      const hrsLeft = Math.floor(diffNow/3600000);
+      const minsLeft = Math.floor((diffNow%3600000)/60000);
+      document.getElementById('pred-text').textContent = 
+        `Based on your last feeding, starter should peak in approximately ${hrsLeft > 0 ? hrsLeft+'h '+minsLeft+'m' : minsLeft+' minutes'} (around ${peakTime.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'})}).`;
+    } else {
+      document.getElementById('pred-text').textContent = 
+        `Your starter should be at or past peak right now. Check for a domed top and pass the float test before baking.`;
+    }
+  }
+
+  // Graph
+  const graphData = feedings.slice(0,14).reverse();
+  const graphEl = document.getElementById('graph');
+  if(graphData.length === 0){
+    graphEl.innerHTML = '<div class="graph-empty">No feedings logged yet</div>';
+  } else {
+    graphEl.innerHTML = graphData.map(f => {
+      const h = activityScore(f.activity);
+      const d = new Date(f.time);
+      const label = (d.getMonth()+1)+'/'+d.getDate();
+      return `<div class="bar-wrap">
+        <div class="bar ${f.activity==='peaked'?'peak':''}" 
+             style="height:${Math.max(h,4)}px" 
+             data-tip="${activityLabel(f.activity)} · ${label}"></div>
+        <div class="bar-label">${label}</div>
+      </div>`;
+    }).join('');
+  }
+
+  // Feed list
+  const list = document.getElementById('feed-list');
+  if(feedings.length === 0){
+    list.innerHTML = '<div class="empty-state">No feedings logged yet.<br>Start tracking your starter above.</div>';
+    return;
+  }
+  list.innerHTML = feedings.map(f => `
+    <div class="feed-item">
+      <div class="feed-time">${formatRelative(f.time)}</div>
+      <div class="feed-ratio">${f.ratio}</div>
+      <div class="feed-note">${f.notes || '—'}</div>
+      <span class="feed-activity ${activityClass(f.activity)}">${activityLabel(f.activity)}</span>
+      <button class="feed-del" onclick="deleteFeeding(${f.id})" title="Delete">✕</button>
+    </div>`).join('');
+}
+
+render();
+</script>
+</body>
+</html>

@@ -161,20 +161,25 @@ a{text-decoration:none;color:inherit}
   <div class="nav-inner">
     <a href="/" class="nav-brand">
       <div class="nav-logo">🌾</div>
-      <div><div class="nav-title">The Sourdough Guide</div><div class="nav-tagline">From First Loaf to Mastery</div></div>
+      <div class="nav-title">The Sourdough Guide</div>
     </a>
     <nav class="nav-links">
       <a href="/beginner.html">Start Here</a>
       <a href="/recipes.html?cat=recipe">Recipes</a>
       <a href="/troubleshooting.html">Troubleshooting</a>
       <a href="/equipment.html" class="active">Equipment</a>
-      <a href="/about.html">About</a>
+      <a href="/tools.html">Tools</a>
+      <a href="/assistant.html">Doughy AI 🍞</a>
     </nav>
     <button class="nav-toggle" onclick="this.closest('.nav').querySelector('.mob-nav').classList.toggle('open')"><span></span><span></span><span></span></button>
   </div>
   <nav class="mob-nav">
-    <a href="/beginner.html">Start Here</a><a href="/recipes.html?cat=recipe">Recipes</a>
-    <a href="/troubleshooting.html">Troubleshooting</a><a href="/equipment.html">Equipment</a><a href="/about.html">About</a>
+    <a href="/beginner.html">Start Here</a>
+    <a href="/recipes.html?cat=recipe">Recipes</a>
+    <a href="/troubleshooting.html">Troubleshooting</a>
+    <a href="/equipment.html" class="active">Equipment</a>
+    <a href="/tools.html">Tools</a>
+    <a href="/assistant.html">Doughy AI 🍞</a>
   </nav>
 </header>
 
@@ -405,6 +410,181 @@ a{text-decoration:none;color:inherit}
   </div>
 </div>
 
+
+<!-- THERMOMETERS -->
+<div class="equip-category" data-cat="thermometers">
+  <div class="cat-header">
+    <h2 class="cat-title">🌡️ Thermometers</h2>
+    <span class="cat-badge must-have">Must Have</span>
+  </div>
+  <div class="equip-grid">
+    <div class="equip-card" data-budget="premium" data-priority="nice" onclick="toggleCompare(this,'Thermapen ONE')">
+      <div class="compare-checkbox">✓</div>
+      <div class="equip-img" style="background-image:url('https://images.pexels.com/photos/4881593/pexels-photo-4881593.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop')">
+        <span class="equip-necessity equip-nice">Nice to Have</span>
+        <span class="equip-price-badge">$100+</span>
+      </div>
+      <div class="equip-body">
+        <div class="equip-title">Thermapen ONE</div>
+        <div class="equip-desc">The gold standard of instant-read thermometers. 1-second readings, ±0.5°F accuracy, waterproof. Used by professional bakers worldwide. Essential for knowing exactly when your loaf hits 205-210°F internal temp.</div>
+        <div class="equip-meta"><span class="equip-price">~$105</span><div class="equip-rating">⭐⭐⭐⭐⭐</div></div>
+        <div class="verdict-bar"><div class="verdict-label">Our Verdict</div><div class="verdict-text">Pricey but the most accurate instant-read thermometer you can buy. If you bake regularly, it pays for itself by eliminating undercooked loaves.</div></div>
+        <div class="pros-cons">
+          <div class="pros"><div class="pros-title">✅ Pros</div><ul><li>1-second accurate readings</li><li>Waterproof IP67</li><li>5-year warranty</li><li>Auto-rotating display</li></ul></div>
+          <div class="cons"><div class="cons-title">⚠️ Cons</div><ul><li>Expensive</li><li>Overkill for casual bakers</li></ul></div>
+        </div>
+        <a href="https://www.thermoworks.com/products/thermapen-one" class="equip-cta" target="_blank">Shop at ThermoWorks →</a>
+      </div>
+    </div>
+    <div class="equip-card" data-budget="budget" data-priority="must" onclick="toggleCompare(this,'Budget Oven Thermometer')">
+      <div class="compare-checkbox">✓</div>
+      <div class="equip-img" style="background-image:url('https://images.pexels.com/photos/4881589/pexels-photo-4881589.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop')">
+        <span class="equip-necessity equip-must">Must Have</span>
+        <span class="equip-price-badge">$8–15</span>
+      </div>
+      <div class="equip-body">
+        <div class="equip-title">Oven Thermometer</div>
+        <div class="equip-desc">A cheap but critical tool. Most home ovens run 15-25°F off from the dial. An oven thermometer tells you the actual temperature — fixing one of the most common causes of flat or pale loaves.</div>
+        <div class="equip-meta"><span class="equip-price">~$10</span><div class="equip-rating">⭐⭐⭐⭐⭐</div></div>
+        <div class="verdict-bar"><div class="verdict-label">Our Verdict</div><div class="verdict-text">The highest ROI purchase on this entire page. If you don't own one, buy it today. A $10 oven thermometer will improve your bread more than any other tool at this price.</div></div>
+        <div class="pros-cons">
+          <div class="pros"><div class="pros-title">✅ Pros</div><ul><li>Extremely cheap</li><li>Reveals true oven temp</li><li>Solves mysterious baking failures</li></ul></div>
+          <div class="cons"><div class="cons-title">⚠️ Cons</div><ul><li>Stays inside oven</li></ul></div>
+        </div>
+        <a href="https://www.amazon.com/s?k=oven+thermometer+baking" class="equip-cta" target="_blank">Search on Amazon →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROOFING & FERMENTATION -->
+<div class="equip-category" data-cat="proofing">
+  <div class="cat-header">
+    <h2 class="cat-title">🌡️ Proofing & Temperature Control</h2>
+    <span class="cat-badge nice-have">Nice to Have</span>
+  </div>
+  <div class="equip-grid">
+    <div class="equip-card" data-budget="premium" data-priority="nice" onclick="toggleCompare(this,'Brod Taylor Folding Proofer')">
+      <div class="compare-checkbox">✓</div>
+      <div class="equip-img" style="background-image:url('https://images.pexels.com/photos/30895275/pexels-photo-30895275.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop')">
+        <span class="equip-necessity equip-nice">Nice to Have</span>
+        <span class="equip-price-badge">$190+</span>
+      </div>
+      <div class="equip-body">
+        <div class="equip-title">Brod & Taylor Folding Proofer</div>
+        <div class="equip-desc">A collapsible proofing chamber that maintains precise temperature and humidity for fermenting dough, proofing loaves, and even maintaining your starter. Game-changer for cold kitchens.</div>
+        <div class="equip-meta"><span class="equip-price">~$195</span><div class="equip-rating">⭐⭐⭐⭐⭐</div></div>
+        <div class="verdict-bar"><div class="verdict-label">Our Verdict</div><div class="verdict-text">Eliminates the biggest variable in home sourdough — temperature inconsistency. If you live somewhere cold or have a drafty kitchen, this changes everything.</div></div>
+        <div class="pros-cons">
+          <div class="pros"><div class="pros-title">✅ Pros</div><ul><li>Precise temp control</li><li>Folds flat for storage</li><li>Also works as slow cooker</li><li>Dramatically more consistent results</li></ul></div>
+          <div class="cons"><div class="cons-title">⚠️ Cons</div><ul><li>Expensive</li><li>Only needed if your kitchen is cold</li></ul></div>
+        </div>
+        <a href="https://brodandtaylor.com/products/folding-proofer-slow-cooker" class="equip-cta" target="_blank">Shop at Brod & Taylor →</a>
+      </div>
+    </div>
+    <div class="equip-card" data-budget="premium" data-priority="nice" onclick="toggleCompare(this,'Brod Taylor Sourdough Home')">
+      <div class="compare-checkbox">✓</div>
+      <div class="equip-img" style="background-image:url('https://images.pexels.com/photos/4881595/pexels-photo-4881595.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop')">
+        <span class="equip-necessity equip-nice">Nice to Have</span>
+        <span class="equip-price-badge">$95+</span>
+      </div>
+      <div class="equip-body">
+        <div class="equip-title">Brod & Taylor Sourdough Home</div>
+        <div class="equip-desc">A dedicated heating AND cooling appliance designed specifically for starter jars. Keeps your starter at the exact right temperature year-round — heating in winter, cooling in summer.</div>
+        <div class="equip-meta"><span class="equip-price">~$99</span><div class="equip-rating">⭐⭐⭐⭐⭐</div></div>
+        <div class="verdict-bar"><div class="verdict-label">Our Verdict</div><div class="verdict-text">Only device that heats AND cools a starter. If your starter is inconsistent across seasons, this solves it permanently.</div></div>
+        <div class="pros-cons">
+          <div class="pros"><div class="pros-title">✅ Pros</div><ul><li>Heats AND cools</li><li>Designed for starters specifically</li><li>Compact size</li></ul></div>
+          <div class="cons"><div class="cons-title">⚠️ Cons</div><ul><li>Only for starter jars</li><li>Expensive for one task</li></ul></div>
+        </div>
+        <a href="https://brodandtaylor.com/products/sourdough-home" class="equip-cta" target="_blank">Shop at Brod & Taylor →</a>
+      </div>
+    </div>
+    <div class="equip-card" data-budget="mid" data-priority="nice" onclick="toggleCompare(this,'Brod Taylor Proofing Container')">
+      <div class="compare-checkbox">✓</div>
+      <div class="equip-img" style="background-image:url('https://images.pexels.com/photos/30895289/pexels-photo-30895289.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop')">
+        <span class="equip-necessity equip-nice">Nice to Have</span>
+        <span class="equip-price-badge">$40–50</span>
+      </div>
+      <div class="equip-body">
+        <div class="equip-title">Dough Proofing Container (6L)</div>
+        <div class="equip-desc">A clear container with volume markings on the side for tracking bulk fermentation rise. The tight-fitting lid maintains humidity. Makes hitting 50-75% rise target much easier.</div>
+        <div class="equip-meta"><span class="equip-price">~$45</span><div class="equip-rating">⭐⭐⭐⭐⭐</div></div>
+        <div class="verdict-bar"><div class="verdict-label">Our Verdict</div><div class="verdict-text">Volume markings take the guesswork out of bulk fermentation. You can see exactly when you've hit 50% rise — no more "I think it looks right?"</div></div>
+        <div class="pros-cons">
+          <div class="pros"><div class="pros-title">✅ Pros</div><ul><li>Volume markings</li><li>Non-stick surface</li><li>Tight lid</li><li>BPA-free</li></ul></div>
+          <div class="cons"><div class="cons-title">⚠️ Cons</div><ul><li>Any large clear container works</li></ul></div>
+        </div>
+        <a href="https://brodandtaylor.com/products/proofing-container" class="equip-cta" target="_blank">Shop at Brod & Taylor →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STORAGE -->
+<div class="equip-category" data-cat="storage">
+  <div class="cat-header">
+    <h2 class="cat-title">🛍️ Storage & Accessories</h2>
+    <span class="cat-badge nice-have">Nice to Have</span>
+  </div>
+  <div class="equip-grid">
+    <div class="equip-card" data-budget="budget" data-priority="nice" onclick="toggleCompare(this,'Linen Bread Bags')">
+      <div class="compare-checkbox">✓</div>
+      <div class="equip-img" style="background-image:url('https://images.pexels.com/photos/30895278/pexels-photo-30895278.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop')">
+        <span class="equip-necessity equip-nice">Nice to Have</span>
+        <span class="equip-price-badge">$12–20</span>
+      </div>
+      <div class="equip-body">
+        <div class="equip-title">Linen Bread Bags</div>
+        <div class="equip-desc">Breathable linen bags keep sourdough fresh for days longer than plastic bags or leaving it cut-side down. Linen lets moisture escape while protecting the crust from going soft too quickly.</div>
+        <div class="equip-meta"><span class="equip-price">~$15</span><div class="equip-rating">⭐⭐⭐⭐</div></div>
+        <div class="verdict-bar"><div class="verdict-label">Our Verdict</div><div class="verdict-text">Simple and effective. Sourdough stored in linen bags stays crust-crisp for 2-3 days. Much better than plastic which makes the crust go soft within hours.</div></div>
+        <div class="pros-cons">
+          <div class="pros"><div class="pros-title">✅ Pros</div><ul><li>Keeps crust crispy</li><li>Eco-friendly reusable</li><li>Washable</li></ul></div>
+          <div class="cons"><div class="cons-title">⚠️ Cons</div><ul><li>Not airtight for longer storage</li></ul></div>
+        </div>
+        <a href="https://www.amazon.com/Natural-Linen-Bread-Bags-Housewarming/dp/B076KT472Y" class="equip-cta" target="_blank">View on Amazon →</a>
+      </div>
+    </div>
+    <div class="equip-card" data-budget="budget" data-priority="must" onclick="toggleCompare(this,'Wire Cooling Rack')">
+      <div class="compare-checkbox">✓</div>
+      <div class="equip-img" style="background-image:url('https://images.pexels.com/photos/600620/pexels-photo-600620.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop')">
+        <span class="equip-necessity equip-must">Must Have</span>
+        <span class="equip-price-badge">$10–20</span>
+      </div>
+      <div class="equip-body">
+        <div class="equip-title">Wire Cooling Rack</div>
+        <div class="equip-desc">A raised wire rack is essential for cooling. Placing a hot loaf on a solid surface traps steam underneath and turns the bottom crust gummy. Air needs to circulate under the loaf as it cools.</div>
+        <div class="equip-meta"><span class="equip-price">~$12</span><div class="equip-rating">⭐⭐⭐⭐⭐</div></div>
+        <div class="verdict-bar"><div class="verdict-label">Our Verdict</div><div class="verdict-text">Non-negotiable. Always cool on a wire rack — never on a cutting board, plate, or countertop. This is responsible for a lot of gummy bottom crusts.</div></div>
+        <div class="pros-cons">
+          <div class="pros"><div class="pros-title">✅ Pros</div><ul><li>Essential for proper cooling</li><li>Very cheap</li><li>Multi-use kitchen tool</li></ul></div>
+          <div class="cons"><div class="cons-title">⚠️ Cons</div><ul><li>Nothing significant</li></ul></div>
+        </div>
+        <a href="https://www.amazon.com/s?k=wire+cooling+rack+baking+bread" class="equip-cta" target="_blank">Search on Amazon →</a>
+      </div>
+    </div>
+    <div class="equip-card" data-budget="budget" data-priority="nice" onclick="toggleCompare(this,'Danish Dough Whisk')">
+      <div class="compare-checkbox">✓</div>
+      <div class="equip-img" style="background-image:url('https://images.pexels.com/photos/4881602/pexels-photo-4881602.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop')">
+        <span class="equip-necessity equip-nice">Nice to Have</span>
+        <span class="equip-price-badge">$10–15</span>
+      </div>
+      <div class="equip-body">
+        <div class="equip-title">Danish Dough Whisk</div>
+        <div class="equip-desc">A coil whisk specifically designed for mixing thick doughs. It cuts through dense dough without getting clogged, making the initial mixing of flour and water much faster and easier than a wooden spoon.</div>
+        <div class="equip-meta"><span class="equip-price">~$12</span><div class="equip-rating">⭐⭐⭐⭐</div></div>
+        <div class="verdict-bar"><div class="verdict-label">Our Verdict</div><div class="verdict-text">Underrated tool. Makes initial mixing effortless. A wooden spoon works fine but a Danish whisk is faster and easier to clean.</div></div>
+        <div class="pros-cons">
+          <div class="pros"><div class="pros-title">✅ Pros</div><ul><li>Faster mixing</li><li>Easy to clean</li><li>Comfortable grip</li></ul></div>
+          <div class="cons"><div class="cons-title">⚠️ Cons</div><ul><li>Not strictly necessary</li></ul></div>
+        </div>
+        <a href="https://www.amazon.com/s?k=danish+dough+whisk+bread+baking" class="equip-cta" target="_blank">Search on Amazon →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <p style="text-align:center;font-size:12px;color:var(--text3);font-style:italic;padding-top:8px">Some links above are Amazon affiliate links. We earn a small commission at no extra cost to you. We only recommend products we genuinely believe in.</p>
 
 </div>
@@ -498,7 +678,15 @@ function toggleCompareMode(){
   if(!compareMode){compareItems=[];updateCompareUI()}
   document.getElementById('compare-toggle-btn').style.color=compareMode?'var(--rust)':'';
 }
-const PRODUCT_URLS={"Lodge Enameled Cast Iron Dutch Oven": "https://www.lodgecastiron.com/products/enameled-dutch-oven", "Lodge Cast Iron Combo Cooker": "https://www.lodgecastiron.com/products/cast-iron-combo-cooker", "Challenger Bread Pan": "https://challengerbreadware.com/product/the-challenger-bread-pan/", "OXO Good Grips 11lb Scale": "https://www.oxo.com/11-lb-stainless-steel-food-scale-w-pull-out-display.html", "Any Accurate Digital Scale": "https://www.amazon.com/s?k=kitchen+scale+1g+accuracy+under+20+dollars", "Round Rattan Banneton (9 inch)": "https://www.amazon.com/s?k=9+inch+round+banneton+proofing+basket", "Bench Scraper (Metal)": "https://www.amazon.com/s?k=metal+bench+scraper+baking", "Bread Lame (Scoring Tool)": "https://www.amazon.com/s?k=bread+lame+scoring+tool+sourdough"};
+const PRODUCT_URLS={"Thermapen ONE":"https://www.thermoworks.com/products/thermapen-one",
+"Budget Oven Thermometer":"https://www.amazon.com/s?k=oven+thermometer+baking",
+"Brod Taylor Folding Proofer":"https://brodandtaylor.com/products/folding-proofer-slow-cooker",
+"Brod Taylor Sourdough Home":"https://brodandtaylor.com/products/sourdough-home",
+"Brod Taylor Proofing Container":"https://brodandtaylor.com/products/proofing-container",
+"Linen Bread Bags":"https://www.amazon.com/Natural-Linen-Bread-Bags-Housewarming/dp/B076KT472Y",
+"Wire Cooling Rack":"https://www.amazon.com/s?k=wire+cooling+rack+baking+bread",
+"Danish Dough Whisk":"https://www.amazon.com/s?k=danish+dough+whisk+bread+baking",
+"Lodge Enameled Cast Iron Dutch Oven": "https://www.lodgecastiron.com/products/enameled-dutch-oven", "Lodge Cast Iron Combo Cooker": "https://www.lodgecastiron.com/products/cast-iron-combo-cooker", "Challenger Bread Pan": "https://challengerbreadware.com/product/the-challenger-bread-pan/", "OXO Good Grips 11lb Scale": "https://www.oxo.com/11-lb-stainless-steel-food-scale-w-pull-out-display.html", "Any Accurate Digital Scale": "https://www.amazon.com/s?k=kitchen+scale+1g+accuracy+under+20+dollars", "Round Rattan Banneton (9 inch)": "https://www.amazon.com/s?k=9+inch+round+banneton+proofing+basket", "Bench Scraper (Metal)": "https://www.amazon.com/s?k=metal+bench+scraper+baking", "Bread Lame (Scoring Tool)": "https://www.amazon.com/s?k=bread+lame+scoring+tool+sourdough"};
 function toggleCompare(card, name){
   if(!compareMode){
     const url=PRODUCT_URLS[name];
@@ -550,6 +738,15 @@ const CARD_DATA = {
   'Budget Digital Scale':{price:'~$12–20',rating:'⭐⭐⭐⭐',necessity:'Must Have',budget:'Budget (Under $30)',verdict:'Perfectly adequate for beginners',pros:'Cheap, works fine, easy to find',cons:'Display may be hidden by bowl'},
   'Round Rattan Banneton 9 inch':{price:'~$18',rating:'⭐⭐⭐⭐⭐',necessity:'Nice to Have',budget:'Budget (Under $30)',verdict:'Buy this with your Dutch oven. Makes shaping easier immediately.',pros:'Wicks moisture, beautiful rings, cheap',cons:'Needs proper flouring, drying between uses'},
   'Bench Scraper':{price:'~$10',rating:'⭐⭐⭐⭐⭐',necessity:'Nice to Have',budget:'Budget (Under $30)',verdict:'The most underrated tool. Get one.',pros:'Cheap, essential for sticky dough, multi-use',cons:'Nothing significant'},
+
+  'Thermapen ONE':{price:'~$105',rating:'⭐⭐⭐⭐⭐',necessity:'Nice to Have',budget:'Premium ($80+)',verdict:'Best instant-read thermometer — overkill for casual bakers but incredible',pros:'1-second reading, waterproof, 5-year warranty',cons:'Expensive'},
+  'Budget Oven Thermometer':{price:'~$10',rating:'⭐⭐⭐⭐⭐',necessity:'Must Have',budget:'Budget (Under $30)',verdict:'Highest ROI purchase on the page — reveals your true oven temp',pros:'Cheap, solves mysterious failures',cons:'Stays inside oven'},
+  'Brod Taylor Folding Proofer':{price:'~$195',rating:'⭐⭐⭐⭐⭐',necessity:'Nice to Have',budget:'Premium ($80+)',verdict:'Eliminates temperature inconsistency — worth it for cold kitchens',pros:'Precise temp control, folds flat, doubles as slow cooker',cons:'Expensive, not needed in warm kitchens'},
+  'Brod Taylor Sourdough Home':{price:'~$99',rating:'⭐⭐⭐⭐⭐',necessity:'Nice to Have',budget:'Premium ($80+)',verdict:'Only device that heats and cools a starter',pros:'Heats AND cools, compact, starter-specific',cons:'Expensive for one purpose'},
+  'Brod Taylor Proofing Container':{price:'~$45',rating:'⭐⭐⭐⭐⭐',necessity:'Nice to Have',budget:'Mid Range ($30-$80)',verdict:'Volume markings remove guesswork from bulk fermentation',pros:'Volume markings, non-stick, BPA-free',cons:'Any large clear container works'},
+  'Linen Bread Bags':{price:'~$15',rating:'⭐⭐⭐⭐',necessity:'Nice to Have',budget:'Budget (Under $30)',verdict:'Keeps crust crispy for days — much better than plastic',pros:'Breathable, reusable, washable',cons:'Not airtight for long-term storage'},
+  'Wire Cooling Rack':{price:'~$12',rating:'⭐⭐⭐⭐⭐',necessity:'Must Have',budget:'Budget (Under $30)',verdict:'Essential — never cool bread on a solid surface',pros:'Cheap, prevents gummy bottom, multi-use',cons:'Nothing significant'},
+  'Danish Dough Whisk':{price:'~$12',rating:'⭐⭐⭐⭐',necessity:'Nice to Have',budget:'Budget (Under $30)',verdict:'Underrated tool that makes initial mixing effortless',pros:'Fast mixing, easy to clean, comfortable',cons:'Not strictly necessary'},
   'Bread Lame':{price:'~$12–25',rating:'⭐⭐⭐⭐',necessity:'Must Have',budget:'Budget (Under $30)',verdict:'Required for proper scoring. Start with a basic straight lame.',pros:'Precise, replaceable blades, lasts forever',cons:'Blades are sharp'},
 };
 function openCompare(){

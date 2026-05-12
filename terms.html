@@ -40,16 +40,26 @@ a{text-decoration:none;color:inherit}
   <div class="nav-inner">
     <a href="/" class="nav-brand">
       <div class="nav-logo">🌾</div>
-      <div><div class="nav-title">The Sourdough Guide</div><div class="nav-tagline">From First Loaf to Mastery</div></div>
+      <div class="nav-title">The Sourdough Guide</div>
     </a>
     <nav class="nav-links">
       <a href="/beginner.html">Start Here</a>
       <a href="/recipes.html?cat=recipe">Recipes</a>
       <a href="/troubleshooting.html">Troubleshooting</a>
       <a href="/equipment.html">Equipment</a>
-      <a href="/about.html">About</a>
+      <a href="/tools.html">Tools</a>
+      <a href="/assistant.html">Doughy AI 🍞</a>
     </nav>
+    <button class="nav-toggle" onclick="this.closest('.nav').querySelector('.mob-nav').classList.toggle('open')"><span></span><span></span><span></span></button>
   </div>
+  <nav class="mob-nav">
+    <a href="/beginner.html">Start Here</a>
+    <a href="/recipes.html?cat=recipe">Recipes</a>
+    <a href="/troubleshooting.html">Troubleshooting</a>
+    <a href="/equipment.html">Equipment</a>
+    <a href="/tools.html">Tools</a>
+    <a href="/assistant.html">Doughy AI 🍞</a>
+  </nav>
 </header>
 <div class="hero">
   <h1>Terms of Use</h1>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sourdough Glossary — Every Term Explained | The Sourdough Guide</title>
+<meta name="description" content="Every sourdough baking term explained clearly. Autolyse, levain, banneton, hydration, bulk fermentation, lamination — all defined with examples.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--rust:#B5451B;--cream:#F5EDE0;--border:#E8E0D5;--text:#1C1410;--text2:#4A3728;--text3:#8B7355;--black:#0F0A07;--tan:#C49A6C;--off:#FAFAF7;--h:'DM Serif Display',Georgia,serif;--s:'Inter',system-ui,sans-serif}
+body{background:var(--off);color:var(--text);font-family:var(--s)}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+.nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{display:flex;align-items:center;height:64px;max-width:1200px;margin:0 auto;padding:0 24px}
+.nav-brand{display:flex;align-items:center;gap:10px}
+.nav-logo{width:34px;height:34px;background:var(--rust);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+.nav-title{font-family:var(--h);font-size:18px;color:var(--black)}
+.nav-links{display:flex;margin-left:auto;gap:4px}
+.nav-links a{font-size:12px;font-weight:500;color:var(--text2);padding:6px 12px;border-radius:6px;transition:all .15s}
+.nav-links a:hover{background:var(--cream);color:var(--rust)}
+.nav-links a.active{background:var(--rust);color:#fff}
+.nav-toggle{display:none;background:none;border:1px solid var(--border);border-radius:6px;padding:8px 10px;cursor:pointer;margin-left:auto;flex-direction:column;gap:4px}
+.nav-toggle span{display:block;width:18px;height:1.5px;background:var(--text)}
+.mob-nav{display:none;background:#fff;border-bottom:1px solid var(--border)}
+.mob-nav.open{display:block}
+.mob-nav a{display:block;font-size:14px;font-weight:500;color:var(--text2);padding:12px 24px;border-bottom:1px solid var(--border)}
+.page-hero{background:var(--black);padding:48px 0}
+.page-hero h1{font-family:var(--h);font-size:clamp(32px,5vw,52px);color:#fff;margin-bottom:8px;letter-spacing:-.02em}
+.page-hero p{font-size:15px;color:rgba(255,255,255,.6);max-width:500px;font-weight:300}
+
+/* SEARCH */
+.search-bar{background:#fff;border:1.5px solid var(--border);border-radius:10px;padding:12px 16px;margin:28px 0 24px;display:flex;align-items:center;gap:10px;transition:border-color .2s}
+.search-bar:focus-within{border-color:var(--rust)}
+.search-icon{font-size:16px}
+.search-bar input{flex:1;border:none;outline:none;font-family:var(--s);font-size:14px;color:var(--text);background:transparent}
+.search-bar input::placeholder{color:var(--text3)}
+.result-count{font-size:12px;color:var(--text3)}
+
+/* ALPHABET NAV */
+.alpha-nav{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:24px}
+.alpha-btn{width:32px;height:32px;background:#fff;border:1px solid var(--border);border-radius:6px;font-family:var(--h);font-size:14px;color:var(--text2);cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center}
+.alpha-btn:hover,.alpha-btn.active{background:var(--rust);color:#fff;border-color:var(--rust)}
+.alpha-btn.disabled{opacity:.3;cursor:default;pointer-events:none}
+
+/* TERMS */
+.term-section{margin-bottom:32px}
+.term-letter{font-family:var(--h);font-size:40px;color:var(--rust);margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--black)}
+.term-grid{display:flex;flex-direction:column;gap:12px}
+.term-card{background:#fff;border:1.5px solid var(--border);border-radius:10px;padding:18px 20px;cursor:pointer;transition:all .2s}
+.term-card:hover{border-color:var(--rust)}
+.term-card.open{border-color:var(--rust)}
+.term-header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.term-name{font-family:var(--h);font-size:18px;color:var(--black)}
+.term-pron{font-size:12px;color:var(--text3);font-style:italic;margin-left:8px}
+.term-badge{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:4px}
+.badge-process{background:var(--cream);color:var(--rust)}
+.badge-equipment{background:#E8F5EE;color:var(--green-text,#1A5C30)}
+.badge-ingredient{background:#FFF8E6;color:#A07010}
+.badge-technique{background:#F0F0FA;color:#4040A0}
+.term-short{font-size:13px;color:var(--text3);margin-top:4px}
+.term-expand{font-size:18px;color:var(--text3);flex-shrink:0;transition:transform .25s}
+.term-card.open .term-expand{transform:rotate(45deg)}
+.term-body{display:none;padding-top:14px;border-top:1px solid var(--border);margin-top:12px}
+.term-card.open .term-body{display:block}
+.term-def{font-size:14px;color:var(--text2);line-height:1.8;margin-bottom:10px}
+.term-example{background:var(--cream);border-radius:6px;padding:10px 14px;font-size:13px;color:var(--text2);font-style:italic;border-left:3px solid var(--rust)}
+.term-example::before{content:'Example: ';font-weight:600;font-style:normal;color:var(--rust)}
+.no-results{text-align:center;padding:48px;color:var(--text3);font-size:14px;display:none}
+
+@media(max-width:640px){.nav-links{display:none}.nav-toggle{display:flex}.wrap{padding:0 16px}.alpha-btn{width:28px;height:28px;font-size:12px}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand"><div class="nav-logo">🌾</div><div class="nav-title">The Sourdough Guide</div></a>
+    <nav class="nav-links">
+      <a href="/beginner.html">Start Here</a><a href="/recipes.html?cat=recipe">Recipes</a>
+      <a href="/troubleshooting.html">Troubleshooting</a><a href="/equipment.html">Equipment</a>
+      <a href="/tools.html" class="active">Tools</a><a href="/assistant.html">Doughy AI</a>
+    </nav>
+    <button class="nav-toggle" onclick="this.closest('.nav').querySelector('.mob-nav').classList.toggle('open')"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mob-nav">
+    <a href="/beginner.html">Start Here</a><a href="/recipes.html?cat=recipe">Recipes</a>
+    <a href="/troubleshooting.html">Troubleshooting</a><a href="/equipment.html">Equipment</a>
+    <a href="/tools.html">Tools</a><a href="/assistant.html">Doughy AI</a>
+  </nav>
+</header>
+
+<div class="page-hero"><div class="wrap">
+  <h1>Sourdough Glossary</h1>
+  <p>Every term you'll encounter in sourdough baking, explained clearly with real examples.</p>
+</div></div>
+
+<div class="wrap" id="wrap" style="padding-bottom:60px">
+  <div class="search-bar">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="search" placeholder="Search any term (e.g. autolyse, levain, hydration...)" oninput="filterTerms(this.value)">
+    <span class="result-count" id="result-count"></span>
+  </div>
+  <div class="alpha-nav" id="alpha-nav"></div>
+  <div id="terms-container"></div>
+  <div class="no-results" id="no-results">No terms found. Try a different search.</div>
+</div>
+
+<script>
+const TERMS = [
+  {term:'Autolyse',pron:'aw-tuh-lyze',cat:'process',short:'Pre-mixing rest that develops gluten without effort',def:'A technique where flour and water (without starter or salt) are mixed and left to rest for 20-60 minutes before the rest of the ingredients are added. During this rest, enzymes in the flour begin breaking down proteins and forming gluten chains on their own — making the dough more extensible and easier to work with.',example:'Mix 450g flour and 325g water, cover, and rest 30 minutes before adding starter.'},
+  {term:'Banneton',pron:'ban-uh-ton',cat:'equipment',short:'Rattan basket used for final proofing',def:'A proofing basket, usually made from rattan cane or wood pulp, used to support the shaped dough during final proofing. The banneton gives the loaf its shape and the characteristic spiral ring pattern on the crust. Always dusted with rice flour or a flour mix before use.',example:'Place shaped boule seam-side up in a floured banneton, cover, and refrigerate overnight.'},
+  {term:"Baker's Percentage",pron:'',cat:'technique',short:'Expressing ingredients as a percentage of total flour',def:"A system where all ingredients are expressed as a percentage of the total flour weight. Flour is always 100%. If a recipe uses 500g flour and 375g water, the water is 75% (375÷500×100). This system makes it easy to scale any recipe up or down and compare recipes regardless of batch size.",example:"500g flour = 100%. 375g water = 75% hydration. 100g starter = 20%. 10g salt = 2%."},
+  {term:'Bassinage',pron:'bass-in-ahzh',cat:'technique',short:'Holding back water and adding it gradually during mixing',def:"A French technique of holding back 5-10% of the total water and adding it gradually during mixing or early stretch-and-folds. This gives the flour time to hydrate fully before the final water is incorporated, making very high-hydration doughs more manageable and giving the baker more control.",example:"For an 80% hydration dough, mix at 75% first. Once the dough has strengthened, add the remaining 5% water during the second stretch and fold."},
+  {term:'Boule',pron:'bool',cat:'technique',short:'Round shaped sourdough loaf',def:'A round loaf shape — the most common sourdough form. "Boule" is French for ball. Boules are shaped by pulling the dough toward you on an unfloured surface to build surface tension, then placed seam-side up in a round banneton.',example:'Most classic sourdough recipes produce a boule. It proofs in a 9-inch round banneton.'},
+  {term:'Batard',pron:'bah-tar',cat:'technique',short:'Oval shaped sourdough loaf',def:'An oval or torpedo-shaped loaf, longer than a boule. Batards require an oval banneton and are shaped by rolling the dough away from you to create an elongated form with surface tension along the seam. They\'re often scored with a long diagonal slash.',example:'A batard fits nicely in a Challenger Bread Pan or oblong Dutch oven.'},
+  {term:'Bulk Fermentation',pron:'',cat:'process',short:'The main rise period after mixing and before shaping',def:'The first and primary fermentation period after all ingredients are mixed. During bulk, the dough rises, gluten develops through stretch and fold sets, and yeast produces the CO₂ that creates the crumb structure. Ends when the dough has risen 50-75% and shows visible bubbles.',example:'After mixing, bulk ferment at room temperature for 5-8 hours until the dough has grown noticeably and jiggles when you shake the container.'},
+  {term:'Cold Retard',pron:'',cat:'process',short:'Extended cold proofing in the refrigerator',def:'Placing the shaped dough in the refrigerator for an extended cold proof, typically 8-16 hours (or up to 72 hours). Cold retarding slows yeast activity while allowing bacteria to continue producing acids — developing more complex flavor and making the dough easier to score.',example:'Shape at 9pm, refrigerate overnight, bake cold the next morning for better flavor and easier scoring.'},
+  {term:'Crumb',pron:'',cat:'process',short:'The interior structure and texture of the baked loaf',def:'The interior of the baked loaf — the soft, hole-filled structure inside the crust. An "open crumb" has large, irregular holes and a light texture. A "closed crumb" or "tight crumb" has smaller, more uniform holes. The crumb structure is determined by hydration, fermentation, and shaping.',example:'A well-fermented sourdough with 75% hydration typically shows a moderately open crumb with irregular holes.'},
+  {term:'Desired Dough Temperature',pron:'DDT',cat:'process',short:'Target temperature for dough after mixing',def:"The target temperature you want your dough to be immediately after mixing. Typically 75-78°F (24-26°C) for sourdough. Since mixing generates heat from friction, bakers adjust their water temperature to hit the DDT: Desired Dough Temp × 3 – Room Temp – Flour Temp – Friction Factor = Water Temp.",example:"If your DDT is 76°F, room temp is 70°F, flour temp is 68°F, and friction factor is 2°F, your water should be 76×3 − 70 − 68 − 2 = 88°F."},
+  {term:'Discard',pron:'',cat:'process',short:'The starter removed before feeding',def:"The portion of starter you remove before each feeding. The discard prevents the culture from growing indefinitely and maintains the right acidity balance. It's not wasted — discard is still full of wild yeast and can be used in pancakes, crackers, waffles, pizza dough, and other recipes.",example:"Before feeding, pour out half your starter (the discard) and save it in the fridge for discard recipes."},
+  {term:'Ear',pron:'',cat:'process',short:'The raised flap created by the score line',def:"The beautiful raised flap or ridge that develops along the score line during baking. As the dough expands in the oven, it pushes up through the cut, creating a raised ear. A well-developed ear is a sign of good oven spring, proper scoring angle, and appropriate dough tension.",example:"To develop an ear, score at a low angle (15-30°) rather than straight down, with a single confident slash."},
+  {term:'Extensibility',pron:'',cat:'technique',short:'The dough\'s ability to stretch without snapping back',def:"How far the dough can stretch before it tears or resists. Highly extensible dough stretches easily without snapping back. Dough with good extensibility is easier to shape but can be tricky to handle at high hydrations. Autolyse and proper bench rests improve extensibility.",example:"After pre-shaping, if the dough snaps back when you try to flatten it, let it bench rest longer until it stretches without resistance."},
+  {term:'Float Test',pron:'',cat:'process',short:'Dropping starter in water to test readiness',def:"A quick test to check if your starter is ready to bake with. A teaspoon of starter is dropped into a glass of water — if it floats, it\'s full of CO₂ from active fermentation and ready to use. If it sinks, it needs more time or feeding. Not foolproof, but a useful quick check.",example:"Drop a small spoonful of your peaked starter into water. Floats = bake. Sinks = feed again and wait."},
+  {term:'Hydration',pron:'',cat:'process',short:'Water as a percentage of total flour weight',def:"Expressed as a percentage, hydration tells you how much water is in the dough relative to flour. 75% hydration means 75g water for every 100g flour. Higher hydration = stickier, more extensible dough with a more open crumb. Lower hydration = stiffer, easier to handle dough.",example:"500g flour + 375g water = 75% hydration. Adding 25g more water raises it to 80%."},
+  {term:'Inclusion',pron:'',cat:'ingredient',short:'Added ingredients like seeds, nuts, olives, herbs',def:"Any ingredient added to sourdough beyond flour, water, starter, and salt. Common inclusions include seeds (sesame, sunflower, poppy), nuts (walnuts, pecans), olives, roasted garlic, cheese, dried fruit, or herbs. Inclusions are typically folded in during bulk fermentation, not mixed in from the start.",example:"Fold in 100g toasted walnuts and 50g dried cranberries during the second stretch and fold."},
+  {term:'Lamination',pron:'',cat:'technique',short:'Stretching dough thin and folding to incorporate inclusions',def:"A technique where the dough is stretched out very thin on a wet surface (like a silicone mat) into a near-transparent sheet, then inclusions are scattered across it and it\'s folded back into a package. Creates very even distribution and exceptional gluten development.",example:"Wet your counter, stretch the dough into a 18-inch square, scatter seeds across it, then fold all four sides in like an envelope."},
+  {term:'Levain',pron:'lev-ahn',cat:'process',short:'A preferment made from starter for baking',def:"A separately built preferment made from a portion of your starter, mixed with fresh flour and water and allowed to ferment to peak activity. Some bakers use levain instead of adding starter directly to maintain more precise control over the final dough\'s timing and fermentation rate.",example:"The night before baking, mix 25g starter + 100g flour + 100g water. Let ferment 8-12 hours at room temperature. Use it at peak."},
+  {term:'Lame',pron:'lahm',cat:'equipment',short:'A razor blade tool used for scoring bread',def:"A tool consisting of a thin, very sharp razor blade on a handle used to score dough before baking. Available in straight and curved styles. A curved lame allows the baker to make an undercutting score that creates an ear; a straight lame is used for decorative scoring patterns.",example:"Using a curved lame, make one swift slash at a low angle across the length of the loaf just before it goes into the Dutch oven."},
+  {term:'Oven Spring',pron:'',cat:'process',short:'The final burst of rise in the first minutes of baking',def:"The dramatic rise that happens in the first 10-15 minutes in the oven, before the crust sets. Heat kills the yeast and causes the remaining gas in the dough to expand rapidly. Good oven spring requires an active starter, proper fermentation, a very hot Dutch oven, and proper scoring.",example:"A loaf that was 6 inches tall going in might be 8-9 inches coming out after oven spring."},
+  {term:'Over-Proofed',pron:'',cat:'process',short:'Dough that has fermented too long, losing structure',def:"When dough ferments past its optimal window, the gluten structure degrades and becomes unable to hold gas effectively. Over-proofed dough feels very slack and jiggly, shows a poke test that doesn\'t spring back, and produces a flat, collapsed loaf with a gummy crumb.",example:"If your dough deflates when you score it or collapses after scoring, it was over-proofed."},
+  {term:'Pre-Shape',pron:'',cat:'technique',short:'An intermediate shaping step before final shaping',def:"A gentle, rough shaping done before the bench rest, creating a round form from the bulk-fermented dough. Pre-shaping organizes the gluten before the bench rest, so the final shaping produces a tighter, more cohesive form. Not the final shape — just a precursor.",example:"Turn dough onto lightly floured surface. Fold edges in, then flip and drag toward you to form a rough ball. Rest 20-30 minutes."},
+  {term:'Proofing',pron:'',cat:'process',short:'The final fermentation stage after shaping',def:"The final rise of the shaped dough before baking. Also called the final proof or final fermentation. Proofing can be done at room temperature (1-3 hours) or in the refrigerator overnight (8-16 hours). The cold retard method produces more complex flavor.",example:"Place shaped dough in a floured banneton. Proof at room temperature for 2 hours or refrigerate overnight."},
+  {term:'Scoring',pron:'',cat:'technique',short:'Cutting the surface of dough before baking',def:"Making intentional cuts in the surface of the shaped, proofed dough immediately before baking. Scoring controls where the loaf opens during oven spring, prevents random bursting, and allows decorative patterns. Must be done with a very sharp blade in one swift motion.",example:"Score the loaf once it\'s in the Dutch oven (or just before) with a single swift slash at 30° angle, ½ inch deep."},
+  {term:'Starter',pron:'',cat:'ingredient',short:'The live culture of wild yeast and bacteria used instead of commercial yeast',def:"A live culture of wild yeast and lactic acid bacteria maintained by regular feeding with flour and water. The starter ferments flour, producing CO₂ (for rise) and acids (for flavor). A healthy starter can last indefinitely with regular feeding and becomes more robust over time.",example:"Feed your starter equal weights of flour and water every day. It should double in 4-8 hours after feeding when fully active."},
+  {term:'Stretch and Fold',pron:'',cat:'technique',short:'A folding technique that builds gluten strength during bulk',def:"A technique performed during bulk fermentation to develop gluten strength without deflating the dough. With wet hands, grab one side of the dough, stretch it up as high as it will go without tearing, then fold it over to the opposite side. Rotate 90° and repeat. Usually 4 times per set, 4 sets total.",example:"Every 30 minutes during the first 2 hours of bulk, perform one set of stretch and folds. By the 4th set, the dough should feel noticeably stronger."},
+  {term:'Sourdough Starter',pron:'',cat:'ingredient',short:'See: Starter',def:"See Starter. Sometimes called a wild yeast starter, mother starter, or levain culture (though levain technically refers to a preferment built from the starter). A mature starter smells pleasantly tangy, doubles reliably after feeding, and passes the float test.",example:""},
+  {term:'Under-Proofed',pron:'',cat:'process',short:'Dough that hasn\'t fermented long enough',def:"Dough that was baked before sufficient fermentation occurred. Under-proofed dough produces a dense, heavy crumb with very few holes, often a gummy texture, and sometimes a cracked crust from excess internal tension. The poke test will spring back too quickly — indicating too much tension.",example:"A dense, gummy loaf that springs back immediately when poked was under-proofed."},
+  {term:'Windowpane Test',pron:'',cat:'technique',short:'Stretching dough to test gluten development',def:"A test of gluten development where a small piece of dough is stretched between your fingers. If it stretches thin enough to see light through without tearing (like a window), the gluten is well-developed. If it tears immediately, more time or folding is needed.",example:"Pinch off a golf-ball-sized piece, gently stretch it between all four fingers into a thin sheet. Hold it up to a light source."},
+  {term:'Wire Cooling Rack',pron:'',cat:'equipment',short:'Elevated rack used to cool baked bread',def:"A wire or metal grid rack that elevates the loaf off the counter surface after baking, allowing air to circulate underneath. Essential for proper cooling — cooling directly on a solid surface traps steam and makes the bottom crust gummy.",example:"Transfer the hot loaf directly from the Dutch oven to a wire rack. Do not place it on a cutting board or plate while it cools."},
+  {term:'Crumb Structure',pron:'',cat:'process',short:'The arrangement of holes and texture inside the baked loaf',def:"The pattern of holes and overall texture inside a finished loaf. Open crumb means large, irregular holes — often prized in artisan breads. Closed or tight crumb means small, even holes — typical of sandwich loaves. Crumb structure is determined primarily by hydration level, fermentation timing, and shaping technique.",example:"A 78% hydration dough with thorough bulk fermentation and gentle shaping tends to produce a more open crumb than a 70% hydration dough."},
+];
+
+// Sort alphabetically
+TERMS.sort((a,b) => a.term.localeCompare(b.term));
+
+function buildAlphaNav(){
+  const letters = [...new Set(TERMS.map(t=>t.term[0].toUpperCase()))];
+  const all = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+  const nav = document.getElementById('alpha-nav');
+  nav.innerHTML = all.map(l=>`<button class="alpha-btn ${letters.includes(l)?'':'disabled'}" onclick="jumpTo('${l}')">${l}</button>`).join('');
+}
+
+function jumpTo(letter){
+  const el = document.getElementById(`letter-${letter}`);
+  if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function buildTerms(list){
+  const container = document.getElementById('terms-container');
+  const groups = {};
+  list.forEach(t=>{
+    const l = t.term[0].toUpperCase();
+    if(!groups[l]) groups[l]=[];
+    groups[l].push(t);
+  });
+  
+  container.innerHTML = Object.keys(groups).sort().map(l=>`
+    <div class="term-section" id="letter-${l}">
+      <div class="term-letter">${l}</div>
+      <div class="term-grid">${groups[l].map(buildTermCard).join('')}</div>
+    </div>`).join('');
+  
+  document.getElementById('result-count').textContent = `${list.length} terms`;
+  document.getElementById('no-results').style.display = list.length ? 'none' : 'block';
+}
+
+function buildTermCard(t){
+  const badges = {process:'Process',equipment:'Equipment',ingredient:'Ingredient',technique:'Technique'};
+  const badgeClasses = {process:'badge-process',equipment:'badge-equipment',ingredient:'badge-ingredient',technique:'badge-technique'};
+  const exampleHtml = t.example ? `<div class="term-example">${t.example}</div>` : '';
+  return `<div class="term-card" onclick="toggleTerm(this)">
+    <div class="term-header">
+      <div>
+        <span class="term-name">${t.term}</span>${t.pron?`<span class="term-pron">/${t.pron}/</span>`:''}
+        <div class="term-short">${t.short}</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="term-badge ${badgeClasses[t.cat]||'badge-process'}">${badges[t.cat]||t.cat}</span>
+        <span class="term-expand">+</span>
+      </div>
+    </div>
+    <div class="term-body">
+      <div class="term-def">${t.def}</div>
+      ${exampleHtml}
+    </div>
+  </div>`;
+}
+
+function toggleTerm(el){
+  el.classList.toggle('open');
+}
+
+function filterTerms(val){
+  const q = val.trim().toLowerCase();
+  if(!q){ buildTerms(TERMS); return; }
+  const filtered = TERMS.filter(t=>
+    t.term.toLowerCase().includes(q) ||
+    t.short.toLowerCase().includes(q) ||
+    t.def.toLowerCase().includes(q)
+  );
+  buildTerms(filtered);
+}
+
+buildAlphaNav();
+buildTerms(TERMS);
+
+// Auto-open if linked with hash
+if(location.hash){
+  const target = location.hash.slice(1).toLowerCase();
+  setTimeout(()=>{
+    document.querySelectorAll('.term-card').forEach(c=>{
+      if(c.querySelector('.term-name').textContent.toLowerCase().includes(target)){
+        c.classList.add('open');
+        c.scrollIntoView({behavior:'smooth',block:'center'});
+      }
+    });
+  }, 100);
+}
+</script>
+</body>
+</html>

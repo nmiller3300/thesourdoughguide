@@ -587,5 +587,63 @@ fetch('/posts/manifest.json')
 const obs=new IntersectionObserver(e=>{e.forEach(i=>{if(i.isIntersecting){i.target.style.opacity='1';i.target.style.transform='translateY(0)';obs.unobserve(i.target)}})},{threshold:.08});
 document.querySelectorAll('.pc,.cat-card,.eq,.step').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity .5s ease,transform .5s ease';obs.observe(el)});
 </script>
+
+  <!-- TOOLS STRIP -->
+  <section style="padding:56px 0;background:#fff;border-top:1px solid var(--border)">
+    <div class="wrap">
+      <div style="text-align:center;margin-bottom:36px">
+        <span style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);display:block;margin-bottom:10px">Free Tools</span>
+        <h2 style="font-family:var(--h);font-size:clamp(28px,4vw,42px);color:var(--black);margin-bottom:10px;letter-spacing:-.02em">The Ultimate Sourdough Toolkit</h2>
+        <p style="font-size:15px;color:var(--text3);max-width:500px;margin:0 auto">Every tool you need to bake better — all free, all in one place.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-bottom:24px">
+        <a href="/planner.html" style="display:flex;flex-direction:column;gap:8px;padding:18px;background:var(--cream);border:1.5px solid var(--border);border-radius:10px;text-decoration:none;transition:all .2s" onmouseover="this.style.borderColor='var(--rust)'" onmouseout="this.style.borderColor='var(--border)'">
+          <span style="font-size:24px">⏱</span>
+          <span style="font-family:var(--h);font-size:16px;color:var(--black)">Bake Planner</span>
+          <span style="font-size:12px;color:var(--text3)">Full schedule from eat time</span>
+        </a>
+        <a href="/calculator.html" style="display:flex;flex-direction:column;gap:8px;padding:18px;background:var(--cream);border:1.5px solid var(--border);border-radius:10px;text-decoration:none;transition:all .2s" onmouseover="this.style.borderColor='var(--rust)'" onmouseout="this.style.borderColor='var(--border)'">
+          <span style="font-size:24px">⚖️</span>
+          <span style="font-family:var(--h);font-size:16px;color:var(--black)">Recipe Calculator</span>
+          <span style="font-size:12px;color:var(--text3)">Adjust hydration &amp; scale</span>
+        </a>
+        <a href="/starter-tracker.html" style="display:flex;flex-direction:column;gap:8px;padding:18px;background:var(--cream);border:1.5px solid var(--border);border-radius:10px;text-decoration:none;transition:all .2s" onmouseover="this.style.borderColor='var(--rust)'" onmouseout="this.style.borderColor='var(--border)'">
+          <span style="font-size:24px">🫙</span>
+          <span style="font-family:var(--h);font-size:16px;color:var(--black)">Starter Tracker</span>
+          <span style="font-size:12px;color:var(--text3)">Log feedings &amp; predict peak</span>
+        </a>
+        <a href="/diagnosis.html" style="display:flex;flex-direction:column;gap:8px;padding:18px;background:var(--cream);border:1.5px solid var(--border);border-radius:10px;text-decoration:none;transition:all .2s" onmouseover="this.style.borderColor='var(--rust)'" onmouseout="this.style.borderColor='var(--border)'">
+          <span style="font-size:24px">🔬</span>
+          <span style="font-family:var(--h);font-size:16px;color:var(--black)">Loaf Diagnosis</span>
+          <span style="font-size:12px;color:var(--text3)">5 questions → exact fix</span>
+        </a>
+        <a href="/glossary.html" style="display:flex;flex-direction:column;gap:8px;padding:18px;background:var(--cream);border:1.5px solid var(--border);border-radius:10px;text-decoration:none;transition:all .2s" onmouseover="this.style.borderColor='var(--rust)'" onmouseout="this.style.borderColor='var(--border)'">
+          <span style="font-size:24px">📖</span>
+          <span style="font-family:var(--h);font-size:16px;color:var(--black)">Glossary</span>
+          <span style="font-size:12px;color:var(--text3)">30+ terms explained</span>
+        </a>
+        <a href="/flour-guide.html" style="display:flex;flex-direction:column;gap:8px;padding:18px;background:var(--cream);border:1.5px solid var(--border);border-radius:10px;text-decoration:none;transition:all .2s" onmouseover="this.style.borderColor='var(--rust)'" onmouseout="this.style.borderColor='var(--border)'">
+          <span style="font-size:24px">🌾</span>
+          <span style="font-family:var(--h);font-size:16px;color:var(--black)">Flour Guide</span>
+          <span style="font-size:12px;color:var(--text3)">Substitutions &amp; adjustments</span>
+        </a>
+      </div>
+      <div style="text-align:center"><a href="/tools.html" style="display:inline-flex;align-items:center;gap:6px;background:var(--rust);color:#fff;font-size:13px;font-weight:600;padding:12px 22px;border-radius:8px;text-decoration:none">See All 8 Tools →</a></div>
+    </div>
+  </section>
+
+  <!-- DOUGHY FEATURE -->
+  <section style="padding:56px 0;background:var(--black)">
+    <div class="wrap" style="display:flex;align-items:center;gap:48px;flex-wrap:wrap">
+      <div style="flex:1;min-width:280px">
+        <span style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--tan);display:block;margin-bottom:12px">AI Assistant</span>
+        <h2 style="font-family:var(--h);font-size:clamp(26px,4vw,42px);color:#fff;margin-bottom:14px;letter-spacing:-.02em;line-height:1.15">Meet Doughy — your sourdough AI</h2>
+        <p style="font-size:15px;color:rgba(255,255,255,.6);line-height:1.75;margin-bottom:24px">Ask anything about sourdough and get an instant expert answer. Starter problems, timing questions, troubleshooting a flat loaf — Doughy knows it all and is available 24/7.</p>
+        <a href="/assistant.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--rust);color:#fff;font-size:14px;font-weight:600;padding:14px 24px;border-radius:8px;text-decoration:none">Chat with Doughy 🍞</a>
+      </div>
+      <div style="flex:0 0 auto;width:200px;height:200px;background:linear-gradient(135deg,#B5451B,#5A1A00);border-radius:24px;display:flex;align-items:center;justify-content:center;font-size:90px;box-shadow:0 24px 80px rgba(181,69,27,.4)">🍞</div>
+    </div>
+  </section>
+
 </body>
 </html>

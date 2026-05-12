@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sourdough Loaf Diagnosis Tool | The Sourdough Guide</title>
+<meta name="description" content="Answer 5 questions about your sourdough bake and get an instant diagnosis with the exact cause and fix. More precise than searching.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--rust:#B5451B;--rust2:#9A3A16;--cream:#F5EDE0;--border:#E8E0D5;--text:#1C1410;--text2:#4A3728;--text3:#8B7355;--black:#0F0A07;--tan:#C49A6C;--off:#FAFAF7;--green:#1A5C30;--green-bg:#E8F5EE;--h:'DM Serif Display',Georgia,serif;--s:'Inter',system-ui,sans-serif}
+body{background:var(--off);color:var(--text);font-family:var(--s)}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+.nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{display:flex;align-items:center;height:64px;max-width:1200px;margin:0 auto;padding:0 24px}
+.nav-brand{display:flex;align-items:center;gap:10px}
+.nav-logo{width:34px;height:34px;background:var(--rust);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+.nav-title{font-family:var(--h);font-size:18px;color:var(--black)}
+.nav-links{display:flex;margin-left:auto;gap:4px}
+.nav-links a{font-size:12px;font-weight:500;color:var(--text2);padding:6px 12px;border-radius:6px;transition:all .15s}
+.nav-links a:hover{background:var(--cream);color:var(--rust)}
+.nav-links a.active{background:var(--rust);color:#fff}
+.nav-toggle{display:none;background:none;border:1px solid var(--border);border-radius:6px;padding:8px 10px;cursor:pointer;margin-left:auto;flex-direction:column;gap:4px}
+.nav-toggle span{display:block;width:18px;height:1.5px;background:var(--text)}
+.mob-nav{display:none;background:#fff;border-bottom:1px solid var(--border)}
+.mob-nav.open{display:block}
+.mob-nav a{display:block;font-size:14px;font-weight:500;color:var(--text2);padding:12px 24px;border-bottom:1px solid var(--border)}
+.page-hero{background:var(--black);padding:48px 0}
+.page-hero h1{font-family:var(--h);font-size:clamp(32px,5vw,52px);color:#fff;margin-bottom:8px;letter-spacing:-.02em}
+.page-hero p{font-size:15px;color:rgba(255,255,255,.6);max-width:500px;font-weight:300}
+
+/* DIAGNOSIS */
+.diag-progress{display:flex;align-items:center;gap:0;margin:28px 0 24px;overflow:hidden;border-radius:8px}
+.prog-step{flex:1;height:5px;background:var(--border);transition:background .3s}
+.prog-step.done{background:var(--green)}
+.prog-step.active{background:var(--rust)}
+.question-card{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:28px;display:none;animation:fadeIn .3s ease}
+.question-card.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.q-step{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--rust);margin-bottom:8px}
+.q-text{font-family:var(--h);font-size:clamp(20px,3vw,26px);color:var(--black);margin-bottom:20px;line-height:1.3}
+.q-options{display:flex;flex-direction:column;gap:10px}
+.q-opt{background:var(--off);border:1.5px solid var(--border);border-radius:8px;padding:14px 18px;cursor:pointer;font-size:14px;color:var(--text2);text-align:left;transition:all .15s;display:flex;align-items:center;gap:10px}
+.q-opt:hover{border-color:var(--rust);color:var(--rust);background:var(--cream)}
+.q-opt.selected{border-color:var(--rust);background:var(--cream);color:var(--rust);font-weight:500}
+.q-opt .opt-icon{font-size:20px;flex-shrink:0}
+
+/* RESULT */
+.result-card{display:none;animation:fadeIn .4s ease}
+.result-card.show{display:block}
+.result-header{background:var(--black);border-radius:12px 12px 0 0;padding:24px 28px}
+.result-diagnosis{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tan);margin-bottom:8px}
+.result-title{font-family:var(--h);font-size:clamp(22px,3vw,30px);color:#fff;margin-bottom:6px}
+.result-confidence{font-size:13px;color:rgba(255,255,255,.5)}
+.result-body{background:#fff;border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:24px 28px}
+.result-section{margin-bottom:20px}
+.result-section-title{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.cause-title{color:var(--rust)}
+.fix-title{color:var(--green)}
+.cause-text{font-size:14px;color:var(--text2);line-height:1.75}
+.fix-list{display:flex;flex-direction:column;gap:8px}
+.fix-item{display:flex;gap:10px;font-size:14px;color:var(--text2);line-height:1.65;padding:10px 12px;background:var(--green-bg);border-radius:6px}
+.fix-num{font-family:var(--h);font-size:16px;color:var(--green);flex-shrink:0;font-style:italic}
+.result-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.btn-primary{background:var(--rust);color:#fff;border:none;border-radius:7px;font-family:var(--s);font-size:13px;font-weight:600;padding:11px 20px;cursor:pointer;text-decoration:none;transition:background .2s}
+.btn-primary:hover{background:var(--rust2)}
+.btn-secondary{background:#fff;color:var(--text2);border:1.5px solid var(--border);border-radius:7px;font-family:var(--s);font-size:13px;font-weight:500;padding:10px 20px;cursor:pointer;transition:all .15s}
+.btn-secondary:hover{border-color:var(--rust);color:var(--rust)}
+.also-check{background:#FFF8E6;border:1px solid #F5CC60;border-radius:8px;padding:14px 16px;margin-top:16px;font-size:13px;color:#5C4010}
+.also-check strong{color:#A07010}
+@media(max-width:640px){.nav-links{display:none}.nav-toggle{display:flex}.wrap{padding:0 16px}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand"><div class="nav-logo">🌾</div><div class="nav-title">The Sourdough Guide</div></a>
+    <nav class="nav-links">
+      <a href="/beginner.html">Start Here</a><a href="/recipes.html?cat=recipe">Recipes</a>
+      <a href="/troubleshooting.html">Troubleshooting</a><a href="/equipment.html">Equipment</a>
+      <a href="/tools.html" class="active">Tools</a><a href="/assistant.html">Doughy AI</a>
+    </nav>
+    <button class="nav-toggle" onclick="this.closest('.nav').querySelector('.mob-nav').classList.toggle('open')"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mob-nav">
+    <a href="/beginner.html">Start Here</a><a href="/recipes.html?cat=recipe">Recipes</a>
+    <a href="/troubleshooting.html">Troubleshooting</a><a href="/equipment.html">Equipment</a>
+    <a href="/tools.html">Tools</a><a href="/assistant.html">Doughy AI</a>
+  </nav>
+</header>
+
+<div class="page-hero"><div class="wrap">
+  <h1>Loaf Diagnosis Tool</h1>
+  <p>Answer 5 questions — get an instant, specific diagnosis of what went wrong and exactly how to fix it.</p>
+</div></div>
+
+<div class="wrap" style="padding-bottom:60px">
+  <div class="diag-progress">
+    <div class="prog-step active" id="prog-0"></div>
+    <div class="prog-step" id="prog-1"></div>
+    <div class="prog-step" id="prog-2"></div>
+    <div class="prog-step" id="prog-3"></div>
+    <div class="prog-step" id="prog-4"></div>
+  </div>
+
+  <!-- Q1 -->
+  <div class="question-card active" id="q-0">
+    <div class="q-step">Question 1 of 5</div>
+    <div class="q-text">How did your loaf rise in the oven?</div>
+    <div class="q-options">
+      <button class="q-opt" onclick="answer(0,'good-rise')"><span class="opt-icon">🙌</span>Good rise — noticeably taller coming out</button>
+      <button class="q-opt" onclick="answer(0,'flat')"><span class="opt-icon">😞</span>Flat or barely rose at all</button>
+      <button class="q-opt" onclick="answer(0,'burst')"><span class="opt-icon">💥</span>Rose but burst on the side or bottom</button>
+      <button class="q-opt" onclick="answer(0,'collapse')"><span class="opt-icon">📉</span>Rose then collapsed or sank</button>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="question-card" id="q-1">
+    <div class="q-step">Question 2 of 5</div>
+    <div class="q-text">What does the crust look like?</div>
+    <div class="q-options">
+      <button class="q-opt" onclick="answer(1,'crust-good')"><span class="opt-icon">✅</span>Deep golden brown and crackling</button>
+      <button class="q-opt" onclick="answer(1,'crust-pale')"><span class="opt-icon">😐</span>Pale, soft, or didn't brown much</button>
+      <button class="q-opt" onclick="answer(1,'crust-burnt')"><span class="opt-icon">🔥</span>Burnt or very dark on the outside</button>
+      <button class="q-opt" onclick="answer(1,'crust-thick')"><span class="opt-icon">🧱</span>Very thick and hard crust</button>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="question-card" id="q-2">
+    <div class="q-step">Question 3 of 5</div>
+    <div class="q-text">What does the crumb (inside) look like?</div>
+    <div class="q-options">
+      <button class="q-opt" onclick="answer(2,'crumb-open')"><span class="opt-icon">🧀</span>Open with irregular holes — looks good</button>
+      <button class="q-opt" onclick="answer(2,'crumb-dense')"><span class="opt-icon">🧱</span>Dense, heavy, barely any holes</button>
+      <button class="q-opt" onclick="answer(2,'crumb-gummy')"><span class="opt-icon">🫠</span>Gummy, wet, or sticky inside</button>
+      <button class="q-opt" onclick="answer(2,'crumb-huge-holes')"><span class="opt-icon">🕳️</span>Giant irregular holes — uneven</button>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="question-card" id="q-3">
+    <div class="q-step">Question 4 of 5</div>
+    <div class="q-text">What was your starter like before baking?</div>
+    <div class="q-options">
+      <button class="q-opt" onclick="answer(3,'starter-peak')"><span class="opt-icon">💪</span>Doubled, domed, passed float test</button>
+      <button class="q-opt" onclick="answer(3,'starter-weak')"><span class="opt-icon">😴</span>Didn't double or felt sluggish</button>
+      <button class="q-opt" onclick="answer(3,'starter-past-peak')"><span class="opt-icon">📉</span>Past peak — already deflating</button>
+      <button class="q-opt" onclick="answer(3,'starter-unsure')"><span class="opt-icon">🤷</span>Not sure / didn't check</button>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="question-card" id="q-4">
+    <div class="q-step">Question 5 of 5</div>
+    <div class="q-text">How did the dough behave during bulk fermentation?</div>
+    <div class="q-options">
+      <button class="q-opt" onclick="answer(4,'bulk-good')"><span class="opt-icon">✅</span>Rose 50-75%, lots of bubbles, felt airy</button>
+      <button class="q-opt" onclick="answer(4,'bulk-under')"><span class="opt-icon">😶</span>Rose less than expected, felt dense</button>
+      <button class="q-opt" onclick="answer(4,'bulk-over')"><span class="opt-icon">🫧</span>Very jiggly, slack, or looked overproofed</button>
+      <button class="q-opt" onclick="answer(4,'bulk-unsure')"><span class="opt-icon">🤷</span>Not sure / didn't track</button>
+    </div>
+  </div>
+
+  <!-- RESULT -->
+  <div class="result-card" id="result">
+    <div class="result-header">
+      <div class="result-diagnosis">Diagnosis</div>
+      <div class="result-title" id="r-title"></div>
+      <div class="result-confidence" id="r-confidence"></div>
+    </div>
+    <div class="result-body">
+      <div class="result-section">
+        <div class="result-section-title cause-title">🔍 Why this happened</div>
+        <div class="cause-text" id="r-cause"></div>
+      </div>
+      <div class="result-section">
+        <div class="result-section-title fix-title">✅ How to fix it next bake</div>
+        <div class="fix-list" id="r-fixes"></div>
+      </div>
+      <div class="also-check" id="r-also" style="display:none"></div>
+      <div class="result-actions">
+        <a href="/troubleshooting.html" class="btn-primary">Full Troubleshooting Guide →</a>
+        <a href="/assistant.html" class="btn-primary" style="background:var(--black)">Ask Doughy AI 🍞</a>
+        <button class="btn-secondary" onclick="restart()">↺ Diagnose Again</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const answers = {};
+
+function answer(qNum, val){
+  answers[qNum] = val;
+  document.querySelectorAll(`#q-${qNum} .q-opt`).forEach(b=>b.classList.remove('selected'));
+  event.currentTarget.classList.add('selected');
+  
+  document.getElementById(`prog-${qNum}`).classList.remove('active');
+  document.getElementById(`prog-${qNum}`).classList.add('done');
+  
+  setTimeout(()=>{
+    document.getElementById(`q-${qNum}`).classList.remove('active');
+    if(qNum < 4){
+      document.getElementById(`q-${qNum+1}`).classList.add('active');
+      if(qNum+1 < 5) document.getElementById(`prog-${qNum+1}`).classList.add('active');
+    } else {
+      diagnose();
+    }
+  }, 300);
+}
+
+function diagnose(){
+  const r0 = answers[0]; // rise
+  const r1 = answers[1]; // crust
+  const r2 = answers[2]; // crumb
+  const r3 = answers[3]; // starter
+  const r4 = answers[4]; // bulk
+
+  let title, cause, fixes, also, confidence;
+
+  // Decision tree
+  if(r0 === 'flat' && r3 === 'starter-weak'){
+    title = 'Inactive Starter';
+    confidence = 'High confidence — starter health is the primary cause';
+    cause = 'Your starter wasn\'t active enough to produce the CO₂ needed for oven spring. Without healthy yeast activity, there\'s nothing to drive the rise when the loaf hits the hot oven.';
+    fixes = ['Feed your starter twice daily for 3-5 days before baking. It needs consistent feeding to build yeast strength.','Use starter at peak — when it\'s doubled, domed, and passes the float test. Usually 4-8 hours after feeding.','Try adding 20% whole wheat or rye flour to your feeds — these carry more wild yeast than white flour.','Make sure your feeding environment is warm enough (75-80°F). Below 68°F, yeast activity barely registers.'];
+    also = '<strong>Also check:</strong> Are you using filtered water? Chlorine in tap water inhibits wild yeast and can prevent a starter from becoming active even with regular feeding.';
+  } else if(r0 === 'flat' && r4 === 'bulk-under'){
+    title = 'Under-Fermented Dough';
+    confidence = 'High confidence — insufficient bulk fermentation';
+    cause = 'The dough didn\'t ferment long enough to produce sufficient gas. Under-fermented dough goes into the oven without the yeast activity needed to drive oven spring, resulting in a flat, dense loaf.';
+    fixes = ['Extend bulk fermentation. Watch the dough, not the clock — aim for 50-75% volume increase with bubbles visible on the sides.','Ensure your kitchen is warm enough. Below 70°F, fermentation is very slow. Find a warm spot (top of fridge, near oven).','Make sure your starter was truly active before mixing. An underactive starter = underfermented dough no matter how long you wait.','Test the dough at the end of bulk: it should feel airy, jiggly when you shake it, and show visible bubbles throughout.'];
+  } else if(r0 === 'flat' && r3 === 'starter-peak' && r4 === 'bulk-good'){
+    title = 'Dutch Oven Not Hot Enough';
+    confidence = 'High confidence — baking setup issue';
+    cause = 'Everything went right with the fermentation, but the baking environment failed. A Dutch oven that isn\'t fully preheated can\'t generate the explosive oven spring needed in the first 10 minutes of baking.';
+    fixes = ['Preheat your Dutch oven inside the oven for a full 45-60 minutes at 500°F before the loaf goes in.','Verify your oven temperature with an oven thermometer — many ovens run 15-25°F cooler than the dial shows.','Score at least ½ inch deep at a 30-45° angle. A shallow score prevents the loaf from opening and rising freely.','Bake the loaf straight from the fridge, cold. Cold dough holds its shape better and springs more dramatically.'];
+    also = '<strong>Also check:</strong> Did you score deeply enough? A shallow or hesitant score prevents the loaf from opening and can look like a flat loaf even when fermentation was fine.';
+  } else if(r0 === 'burst'){
+    title = 'Score Line Didn\'t Open — Side Burst';
+    confidence = 'High confidence — scoring or proofing issue';
+    cause = 'The loaf had excess internal pressure that found the weakest point (the side or bottom seam) instead of your score line. This happens when the score was too shallow, at the wrong angle, or the dough had too much tension.';
+    fixes = ['Score at a low angle — 15-30° from horizontal, not straight down. This undercut creates an ear that lifts rather than just splitting.','One swift, confident slash at least ½ inch deep. Hesitation creates dragging rather than cutting.','Use a fresh, sharp razor blade or lame. A dull blade pushes through instead of cutting cleanly.','Bake cold dough straight from the fridge — firmer dough scores more cleanly and the cut stays open.'];
+  } else if(r0 === 'collapse'){
+    title = 'Over-Proofed Dough';
+    confidence = 'High confidence — over-fermentation';
+    cause = 'The dough fermented past its peak, weakening the gluten structure. Over-proofed dough looks active but has degraded past the point of holding gas effectively, causing the loaf to collapse when scored or when it hits the heat.';
+    fixes = ['Shorten bulk fermentation by 30-60 minutes on your next bake and watch the poke test, not just volume.','Poke test before baking: press a floured finger ½ inch into the dough. Slowly springs back halfway = perfect. Stays dented = bake immediately.','In warm kitchens (above 76°F), fermentation is dramatically faster. Check your dough hourly in the final stages.','Use less starter (10-15%) to slow fermentation and give yourself more control over timing.'];
+  } else if(r2 === 'crumb-dense' && r4 !== 'bulk-under'){
+    title = 'Dense Crumb — Multiple Possible Causes';
+    confidence = 'Medium confidence — several factors may contribute';
+    cause = 'A dense crumb with good bulk fermentation usually points to degassing during shaping, insufficient gluten development, or high-protein flour issues. The fermentation was there but the structure to hold the gas wasn\'t.';
+    fixes = ['Handle dough gently during shaping. Aggressive pre-shaping and final shaping degasses the dough you worked hard to ferment.','Complete all stretch and fold sets (4 sets over 2 hours) during bulk to build gluten strength.','Use bread flour with at least 12% protein. All-purpose flour alone can\'t create an open crumb structure.','Make sure you\'re waiting a full 1.5 hours after baking before slicing. Cutting too soon makes an open crumb look dense.'];
+  } else if(r2 === 'crumb-gummy'){
+    title = 'Gummy Interior — Cut Too Soon';
+    confidence = 'Very high confidence';
+    cause = 'The loaf was almost certainly cut before it had fully cooled. The starch inside sourdough is still gelatinized and setting for 1-2 hours after it comes out of the oven. Cutting too soon releases steam and collapses the crumb.';
+    fixes = ['Wait at least 1.5 hours after baking before slicing. 2 hours is better for large loaves.','Cool on a wire rack — not a solid surface. Air needs to circulate underneath too.','Check internal temperature: 205-210°F means fully baked. Below that, return to the oven for 5 more minutes.','If the loaf was genuinely cool before cutting and still gummy, it was under-baked. Extend the uncovered bake time next time.'];
+  } else if(r1 === 'crust-pale'){
+    title = 'Pale Crust — Insufficient Dry Heat';
+    confidence = 'High confidence — uncovered baking issue';
+    cause = 'The Maillard reaction that creates a deep, crackling crust requires high, dry heat. The covered phase traps steam; the uncovered phase builds color. Without enough dry heat exposure, the crust stays pale and soft.';
+    fixes = ['Make sure you removed the lid and baked uncovered for a full 20-25 minutes.','Raise the uncovered baking temperature to 450-475°F. Check with an oven thermometer.','Leave the baked loaf in the turned-off oven with the door cracked for 10 extra minutes.','Never wrap or cover a warm loaf — trapped steam immediately softens the crust you just built.'];
+  } else if(r1 === 'crust-burnt' && r2 === 'crumb-gummy'){
+    title = 'Burnt Outside, Raw Inside';
+    confidence = 'High confidence — lid timing issue';
+    cause = 'The outside browned too fast before heat could penetrate the center. Usually caused by removing the Dutch oven lid too early or baking uncovered at too high a temperature.';
+    fixes = ['Keep the lid on for the full first 20 minutes. Steam prevents the crust from browning prematurely.','After removing the lid, reduce temperature by 20-25°F for the uncovered phase.','Check internal temperature with a thermometer — done when it reaches 205-210°F inside.','For very large or dense loaves, increase covered bake time to 25 minutes before removing the lid.'];
+  } else {
+    // Default good result or unknown
+    title = 'Bake Looks Generally Solid';
+    confidence = 'Based on your answers, the bake went reasonably well';
+    cause = 'Your answers suggest the major baking fundamentals were in place. Any issues you\'re noticing may be minor technique refinements rather than fundamental problems.';
+    fixes = ['Keep a baking journal — note starter peak time, bulk duration, kitchen temp, and bake times for each loaf.','Each variable you control precisely gives you one less thing to troubleshoot next time.','If you had one specific issue not captured above, try the full troubleshooting guide for targeted advice.','Consider asking Doughy AI to describe your exact symptoms for a more tailored diagnosis.'];
+  }
+
+  document.getElementById('r-title').textContent = title;
+  document.getElementById('r-confidence').textContent = confidence;
+  document.getElementById('r-cause').textContent = cause;
+  document.getElementById('r-fixes').innerHTML = fixes.map((f,i)=>`<div class="fix-item"><span class="fix-num">${i+1}</span><span>${f}</span></div>`).join('');
+  
+  if(also){
+    document.getElementById('r-also').innerHTML = also;
+    document.getElementById('r-also').style.display = '';
+  }
+
+  document.querySelector('.result-card').classList.add('show');
+  document.querySelector('.result-card').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function restart(){
+  Object.keys(answers).forEach(k=>delete answers[k]);
+  document.querySelectorAll('.q-opt').forEach(b=>b.classList.remove('selected'));
+  document.querySelectorAll('.question-card').forEach(c=>c.classList.remove('active'));
+  document.querySelectorAll('.prog-step').forEach((p,i)=>{p.classList.remove('done','active');if(i===0)p.classList.add('active');});
+  document.getElementById('q-0').classList.add('active');
+  document.querySelector('.result-card').classList.remove('show');
+  document.getElementById('r-also').style.display='none';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>

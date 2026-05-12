@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sourdough Recipe & Hydration Calculator | The Sourdough Guide</title>
+<meta name="description" content="Calculate exact ingredient amounts for any sourdough recipe. Adjust hydration, flour weight, and servings instantly. Free sourdough calculator.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--rust:#B5451B;--rust2:#9A3A16;--cream:#F5EDE0;--border:#E8E0D5;--text:#1C1410;--text2:#4A3728;--text3:#8B7355;--black:#0F0A07;--tan:#C49A6C;--off:#FAFAF7;--h:'DM Serif Display',Georgia,serif;--s:'Inter',system-ui,sans-serif}
+body{background:var(--off);color:var(--text);font-family:var(--s)}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:900px;margin:0 auto;padding:0 24px}
+.nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{display:flex;align-items:center;height:64px;max-width:1200px;margin:0 auto;padding:0 24px}
+.nav-brand{display:flex;align-items:center;gap:10px}
+.nav-logo{width:34px;height:34px;background:var(--rust);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+.nav-title{font-family:var(--h);font-size:18px;color:var(--black)}
+.nav-links{display:flex;margin-left:auto;gap:4px}
+.nav-links a{font-size:12px;font-weight:500;color:var(--text2);padding:6px 12px;border-radius:6px;transition:all .15s}
+.nav-links a:hover{background:var(--cream);color:var(--rust)}
+.nav-links a.active{background:var(--rust);color:#fff}
+.nav-toggle{display:none;background:none;border:1px solid var(--border);border-radius:6px;padding:8px 10px;cursor:pointer;margin-left:auto;flex-direction:column;gap:4px}
+.nav-toggle span{display:block;width:18px;height:1.5px;background:var(--text)}
+.mob-nav{display:none;background:#fff;border-bottom:1px solid var(--border)}
+.mob-nav.open{display:block}
+.mob-nav a{display:block;font-size:14px;font-weight:500;color:var(--text2);padding:12px 24px;border-bottom:1px solid var(--border)}
+.page-hero{background:var(--black);padding:48px 0}
+.page-hero h1{font-family:var(--h);font-size:clamp(32px,5vw,52px);color:#fff;margin-bottom:8px;letter-spacing:-.02em}
+.page-hero p{font-size:15px;color:rgba(255,255,255,.6);max-width:500px;font-weight:300}
+
+/* CALC */
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:32px 0}
+.calc-panel{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:24px}
+.panel-title{font-family:var(--h);font-size:18px;color:var(--black);margin-bottom:16px}
+.slider-field{margin-bottom:20px}
+.slider-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.slider-label{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text3)}
+.slider-val{font-family:var(--h);font-size:22px;color:var(--rust);line-height:1}
+.slider-unit{font-size:13px;color:var(--text3);margin-left:2px}
+input[type=range]{width:100%;height:4px;background:var(--border);outline:none;border-radius:2px;appearance:none;cursor:pointer}
+input[type=range]::-webkit-slider-thumb{appearance:none;width:18px;height:18px;border-radius:50%;background:var(--rust);cursor:pointer;box-shadow:0 2px 4px rgba(181,69,27,.3)}
+input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--rust);cursor:pointer;border:none}
+.slider-range{display:flex;justify-content:space-between;font-size:10px;color:var(--text3);margin-top:3px}
+.recipe-tabs{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap}
+.r-tab{font-size:12px;font-weight:500;padding:6px 12px;border-radius:6px;border:1.5px solid var(--border);background:#fff;color:var(--text2);cursor:pointer;transition:all .15s}
+.r-tab.active,.r-tab:hover{background:var(--rust);color:#fff;border-color:var(--rust)}
+
+/* RESULTS */
+.result-panel{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:24px}
+.result-title{font-family:var(--h);font-size:18px;color:var(--black);margin-bottom:4px}
+.result-hydration{font-size:13px;color:var(--text3);margin-bottom:20px}
+.ing-list{display:flex;flex-direction:column;gap:0}
+.ing-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--border)}
+.ing-row:last-child{border-bottom:none}
+.ing-name{font-size:14px;color:var(--text2)}
+.ing-sub{font-size:11px;color:var(--text3);margin-top:2px}
+.ing-amount{font-family:var(--h);font-size:20px;color:var(--rust)}
+.ing-g{font-size:12px;color:var(--text3);margin-left:2px}
+.hydration-chart{margin:20px 0;background:var(--off);border-radius:8px;overflow:hidden;height:16px;display:flex}
+.hc-flour{background:var(--tan);display:flex;align-items:center;justify-content:center;font-size:9px;color:#fff;font-weight:700;transition:width .3s}
+.hc-water{background:var(--rust);display:flex;align-items:center;justify-content:center;font-size:9px;color:#fff;font-weight:700;transition:width .3s}
+.hc-other{background:var(--border);flex:1}
+.chart-legend{display:flex;gap:12px;margin-top:6px;flex-wrap:wrap}
+.legend-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--text3)}
+.legend-dot{width:8px;height:8px;border-radius:50%}
+.bakers-pct{font-size:11px;color:var(--text3);text-align:center;margin-top:16px;padding-top:12px;border-top:1px solid var(--border)}
+.print-btn{background:var(--off);border:1.5px solid var(--border);color:var(--text2);font-family:var(--s);font-size:13px;font-weight:500;padding:10px 20px;border-radius:8px;cursor:pointer;margin-top:16px;display:inline-flex;align-items:center;gap:6px;transition:all .18s;width:100%;justify-content:center}
+.print-btn:hover{border-color:var(--rust);color:var(--rust)}
+.tips-card{background:var(--cream);border:1px solid var(--border);border-radius:8px;padding:16px;margin-top:16px}
+.tips-title{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--rust);margin-bottom:8px}
+.tips-text{font-size:12px;color:var(--text2);line-height:1.7}
+
+@media(max-width:700px){.nav-links{display:none}.nav-toggle{display:flex}.calc-grid{grid-template-columns:1fr}.wrap{padding:0 16px}}
+@media print{.nav,.page-hero,.calc-panel,.print-btn,.tips-card{display:none!important}.result-panel{border:none;padding:0}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand"><div class="nav-logo">🌾</div><div class="nav-title">The Sourdough Guide</div></a>
+    <nav class="nav-links">
+      <a href="/beginner.html">Start Here</a><a href="/recipes.html?cat=recipe">Recipes</a>
+      <a href="/troubleshooting.html">Troubleshooting</a><a href="/equipment.html">Equipment</a>
+      <a href="/tools.html" class="active">Tools</a><a href="/assistant.html">Doughy AI</a>
+    </nav>
+    <button class="nav-toggle" onclick="this.closest('.nav').querySelector('.mob-nav').classList.toggle('open')"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mob-nav">
+    <a href="/beginner.html">Start Here</a><a href="/recipes.html?cat=recipe">Recipes</a>
+    <a href="/troubleshooting.html">Troubleshooting</a><a href="/equipment.html">Equipment</a>
+    <a href="/tools.html">Tools</a><a href="/assistant.html">Doughy AI</a>
+  </nav>
+</header>
+
+<div class="page-hero"><div class="wrap">
+  <h1>Recipe Calculator</h1>
+  <p>Adjust flour, hydration, and loaves — every ingredient updates instantly in grams.</p>
+</div></div>
+
+<div class="wrap">
+<div class="calc-grid">
+  <!-- CONTROLS -->
+  <div class="calc-panel">
+    <div class="panel-title">⚙️ Adjust Your Recipe</div>
+
+    <div style="margin-bottom:20px">
+      <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:10px">Recipe preset</div>
+      <div class="recipe-tabs">
+        <button class="r-tab active" onclick="setPreset('classic',this)">Classic Sourdough</button>
+        <button class="r-tab" onclick="setPreset('whole-wheat',this)">Whole Wheat</button>
+        <button class="r-tab" onclick="setPreset('rye',this)">Dark Rye</button>
+        <button class="r-tab" onclick="setPreset('focaccia',this)">Focaccia</button>
+        <button class="r-tab" onclick="setPreset('pizza',this)">Pizza Dough</button>
+      </div>
+    </div>
+
+    <div class="slider-field">
+      <div class="slider-header">
+        <span class="slider-label">Total Flour</span>
+        <span><span class="slider-val" id="flour-val">500</span><span class="slider-unit">g</span></span>
+      </div>
+      <input type="range" id="flour" min="200" max="1500" step="50" value="500" oninput="update()">
+      <div class="slider-range"><span>200g</span><span>1500g</span></div>
+    </div>
+
+    <div class="slider-field">
+      <div class="slider-header">
+        <span class="slider-label">Hydration</span>
+        <span><span class="slider-val" id="hydration-val">75</span><span class="slider-unit">%</span></span>
+      </div>
+      <input type="range" id="hydration" min="55" max="95" step="1" value="75" oninput="update()">
+      <div class="slider-range"><span>55% (stiff)</span><span>95% (very wet)</span></div>
+    </div>
+
+    <div class="slider-field">
+      <div class="slider-header">
+        <span class="slider-label">Starter %</span>
+        <span><span class="slider-val" id="starter-val">20</span><span class="slider-unit">%</span></span>
+      </div>
+      <input type="range" id="starter-pct" min="5" max="40" step="1" value="20" oninput="update()">
+      <div class="slider-range"><span>5% (slow)</span><span>40% (fast)</span></div>
+    </div>
+
+    <div class="slider-field">
+      <div class="slider-header">
+        <span class="slider-label">Salt</span>
+        <span><span class="slider-val" id="salt-val">2.0</span><span class="slider-unit">%</span></span>
+      </div>
+      <input type="range" id="salt-pct" min="1.5" max="2.5" step="0.1" value="2.0" oninput="update()">
+      <div class="slider-range"><span>1.5%</span><span>2.5%</span></div>
+    </div>
+
+    <div class="slider-field">
+      <div class="slider-header">
+        <span class="slider-label">Loaves</span>
+        <span><span class="slider-val" id="loaves-val">1</span></span>
+      </div>
+      <input type="range" id="loaves" min="1" max="6" step="1" value="1" oninput="update()">
+      <div class="slider-range"><span>1</span><span>6</span></div>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="result-panel">
+    <div class="result-title" id="result-title">Classic Sourdough</div>
+    <div class="result-hydration" id="result-sub">75% hydration · 1 loaf · ~900g dough</div>
+
+    <div class="hydration-chart">
+      <div class="hc-flour" id="hc-flour">Flour</div>
+      <div class="hc-water" id="hc-water">Water</div>
+      <div class="hc-other" id="hc-other"></div>
+    </div>
+    <div class="chart-legend">
+      <div class="legend-item"><div class="legend-dot" style="background:var(--tan)"></div>Flour</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--rust)"></div>Water</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--border)"></div>Other</div>
+    </div>
+
+    <div class="ing-list" id="ing-list">
+    </div>
+
+    <div class="bakers-pct" id="bakers-pct"></div>
+
+    <button class="print-btn" onclick="window.print()">🖨 Print Recipe</button>
+
+    <div class="tips-card" id="tips-card">
+      <div class="tips-title">💡 Hydration tip</div>
+      <div class="tips-text" id="tips-text">Classic hydration for a manageable dough with good structure.</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+const PRESETS = {
+  'classic': {name:'Classic Sourdough', flour:500, hydration:75, starter:20, salt:2.0, note:'The standard starting point. Manageable dough, good open crumb, reliable crust.'},
+  'whole-wheat': {name:'Whole Wheat Sourdough', flour:500, hydration:80, starter:20, salt:2.0, note:'Whole wheat absorbs more water. Start at 75% if this feels too sticky.'},
+  'rye': {name:'Dark Rye Sourdough', flour:500, hydration:85, starter:25, salt:2.0, note:'Rye dough is very sticky — this is normal. Higher starter % speeds fermentation.'},
+  'focaccia': {name:'Sourdough Focaccia', flour:500, hydration:88, starter:15, salt:2.2, note:'Very wet dough — focaccia spreads in the pan so high hydration is correct.'},
+  'pizza': {name:'Pizza Dough', flour:500, hydration:65, starter:10, salt:2.5, note:'Lower hydration for a workable, stretchy pizza dough. Cold ferment 24-72 hrs.'},
+};
+
+let currentPreset = 'classic';
+
+function setPreset(key, btn){
+  currentPreset = key;
+  document.querySelectorAll('.r-tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const p = PRESETS[key];
+  document.getElementById('flour').value = p.flour;
+  document.getElementById('hydration').value = p.hydration;
+  document.getElementById('starter-pct').value = p.starter;
+  document.getElementById('salt-pct').value = p.salt;
+  document.getElementById('loaves').value = 1;
+  update();
+}
+
+function update(){
+  const flour = parseInt(document.getElementById('flour').value);
+  const hydration = parseInt(document.getElementById('hydration').value);
+  const starterPct = parseInt(document.getElementById('starter-pct').value);
+  const saltPct = parseFloat(document.getElementById('salt-pct').value);
+  const loaves = parseInt(document.getElementById('loaves').value);
+
+  document.getElementById('flour-val').textContent = flour;
+  document.getElementById('hydration-val').textContent = hydration;
+  document.getElementById('starter-val').textContent = starterPct;
+  document.getElementById('salt-val').textContent = saltPct.toFixed(1);
+  document.getElementById('loaves-val').textContent = loaves;
+
+  const totalFlour = flour * loaves;
+  const water = Math.round(totalFlour * (hydration / 100));
+  const starter = Math.round(totalFlour * (starterPct / 100));
+  const salt = Math.round(totalFlour * (saltPct / 100) * 10) / 10;
+  const total = totalFlour + water + salt;
+
+  // Hydration chart
+  const total_ = totalFlour + water + salt;
+  document.getElementById('hc-flour').style.width = Math.round((totalFlour/total_)*100*0.9)+'%';
+  document.getElementById('hc-water').style.width = Math.round((water/total_)*100*0.9)+'%';
+
+  // Ingredients
+  const ingredients = [
+    {name:'Bread Flour', sub:`${loaves > 1 ? loaves+'× ' : ''}base flour`, amount: totalFlour, unit:'g'},
+    {name:'Water', sub:`${hydration}% hydration`, amount: water, unit:'g'},
+    {name:'Active Starter', sub:`${starterPct}% of flour — use at peak`, amount: starter, unit:'g'},
+    {name:'Fine Sea Salt', sub:`${saltPct}% of flour`, amount: salt, unit:'g'},
+  ];
+
+  if(currentPreset === 'focaccia'){
+    ingredients.push({name:'Olive Oil', sub:'for panning', amount: Math.round(totalFlour*0.06), unit:'g'});
+  }
+
+  const ingList = document.getElementById('ing-list');
+  ingList.innerHTML = ingredients.map(i=>`
+    <div class="ing-row">
+      <div><div class="ing-name">${i.name}</div><div class="ing-sub">${i.sub}</div></div>
+      <div><span class="ing-amount">${i.amount}</span><span class="ing-g">${i.unit}</span></div>
+    </div>`).join('');
+
+  // Baker's percentages
+  document.getElementById('bakers-pct').innerHTML = 
+    `Baker's %: Flour 100% · Water ${hydration}% · Starter ${starterPct}% · Salt ${saltPct}%`;
+
+  // Subtitle
+  const doughWeight = totalFlour + water + salt;
+  document.getElementById('result-sub').textContent = 
+    `${hydration}% hydration · ${loaves} loaf${loaves>1?'s':''} · ~${Math.round(doughWeight)}g total dough`;
+  document.getElementById('result-title').textContent = PRESETS[currentPreset]?.name || 'Custom Recipe';
+
+  // Tips
+  const tips = hydration < 65 ? 'Stiff dough — easy to handle and shape. Good for beginners or pizza.'
+    : hydration < 72 ? 'Moderate hydration — forgiving and workable. Good for sandwich loaves.'
+    : hydration < 78 ? 'Classic artisan hydration — great balance of workability and open crumb.'
+    : hydration < 85 ? 'High hydration — stickier dough but more open crumb. Use wet hands.'
+    : 'Very high hydration — experienced bakers only. Refrigerate frequently during handling.';
+  document.getElementById('tips-text').textContent = PRESETS[currentPreset]?.note || tips;
+}
+
+update();
+</script>
+</body>
+</html>

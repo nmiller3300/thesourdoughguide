@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sourdough Bake Timeline Planner | The Sourdough Guide</title>
+<meta name="description" content="Enter when you want to eat your sourdough and get a complete bake schedule. Every step timed automatically based on your kitchen temperature.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--rust:#B5451B;--rust2:#9A3A16;--cream:#F5EDE0;--border:#E8E0D5;--text:#1C1410;--text2:#4A3728;--text3:#8B7355;--black:#0F0A07;--tan:#C49A6C;--off:#FAFAF7;--green:#1A5C30;--green-bg:#E8F5EE;--h:'DM Serif Display',Georgia,serif;--s:'Inter',system-ui,sans-serif}
+body{background:var(--off);color:var(--text);font-family:var(--s)}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:900px;margin:0 auto;padding:0 24px}
+.nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{display:flex;align-items:center;height:64px;max-width:1200px;margin:0 auto;padding:0 24px;gap:12px}
+.nav-brand{display:flex;align-items:center;gap:10px}
+.nav-logo{width:34px;height:34px;background:var(--rust);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+.nav-title{font-family:var(--h);font-size:18px;color:var(--black)}
+.nav-links{display:flex;margin-left:auto;gap:4px}
+.nav-links a{font-size:12px;font-weight:500;color:var(--text2);padding:6px 12px;border-radius:6px;transition:all .15s}
+.nav-links a:hover{background:var(--cream);color:var(--rust)}
+.nav-links a.active{background:var(--rust);color:#fff}
+.nav-toggle{display:none;background:none;border:1px solid var(--border);border-radius:6px;padding:8px 10px;cursor:pointer;margin-left:auto;flex-direction:column;gap:4px}
+.nav-toggle span{display:block;width:18px;height:1.5px;background:var(--text)}
+.mob-nav{display:none;background:#fff;border-bottom:1px solid var(--border)}
+.mob-nav.open{display:block}
+.mob-nav a{display:block;font-size:14px;font-weight:500;color:var(--text2);padding:12px 24px;border-bottom:1px solid var(--border)}
+
+/* PAGE */
+.page-hero{background:var(--black);padding:48px 0}
+.page-hero h1{font-family:var(--h);font-size:clamp(32px,5vw,52px);color:#fff;margin-bottom:8px;letter-spacing:-.02em}
+.page-hero p{font-size:15px;color:rgba(255,255,255,.6);max-width:500px;font-weight:300}
+
+/* PLANNER CARD */
+.planner-card{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:28px;margin:32px 0}
+.planner-title{font-family:var(--h);font-size:22px;color:var(--black);margin-bottom:20px}
+.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3)}
+.field input,.field select{font-family:var(--s);font-size:14px;color:var(--text);background:var(--off);border:1.5px solid var(--border);border-radius:8px;padding:10px 14px;outline:none;transition:border-color .2s;width:100%}
+.field input:focus,.field select:focus{border-color:var(--rust)}
+.field-note{font-size:11px;color:var(--text3);margin-top:2px}
+.gen-btn{width:100%;background:var(--rust);color:#fff;border:none;border-radius:8px;font-family:var(--s);font-size:15px;font-weight:600;padding:14px;cursor:pointer;transition:background .2s;letter-spacing:.02em}
+.gen-btn:hover{background:var(--rust2)}
+
+/* TIMELINE */
+.timeline{margin:28px 0;display:none}
+.timeline-title{font-family:var(--h);font-size:20px;color:var(--black);margin-bottom:6px}
+.timeline-subtitle{font-size:13px;color:var(--text3);margin-bottom:20px}
+.step-row{display:flex;gap:0;margin-bottom:0}
+.step-time{font-size:14px;font-weight:700;color:var(--rust);min-width:80px;padding:14px 0;flex-shrink:0;font-family:var(--s)}
+.step-connector{display:flex;flex-direction:column;align-items:center;width:32px;flex-shrink:0}
+.step-dot{width:12px;height:12px;border-radius:50%;background:var(--rust);flex-shrink:0;margin-top:17px}
+.step-dot.done{background:var(--green)}
+.step-dot.final{background:var(--rust);box-shadow:0 0 0 4px rgba(181,69,27,.2)}
+.step-line{flex:1;width:2px;background:var(--border);margin-top:4px}
+.step-row:last-child .step-line{display:none}
+.step-content{flex:1;padding:10px 0 10px 12px}
+.step-name{font-size:14px;font-weight:600;color:var(--text)}
+.step-desc{font-size:12px;color:var(--text3);line-height:1.6;margin-top:3px}
+.step-duration{font-size:11px;font-weight:600;color:var(--text3);background:var(--off);border-radius:4px;padding:2px 8px;display:inline-block;margin-top:4px}
+.print-btn{background:var(--off);border:1.5px solid var(--border);color:var(--text2);font-family:var(--s);font-size:13px;font-weight:500;padding:10px 20px;border-radius:8px;cursor:pointer;margin-top:16px;display:inline-flex;align-items:center;gap:6px;transition:all .18s}
+.print-btn:hover{border-color:var(--rust);color:var(--rust)}
+.alert{background:#FEF3F0;border:1.5px solid #F2C4B8;border-radius:8px;padding:14px;margin-bottom:16px;font-size:13px;color:var(--rust2);display:none}
+@media print{.nav,.page-hero,.planner-card,.print-btn{display:none!important}.timeline{display:block!important}}
+@media(max-width:640px){.nav-links{display:none}.nav-toggle{display:flex}.field-grid{grid-template-columns:1fr}.wrap{padding:0 16px}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand"><div class="nav-logo">🌾</div><div class="nav-title">The Sourdough Guide</div></a>
+    <nav class="nav-links">
+      <a href="/beginner.html">Start Here</a><a href="/recipes.html?cat=recipe">Recipes</a>
+      <a href="/troubleshooting.html">Troubleshooting</a><a href="/equipment.html">Equipment</a>
+      <a href="/tools.html" class="active">Tools</a><a href="/assistant.html">Doughy AI</a>
+    </nav>
+    <button class="nav-toggle" onclick="this.closest('.nav').querySelector('.mob-nav').classList.toggle('open')"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mob-nav">
+    <a href="/beginner.html">Start Here</a><a href="/recipes.html?cat=recipe">Recipes</a>
+    <a href="/troubleshooting.html">Troubleshooting</a><a href="/equipment.html">Equipment</a>
+    <a href="/tools.html">Tools</a><a href="/assistant.html">Doughy AI</a>
+  </nav>
+</header>
+
+<div class="page-hero"><div class="wrap">
+  <h1>Bake Timeline Planner</h1>
+  <p>Tell us when you want fresh bread — we'll tell you exactly when to do everything.</p>
+</div></div>
+
+<div class="wrap">
+  <div class="planner-card">
+    <div class="planner-title">⏱ Plan Your Bake</div>
+    <div class="alert" id="alert"></div>
+    <div class="field-grid">
+      <div class="field">
+        <label>I want bread ready on</label>
+        <input type="date" id="eat-date">
+      </div>
+      <div class="field">
+        <label>At what time</label>
+        <input type="time" id="eat-time" value="09:00">
+        <div class="field-note">When you want to slice into it</div>
+      </div>
+      <div class="field">
+        <label>Kitchen temperature</label>
+        <select id="kitchen-temp">
+          <option value="62">Very cold (below 65°F / 18°C)</option>
+          <option value="68" selected>Cool (65-70°F / 18-21°C)</option>
+          <option value="73">Room temp (70-75°F / 21-24°C)</option>
+          <option value="78">Warm (75-80°F / 24-27°C)</option>
+          <option value="83">Hot (above 80°F / 27°C)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Experience level</label>
+        <select id="experience">
+          <option value="beginner">Beginner (simple schedule)</option>
+          <option value="intermediate" selected>Intermediate</option>
+          <option value="advanced">Advanced (full process)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Cold proof preference</label>
+        <select id="cold-proof">
+          <option value="overnight">Overnight in fridge (recommended)</option>
+          <option value="same-day">Same day (no cold proof)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Starter feed time</label>
+        <select id="starter-peak">
+          <option value="4">Fast starter (peaks in ~4 hrs)</option>
+          <option value="6" selected>Average starter (peaks in ~6 hrs)</option>
+          <option value="8">Slow starter (peaks in ~8 hrs)</option>
+        </select>
+      </div>
+    </div>
+    <button class="gen-btn" onclick="generatePlan()">Generate My Bake Schedule →</button>
+  </div>
+
+  <div class="timeline" id="timeline">
+    <div class="timeline-title" id="timeline-title">Your Bake Schedule</div>
+    <div class="timeline-subtitle" id="timeline-subtitle"></div>
+    <div id="timeline-steps"></div>
+    <button class="print-btn" onclick="window.print()">🖨 Print Schedule</button>
+  </div>
+</div>
+
+<script>
+// Set default date to today
+document.getElementById('eat-date').value = new Date().toISOString().split('T')[0];
+
+function generatePlan(){
+  const dateVal = document.getElementById('eat-date').value;
+  const timeVal = document.getElementById('eat-time').value;
+  const temp = parseInt(document.getElementById('kitchen-temp').value);
+  const experience = document.getElementById('experience').value;
+  const coldProof = document.getElementById('cold-proof').value;
+  const starterPeak = parseInt(document.getElementById('starter-peak').value);
+
+  if(!dateVal || !timeVal){
+    showAlert('Please fill in the date and time.');
+    return;
+  }
+
+  hideAlert();
+
+  // Calculate timings based on temp
+  const bulkHours = temp <= 65 ? 8 : temp <= 70 ? 6.5 : temp <= 75 ? 5 : temp <= 80 ? 4 : 3.5;
+  const preheatMins = 60;
+  const bakeCoveredMins = 20;
+  const bakeUncoveredMins = 25;
+  const coolMins = 90;
+  const shapingMins = 20;
+  const benchRestMins = experience === 'beginner' ? 20 : 30;
+  const foldsMins = experience === 'beginner' ? 90 : 120;
+  const mixMins = 20;
+  const autolyse = experience !== 'beginner' ? 30 : 0;
+  const coldProofHours = coldProof === 'overnight' ? 12 : 0;
+
+  // Work backwards from eat time
+  const eatDateTime = new Date(`${dateVal}T${timeVal}`);
+  let cursor = new Date(eatDateTime);
+
+  const steps = [];
+
+  // Cool time
+  cursor = new Date(cursor - coolMins*60000);
+  const bakeDone = new Date(cursor);
+  
+  // Bake uncovered
+  cursor = new Date(cursor - bakeUncoveredMins*60000);
+  const removeLid = new Date(cursor);
+  
+  // Bake covered
+  cursor = new Date(cursor - bakeCoveredMins*60000);
+  const bakingStart = new Date(cursor);
+  
+  // Preheat
+  cursor = new Date(cursor - preheatMins*60000);
+  const preheatStart = new Date(cursor);
+
+  let coldProofEnd, coldProofStart, shapeStart;
+  
+  if(coldProof === 'overnight'){
+    // Score and bake
+    coldProofEnd = bakingStart;
+    // Cold proof
+    cursor = new Date(preheatStart - 30*60000); // start preheat 30 min before taking out
+    shapeStart = new Date(new Date(cursor) - coldProofHours*3600000 - shapingMins*60000);
+    coldProofStart = new Date(shapeStart.getTime() + shapingMins*60000);
+    coldProofEnd = new Date(coldProofStart.getTime() + coldProofHours*3600000);
+    cursor = new Date(shapeStart);
+  } else {
+    cursor = new Date(preheatStart);
+    shapeStart = new Date(cursor - shapingMins*60000 - benchRestMins*60000);
+    cursor = new Date(shapeStart);
+  }
+
+  // Bench rest
+  const benchEnd = new Date(cursor);
+  cursor = new Date(cursor - benchRestMins*60000);
+  const benchStart = cursor;
+
+  // Bulk ferment
+  cursor = new Date(cursor - bulkHours*3600000);
+  const bulkStart = new Date(cursor);
+
+  // Mix / folds
+  cursor = new Date(cursor - foldsMins*60000);
+  const foldsStart = new Date(cursor);
+
+  // Autolyse
+  let autolyseDone;
+  if(experience !== 'beginner'){
+    cursor = new Date(cursor - autolyse*60000);
+    autolyseDone = new Date(cursor);
+  }
+
+  // Mix start
+  cursor = new Date(cursor - mixMins*60000);
+  const mixStart = new Date(cursor);
+
+  // Starter feed
+  cursor = new Date(cursor - starterPeak*3600000);
+  const feedStart = new Date(cursor);
+
+  // Build steps array (chronological)
+  const allSteps = [];
+  allSteps.push({time: feedStart, name: '🫙 Feed Your Starter', desc: `Feed your starter at a 1:1:1 or 1:2:2 ratio. It needs about ${starterPeak} hours to reach peak activity before you mix.`, duration: `${starterPeak} hr rise`});
+  allSteps.push({time: mixStart, name: '🥣 Mix Dough (Autolyse)', desc: experience === 'beginner' ? 'Mix flour and water together until no dry flour remains. Cover and rest.' : 'Mix just the flour and water (no starter yet). Rest 30 minutes — gluten develops on its own.', duration: '20 min'});
+  if(experience !== 'beginner'){
+    allSteps.push({time: autolyseDone, name: '➕ Add Starter + Salt', desc: 'Add your starter at peak activity and the salt. Mix well by pinching and squeezing until fully combined.', duration: '10 min'});
+  }
+  allSteps.push({time: foldsStart, name: '🤲 Stretch & Fold Sets', desc: experience === 'beginner' ? '3 sets of stretch and fold, 30 minutes apart. Wet hands, stretch up, fold over. 4 directions each set.' : '4 sets of stretch and fold every 30 minutes. Dough should feel noticeably stronger by set 4.', duration: `${foldsMins} min total`});
+  allSteps.push({time: bulkStart, name: '⏳ Bulk Fermentation', desc: `Leave covered at ${temp}°F room temp. Look for ${temp <= 68 ? '50-60%' : '60-75%'} volume increase with bubbles on sides and surface. ${temp <= 65 ? 'Your cool kitchen means this takes longer — be patient.' : temp >= 78 ? 'Warm kitchen = fast ferment. Check hourly in the final stages.' : 'Check your dough, not just the clock.'}`, duration: `~${bulkHours.toFixed(1)} hrs`});
+  allSteps.push({time: benchEnd, name: '🔵 Pre-shape', desc: 'Turn dough onto a clean surface. Shape into a rough round with a bench scraper. Cover and bench rest.', duration: `${benchRestMins} min rest`});
+  allSteps.push({time: shapeStart, name: '🎯 Final Shape', desc: 'Final shape into boule (round) or batard (oval). Build surface tension by dragging toward you. Transfer seam-side up into floured banneton.', duration: '15 min'});
+  if(coldProof === 'overnight'){
+    allSteps.push({time: coldProofStart, name: '❄️ Cold Proof (Fridge)', desc: 'Cover tightly with plastic wrap and refrigerate. Cold proofing develops flavor and makes scoring easier. Bake cold — do not warm up.', duration: `${coldProofHours} hrs`});
+    allSteps.push({time: new Date(preheatStart - 30*60000), name: '🔥 Preheat Dutch Oven', desc: 'Place Dutch oven (with lid) in cold oven, then turn to 500°F / 260°C. Must preheat a full hour. Meanwhile the loaf stays in the fridge until the very last second.', duration: '60 min'});
+  } else {
+    allSteps.push({time: preheatStart, name: '🔥 Preheat Dutch Oven', desc: 'Place Dutch oven (with lid) in cold oven, then turn to 500°F / 260°C. Full 60 min preheat is not optional.', duration: '60 min'});
+  }
+  allSteps.push({time: bakingStart, name: '🍞 Score + Bake (Covered)', desc: 'Remove loaf from fridge. Score immediately with one confident slash at 30-45°. Lower into screaming-hot Dutch oven on parchment. Cover and bake.', duration: '20 min'});
+  allSteps.push({time: removeLid, name: '🔓 Remove Lid — Bake Uncovered', desc: 'Remove lid. Reduce temp to 450°F / 232°C. Bake until deep golden brown — almost darker than you think it should be. Use a thermometer: done at 205-210°F internal.', duration: '20-25 min'});
+  allSteps.push({time: bakeDone, name: '🎉 Out of the Oven!', desc: 'Transfer to a wire rack immediately. Do not slice yet — the crumb is still setting inside. Wait at least 90 minutes. Your ears will thank you.', duration: '90 min rest'});
+  allSteps.push({time: eatDateTime, name: '🥖 Ready to Slice!', desc: 'Tap the bottom — it should sound hollow. Slice, eat, enjoy everything you built from scratch.', duration: 'Enjoy!'});
+
+  // Render
+  document.getElementById('timeline-title').textContent = `Your Bake Schedule`;
+  document.getElementById('timeline-subtitle').textContent = `For fresh bread ${formatDateTime(eatDateTime)} · ${temp}°F kitchen · ${coldProof === 'overnight' ? 'Overnight cold proof' : 'Same-day bake'}`;
+
+  const container = document.getElementById('timeline-steps');
+  container.innerHTML = '';
+  allSteps.forEach((step, i) => {
+    const row = document.createElement('div');
+    row.className = 'step-row';
+    const isLast = i === allSteps.length - 1;
+    row.innerHTML = `
+      <div class="step-time">${formatTime(step.time)}</div>
+      <div class="step-connector">
+        <div class="step-dot ${isLast ? 'final' : ''}"></div>
+        ${!isLast ? '<div class="step-line"></div>' : ''}
+      </div>
+      <div class="step-content">
+        <div class="step-name">${step.name}</div>
+        <div class="step-desc">${step.desc}</div>
+        <span class="step-duration">${step.duration}</span>
+      </div>`;
+    container.appendChild(row);
+  });
+
+  document.getElementById('timeline').style.display = 'block';
+  document.getElementById('timeline').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function formatTime(d){
+  return d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',hour12:true});
+}
+function formatDateTime(d){
+  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  return `${days[d.getDay()]} at ${formatTime(d)}`;
+}
+function showAlert(msg){const a=document.getElementById('alert');a.textContent=msg;a.style.display='block'}
+function hideAlert(){document.getElementById('alert').style.display='none'}
+</script>
+</body>
+</html>

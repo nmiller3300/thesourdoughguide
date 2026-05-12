@@ -193,23 +193,25 @@ a{text-decoration:none;color:inherit}
   <div class="nav-inner">
     <a href="/" class="nav-brand">
       <div class="nav-logo">🌾</div>
-      <div>
-        <div class="nav-title">The Sourdough Guide</div>
-        <div class="nav-tagline">From First Loaf to Mastery</div>
-      </div>
+      <div class="nav-title">The Sourdough Guide</div>
     </a>
     <nav class="nav-links">
       <a href="/beginner.html">Start Here</a>
       <a href="/recipes.html?cat=recipe">Recipes</a>
       <a href="/troubleshooting.html" class="active">Troubleshooting</a>
       <a href="/equipment.html">Equipment</a>
-      <a href="/about.html">About</a>
+      <a href="/tools.html">Tools</a>
+      <a href="/assistant.html">Doughy AI 🍞</a>
     </nav>
     <button class="nav-toggle" onclick="this.closest('.nav').querySelector('.mob-nav').classList.toggle('open')"><span></span><span></span><span></span></button>
   </div>
   <nav class="mob-nav">
-    <a href="/beginner.html">Start Here</a><a href="/recipes.html?cat=recipe">Recipes</a>
-    <a href="/troubleshooting.html">Troubleshooting</a><a href="/equipment.html">Equipment</a><a href="/about.html">About</a>
+    <a href="/beginner.html">Start Here</a>
+    <a href="/recipes.html?cat=recipe">Recipes</a>
+    <a href="/troubleshooting.html" class="active">Troubleshooting</a>
+    <a href="/equipment.html">Equipment</a>
+    <a href="/tools.html">Tools</a>
+    <a href="/assistant.html">Doughy AI 🍞</a>
   </nav>
 </header>
 
@@ -262,44 +264,62 @@ a{text-decoration:none;color:inherit}
 
     <!-- LOAF SYMPTOMS -->
     <div class="symptoms active" id="tab-loaf">
-      <button class="sym-btn" onclick="showAnswer('loaf-flat')"><span class="sym-icon">📉</span><span class="sym-text">Flat loaf — barely rose in the oven</span></button>
-      <button class="sym-btn" onclick="showAnswer('loaf-spread')"><span class="sym-icon">↔️</span><span class="sym-text">Spread sideways instead of up</span></button>
-      <button class="sym-btn" onclick="showAnswer('loaf-burnt')"><span class="sym-icon">🔥</span><span class="sym-text">Crust burnt, inside raw or gummy</span></button>
-      <button class="sym-btn" onclick="showAnswer('loaf-pale')"><span class="sym-icon">😶</span><span class="sym-text">Pale, soft crust — won't brown</span></button>
-      <button class="sym-btn" onclick="showAnswer('loaf-burst')"><span class="sym-icon">💥</span><span class="sym-text">Score blew out / side burst open</span></button>
-      <button class="sym-btn" onclick="showAnswer('loaf-crust-soft')"><span class="sym-icon">😞</span><span class="sym-text">Crust softens after cooling</span></button>
+      <button class="sym-btn" onclick="showAnswer('loaf-flat',this)"><span class="sym-icon">📉</span><span class="sym-text">Flat loaf — barely rose in the oven</span></button>
+      <button class="sym-btn" onclick="showAnswer('loaf-spread',this)"><span class="sym-icon">↔️</span><span class="sym-text">Spread sideways instead of up</span></button>
+      <button class="sym-btn" onclick="showAnswer('loaf-burnt',this)"><span class="sym-icon">🔥</span><span class="sym-text">Crust burnt, inside raw or gummy</span></button>
+      <button class="sym-btn" onclick="showAnswer('loaf-pale',this)"><span class="sym-icon">😶</span><span class="sym-text">Pale, soft crust — won't brown</span></button>
+      <button class="sym-btn" onclick="showAnswer('loaf-burst',this)"><span class="sym-icon">💥</span><span class="sym-text">Score blew out / side burst open</span></button>
+      <button class="sym-btn" onclick="showAnswer('loaf-crust-soft',this)"><span class="sym-icon">😞</span><span class="sym-text">Crust softens after cooling</span></button>
+      <button class="sym-btn" onclick="showAnswer('loaf-no-ear',this)"><span class="sym-icon">👂</span><span class="sym-text">No ear — score didn't open</span></button>
+      <button class="sym-btn" onclick="showAnswer('loaf-sticks',this)"><span class="sym-icon">🫙</span><span class="sym-text">Stuck to Dutch oven</span></button>
+      <button class="sym-btn" onclick="showAnswer('loaf-lopsided',this)"><span class="sym-icon">↗️</span><span class="sym-text">Loaf baked lopsided</span></button>
+      <button class="sym-btn" onclick="showAnswer('loaf-collapses',this)"><span class="sym-icon">📉</span><span class="sym-text">Collapses or wrinkles after baking</span></button>
+      <button class="sym-btn" onclick="showAnswer('loaf-thick-crust',this)"><span class="sym-icon">🧱</span><span class="sym-text">Crust too thick or hard</span></button>
     </div>
 
     <!-- CRUMB SYMPTOMS -->
     <div class="symptoms" id="tab-crumb">
-      <button class="sym-btn" onclick="showAnswer('crumb-dense')"><span class="sym-icon">🧱</span><span class="sym-text">Dense, heavy crumb — barely any holes</span></button>
-      <button class="sym-btn" onclick="showAnswer('crumb-gummy')"><span class="sym-icon">🫠</span><span class="sym-text">Gummy, wet, or sticky interior</span></button>
-      <button class="sym-btn" onclick="showAnswer('crumb-huge-holes')"><span class="sym-icon">🕳️</span><span class="sym-text">Giant irregular holes, uneven crumb</span></button>
-      <button class="sym-btn" onclick="showAnswer('crumb-tough')"><span class="sym-icon">💪</span><span class="sym-text">Tough, rubbery, chewy crumb</span></button>
+      <button class="sym-btn" onclick="showAnswer('crumb-dense',this)"><span class="sym-icon">🧱</span><span class="sym-text">Dense, heavy crumb — barely any holes</span></button>
+      <button class="sym-btn" onclick="showAnswer('crumb-gummy',this)"><span class="sym-icon">🫠</span><span class="sym-text">Gummy, wet, or sticky interior</span></button>
+      <button class="sym-btn" onclick="showAnswer('crumb-huge-holes',this)"><span class="sym-icon">🕳️</span><span class="sym-text">Giant irregular holes, uneven crumb</span></button>
+      <button class="sym-btn" onclick="showAnswer('crumb-tough',this)"><span class="sym-icon">💪</span><span class="sym-text">Tough, rubbery, chewy crumb</span></button>
+      <button class="sym-btn" onclick="showAnswer('crumb-gummy-bottom',this)"><span class="sym-icon">⬇️</span><span class="sym-text">Gummy bottom, good top</span></button>
+      <button class="sym-btn" onclick="showAnswer('crumb-tunnel',this)"><span class="sym-icon">🕳️</span><span class="sym-text">Large hole under the crust</span></button>
+      <button class="sym-btn" onclick="showAnswer('crumb-closed',this)"><span class="sym-icon">🔒</span><span class="sym-text">Closed crumb — no open holes</span></button>
     </div>
 
     <!-- DOUGH SYMPTOMS -->
     <div class="symptoms" id="tab-dough">
-      <button class="sym-btn" onclick="showAnswer('dough-sticky')"><span class="sym-icon">😰</span><span class="sym-text">Dough too sticky to handle or shape</span></button>
-      <button class="sym-btn" onclick="showAnswer('dough-stiff')"><span class="sym-icon">🪨</span><span class="sym-text">Dough too stiff and hard to work with</span></button>
-      <button class="sym-btn" onclick="showAnswer('dough-tears')"><span class="sym-icon">😬</span><span class="sym-text">Dough tears when shaping</span></button>
-      <button class="sym-btn" onclick="showAnswer('dough-overproofed')"><span class="sym-icon">🫧</span><span class="sym-text">Dough looks overproofed or collapsed</span></button>
+      <button class="sym-btn" onclick="showAnswer('dough-sticky',this)"><span class="sym-icon">😰</span><span class="sym-text">Dough too sticky to handle or shape</span></button>
+      <button class="sym-btn" onclick="showAnswer('dough-stiff',this)"><span class="sym-icon">🪨</span><span class="sym-text">Dough too stiff and hard to work with</span></button>
+      <button class="sym-btn" onclick="showAnswer('dough-tears',this)"><span class="sym-icon">😬</span><span class="sym-text">Dough tears when shaping</span></button>
+      <button class="sym-btn" onclick="showAnswer('dough-overproofed',this)"><span class="sym-icon">🫧</span><span class="sym-text">Dough looks overproofed or collapsed</span></button>
+      <button class="sym-btn" onclick="showAnswer('dough-skin',this)"><span class="sym-icon">🏜️</span><span class="sym-text">Dry skin forming on dough</span></button>
+      <button class="sym-btn" onclick="showAnswer('dough-windowpane',this)"><span class="sym-icon">🪟</span><span class="sym-text">Fails windowpane test</span></button>
+      <button class="sym-btn" onclick="showAnswer('dough-deflates',this)"><span class="sym-icon">💨</span><span class="sym-text">Deflates when scored</span></button>
+      <button class="sym-btn" onclick="showAnswer('dough-slack',this)"><span class="sym-icon">💧</span><span class="sym-text">Still wet and slack after folds</span></button>
     </div>
 
     <!-- STARTER SYMPTOMS -->
     <div class="symptoms" id="tab-starter">
-      <button class="sym-btn" onclick="showAnswer('starter-no-rise')"><span class="sym-icon">😴</span><span class="sym-text">Starter won't rise or double after feeding</span></button>
-      <button class="sym-btn" onclick="showAnswer('starter-smell')"><span class="sym-icon">👃</span><span class="sym-text">Starter smells like vinegar or nail polish</span></button>
-      <button class="sym-btn" onclick="showAnswer('starter-liquid')"><span class="sym-icon">💧</span><span class="sym-text">Grey or dark liquid on top of starter</span></button>
-      <button class="sym-btn" onclick="showAnswer('starter-mold')"><span class="sym-icon">🚨</span><span class="sym-text">Pink, orange, or fuzzy growth in starter</span></button>
+      <button class="sym-btn" onclick="showAnswer('starter-no-rise',this)"><span class="sym-icon">😴</span><span class="sym-text">Starter won't rise or double after feeding</span></button>
+      <button class="sym-btn" onclick="showAnswer('starter-smell',this)"><span class="sym-icon">👃</span><span class="sym-text">Starter smells like vinegar or nail polish</span></button>
+      <button class="sym-btn" onclick="showAnswer('starter-liquid',this)"><span class="sym-icon">💧</span><span class="sym-text">Grey or dark liquid on top of starter</span></button>
+      <button class="sym-btn" onclick="showAnswer('starter-mold',this)"><span class="sym-icon">🚨</span><span class="sym-text">Pink, orange, or fuzzy growth in starter</span></button>
+      <button class="sym-btn" onclick="showAnswer('starter-fast-fall',this)"><span class="sym-icon">⚡</span><span class="sym-text">Rises fast then falls quickly</span></button>
+      <button class="sym-btn" onclick="showAnswer('starter-no-bubbles',this)"><span class="sym-icon">🫥</span><span class="sym-text">Smells OK but won't rise</span></button>
+      <button class="sym-btn" onclick="showAnswer('starter-consistency',this)"><span class="sym-icon">🥣</span><span class="sym-text">Too runny or too thick</span></button>
+      <button class="sym-btn" onclick="showAnswer('starter-white-film',this)"><span class="sym-icon">⬜</span><span class="sym-text">White film on top of starter</span></button>
     </div>
 
     <!-- FLAVOUR SYMPTOMS -->
     <div class="symptoms" id="tab-flavour">
-      <button class="sym-btn" onclick="showAnswer('flavour-bland')"><span class="sym-icon">😑</span><span class="sym-text">Bread tastes bland — no flavor</span></button>
-      <button class="sym-btn" onclick="showAnswer('flavour-sour')"><span class="sym-icon">😣</span><span class="sym-text">Way too sour or sharp tasting</span></button>
-      <button class="sym-btn" onclick="showAnswer('flavour-bitter')"><span class="sym-icon">🤢</span><span class="sym-text">Bitter or chemical taste</span></button>
-      <button class="sym-btn" onclick="showAnswer('flavour-yeasty')"><span class="sym-icon">🍺</span><span class="sym-text">Yeasty, beer-like flavor</span></button>
+      <button class="sym-btn" onclick="showAnswer('flavour-bland',this)"><span class="sym-icon">😑</span><span class="sym-text">Bread tastes bland — no flavor</span></button>
+      <button class="sym-btn" onclick="showAnswer('flavour-sour',this)"><span class="sym-icon">😣</span><span class="sym-text">Way too sour or sharp tasting</span></button>
+      <button class="sym-btn" onclick="showAnswer('flavour-bitter',this)"><span class="sym-icon">🤢</span><span class="sym-text">Bitter or chemical taste</span></button>
+      <button class="sym-btn" onclick="showAnswer('flavour-yeasty',this)"><span class="sym-icon">🍺</span><span class="sym-text">Yeasty, beer-like flavor</span></button>
+      <button class="sym-btn" onclick="showAnswer('flavour-metallic',this)"><span class="sym-icon">🔩</span><span class="sym-text">Metallic or tinny taste</span></button>
+      <button class="sym-btn" onclick="showAnswer('flavour-floury',this)"><span class="sym-icon">🌾</span><span class="sym-text">Doughy or under-baked taste</span></button>
     </div>
 
     <!-- ANSWER BOXES -->
@@ -454,7 +474,28 @@ const ANSWERS = {
   'flavour-bland':{title:'Bread Tastes Bland',cause:'Fermentation was too fast and warm — flavor compounds need time to develop. Quick, warm ferments produce bread but not complex flavor.',fixes:['Add an overnight cold proof: after shaping, refrigerate for 8–16 hours before baking. This single step transforms flavor more than any other variable.','Extend bulk fermentation by 1–2 hours to allow more lactic acid to develop.','Use a lower percentage of starter (8–12%) to slow fermentation and give flavor more time to build.','Add 10–15% whole wheat or rye flour — these contribute earthy, complex flavor that white flour can\'t.','Use starter that\'s slightly past peak rather than freshly peaked — it contributes more existing acids to the dough.'],link:'/post.html?slug=sourdough-too-sour'},
   'flavour-sour':{title:'Way Too Sour',cause:'Too much acetic acid development — usually from long, cool fermentation or over-ripe starter. Acetic acid is sharp and vinegary; lactic acid is mild and yoghurt-like.',fixes:['Ferment warmer (76–82°F) — warm conditions favor mild lactic acid over sharp acetic acid.','Shorten or skip the cold retard — overnight fridge proofing significantly increases sourness.','Use a fresher starter: feed it 2–4 hours before use so it\'s active and yeasty rather than over-ripe and acidic.','Increase starter percentage to 20% to shorten overall ferment time and reduce acid accumulation.','Reduce whole wheat and rye content — high-bran flours contribute to greater acidity in the final loaf.'],link:'/post.html?slug=sourdough-too-sour'},
   'flavour-bitter':{title:'Bitter or Chemical Taste',cause:'Severely over-fermented dough (protein breakdown), crust over-caramelized at too-high temperature, or contaminated starter.',fixes:['Check your starter for pink or orange streaks — any unusual color means discard and start fresh.','Significantly shorten bulk fermentation. Bitter flavor from protein degradation is a clear sign of over-fermentation.','Reduce oven temperature for the uncovered phase to prevent crust over-caramelization. Try 435–445°F instead of 450°F.','Switch to filtered water and unbleached flour to eliminate chemical interference from chlorine or bleaching agents.','Normal grey hooch is not contamination. Only fuzzy mold or bright colors are cause for concern.'],link:'/troubleshooting.html?symptom=flavour-bitter'},
-  'flavour-yeasty':{title:'Yeasty or Beer-Like Flavor',cause:'Over-active yeast with insufficient acid bacteria activity. Fermentation too fast and warm — yeast outpaces bacteria, creating alcohol-forward notes.',fixes:['Reduce starter quantity to 8–12% to slow yeast activity and give bacteria more time to produce lactic acid.','Ferment cooler — 65–70°F slows yeast more than bacteria, restoring the flavor balance.','Extend bulk fermentation time (cooler but longer) to let bacteria catch up to yeast activity.','Add an overnight cold retard — fridge temperatures suppress yeast while bacteria keep producing acids.','Use starter that\'s slightly past peak rather than at maximum rise — it has more acid and less pure yeast activity.'],link:'/troubleshooting.html?symptom=flavour-yeasty'}
+  'flavour-yeasty':{title:'Yeasty or Beer-Like Flavor',cause:'Over-active yeast with insufficient acid bacteria activity. Fermentation too fast and warm — yeast outpaces bacteria, creating alcohol-forward notes.',fixes:['Reduce starter quantity to 8–12% to slow yeast activity and give bacteria more time to produce lactic acid.','Ferment cooler — 65–70°F slows yeast more than bacteria, restoring the flavor balance.','Extend bulk fermentation time (cooler but longer) to let bacteria catch up to yeast activity.','Add an overnight cold retard — fridge temperatures suppress yeast while bacteria keep producing acids.','Use starter that\'s slightly past peak rather than at maximum rise — it has more acid and less pure yeast activity.'],link:'/troubleshooting.html?symptom=flavour-yeasty'},
+
+
+  'loaf-no-ear':{title:'No Ear — Score Didn\'t Open',cause:'The score line didn\'t open into a raised "ear" because the cut was too shallow, too straight, or the dough was over-proofed and lost tension.',fixes:['Score at a low angle — 15–30° from horizontal rather than straight down. This undercut angle is what creates the ear.','Cut in one swift motion at least ½ inch deep. Two passes over the same line drags and seals the cut.','Use a curved lame or offset your straight lame at a low angle. A straight vertical cut produces a simple split, not an ear.','Cold dough scores better — bake straight from the fridge without warming up first.','If consistently getting no ear, try slightly underproofing the dough. A tighter, more tensioned dough opens more dramatically.'],link:'/troubleshooting.html?symptom=loaf-no-ear'},
+  'loaf-sticks':{title:'Bread Stuck to Dutch Oven',cause:'Either no parchment paper was used, or the Dutch oven wasn\'t hot enough so the loaf stuck before a crust could form and release.',fixes:['Always use parchment paper. Cut a square, place the dough on it, and lower both into the Dutch oven together. This is non-negotiable for beginners.','If using a bare cast iron (no enamel), season it well and preheat it fully. Enamel Dutch ovens are far more forgiving.','Lightly flour the bottom of the parchment if using a very wet dough.','Never oil an enameled Dutch oven — the oil smokes and doesn\'t prevent sticking the way parchment does.','After the loaf releases, immediately transfer to a wire rack to prevent the bottom steaming and softening.'],link:'/troubleshooting.html?symptom=loaf-sticks'},
+  'loaf-lopsided':{title:'Loaf Baked Lopsided / Uneven Rise',cause:'Uneven surface tension during shaping, or one side of the dough was scored differently — the loaf always expands in the direction of least resistance.',fixes:['Score symmetrically. If doing a single slash, center it precisely. Any lean to one side and the loaf will lean that way.','During shaping, apply even pressure across the whole surface — don\'t pull one side more than the other.','Make sure your banneton is sitting level in the fridge. A tilted proofing basket means a tilted loaf.','Check that the dough seam is centered and pinched closed at the bottom, not off to one side.','If your oven has a hot spot, rotate the Dutch oven halfway through the uncovered bake.'],link:'/troubleshooting.html?symptom=loaf-lopsided'},
+  'loaf-collapses':{title:'Loaf Collapses or Wrinkles After Baking',cause:'Over-proofed dough where the gluten structure weakened past the point of holding up the loaf. The gas escapes and the structure caves in.',fixes:['The poke test before baking: press a floured finger ½ inch in. Slowly springs back halfway = perfect. Stays dented = overproofed.','Bake immediately when you notice over-proofing — don\'t continue the cold proof.','Shorten your bulk ferment next time. If it\'s collapsing after baking, bulk went too long.','Score immediately before baking — don\'t score and then wait. Gas escapes through the cut.','Use less starter (8–12%) on your next bake to slow fermentation and give yourself more control over timing.'],link:'/troubleshooting.html?symptom=loaf-collapses'},
+  'loaf-thick-crust':{title:'Crust Too Thick or Hard',cause:'Excess dry heat during the uncovered phase, or the loaf baked too long. A thick crust happens when surface moisture evaporates too fast.',fixes:['Reduce the uncovered bake temperature by 20–25°F. The covered phase creates the oven spring; the uncovered phase only needs enough heat to color the crust.','Shorten the uncovered bake time — check at 15 minutes instead of 20. Pull it when it\'s the color you want.','A thick crust is often a hydration issue too — try increasing dough hydration by 5% for a thinner, cracklier crust.','Make sure your lid was on tight for the full first 20 minutes. Steam keeps the crust extensible and thin.','If using a combo cooker, the shallow base traps steam less efficiently than a deep Dutch oven — ensure a tight fit.'],link:'/troubleshooting.html?symptom=loaf-thick-crust'},
+  'crumb-gummy-bottom':{title:'Gummy Bottom, Good Top',cause:'Steam trapped underneath the loaf during cooling, or the bottom didn\'t bake through because the Dutch oven floor ran hotter and over-caramelized the base while the interior stayed raw.',fixes:['Cool on a wire rack immediately after baking. The bottom needs airflow just as much as the top.','If the bottom crust looks extremely dark or black: place a baking sheet on the rack below your Dutch oven to shield it next bake.','Internal temp check: the loaf needs to reach 205–210°F all the way through, not just on the top surface.','Avoid placing your Dutch oven directly on the bottom oven rack — this concentrates excessive heat on the base.','Extend the bake time by 5 minutes with the door cracked to drive out steam and ensure the interior is fully set.'],link:'/troubleshooting.html?symptom=crumb-gummy-bottom'},
+  'crumb-tunnel':{title:'Large Hole Under the Top Crust',cause:'Gas accumulated at the top of the dough during proofing and couldn\'t redistribute. Usually from under-degassing during shaping or scoring too lightly.',fixes:['Apply firm, even pressure during final shaping to eliminate large air pockets near the surface.','Score deeper — at least ½–¾ inch. A deep score lets surface gas escape in a controlled way rather than blowing a pocket under the crust.','Check for air bubbles just below the dough surface before shaping and pop them gently with a fingertip.','This often happens with overproofed dough that has uneven gas distribution — tighten up your bulk timing.','Pre-shaping more firmly with a proper bench rest helps redistribute gas evenly before final shape.'],link:'/troubleshooting.html?symptom=crumb-tunnel'},
+  'crumb-closed':{title:'Very Closed Crumb — No Open Holes',cause:'Under-fermentation, too much degassing during shaping, or using low-protein flour. An open crumb requires healthy gluten AND sufficient gas production.',fixes:['Make sure bulk fermentation is reaching 50–75% rise with visible bubbles — not just the clock time.','Handle the dough more gently during shaping. An overly aggressive pre-shape and final shape will degas and close the crumb.','Use high-protein bread flour (12%+ protein) — all-purpose flour doesn\'t have enough gluten strength for an open crumb.','Increase hydration to 75–80%. Higher-hydration doughs tend toward more open crumbs.','Be patient during bulk — the final hour of fermentation often produces the most gas. Don\'t rush it.'],link:'/troubleshooting.html?symptom=crumb-closed'},
+  'dough-skin':{title:'Dry Skin Forming on Dough',cause:'Exposed dough surface drying out during bulk fermentation — the top layer desiccates and creates a tough skin that interferes with shaping and scoring.',fixes:['Cover the bowl tightly. Plastic wrap pressed directly onto the dough surface works best, or use a shower cap on the bowl.','A lightly oiled container instead of a floured bowl prevents both sticking and drying during bulk.','If skin has already formed: fold the dough so the skin goes inside where it won\'t affect scoring or rise.','Damp kitchen towels work in a pinch but plastic wrap creates a more reliable seal.','During shaping, any skin patches will feel tough — handle those areas more carefully and ensure they end up on the seam side.'],link:'/troubleshooting.html?symptom=dough-skin'},
+  'dough-windowpane':{title:'Dough Fails Windowpane Test',cause:'Gluten isn\'t sufficiently developed to stretch thin without tearing — needs either more time, more folding, or an autolyse rest.',fixes:['Don\'t panic. The windowpane test is a guide, not a hard rule — many excellent loaves fail it at the start of bulk and succeed at the end.','Complete more stretch and fold sets. If you\'ve done 2, do 4. If you\'ve done 4, try a coil fold and rest 30 more minutes.','Autolyse on your next bake: rest the flour and water together for 30–60 minutes before adding starter. This dramatically improves extensibility.','Check your flour — low-protein flour can\'t form a windowpane. Use bread flour with 12%+ protein.','Test the windowpane at the END of bulk, not the beginning. Gluten develops throughout the whole fermentation process.'],link:'/troubleshooting.html?symptom=dough-windowpane'},
+  'dough-deflates':{title:'Dough Deflates When Scored',cause:'Over-proofed dough has lost structural integrity — the gluten is too weak to hold the gas when punctured by scoring.',fixes:['This is the definitive sign of over-proofing. Bake it anyway — a flat loaf is better than a wasted one.','The poke test before scoring would have caught this. Slow spring-back or no spring-back = bake immediately, don\'t probe further.','Shorten bulk fermentation by 30–60 minutes on your next bake. Over-proofing happens fast in warm kitchens.','Use a thermometer in your kitchen and dough. Dough above 80°F ferments very quickly.','A deflated loaf can still taste good — don\'t throw it out. Slice thin for toast or croutons.'],link:'/troubleshooting.html?symptom=dough-deflates'},
+  'dough-slack':{title:'Dough Still Wet and Slack After Folds',cause:'Either bulk fermentation hasn\'t progressed far enough for the gluten to tighten, the hydration is too high for your technique, or the dough is too warm.',fixes:['Refrigerate for 20–30 minutes. Cold firms up the dough dramatically and makes it workable.','This is often normal in the first 2 hours — the stretch and folds are what build strength. Complete all 4 sets before judging.','Check your dough temperature. Above 80°F, gluten breaks down faster than it develops. Aim for 75–78°F dough temp.','Reduce hydration by 5% next bake. Not every baker needs 80% hydration. Start at 72–75% and work up.','Make sure you\'re measuring flour by weight, not cups — volume measurements significantly overestimate flour, producing slack dough.'],link:'/troubleshooting.html?symptom=dough-slack'},
+  'starter-fast-fall':{title:'Starter Rises Fast Then Falls Quickly',cause:'The starter is too warm or using too little fresh flour — it exhausts its food supply before you catch it at peak. Activity is healthy but peak timing is narrow.',fixes:['Feed at a higher ratio: 1:3:3 or 1:4:4 (starter:flour:water) to give more food and extend the peak window.','Move the starter somewhere cooler (68–72°F). A cooler environment slows the rise and gives a longer usable peak.','Bake with it at peak — right when it\'s domed and hasn\'t started to fall. This requires learning your starter\'s timing.','Mark the jar with a rubber band after feeding. Watch it over 2–3 feeds to learn exactly when it peaks in your environment.','A starter that rises and falls predictably is healthy and active — you just need to time your bake to catch it right.'],link:'/troubleshooting.html?symptom=starter-fast-fall'},
+  'starter-no-bubbles':{title:'Starter Smells Right But Won\'t Rise',cause:'Activity is present (good smell = bacteria working) but not enough yeast yet to lift the mixture. This is common in young starters and after long refrigeration.',fixes:['Be patient — bacterial activity (the smell) establishes before yeast activity (the rise). Keep feeding daily.','Add a small amount of whole wheat or rye flour to one feeding — these carry far more wild yeast than white flour.','Make sure you\'re in a warm enough spot. 75–80°F is ideal. Below 68°F, yeast activity is barely detectable.','If the starter has been in the fridge: feed it twice daily at room temperature for 3–5 days to fully reactivate.','Try a 1:1:1 feed ratio (equal parts starter, flour, water by weight) to concentrate the existing yeast culture.'],link:'/troubleshooting.html?symptom=starter-no-bubbles'},
+  'starter-consistency':{title:'Starter Too Runny or Too Thick',cause:'The flour-to-water ratio has drifted from consistent feedings, or you\'re using different flour types that absorb water differently.',fixes:['Too runny: reduce water slightly or increase flour in your next feeding. Aim for a thick pancake batter consistency.','Too thick: add a small amount of water to the next feeding. It should flow slowly off a spoon, not be stiff.','Whole wheat and rye absorb more water than white flour — if switching flours, adjust water accordingly.','Consistency (same flour, same ratio every time) matters more than the exact ratio. Pick a ratio and stick to it.','100% hydration (equal weights flour and water) is a good standard baseline — easy to remember and widely used.'],link:'/troubleshooting.html?symptom=starter-consistency'},
+  'starter-white-film':{title:'White Film or Kahm Yeast on Top',cause:'Kahm yeast — a harmless but undesirable wild yeast that forms a white, flat film on the surface when the starter isn\'t fed frequently enough.',fixes:['Scrape off the film and feed immediately. Kahm yeast is harmless but indicates the starter needs more frequent attention.','This is NOT mold (which is fuzzy and 3D) — it\'s a flat, smooth white layer. The starter below is fine.','Increase feeding frequency. Room-temperature starters need daily feeding. Neglect allows Kahm to take hold.','After removing the film, do 2–3 days of twice-daily feeding to reassert the beneficial bacteria and yeast.','Switching to a cleaner jar and feeding regularly will prevent recurrence.'],link:'/troubleshooting.html?symptom=starter-white-film'},
+  'flavour-metallic':{title:'Metallic or Tinny Taste',cause:'Reaction between acidic dough and reactive metal — using aluminum or uncoated metal bowls, utensils, or baking vessels concentrates metallic off-flavors.',fixes:['Use glass, ceramic, or food-grade plastic bowls for fermenting and proofing. Reactive metals interact with the lactic and acetic acids in sourdough.','Check your Dutch oven — bare aluminum is the most reactive. Cast iron or enameled cast iron is ideal.','Make sure your starter jar is glass or food-safe plastic, not metal.','Wooden or silicone utensils are preferable for mixing sourdough dough.','If you\'ve ruled out metal contact, check your water — highly mineralized water can occasionally impart metallic notes.'],link:'/troubleshooting.html?symptom=flavour-metallic'},
+  'flavour-floury':{title:'Tastes Doughy or Under-Baked',cause:'Under-fermentation leaves starch unconverted, giving a raw, floury taste. Or the loaf was genuinely under-baked — internal temperature never reached 205°F.',fixes:['Check internal temperature with an instant-read thermometer. 205–210°F (96–99°C) is fully baked. Below that, return it to the oven.','Extend bulk fermentation. A doughy flavor is almost always under-fermentation — the yeast hasn\'t had enough time to convert raw starch.','Ensure your starter was truly active and at peak before mixing. A sluggish starter produces an under-fermented, doughy-tasting loaf.','Cool the loaf completely before slicing — at least 1–1.5 hours. Cutting too soon makes even a well-baked loaf taste gummy and doughy.','Increase the uncovered bake time by 5 minutes and check the internal temp. Better slightly over-baked than under.'],link:'/troubleshooting.html?symptom=flavour-floury'}
+
 };
 
 let activeAnswer = null;
@@ -534,6 +575,24 @@ function searchProbs(v){
     'too sour':['flavour','flavour-sour'],'sour':['flavour','flavour-sour'],
     'bitter':['flavour','flavour-bitter'],'chemical':['flavour','flavour-bitter'],
     'yeasty':['flavour','flavour-yeasty'],'beer':['flavour','flavour-yeasty'],
+    'no ear':['loaf','loaf-no-ear'],'ear':['loaf','loaf-no-ear'],'ear didnt':['loaf','loaf-no-ear'],
+    'stuck':['loaf','loaf-sticks'],'sticks to':['loaf','loaf-sticks'],'dutch oven stuck':['loaf','loaf-sticks'],
+    'lopsided':['loaf','loaf-lopsided'],'uneven rise':['loaf','loaf-lopsided'],
+    'collapses':['loaf','loaf-collapses'],'wrinkles':['loaf','loaf-collapses'],'deflated after':['loaf','loaf-collapses'],
+    'thick crust':['loaf','loaf-thick-crust'],'hard crust':['loaf','loaf-thick-crust'],
+    'gummy bottom':['crumb','crumb-gummy-bottom'],'wet bottom':['crumb','crumb-gummy-bottom'],
+    'hole under':['crumb','crumb-tunnel'],'tunnel':['crumb','crumb-tunnel'],'big hole top':['crumb','crumb-tunnel'],
+    'closed crumb':['crumb','crumb-closed'],'no holes':['crumb','crumb-closed'],'tight crumb':['crumb','crumb-closed'],
+    'skin on':['dough','dough-skin'],'dry top':['dough','dough-skin'],'crust on dough':['dough','dough-skin'],
+    'windowpane':['dough','dough-windowpane'],'tears when stretch':['dough','dough-windowpane'],
+    'deflates when scored':['dough','dough-deflates'],'collapses when scored':['dough','dough-deflates'],
+    'still sticky after':['dough','dough-slack'],'slack':['dough','dough-slack'],'wet after fold':['dough','dough-slack'],
+    'falls quickly':['starter','starter-fast-fall'],'peaks too fast':['starter','starter-fast-fall'],
+    'no bubbles':['starter','starter-no-bubbles'],'wont rise':['starter','starter-no-bubbles'],
+    'too runny':['starter','starter-consistency'],'too thick':['starter','starter-consistency'],
+    'white film':['starter','starter-white-film'],'kahm':['starter','starter-white-film'],
+    'metallic':['flavour','flavour-metallic'],'tinny':['flavour','flavour-metallic'],'metal taste':['flavour','flavour-metallic'],
+    'doughy':['flavour','flavour-floury'],'raw taste':['flavour','flavour-floury'],'floury':['flavour','flavour-floury'],
   };
   for(const[k,v2]of Object.entries(map)){
     if(val.includes(k)){if(feedbackEl)feedbackEl.textContent="Showing results for: "+k;switchTab(v2[0]);setTimeout(()=>{const btn=document.querySelector(`[onclick*="${v2[1]}"]`);showAnswer(v2[1],btn);if(btn)btn.classList.add("active");document.querySelector(".engine").scrollIntoView({behavior:"smooth",block:"start"});},150);return;}
