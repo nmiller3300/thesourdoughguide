@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Recipes & Guides — The Sourdough Guide</title>
-<meta name="description" content="Browse all sourdough recipes, beginner guides, troubleshooting articles and equipment reviews.">
+<title>Sourdough Recipes & Guides — The Sourdough Guide</title>
+<meta name="description" content="Browse all sourdough recipes, beginner guides, troubleshooting articles and equipment reviews. Focaccia, bagels, pizza, cinnamon rolls and more.">
 <meta name="google-adsense-account" content="ca-pub-6666741024266551">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6666741024266551" crossorigin="anonymous"></script>
@@ -118,6 +118,19 @@ img{max-width:100%;display:block}
 }
 @media(max-width:480px){.wrap{padding-left:20px;padding-right:20px}}
 </style>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="canonical" href="https://thesourdoughguide.com/recipes.html">
+<meta property="og:title" content="Sourdough Recipes & Guides — The Sourdough Guide">
+<meta property="og:description" content="Browse all sourdough recipes, beginner guides, troubleshooting articles and equipment reviews. Focaccia, bagels, pizza, cinnamon rolls and more.">
+<meta property="og:image" content="https://images.pexels.com/photos/30548099/pexels-photo-30548099.jpeg?auto=compress&cs=tinysrgb&w=1200">
+<meta property="og:url" content="https://thesourdoughguide.com/recipes.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Sourdough Guide">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sourdough Recipes & Guides — The Sourdough Guide">
+<meta name="twitter:description" content="Browse all sourdough recipes, beginner guides, troubleshooting articles and equipment reviews. Focaccia, bagels, pizza, cinnamon rolls and more.">
+<meta name="twitter:image" content="https://images.pexels.com/photos/30548099/pexels-photo-30548099.jpeg?auto=compress&cs=tinysrgb&w=1200">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"The Sourdough Guide","url":"https://thesourdoughguide.com","description":"Browse all sourdough recipes, beginner guides, troubleshooting articles and equipment reviews. Focaccia, bagels, pizza, cinnamon rolls and more.","potentialAction":{"@type":"SearchAction","target":"https://thesourdoughguide.com/recipes.html?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
 </head>
 <body>
 
@@ -137,13 +150,13 @@ img{max-width:100%;display:block}
       <a href="/equipment.html" id="nl-equipment">Equipment</a>
       <a href="/about.html" id="nl-about">About</a>
     </nav>
-    <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Menu">
+    <button class="nav-toggle" onclick="this.closest('.nav').querySelector('.mob-nav').classList.toggle('open')" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </div>
   <nav class="mob-nav">
     <a href="/beginner.html">Start Here</a>
-    <a href="/recipes.html">Recipes</a>
+    <a href="/recipes.html?cat=recipe">Recipes</a>
     <a href="/troubleshooting.html">Troubleshooting</a>
     <a href="/equipment.html">Equipment</a>
     <a href="/about.html">About</a>
@@ -212,9 +225,11 @@ img{max-width:100%;display:block}
 </div>
 <script>
 function handleSub(e){e.preventDefault();const btn=e.target.querySelector('button');const inp=e.target.querySelector('input');btn.textContent='Subscribed ✓';btn.style.background='#2D6A4F';inp.value='';inp.disabled=true;inp.placeholder="You're on the list!";setTimeout(()=>{btn.textContent='Subscribe';btn.style.background='';inp.disabled=false;inp.placeholder='Your email address'},4000);}
+const POST_IMAGES={"sourdough-cinnamon-rolls": "https://images.pexels.com/photos/3951310/pexels-photo-3951310.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "sourdough-bagels": "https://images.pexels.com/photos/3957500/pexels-photo-3957500.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "sourdough-pizza-dough": "https://images.pexels.com/photos/2909822/pexels-photo-2909822.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "sourdough-focaccia": "https://images.pexels.com/photos/19165814/pexels-photo-19165814.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "sourdough-chocolate-chip-cookies": "https://images.pexels.com/photos/230325/pexels-photo-230325.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "sourdough-english-muffins": "https://images.pexels.com/photos/4110104/pexels-photo-4110104.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "sourdough-sandwich-loaf": "https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "sourdough-discard-recipes": "https://images.pexels.com/photos/6605304/pexels-photo-6605304.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "jalapeno-cheddar-sourdough": "https://images.pexels.com/photos/36931181/pexels-photo-36931181.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "classic-country-sourdough-loaf": "https://images.pexels.com/photos/30548099/pexels-photo-30548099.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "whole-wheat-sourdough": "https://images.pexels.com/photos/4881602/pexels-photo-4881602.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "rosemary-olive-oil-sourdough": "https://images.pexels.com/photos/30895278/pexels-photo-30895278.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "dark-rye-sourdough": "https://images.pexels.com/photos/7693927/pexels-photo-7693927.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "why-is-my-sourdough-dense": "https://images.pexels.com/photos/30888597/pexels-photo-30888597.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "sourdough-starter-not-rising": "https://images.pexels.com/photos/4881595/pexels-photo-4881595.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "sourdough-no-oven-spring": "https://images.pexels.com/photos/36930991/pexels-photo-36930991.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "sourdough-too-sour": "https://images.pexels.com/photos/4881593/pexels-photo-4881593.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "sourdough-too-sticky": "https://images.pexels.com/photos/4881589/pexels-photo-4881589.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "sourdough-spread-sideways": "https://images.pexels.com/photos/30632198/pexels-photo-30632198.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "how-to-start-a-sourdough-starter": "https://images.pexels.com/photos/30895275/pexels-photo-30895275.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "sourdough-hydration-explained": "https://images.pexels.com/photos/30895289/pexels-photo-30895289.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "best-dutch-ovens-for-sourdough": "https://images.pexels.com/photos/36202913/pexels-photo-36202913.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop", "understanding-bulk-fermentation": "https://images.pexels.com/photos/31546233/pexels-photo-31546233.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop"};
 function catImgClass(cat){const m={beginner:'pi-beginner',recipe:'pi-recipe',troubleshooting:'pi-troubleshooting',equipment:'pi-equipment',advanced:'pi-advanced'};return m[cat]||'pi-default';}
+function getPostImg(slug,cat){if(POST_IMAGES[slug])return`background-image:url('${POST_IMAGES[slug]}');background-size:cover;background-position:center`;return'';}
 function fmtDate(s){if(!s)return'';try{return new Date(s).toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'})}catch(e){return s}}
-function buildCard(p){return`<article class="pc"><a href="/post.html?slug=${p.slug}" class="pc-img ${catImgClass(p.category)}"><span class="pc-tag">${p.category||'Post'}</span></a><div class="pc-body"><p class="pc-meta">${fmtDate(p.date)}${p.readtime?' &middot; '+p.readtime:''}</p><h3 class="pc-title"><a href="/post.html?slug=${p.slug}">${p.title}</a></h3><p class="pc-excerpt">${p.excerpt||''}</p><a href="/post.html?slug=${p.slug}" class="pc-read">Read More →</a></div></article>`;}
+function buildCard(p){const imgStyle=getPostImg(p.slug,p.category);const imgClass=imgStyle?'':catImgClass(p.category);return`<article class="pc"><a href="/post.html?slug=${p.slug}" class="pc-img ${imgClass}" style="${imgStyle}"><span class="pc-tag">${p.category||'Post'}</span></a><div class="pc-body"><p class="pc-meta">${fmtDate(p.date)}${p.readtime?' &middot; '+p.readtime:''}</p><h3 class="pc-title"><a href="/post.html?slug=${p.slug}">${p.title}</a></h3><p class="pc-excerpt">${p.excerpt||''}</p><a href="/post.html?slug=${p.slug}" class="pc-read">Read More →</a></div></article>`;}
 </script>
 <script>
 let allPosts=[],activeFilter='all';
