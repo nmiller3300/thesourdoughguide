@@ -489,8 +489,8 @@ img{max-width:100%;display:block}
       <span class="sec-label">Newsletter</span>
       <h2>Get better at sourdough,<br>one email at a time.</h2>
       <p>New guides, troubleshooting tips, and seasonal recipes delivered to your inbox. No spam, ever. Unsubscribe anytime.</p>
-      <form class="nl-form" onsubmit="handleSub(event)">
-        <input type="email" placeholder="Your email address" required>
+      <form class="nl-form" name="newsletter" netlify netlify-honeypot="bot-field" onsubmit="handleSub(event)">
+        <input type="hidden" name="form-name" value="newsletter"><input type="text" name="bot-field" style="display:none"><input type="email" name="email" placeholder="Your email address" required>
         <button type="submit">Subscribe</button>
       </form>
     </div>
