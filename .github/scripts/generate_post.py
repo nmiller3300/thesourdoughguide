@@ -7,7 +7,7 @@ from datetime import datetime
 from pathlib import Path
 
 client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
-posts_dir = Path("posts")
+import os script_dir = Path(__file__).parent.parent.parent posts_dir = script_dir / "posts" print(f"Posts directory: {posts_dir}")
 
 existing_titles = []
 existing_categories = []
