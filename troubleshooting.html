@@ -221,7 +221,7 @@ a{text-decoration:none;color:inherit}
     <p>Every sourdough problem has a cause — and almost every cause has a clear fix. Select your symptom below and get straight to the answer.</p>
     <div class="search-wrap">
       <span class="search-icon">🔍</span>
-      <input type="text" id="srch" placeholder="Search problems (e.g. flat, dense, sticky, sour...)" oninput="searchProbs(this.value)">
+      <input type="text" id="srch" placeholder="Search problems (e.g. flat, dense, sticky, sour...)" oninput="searchProbs(this.value)"></div><div style="text-align:center;margin-top:10px"><span id="search-feedback" style="font-size:13px;color:rgba(255,255,255,.5);font-family:var(--s)"></span
     </div>
   </div>
 </section>
@@ -474,11 +474,12 @@ function openTab(tab,idx){
   document.querySelector('.engine').scrollIntoView({behavior:'smooth',block:'start'});
 }
 
-function showAnswer(id){
+function showAnswer(id, btn){
   const data=ANSWERS[id];
   if(!data)return;
   document.querySelectorAll('.sym-btn').forEach(b=>b.classList.remove('active'));
-  event.currentTarget.classList.add('active');
+  const activeBtn = btn || (typeof event !== "undefined" && event.currentTarget);
+  if(activeBtn) activeBtn.classList.add('active');
   const fixesHTML=data.fixes.map(f=>`<li><span class="fix-icon">✓</span><span>${f}</span></li>`).join('');
   document.getElementById('answer-container').innerHTML=`
     <div class="answer-box show" style="margin-top:20px">
@@ -509,7 +510,8 @@ function toggleFAQ(el){
 
 function searchProbs(v){
   const val=v.trim().toLowerCase();
-  if(!val)return;
+  const feedbackEl=document.getElementById('search-feedback');
+  if(!val){if(feedbackEl)feedbackEl.textContent='';return;}
   const map={
     'flat':['loaf','loaf-flat'],'spread':['loaf','loaf-spread'],'sideways':['loaf','loaf-spread'],
     'burnt':['loaf','loaf-burnt'],'burn':['loaf','loaf-burnt'],'raw':['loaf','loaf-burnt'],
@@ -534,8 +536,9 @@ function searchProbs(v){
     'yeasty':['flavour','flavour-yeasty'],'beer':['flavour','flavour-yeasty'],
   };
   for(const[k,v2]of Object.entries(map)){
-    if(val.includes(k)){switchTab(v2[0]);setTimeout(()=>showAnswer(v2[1]),100);return}
+    if(val.includes(k)){if(feedbackEl)feedbackEl.textContent="Showing results for: "+k;switchTab(v2[0]);setTimeout(()=>{const btn=document.querySelector(`[onclick*="${v2[1]}"]`);showAnswer(v2[1],btn);if(btn)btn.classList.add("active");document.querySelector(".engine").scrollIntoView({behavior:"smooth",block:"start"});},150);return;}
   }
+  if(feedbackEl)feedbackEl.textContent="No exact match — try: flat, dense, sticky, sour, starter";
   // Search FAQ
   document.querySelectorAll('.faq-item').forEach(item=>{
     const tags=(item.dataset.tags||'')+(item.querySelector('.faq-q').textContent||'');
