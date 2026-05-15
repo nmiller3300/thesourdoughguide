@@ -1,5 +1,13 @@
 [
   {
+    "slug": "sourdough-sticking-to-your-dutch-oven-here-s-how-to-get-a-cl",
+    "title": "Sourdough Sticking to Your Dutch Oven? Here's How to Get a Clean Release Every Time",
+    "date": "2026-05-15",
+    "category": "troubleshooting",
+    "readtime": "7 min read",
+    "excerpt": "Tired of leaving half your crust behind? Learn exactly why sourdough sticks and how to prevent it."
+  },
+  {
     "slug": "choosing-flour-for-sourdough-your-guide-to-the-foundation-of",
     "title": "Choosing Flour for Sourdough \u2014 Your Guide to the Foundation of Great Bread",
     "date": "2026-05-13",
@@ -48,20 +56,20 @@
     "excerpt": "Sticky dough isn't broken \u2014 it just needs the right technique. A stage-by-stage guide from mixing through shaping."
   },
   {
-    "slug": "sourdough-spread-sideways",
-    "title": "Why Did My Sourdough Spread Sideways? And How to Fix It",
-    "date": "2025-06-10",
-    "category": "troubleshooting",
-    "readtime": "6 min read",
-    "excerpt": "A loaf that spreads flat instead of rising up has a gluten or proofing problem. Here's how to figure out which one and fix it for your next bake."
-  },
-  {
     "slug": "jalapeno-cheddar-sourdough",
     "title": "Jalape\u00f1o Cheddar Sourdough \u2014 Bold Flavor, Perfect Crumb",
     "date": "2025-06-10",
     "category": "recipe",
     "readtime": "9 min read",
     "excerpt": "Spicy jalape\u00f1os and sharp cheddar baked into a golden sourdough loaf. The most-requested recipe on the site for a reason."
+  },
+  {
+    "slug": "sourdough-spread-sideways",
+    "title": "Why Did My Sourdough Spread Sideways? And How to Fix It",
+    "date": "2025-06-10",
+    "category": "troubleshooting",
+    "readtime": "6 min read",
+    "excerpt": "A loaf that spreads flat instead of rising up has a gluten or proofing problem. Here's how to figure out which one and fix it for your next bake."
   },
   {
     "slug": "sourdough-focaccia",
@@ -112,20 +120,20 @@
     "excerpt": "Fresh rosemary and good olive oil folded into a sourdough loaf produce a golden, aromatic bread that's perfect with everything from cheese boards to Sunday roasts."
   },
   {
-    "slug": "sourdough-discard-recipes",
-    "title": "8 Ways to Use Sourdough Discard (That Actually Taste Good)",
-    "date": "2025-06-03",
-    "category": "recipe",
-    "readtime": "6 min read",
-    "excerpt": "Stop throwing away your sourdough discard. These 8 recipes are quick, delicious, and use up every bit of it."
-  },
-  {
     "slug": "sourdough-bagels",
     "title": "Sourdough Bagels \u2014 Chewy, Glossy, and Worth Every Minute",
     "date": "2025-06-03",
     "category": "recipe",
     "readtime": "10 min read",
     "excerpt": "Real New York-style bagels at home, leavened with sourdough starter. Dense, chewy, with that signature glossy crust \u2014 better than anything you'll find at a grocery store."
+  },
+  {
+    "slug": "sourdough-discard-recipes",
+    "title": "8 Ways to Use Sourdough Discard (That Actually Taste Good)",
+    "date": "2025-06-03",
+    "category": "recipe",
+    "readtime": "6 min read",
+    "excerpt": "Stop throwing away your sourdough discard. These 8 recipes are quick, delicious, and use up every bit of it."
   },
   {
     "slug": "sourdough-sandwich-loaf",
@@ -136,20 +144,20 @@
     "excerpt": "A soft, enriched sourdough loaf with a tight crumb perfect for sandwiches, toast, and French toast. The everyday bread your kitchen has been missing."
   },
   {
-    "slug": "how-to-start-a-sourdough-starter",
-    "title": "How to Start a Sourdough Starter From Scratch (Day-by-Day Guide)",
-    "date": "2025-06-01",
-    "category": "beginner",
-    "readtime": "8 min read",
-    "excerpt": "Everything you need to build an active, bubbly starter in 7 days \u2014 even if you've failed before."
-  },
-  {
     "slug": "classic-country-sourdough-loaf",
     "title": "Classic Country Sourdough Loaf \u2014 The Only Recipe You Need",
     "date": "2025-06-01",
     "category": "recipe",
     "readtime": "8 min read",
     "excerpt": "Simple, reliable, and deeply satisfying. This is the recipe most home bakers come back to again and again."
+  },
+  {
+    "slug": "how-to-start-a-sourdough-starter",
+    "title": "How to Start a Sourdough Starter From Scratch (Day-by-Day Guide)",
+    "date": "2025-06-01",
+    "category": "beginner",
+    "readtime": "8 min read",
+    "excerpt": "Everything you need to build an active, bubbly starter in 7 days \u2014 even if you've failed before."
   },
   {
     "slug": "dark-rye-sourdough",
@@ -160,20 +168,20 @@
     "excerpt": "A bold, earthy rye loaf with caraway seeds and a tight crumb perfect for open-faced sandwiches. Once you try rye sourdough, you'll keep coming back."
   },
   {
-    "slug": "sourdough-hydration-explained",
-    "title": "Sourdough Hydration Explained \u2014 What It Is and Why It Matters",
-    "date": "2025-05-28",
-    "category": "beginner",
-    "readtime": "7 min read",
-    "excerpt": "Baker's percentages and hydration ratios don't have to be intimidating. Here's exactly what they mean and how to use them."
-  },
-  {
     "slug": "sourdough-english-muffins",
     "title": "Sourdough English Muffins \u2014 Nooks, Crannies, and Better Than Store-Bought",
     "date": "2025-05-28",
     "category": "recipe",
     "readtime": "8 min read",
     "excerpt": "Homemade sourdough English muffins with real nooks and crannies, a slightly tangy flavor, and a texture that holds up under any topping. Split with a fork, never a knife."
+  },
+  {
+    "slug": "sourdough-hydration-explained",
+    "title": "Sourdough Hydration Explained \u2014 What It Is and Why It Matters",
+    "date": "2025-05-28",
+    "category": "beginner",
+    "readtime": "7 min read",
+    "excerpt": "Baker's percentages and hydration ratios don't have to be intimidating. Here's exactly what they mean and how to use them."
   },
   {
     "slug": "sourdough-chocolate-chip-cookies",
