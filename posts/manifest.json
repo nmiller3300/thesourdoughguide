@@ -1,5 +1,13 @@
 [
   {
+    "slug": "stretch-and-fold-the-gentle-technique-that-builds-incredible",
+    "title": "Stretch and Fold \u2014 The Gentle Technique That Builds Incredible Sourdough Structure",
+    "date": "2026-05-18",
+    "category": "beginner",
+    "readtime": "7 min read",
+    "excerpt": "Master the stretch and fold technique to build strength in your sourdough without heavy kneading."
+  },
+  {
     "slug": "sourdough-sticking-to-your-dutch-oven-here-s-how-to-get-a-cl",
     "title": "Sourdough Sticking to Your Dutch Oven? Here's How to Get a Clean Release Every Time",
     "date": "2026-05-15",
@@ -56,20 +64,20 @@
     "excerpt": "Sticky dough isn't broken \u2014 it just needs the right technique. A stage-by-stage guide from mixing through shaping."
   },
   {
-    "slug": "jalapeno-cheddar-sourdough",
-    "title": "Jalape\u00f1o Cheddar Sourdough \u2014 Bold Flavor, Perfect Crumb",
-    "date": "2025-06-10",
-    "category": "recipe",
-    "readtime": "9 min read",
-    "excerpt": "Spicy jalape\u00f1os and sharp cheddar baked into a golden sourdough loaf. The most-requested recipe on the site for a reason."
-  },
-  {
     "slug": "sourdough-spread-sideways",
     "title": "Why Did My Sourdough Spread Sideways? And How to Fix It",
     "date": "2025-06-10",
     "category": "troubleshooting",
     "readtime": "6 min read",
     "excerpt": "A loaf that spreads flat instead of rising up has a gluten or proofing problem. Here's how to figure out which one and fix it for your next bake."
+  },
+  {
+    "slug": "jalapeno-cheddar-sourdough",
+    "title": "Jalape\u00f1o Cheddar Sourdough \u2014 Bold Flavor, Perfect Crumb",
+    "date": "2025-06-10",
+    "category": "recipe",
+    "readtime": "9 min read",
+    "excerpt": "Spicy jalape\u00f1os and sharp cheddar baked into a golden sourdough loaf. The most-requested recipe on the site for a reason."
   },
   {
     "slug": "sourdough-focaccia",
@@ -96,20 +104,20 @@
     "excerpt": "Sourdough starter transforms ordinary cinnamon rolls into something extraordinary \u2014 pillowy, slightly tangy, with the most incredible depth of flavor."
   },
   {
-    "slug": "why-is-my-sourdough-dense",
-    "title": "Why Is My Sourdough Dense? 7 Reasons and How to Fix Each One",
-    "date": "2025-06-05",
-    "category": "troubleshooting",
-    "readtime": "8 min read",
-    "excerpt": "A dense, gummy sourdough loaf is the most common beginner problem. Here are the 7 most likely causes and the exact fix for each."
-  },
-  {
     "slug": "sourdough-pizza-dough",
     "title": "Sourdough Pizza Dough \u2014 Chewy, Crispy, and Packed with Flavor",
     "date": "2025-06-05",
     "category": "recipe",
     "readtime": "7 min read",
     "excerpt": "The best pizza dough you'll ever make. Sourdough starter gives it a complex, slightly tangy flavor and a chewy-crispy crust that commercial yeast can't touch."
+  },
+  {
+    "slug": "why-is-my-sourdough-dense",
+    "title": "Why Is My Sourdough Dense? 7 Reasons and How to Fix Each One",
+    "date": "2025-06-05",
+    "category": "troubleshooting",
+    "readtime": "8 min read",
+    "excerpt": "A dense, gummy sourdough loaf is the most common beginner problem. Here are the 7 most likely causes and the exact fix for each."
   },
   {
     "slug": "rosemary-olive-oil-sourdough",
