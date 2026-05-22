@@ -1,5 +1,13 @@
 [
   {
+    "slug": "the-best-bench-scrapers-for-sourdough-your-most-underrated-t",
+    "title": "The Best Bench Scrapers for Sourdough \u2014 Your Most Underrated Tool",
+    "date": "2026-05-22",
+    "category": "equipment",
+    "readtime": "7 min read",
+    "excerpt": "A good bench scraper transforms how you handle dough. Here's how to choose the right one for your sourdough practice."
+  },
+  {
     "slug": "bassinage-the-french-technique-for-achieving-higher-hydratio",
     "title": "Bassinage \u2014 The French Technique for Achieving Higher Hydration Without the Mess",
     "date": "2026-05-20",
@@ -72,20 +80,20 @@
     "excerpt": "Sticky dough isn't broken \u2014 it just needs the right technique. A stage-by-stage guide from mixing through shaping."
   },
   {
-    "slug": "jalapeno-cheddar-sourdough",
-    "title": "Jalape\u00f1o Cheddar Sourdough \u2014 Bold Flavor, Perfect Crumb",
-    "date": "2025-06-10",
-    "category": "recipe",
-    "readtime": "9 min read",
-    "excerpt": "Spicy jalape\u00f1os and sharp cheddar baked into a golden sourdough loaf. The most-requested recipe on the site for a reason."
-  },
-  {
     "slug": "sourdough-spread-sideways",
     "title": "Why Did My Sourdough Spread Sideways? And How to Fix It",
     "date": "2025-06-10",
     "category": "troubleshooting",
     "readtime": "6 min read",
     "excerpt": "A loaf that spreads flat instead of rising up has a gluten or proofing problem. Here's how to figure out which one and fix it for your next bake."
+  },
+  {
+    "slug": "jalapeno-cheddar-sourdough",
+    "title": "Jalape\u00f1o Cheddar Sourdough \u2014 Bold Flavor, Perfect Crumb",
+    "date": "2025-06-10",
+    "category": "recipe",
+    "readtime": "9 min read",
+    "excerpt": "Spicy jalape\u00f1os and sharp cheddar baked into a golden sourdough loaf. The most-requested recipe on the site for a reason."
   },
   {
     "slug": "sourdough-focaccia",
@@ -112,20 +120,20 @@
     "excerpt": "Sourdough starter transforms ordinary cinnamon rolls into something extraordinary \u2014 pillowy, slightly tangy, with the most incredible depth of flavor."
   },
   {
-    "slug": "why-is-my-sourdough-dense",
-    "title": "Why Is My Sourdough Dense? 7 Reasons and How to Fix Each One",
-    "date": "2025-06-05",
-    "category": "troubleshooting",
-    "readtime": "8 min read",
-    "excerpt": "A dense, gummy sourdough loaf is the most common beginner problem. Here are the 7 most likely causes and the exact fix for each."
-  },
-  {
     "slug": "sourdough-pizza-dough",
     "title": "Sourdough Pizza Dough \u2014 Chewy, Crispy, and Packed with Flavor",
     "date": "2025-06-05",
     "category": "recipe",
     "readtime": "7 min read",
     "excerpt": "The best pizza dough you'll ever make. Sourdough starter gives it a complex, slightly tangy flavor and a chewy-crispy crust that commercial yeast can't touch."
+  },
+  {
+    "slug": "why-is-my-sourdough-dense",
+    "title": "Why Is My Sourdough Dense? 7 Reasons and How to Fix Each One",
+    "date": "2025-06-05",
+    "category": "troubleshooting",
+    "readtime": "8 min read",
+    "excerpt": "A dense, gummy sourdough loaf is the most common beginner problem. Here are the 7 most likely causes and the exact fix for each."
   },
   {
     "slug": "rosemary-olive-oil-sourdough",
@@ -184,20 +192,20 @@
     "excerpt": "A bold, earthy rye loaf with caraway seeds and a tight crumb perfect for open-faced sandwiches. Once you try rye sourdough, you'll keep coming back."
   },
   {
-    "slug": "sourdough-english-muffins",
-    "title": "Sourdough English Muffins \u2014 Nooks, Crannies, and Better Than Store-Bought",
-    "date": "2025-05-28",
-    "category": "recipe",
-    "readtime": "8 min read",
-    "excerpt": "Homemade sourdough English muffins with real nooks and crannies, a slightly tangy flavor, and a texture that holds up under any topping. Split with a fork, never a knife."
-  },
-  {
     "slug": "sourdough-hydration-explained",
     "title": "Sourdough Hydration Explained \u2014 What It Is and Why It Matters",
     "date": "2025-05-28",
     "category": "beginner",
     "readtime": "7 min read",
     "excerpt": "Baker's percentages and hydration ratios don't have to be intimidating. Here's exactly what they mean and how to use them."
+  },
+  {
+    "slug": "sourdough-english-muffins",
+    "title": "Sourdough English Muffins \u2014 Nooks, Crannies, and Better Than Store-Bought",
+    "date": "2025-05-28",
+    "category": "recipe",
+    "readtime": "8 min read",
+    "excerpt": "Homemade sourdough English muffins with real nooks and crannies, a slightly tangy flavor, and a texture that holds up under any topping. Split with a fork, never a knife."
   },
   {
     "slug": "sourdough-chocolate-chip-cookies",
