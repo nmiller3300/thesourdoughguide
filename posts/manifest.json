@@ -1,5 +1,13 @@
 [
   {
+    "slug": "sourdough-soft-pretzels-golden-chewy-and-impossibly-good",
+    "title": "Sourdough Soft Pretzels \u2014 Golden, Chewy, and Impossibly Good",
+    "date": "2026-05-25",
+    "category": "recipe",
+    "readtime": "12 min read",
+    "excerpt": "Soft, chewy pretzels with a deep golden crust and tangy sourdough flavor that rivals any bakery or ballpark."
+  },
+  {
     "slug": "the-best-bench-scrapers-for-sourdough-your-most-underrated-t",
     "title": "The Best Bench Scrapers for Sourdough \u2014 Your Most Underrated Tool",
     "date": "2026-05-22",
@@ -120,20 +128,20 @@
     "excerpt": "Sourdough starter transforms ordinary cinnamon rolls into something extraordinary \u2014 pillowy, slightly tangy, with the most incredible depth of flavor."
   },
   {
-    "slug": "sourdough-pizza-dough",
-    "title": "Sourdough Pizza Dough \u2014 Chewy, Crispy, and Packed with Flavor",
-    "date": "2025-06-05",
-    "category": "recipe",
-    "readtime": "7 min read",
-    "excerpt": "The best pizza dough you'll ever make. Sourdough starter gives it a complex, slightly tangy flavor and a chewy-crispy crust that commercial yeast can't touch."
-  },
-  {
     "slug": "why-is-my-sourdough-dense",
     "title": "Why Is My Sourdough Dense? 7 Reasons and How to Fix Each One",
     "date": "2025-06-05",
     "category": "troubleshooting",
     "readtime": "8 min read",
     "excerpt": "A dense, gummy sourdough loaf is the most common beginner problem. Here are the 7 most likely causes and the exact fix for each."
+  },
+  {
+    "slug": "sourdough-pizza-dough",
+    "title": "Sourdough Pizza Dough \u2014 Chewy, Crispy, and Packed with Flavor",
+    "date": "2025-06-05",
+    "category": "recipe",
+    "readtime": "7 min read",
+    "excerpt": "The best pizza dough you'll ever make. Sourdough starter gives it a complex, slightly tangy flavor and a chewy-crispy crust that commercial yeast can't touch."
   },
   {
     "slug": "rosemary-olive-oil-sourdough",
@@ -192,20 +200,20 @@
     "excerpt": "A bold, earthy rye loaf with caraway seeds and a tight crumb perfect for open-faced sandwiches. Once you try rye sourdough, you'll keep coming back."
   },
   {
-    "slug": "sourdough-hydration-explained",
-    "title": "Sourdough Hydration Explained \u2014 What It Is and Why It Matters",
-    "date": "2025-05-28",
-    "category": "beginner",
-    "readtime": "7 min read",
-    "excerpt": "Baker's percentages and hydration ratios don't have to be intimidating. Here's exactly what they mean and how to use them."
-  },
-  {
     "slug": "sourdough-english-muffins",
     "title": "Sourdough English Muffins \u2014 Nooks, Crannies, and Better Than Store-Bought",
     "date": "2025-05-28",
     "category": "recipe",
     "readtime": "8 min read",
     "excerpt": "Homemade sourdough English muffins with real nooks and crannies, a slightly tangy flavor, and a texture that holds up under any topping. Split with a fork, never a knife."
+  },
+  {
+    "slug": "sourdough-hydration-explained",
+    "title": "Sourdough Hydration Explained \u2014 What It Is and Why It Matters",
+    "date": "2025-05-28",
+    "category": "beginner",
+    "readtime": "7 min read",
+    "excerpt": "Baker's percentages and hydration ratios don't have to be intimidating. Here's exactly what they mean and how to use them."
   },
   {
     "slug": "sourdough-chocolate-chip-cookies",
