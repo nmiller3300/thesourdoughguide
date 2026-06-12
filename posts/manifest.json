@@ -1,5 +1,13 @@
 [
   {
+    "slug": "shaping-a-batard-the-elegant-oval-loaf-that-s-easier-than-yo",
+    "title": "Shaping a Batard \u2014 The Elegant Oval Loaf That's Easier Than You Think",
+    "date": "2026-06-12",
+    "category": "beginner",
+    "readtime": "8 min read",
+    "excerpt": "Master the batard shape with this step-by-step guide to creating a beautiful, evenly baked oval sourdough loaf."
+  },
+  {
     "slug": "shaping-a-boule-the-foolproof-method-for-a-perfectly-round-s",
     "title": "Shaping a Boule \u2014 The Foolproof Method for a Perfectly Round Sourdough Loaf",
     "date": "2026-06-10",
@@ -176,20 +184,20 @@
     "excerpt": "Sourdough starter transforms ordinary cinnamon rolls into something extraordinary \u2014 pillowy, slightly tangy, with the most incredible depth of flavor."
   },
   {
-    "slug": "why-is-my-sourdough-dense",
-    "title": "Why Is My Sourdough Dense? 7 Reasons and How to Fix Each One",
-    "date": "2025-06-05",
-    "category": "troubleshooting",
-    "readtime": "8 min read",
-    "excerpt": "A dense, gummy sourdough loaf is the most common beginner problem. Here are the 7 most likely causes and the exact fix for each."
-  },
-  {
     "slug": "sourdough-pizza-dough",
     "title": "Sourdough Pizza Dough \u2014 Chewy, Crispy, and Packed with Flavor",
     "date": "2025-06-05",
     "category": "recipe",
     "readtime": "7 min read",
     "excerpt": "The best pizza dough you'll ever make. Sourdough starter gives it a complex, slightly tangy flavor and a chewy-crispy crust that commercial yeast can't touch."
+  },
+  {
+    "slug": "why-is-my-sourdough-dense",
+    "title": "Why Is My Sourdough Dense? 7 Reasons and How to Fix Each One",
+    "date": "2025-06-05",
+    "category": "troubleshooting",
+    "readtime": "8 min read",
+    "excerpt": "A dense, gummy sourdough loaf is the most common beginner problem. Here are the 7 most likely causes and the exact fix for each."
   },
   {
     "slug": "rosemary-olive-oil-sourdough",
