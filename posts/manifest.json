@@ -1,5 +1,13 @@
 [
   {
+    "slug": "the-best-bread-lames-for-sourdough-score-like-a-pro-every-ti",
+    "title": "The Best Bread Lames for Sourdough \u2014 Score Like a Pro, Every Time",
+    "date": "2026-06-15",
+    "category": "equipment",
+    "readtime": "7 min read",
+    "excerpt": "A great bread lame transforms your scoring from hesitant scratches to confident slashes. Here's how to choose the right one."
+  },
+  {
     "slug": "shaping-a-batard-the-elegant-oval-loaf-that-s-easier-than-yo",
     "title": "Shaping a Batard \u2014 The Elegant Oval Loaf That's Easier Than You Think",
     "date": "2026-06-12",
@@ -184,20 +192,20 @@
     "excerpt": "Sourdough starter transforms ordinary cinnamon rolls into something extraordinary \u2014 pillowy, slightly tangy, with the most incredible depth of flavor."
   },
   {
-    "slug": "sourdough-pizza-dough",
-    "title": "Sourdough Pizza Dough \u2014 Chewy, Crispy, and Packed with Flavor",
-    "date": "2025-06-05",
-    "category": "recipe",
-    "readtime": "7 min read",
-    "excerpt": "The best pizza dough you'll ever make. Sourdough starter gives it a complex, slightly tangy flavor and a chewy-crispy crust that commercial yeast can't touch."
-  },
-  {
     "slug": "why-is-my-sourdough-dense",
     "title": "Why Is My Sourdough Dense? 7 Reasons and How to Fix Each One",
     "date": "2025-06-05",
     "category": "troubleshooting",
     "readtime": "8 min read",
     "excerpt": "A dense, gummy sourdough loaf is the most common beginner problem. Here are the 7 most likely causes and the exact fix for each."
+  },
+  {
+    "slug": "sourdough-pizza-dough",
+    "title": "Sourdough Pizza Dough \u2014 Chewy, Crispy, and Packed with Flavor",
+    "date": "2025-06-05",
+    "category": "recipe",
+    "readtime": "7 min read",
+    "excerpt": "The best pizza dough you'll ever make. Sourdough starter gives it a complex, slightly tangy flavor and a chewy-crispy crust that commercial yeast can't touch."
   },
   {
     "slug": "rosemary-olive-oil-sourdough",
@@ -232,20 +240,20 @@
     "excerpt": "A soft, enriched sourdough loaf with a tight crumb perfect for sandwiches, toast, and French toast. The everyday bread your kitchen has been missing."
   },
   {
-    "slug": "classic-country-sourdough-loaf",
-    "title": "Classic Country Sourdough Loaf \u2014 The Only Recipe You Need",
-    "date": "2025-06-01",
-    "category": "recipe",
-    "readtime": "8 min read",
-    "excerpt": "Simple, reliable, and deeply satisfying. This is the recipe most home bakers come back to again and again."
-  },
-  {
     "slug": "how-to-start-a-sourdough-starter",
     "title": "How to Start a Sourdough Starter From Scratch (Day-by-Day Guide)",
     "date": "2025-06-01",
     "category": "beginner",
     "readtime": "8 min read",
     "excerpt": "Everything you need to build an active, bubbly starter in 7 days \u2014 even if you've failed before."
+  },
+  {
+    "slug": "classic-country-sourdough-loaf",
+    "title": "Classic Country Sourdough Loaf \u2014 The Only Recipe You Need",
+    "date": "2025-06-01",
+    "category": "recipe",
+    "readtime": "8 min read",
+    "excerpt": "Simple, reliable, and deeply satisfying. This is the recipe most home bakers come back to again and again."
   },
   {
     "slug": "dark-rye-sourdough",
