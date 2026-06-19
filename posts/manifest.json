@@ -1,5 +1,13 @@
 [
   {
+    "slug": "sourdough-brioche-rich-buttery-and-worth-the-wait",
+    "title": "Sourdough Brioche \u2014 Rich, Buttery, and Worth the Wait",
+    "date": "2026-06-19",
+    "category": "recipe",
+    "readtime": "12 min read",
+    "excerpt": "Impossibly tender brioche with sourdough depth \u2014 the perfect marriage of buttery richness and subtle tang."
+  },
+  {
     "slug": "the-best-proofing-boxes-for-sourdough-consistent-results-in-",
     "title": "The Best Proofing Boxes for Sourdough \u2014 Consistent Results in Any Kitchen",
     "date": "2026-06-17",
@@ -272,20 +280,20 @@
     "excerpt": "A bold, earthy rye loaf with caraway seeds and a tight crumb perfect for open-faced sandwiches. Once you try rye sourdough, you'll keep coming back."
   },
   {
-    "slug": "sourdough-hydration-explained",
-    "title": "Sourdough Hydration Explained \u2014 What It Is and Why It Matters",
-    "date": "2025-05-28",
-    "category": "beginner",
-    "readtime": "7 min read",
-    "excerpt": "Baker's percentages and hydration ratios don't have to be intimidating. Here's exactly what they mean and how to use them."
-  },
-  {
     "slug": "sourdough-english-muffins",
     "title": "Sourdough English Muffins \u2014 Nooks, Crannies, and Better Than Store-Bought",
     "date": "2025-05-28",
     "category": "recipe",
     "readtime": "8 min read",
     "excerpt": "Homemade sourdough English muffins with real nooks and crannies, a slightly tangy flavor, and a texture that holds up under any topping. Split with a fork, never a knife."
+  },
+  {
+    "slug": "sourdough-hydration-explained",
+    "title": "Sourdough Hydration Explained \u2014 What It Is and Why It Matters",
+    "date": "2025-05-28",
+    "category": "beginner",
+    "readtime": "7 min read",
+    "excerpt": "Baker's percentages and hydration ratios don't have to be intimidating. Here's exactly what they mean and how to use them."
   },
   {
     "slug": "sourdough-chocolate-chip-cookies",
