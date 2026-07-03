@@ -1,5 +1,13 @@
 [
   {
+    "slug": "maintaining-a-sourdough-starter-everything-you-need-to-know-",
+    "title": "Maintaining a Sourdough Starter \u2014 Everything You Need to Know to Keep It Alive and Thriving",
+    "date": "2026-07-03",
+    "category": "beginner",
+    "readtime": "8 min read",
+    "excerpt": "Learn exactly how to feed, store, and care for your sourdough starter so it stays healthy and ready to bake for years."
+  },
+  {
     "slug": "desired-dough-temperature-the-calculation-that-transforms-yo",
     "title": "Desired Dough Temperature \u2014 The Calculation That Transforms Your Sourdough Consistency",
     "date": "2026-07-01",
@@ -296,20 +304,20 @@
     "excerpt": "A soft, enriched sourdough loaf with a tight crumb perfect for sandwiches, toast, and French toast. The everyday bread your kitchen has been missing."
   },
   {
-    "slug": "classic-country-sourdough-loaf",
-    "title": "Classic Country Sourdough Loaf \u2014 The Only Recipe You Need",
-    "date": "2025-06-01",
-    "category": "recipe",
-    "readtime": "8 min read",
-    "excerpt": "Simple, reliable, and deeply satisfying. This is the recipe most home bakers come back to again and again."
-  },
-  {
     "slug": "how-to-start-a-sourdough-starter",
     "title": "How to Start a Sourdough Starter From Scratch (Day-by-Day Guide)",
     "date": "2025-06-01",
     "category": "beginner",
     "readtime": "8 min read",
     "excerpt": "Everything you need to build an active, bubbly starter in 7 days \u2014 even if you've failed before."
+  },
+  {
+    "slug": "classic-country-sourdough-loaf",
+    "title": "Classic Country Sourdough Loaf \u2014 The Only Recipe You Need",
+    "date": "2025-06-01",
+    "category": "recipe",
+    "readtime": "8 min read",
+    "excerpt": "Simple, reliable, and deeply satisfying. This is the recipe most home bakers come back to again and again."
   },
   {
     "slug": "dark-rye-sourdough",
