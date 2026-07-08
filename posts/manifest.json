@@ -1,5 +1,13 @@
 [
   {
+    "slug": "reading-your-dough-how-to-know-what-your-sourdough-is-tellin",
+    "title": "Reading Your Dough \u2014 How to Know What Your Sourdough Is Telling You",
+    "date": "2026-07-08",
+    "category": "beginner",
+    "readtime": "8 min read",
+    "excerpt": "Learn to read the visual and tactile cues that tell you exactly when your sourdough is ready at every stage."
+  },
+  {
     "slug": "building-a-levain-the-strategic-pre-ferment-that-elevates-ev",
     "title": "Building a Levain \u2014 The Strategic Pre-Ferment That Elevates Every Loaf",
     "date": "2026-07-06",
@@ -336,20 +344,20 @@
     "excerpt": "A bold, earthy rye loaf with caraway seeds and a tight crumb perfect for open-faced sandwiches. Once you try rye sourdough, you'll keep coming back."
   },
   {
-    "slug": "sourdough-hydration-explained",
-    "title": "Sourdough Hydration Explained \u2014 What It Is and Why It Matters",
-    "date": "2025-05-28",
-    "category": "beginner",
-    "readtime": "7 min read",
-    "excerpt": "Baker's percentages and hydration ratios don't have to be intimidating. Here's exactly what they mean and how to use them."
-  },
-  {
     "slug": "sourdough-english-muffins",
     "title": "Sourdough English Muffins \u2014 Nooks, Crannies, and Better Than Store-Bought",
     "date": "2025-05-28",
     "category": "recipe",
     "readtime": "8 min read",
     "excerpt": "Homemade sourdough English muffins with real nooks and crannies, a slightly tangy flavor, and a texture that holds up under any topping. Split with a fork, never a knife."
+  },
+  {
+    "slug": "sourdough-hydration-explained",
+    "title": "Sourdough Hydration Explained \u2014 What It Is and Why It Matters",
+    "date": "2025-05-28",
+    "category": "beginner",
+    "readtime": "7 min read",
+    "excerpt": "Baker's percentages and hydration ratios don't have to be intimidating. Here's exactly what they mean and how to use them."
   },
   {
     "slug": "sourdough-chocolate-chip-cookies",
