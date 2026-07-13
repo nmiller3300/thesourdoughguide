@@ -1,5 +1,13 @@
 [
   {
+    "slug": "why-steam-matters-in-sourdough-baking-the-secret-to-cracklin",
+    "title": "Why Steam Matters in Sourdough Baking \u2014 The Secret to Crackling Crust and Maximum Rise",
+    "date": "2026-07-13",
+    "category": "beginner",
+    "readtime": "7 min read",
+    "excerpt": "Steam is the difference between a pale, tight loaf and one with dramatic oven spring and a shattering crust."
+  },
+  {
     "slug": "starter-smells-like-acetone-why-your-sourdough-has-that-nail",
     "title": "Starter Smells Like Acetone? Why Your Sourdough Has That Nail Polish Remover Odor and How to Fix It",
     "date": "2026-07-10",
@@ -328,20 +336,20 @@
     "excerpt": "A soft, enriched sourdough loaf with a tight crumb perfect for sandwiches, toast, and French toast. The everyday bread your kitchen has been missing."
   },
   {
-    "slug": "classic-country-sourdough-loaf",
-    "title": "Classic Country Sourdough Loaf \u2014 The Only Recipe You Need",
-    "date": "2025-06-01",
-    "category": "recipe",
-    "readtime": "8 min read",
-    "excerpt": "Simple, reliable, and deeply satisfying. This is the recipe most home bakers come back to again and again."
-  },
-  {
     "slug": "how-to-start-a-sourdough-starter",
     "title": "How to Start a Sourdough Starter From Scratch (Day-by-Day Guide)",
     "date": "2025-06-01",
     "category": "beginner",
     "readtime": "8 min read",
     "excerpt": "Everything you need to build an active, bubbly starter in 7 days \u2014 even if you've failed before."
+  },
+  {
+    "slug": "classic-country-sourdough-loaf",
+    "title": "Classic Country Sourdough Loaf \u2014 The Only Recipe You Need",
+    "date": "2025-06-01",
+    "category": "recipe",
+    "readtime": "8 min read",
+    "excerpt": "Simple, reliable, and deeply satisfying. This is the recipe most home bakers come back to again and again."
   },
   {
     "slug": "dark-rye-sourdough",
@@ -352,20 +360,20 @@
     "excerpt": "A bold, earthy rye loaf with caraway seeds and a tight crumb perfect for open-faced sandwiches. Once you try rye sourdough, you'll keep coming back."
   },
   {
-    "slug": "sourdough-hydration-explained",
-    "title": "Sourdough Hydration Explained \u2014 What It Is and Why It Matters",
-    "date": "2025-05-28",
-    "category": "beginner",
-    "readtime": "7 min read",
-    "excerpt": "Baker's percentages and hydration ratios don't have to be intimidating. Here's exactly what they mean and how to use them."
-  },
-  {
     "slug": "sourdough-english-muffins",
     "title": "Sourdough English Muffins \u2014 Nooks, Crannies, and Better Than Store-Bought",
     "date": "2025-05-28",
     "category": "recipe",
     "readtime": "8 min read",
     "excerpt": "Homemade sourdough English muffins with real nooks and crannies, a slightly tangy flavor, and a texture that holds up under any topping. Split with a fork, never a knife."
+  },
+  {
+    "slug": "sourdough-hydration-explained",
+    "title": "Sourdough Hydration Explained \u2014 What It Is and Why It Matters",
+    "date": "2025-05-28",
+    "category": "beginner",
+    "readtime": "7 min read",
+    "excerpt": "Baker's percentages and hydration ratios don't have to be intimidating. Here's exactly what they mean and how to use them."
   },
   {
     "slug": "sourdough-chocolate-chip-cookies",
