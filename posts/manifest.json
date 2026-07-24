@@ -1,5 +1,13 @@
 [
   {
+    "slug": "feeding-ratios-demystified-how-to-manipulate-your-starter-fo",
+    "title": "Feeding Ratios Demystified \u2014 How to Manipulate Your Starter for Peak Performance",
+    "date": "2026-07-24",
+    "category": "advanced",
+    "readtime": "9 min read",
+    "excerpt": "Master the science of feeding ratios to control timing, flavor, and activity in your sourdough starter."
+  },
+  {
     "slug": "the-72-hour-cold-retard-unlocking-deeper-flavor-better-textu",
     "title": "The 72-Hour Cold Retard \u2014 Unlocking Deeper Flavor, Better Texture, and a More Flexible Schedule",
     "date": "2026-07-22",
@@ -344,20 +352,20 @@
     "excerpt": "Fresh rosemary and good olive oil folded into a sourdough loaf produce a golden, aromatic bread that's perfect with everything from cheese boards to Sunday roasts."
   },
   {
-    "slug": "sourdough-bagels",
-    "title": "Sourdough Bagels \u2014 Chewy, Glossy, and Worth Every Minute",
-    "date": "2025-06-03",
-    "category": "recipe",
-    "readtime": "10 min read",
-    "excerpt": "Real New York-style bagels at home, leavened with sourdough starter. Dense, chewy, with that signature glossy crust \u2014 better than anything you'll find at a grocery store."
-  },
-  {
     "slug": "sourdough-discard-recipes",
     "title": "8 Ways to Use Sourdough Discard (That Actually Taste Good)",
     "date": "2025-06-03",
     "category": "recipe",
     "readtime": "6 min read",
     "excerpt": "Stop throwing away your sourdough discard. These 8 recipes are quick, delicious, and use up every bit of it."
+  },
+  {
+    "slug": "sourdough-bagels",
+    "title": "Sourdough Bagels \u2014 Chewy, Glossy, and Worth Every Minute",
+    "date": "2025-06-03",
+    "category": "recipe",
+    "readtime": "10 min read",
+    "excerpt": "Real New York-style bagels at home, leavened with sourdough starter. Dense, chewy, with that signature glossy crust \u2014 better than anything you'll find at a grocery store."
   },
   {
     "slug": "sourdough-sandwich-loaf",
