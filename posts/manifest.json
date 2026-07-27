@@ -1,5 +1,13 @@
 [
   {
+    "slug": "sourdough-waffles-crispy-outside-impossibly-tender-inside-an",
+    "title": "Sourdough Waffles \u2014 Crispy Outside, Impossibly Tender Inside, and Worth Waking Up For",
+    "date": "2026-07-27",
+    "category": "recipe",
+    "readtime": "8 min read",
+    "excerpt": "Transform your sourdough discard into the best waffles you've ever made \u2014 crispy, tangy, and ready in minutes."
+  },
+  {
     "slug": "feeding-ratios-demystified-how-to-manipulate-your-starter-fo",
     "title": "Feeding Ratios Demystified \u2014 How to Manipulate Your Starter for Peak Performance",
     "date": "2026-07-24",
@@ -376,20 +384,20 @@
     "excerpt": "A soft, enriched sourdough loaf with a tight crumb perfect for sandwiches, toast, and French toast. The everyday bread your kitchen has been missing."
   },
   {
-    "slug": "how-to-start-a-sourdough-starter",
-    "title": "How to Start a Sourdough Starter From Scratch (Day-by-Day Guide)",
-    "date": "2025-06-01",
-    "category": "beginner",
-    "readtime": "8 min read",
-    "excerpt": "Everything you need to build an active, bubbly starter in 7 days \u2014 even if you've failed before."
-  },
-  {
     "slug": "classic-country-sourdough-loaf",
     "title": "Classic Country Sourdough Loaf \u2014 The Only Recipe You Need",
     "date": "2025-06-01",
     "category": "recipe",
     "readtime": "8 min read",
     "excerpt": "Simple, reliable, and deeply satisfying. This is the recipe most home bakers come back to again and again."
+  },
+  {
+    "slug": "how-to-start-a-sourdough-starter",
+    "title": "How to Start a Sourdough Starter From Scratch (Day-by-Day Guide)",
+    "date": "2025-06-01",
+    "category": "beginner",
+    "readtime": "8 min read",
+    "excerpt": "Everything you need to build an active, bubbly starter in 7 days \u2014 even if you've failed before."
   },
   {
     "slug": "dark-rye-sourdough",
