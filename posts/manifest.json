@@ -1,5 +1,13 @@
 [
   {
+    "slug": "the-poke-test-how-to-know-when-your-sourdough-is-perfectly-p",
+    "title": "The Poke Test \u2014 How to Know When Your Sourdough Is Perfectly Proofed",
+    "date": "2026-08-05",
+    "category": "beginner",
+    "readtime": "7 min read",
+    "excerpt": "Learn the simple finger poke test that tells you exactly when your dough is ready to bake, every single time."
+  },
+  {
     "slug": "bread-too-pale-why-your-sourdough-lacks-color-and-how-to-ach",
     "title": "Bread Too Pale? Why Your Sourdough Lacks Color and How to Achieve Golden-Brown Perfection",
     "date": "2026-08-03",
@@ -408,20 +416,20 @@
     "excerpt": "A soft, enriched sourdough loaf with a tight crumb perfect for sandwiches, toast, and French toast. The everyday bread your kitchen has been missing."
   },
   {
-    "slug": "classic-country-sourdough-loaf",
-    "title": "Classic Country Sourdough Loaf \u2014 The Only Recipe You Need",
-    "date": "2025-06-01",
-    "category": "recipe",
-    "readtime": "8 min read",
-    "excerpt": "Simple, reliable, and deeply satisfying. This is the recipe most home bakers come back to again and again."
-  },
-  {
     "slug": "how-to-start-a-sourdough-starter",
     "title": "How to Start a Sourdough Starter From Scratch (Day-by-Day Guide)",
     "date": "2025-06-01",
     "category": "beginner",
     "readtime": "8 min read",
     "excerpt": "Everything you need to build an active, bubbly starter in 7 days \u2014 even if you've failed before."
+  },
+  {
+    "slug": "classic-country-sourdough-loaf",
+    "title": "Classic Country Sourdough Loaf \u2014 The Only Recipe You Need",
+    "date": "2025-06-01",
+    "category": "recipe",
+    "readtime": "8 min read",
+    "excerpt": "Simple, reliable, and deeply satisfying. This is the recipe most home bakers come back to again and again."
   },
   {
     "slug": "dark-rye-sourdough",
