@@ -1,5 +1,13 @@
 [
   {
+    "slug": "proofing-baskets-explained-how-bannetons-shape-support-and-t",
+    "title": "Proofing Baskets Explained \u2014 How Bannetons Shape, Support, and Transform Your Sourdough",
+    "date": "2026-08-12",
+    "category": "beginner",
+    "readtime": "7 min read",
+    "excerpt": "Learn how proofing baskets create beautiful loaves with perfect shape, gorgeous flour patterns, and professional results at home."
+  },
+  {
     "slug": "multiple-starters-why-keeping-more-than-one-unlocks-flavors-",
     "title": "Multiple Starters \u2014 Why Keeping More Than One Unlocks Flavors and Possibilities You Never Knew Existed",
     "date": "2026-08-10",
@@ -432,20 +440,20 @@
     "excerpt": "A soft, enriched sourdough loaf with a tight crumb perfect for sandwiches, toast, and French toast. The everyday bread your kitchen has been missing."
   },
   {
-    "slug": "classic-country-sourdough-loaf",
-    "title": "Classic Country Sourdough Loaf \u2014 The Only Recipe You Need",
-    "date": "2025-06-01",
-    "category": "recipe",
-    "readtime": "8 min read",
-    "excerpt": "Simple, reliable, and deeply satisfying. This is the recipe most home bakers come back to again and again."
-  },
-  {
     "slug": "how-to-start-a-sourdough-starter",
     "title": "How to Start a Sourdough Starter From Scratch (Day-by-Day Guide)",
     "date": "2025-06-01",
     "category": "beginner",
     "readtime": "8 min read",
     "excerpt": "Everything you need to build an active, bubbly starter in 7 days \u2014 even if you've failed before."
+  },
+  {
+    "slug": "classic-country-sourdough-loaf",
+    "title": "Classic Country Sourdough Loaf \u2014 The Only Recipe You Need",
+    "date": "2025-06-01",
+    "category": "recipe",
+    "readtime": "8 min read",
+    "excerpt": "Simple, reliable, and deeply satisfying. This is the recipe most home bakers come back to again and again."
   },
   {
     "slug": "dark-rye-sourdough",
