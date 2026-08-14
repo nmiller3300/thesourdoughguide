@@ -1,5 +1,13 @@
 [
   {
+    "slug": "open-crumb-scoring-the-strategic-cuts-that-create-dramatic-a",
+    "title": "Open Crumb Scoring \u2014 The Strategic Cuts That Create Dramatic, Airy Sourdough",
+    "date": "2026-08-14",
+    "category": "advanced",
+    "readtime": "9 min read",
+    "excerpt": "Master the scoring patterns that direct oven spring upward, creating the dramatic ears and open crumb structure of artisan sourdough."
+  },
+  {
     "slug": "proofing-baskets-explained-how-bannetons-shape-support-and-t",
     "title": "Proofing Baskets Explained \u2014 How Bannetons Shape, Support, and Transform Your Sourdough",
     "date": "2026-08-12",
@@ -416,20 +424,20 @@
     "excerpt": "Fresh rosemary and good olive oil folded into a sourdough loaf produce a golden, aromatic bread that's perfect with everything from cheese boards to Sunday roasts."
   },
   {
-    "slug": "sourdough-discard-recipes",
-    "title": "8 Ways to Use Sourdough Discard (That Actually Taste Good)",
-    "date": "2025-06-03",
-    "category": "recipe",
-    "readtime": "6 min read",
-    "excerpt": "Stop throwing away your sourdough discard. These 8 recipes are quick, delicious, and use up every bit of it."
-  },
-  {
     "slug": "sourdough-bagels",
     "title": "Sourdough Bagels \u2014 Chewy, Glossy, and Worth Every Minute",
     "date": "2025-06-03",
     "category": "recipe",
     "readtime": "10 min read",
     "excerpt": "Real New York-style bagels at home, leavened with sourdough starter. Dense, chewy, with that signature glossy crust \u2014 better than anything you'll find at a grocery store."
+  },
+  {
+    "slug": "sourdough-discard-recipes",
+    "title": "8 Ways to Use Sourdough Discard (That Actually Taste Good)",
+    "date": "2025-06-03",
+    "category": "recipe",
+    "readtime": "6 min read",
+    "excerpt": "Stop throwing away your sourdough discard. These 8 recipes are quick, delicious, and use up every bit of it."
   },
   {
     "slug": "sourdough-sandwich-loaf",
@@ -464,20 +472,20 @@
     "excerpt": "A bold, earthy rye loaf with caraway seeds and a tight crumb perfect for open-faced sandwiches. Once you try rye sourdough, you'll keep coming back."
   },
   {
-    "slug": "sourdough-hydration-explained",
-    "title": "Sourdough Hydration Explained \u2014 What It Is and Why It Matters",
-    "date": "2025-05-28",
-    "category": "beginner",
-    "readtime": "7 min read",
-    "excerpt": "Baker's percentages and hydration ratios don't have to be intimidating. Here's exactly what they mean and how to use them."
-  },
-  {
     "slug": "sourdough-english-muffins",
     "title": "Sourdough English Muffins \u2014 Nooks, Crannies, and Better Than Store-Bought",
     "date": "2025-05-28",
     "category": "recipe",
     "readtime": "8 min read",
     "excerpt": "Homemade sourdough English muffins with real nooks and crannies, a slightly tangy flavor, and a texture that holds up under any topping. Split with a fork, never a knife."
+  },
+  {
+    "slug": "sourdough-hydration-explained",
+    "title": "Sourdough Hydration Explained \u2014 What It Is and Why It Matters",
+    "date": "2025-05-28",
+    "category": "beginner",
+    "readtime": "7 min read",
+    "excerpt": "Baker's percentages and hydration ratios don't have to be intimidating. Here's exactly what they mean and how to use them."
   },
   {
     "slug": "sourdough-chocolate-chip-cookies",
