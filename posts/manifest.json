@@ -1,5 +1,13 @@
 [
   {
+    "slug": "the-float-test-how-to-know-your-sourdough-starter-is-ready-t",
+    "title": "The Float Test \u2014 How to Know Your Sourdough Starter Is Ready to Bake",
+    "date": "2026-08-21",
+    "category": "beginner",
+    "readtime": "7 min read",
+    "excerpt": "Learn the simple float test to know exactly when your starter is ready to leaven bread with confidence."
+  },
+  {
     "slug": "cold-retarding-your-sourdough-why-time-in-the-fridge-transfo",
     "title": "Cold Retarding Your Sourdough \u2014 Why Time in the Fridge Transforms Everything",
     "date": "2026-08-19",
@@ -464,20 +472,20 @@
     "excerpt": "A soft, enriched sourdough loaf with a tight crumb perfect for sandwiches, toast, and French toast. The everyday bread your kitchen has been missing."
   },
   {
-    "slug": "how-to-start-a-sourdough-starter",
-    "title": "How to Start a Sourdough Starter From Scratch (Day-by-Day Guide)",
-    "date": "2025-06-01",
-    "category": "beginner",
-    "readtime": "8 min read",
-    "excerpt": "Everything you need to build an active, bubbly starter in 7 days \u2014 even if you've failed before."
-  },
-  {
     "slug": "classic-country-sourdough-loaf",
     "title": "Classic Country Sourdough Loaf \u2014 The Only Recipe You Need",
     "date": "2025-06-01",
     "category": "recipe",
     "readtime": "8 min read",
     "excerpt": "Simple, reliable, and deeply satisfying. This is the recipe most home bakers come back to again and again."
+  },
+  {
+    "slug": "how-to-start-a-sourdough-starter",
+    "title": "How to Start a Sourdough Starter From Scratch (Day-by-Day Guide)",
+    "date": "2025-06-01",
+    "category": "beginner",
+    "readtime": "8 min read",
+    "excerpt": "Everything you need to build an active, bubbly starter in 7 days \u2014 even if you've failed before."
   },
   {
     "slug": "dark-rye-sourdough",
