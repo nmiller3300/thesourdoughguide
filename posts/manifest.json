@@ -1,5 +1,13 @@
 [
   {
+    "slug": "the-windowpane-test-how-to-know-your-sourdough-is-properly-d",
+    "title": "The Windowpane Test \u2014 How to Know Your Sourdough Is Properly Developed",
+    "date": "2026-08-28",
+    "category": "beginner",
+    "readtime": "7 min read",
+    "excerpt": "Learn the simple stretch test that tells you exactly when your dough has built enough gluten for a beautiful loaf."
+  },
+  {
     "slug": "sourdough-naan-pillowy-charred-and-irresistibly-good",
     "title": "Sourdough Naan \u2014 Pillowy, Charred, and Irresistibly Good",
     "date": "2026-08-26",
@@ -488,20 +496,20 @@
     "excerpt": "A soft, enriched sourdough loaf with a tight crumb perfect for sandwiches, toast, and French toast. The everyday bread your kitchen has been missing."
   },
   {
-    "slug": "how-to-start-a-sourdough-starter",
-    "title": "How to Start a Sourdough Starter From Scratch (Day-by-Day Guide)",
-    "date": "2025-06-01",
-    "category": "beginner",
-    "readtime": "8 min read",
-    "excerpt": "Everything you need to build an active, bubbly starter in 7 days \u2014 even if you've failed before."
-  },
-  {
     "slug": "classic-country-sourdough-loaf",
     "title": "Classic Country Sourdough Loaf \u2014 The Only Recipe You Need",
     "date": "2025-06-01",
     "category": "recipe",
     "readtime": "8 min read",
     "excerpt": "Simple, reliable, and deeply satisfying. This is the recipe most home bakers come back to again and again."
+  },
+  {
+    "slug": "how-to-start-a-sourdough-starter",
+    "title": "How to Start a Sourdough Starter From Scratch (Day-by-Day Guide)",
+    "date": "2025-06-01",
+    "category": "beginner",
+    "readtime": "8 min read",
+    "excerpt": "Everything you need to build an active, bubbly starter in 7 days \u2014 even if you've failed before."
   },
   {
     "slug": "dark-rye-sourdough",
