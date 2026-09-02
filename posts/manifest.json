@@ -1,5 +1,13 @@
 [
   {
+    "slug": "mastering-aliquot-jars-the-precision-tool-that-removes-guess",
+    "title": "Mastering Aliquot Jars \u2014 The Precision Tool That Removes Guesswork From Bulk Fermentation",
+    "date": "2026-09-02",
+    "category": "advanced",
+    "readtime": "9 min read",
+    "excerpt": "Stop guessing when bulk fermentation is done. An aliquot jar gives you measurable, repeatable data every single bake."
+  },
+  {
     "slug": "the-best-baking-steels-for-sourdough-maximum-heat-maximum-ri",
     "title": "The Best Baking Steels for Sourdough \u2014 Maximum Heat, Maximum Rise, Maximum Crust",
     "date": "2026-08-31",
@@ -504,20 +512,20 @@
     "excerpt": "A soft, enriched sourdough loaf with a tight crumb perfect for sandwiches, toast, and French toast. The everyday bread your kitchen has been missing."
   },
   {
-    "slug": "classic-country-sourdough-loaf",
-    "title": "Classic Country Sourdough Loaf \u2014 The Only Recipe You Need",
-    "date": "2025-06-01",
-    "category": "recipe",
-    "readtime": "8 min read",
-    "excerpt": "Simple, reliable, and deeply satisfying. This is the recipe most home bakers come back to again and again."
-  },
-  {
     "slug": "how-to-start-a-sourdough-starter",
     "title": "How to Start a Sourdough Starter From Scratch (Day-by-Day Guide)",
     "date": "2025-06-01",
     "category": "beginner",
     "readtime": "8 min read",
     "excerpt": "Everything you need to build an active, bubbly starter in 7 days \u2014 even if you've failed before."
+  },
+  {
+    "slug": "classic-country-sourdough-loaf",
+    "title": "Classic Country Sourdough Loaf \u2014 The Only Recipe You Need",
+    "date": "2025-06-01",
+    "category": "recipe",
+    "readtime": "8 min read",
+    "excerpt": "Simple, reliable, and deeply satisfying. This is the recipe most home bakers come back to again and again."
   },
   {
     "slug": "dark-rye-sourdough",
